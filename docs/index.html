@@ -210,6 +210,24 @@
         .btt.show { opacity:1; transform:translateY(0); pointer-events:auto; }
         .btt:hover { box-shadow:0 6px 22px rgba(26,39,68,.45); transform:translateY(-2px); }
 
+        /* ━━━━━━━━━━ Screenshots ━━━━━━━━━━ */
+        .ss-wrap { margin:1rem 0 .5rem; }
+        .ss-wrap img {
+            width:100%; border-radius:10px;
+            border:1px solid #e5e8ed;
+            box-shadow:0 2px 10px rgba(0,0,0,.06);
+            transition:transform .3s ease, box-shadow .3s ease;
+            cursor:zoom-in;
+        }
+        .ss-wrap img:hover { transform:scale(1.02); box-shadow:0 6px 24px rgba(0,0,0,.12); }
+        .ss-cap {
+            text-align:center; font-size:.78rem; color:#8896a7;
+            margin-top:.4rem; font-weight:500;
+        }
+        .ss-grid { display:grid; gap:1rem; margin:1rem 0; }
+        .ss-grid.cols2 { grid-template-columns:1fr 1fr; }
+        @media(max-width:640px) { .ss-grid.cols2 { grid-template-columns:1fr; } }
+
         /* ━━━━━━━━━━ Responsive ━━━━━━━━━━ */
         @media(max-width:640px) {
             .navbar-links { display:none; }
@@ -284,6 +302,22 @@
                 <li class="step">คลิกที่ข้อความลิงก์คำว่า <span class="hl">ประวัติการส่งออก</span> (อยู่ข้างๆ ปุ่มส่งออก)</li>
                 <li class="step">หน้าต่างประวัติจะเปิดขึ้นมา ให้ดูไฟล์บรรทัดบนสุด แล้วคลิกปุ่ม <span class="hl">ดาวน์โหลด</span> เพื่อบันทึกไฟล์ Excel ลงเครื่อง</li>
             </ol>
+
+            <div class="ss-wrap anim" data-i="1">
+                <img src="images/tiktok-orders.png" alt="หน้าจัดการคำสั่งซื้อ TikTok Seller Center">
+                <p class="ss-cap">▲ หน้าจัดการคำสั่งซื้อ — เลือกแท็บ "ทั้งหมด" ด้านบน</p>
+            </div>
+            <div class="ss-grid cols2">
+                <div class="ss-wrap anim" data-i="2">
+                    <img src="images/tiktok-filter.png" alt="ตัวกรองคำสั่งซื้อ TikTok">
+                    <p class="ss-cap">▲ ตัวกรอง — เลือกช่วงวันที่</p>
+                </div>
+                <div class="ss-wrap anim" data-i="3">
+                    <img src="images/tiktok-export.png" alt="ส่งออกไฟล์ Excel TikTok">
+                    <p class="ss-cap">▲ ส่งออก Excel + ดาวน์โหลด</p>
+                </div>
+            </div>
+
             <div class="fi">
                 <div class="fi-r"><span class="fi-l">📄 ชื่อไฟล์ (TH)</span><span class="fi-v">ทั้งหมด คำสั่งซื้อ-XXXX-XX-XX-XX_XX.xlsx</span></div>
                 <div class="fi-r"><span class="fi-l">📄 ชื่อไฟล์ (EN)</span><span class="fi-v">All order-XXXX-XX-XX-XX:XX.xlsx</span></div>
