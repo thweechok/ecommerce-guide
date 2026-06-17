@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="คู่มือการดึงข้อมูลจาก TikTok Seller Center และ Shopee Seller Centre สำหรับงานบัญชี">
+    <title>คู่มือดึงข้อมูล E-Commerce | TikTok & Shopee</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* ━━━━━━━━━━ Reset & Base ━━━━━━━━━━ */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+        body {
+            font-family: 'Noto Sans Thai', 'Segoe UI', sans-serif;
+            background: #0a0e17;
+            color: #e0e0e0;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* ━━━━━━━━━━ Keyframes ━━━━━━━━━━ */
+        @keyframes fadeSlideUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeSlideLeft {
+            from { opacity: 0; transform: translateX(-30px); }
+            to   { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes fadeSlideRight {
+            from { opacity: 0; transform: translateX(30px); }
+            to   { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+        @keyframes popIn {
+            0%   { opacity: 0; transform: scale(.8); }
+            60%  { transform: scale(1.05); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        @keyframes gradientShift {
+            0%   { background-position: 0% 50%; }
+            50%  { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50%      { transform: translateY(-8px); }
+        }
+        @keyframes shimmer {
+            0%   { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+        @keyframes pulseRing {
+            0%   { box-shadow: 0 0 0 0 rgba(255,0,80,.4); }
+            70%  { box-shadow: 0 0 0 12px rgba(255,0,80,0); }
+            100% { box-shadow: 0 0 0 0 rgba(255,0,80,0); }
+        }
+        @keyframes borderDraw {
+            from { width: 0; }
+            to   { width: 60px; }
+        }
+        @keyframes slideDown {
+            from { opacity: 0; max-height: 0; }
+            to   { opacity: 1; max-height: 2000px; }
+        }
+        @keyframes countUp {
+            from { opacity: 0; transform: translateY(10px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes iconBounce {
+            0%, 100% { transform: scale(1); }
+            50%      { transform: scale(1.15); }
+        }
+        @keyframes glowPulse {
+            0%, 100% { box-shadow: 0 0 20px rgba(255,0,80,.15); }
+            50%      { box-shadow: 0 0 40px rgba(255,0,80,.3); }
+        }
+
+        /* ━━━━━━━━━━ Scroll Animation Helper ━━━━━━━━━━ */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity .7s ease-out, transform .7s ease-out;
+        }
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .animate-on-scroll.slide-left {
+            transform: translateX(-30px);
+        }
+        .animate-on-scroll.slide-left.visible {
+            transform: translateX(0);
+        }
+        .animate-on-scroll.slide-right {
+            transform: translateX(30px);
+        }
+        .animate-on-scroll.slide-right.visible {
+            transform: translateX(0);
+        }
+
+        /* ━━━━━━━━━━ Background Particles ━━━━━━━━━━ */
+        .bg-particles {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: .06;
+            animation: float 6s ease-in-out infinite;
+        }
+        .particle:nth-child(1) { width: 300px; height: 300px; background: #FF0050; top: 10%; left: -5%; animation-delay: 0s; }
+        .particle:nth-child(2) { width: 200px; height: 200px; background: #00F2EA; top: 50%; right: -3%; animation-delay: 2s; }
+        .particle:nth-child(3) { width: 250px; height: 250px; background: #8B00FF; bottom: 10%; left: 30%; animation-delay: 4s; }
+        .particle:nth-child(4) { width: 180px; height: 180px; background: #FF6B00; top: 30%; right: 20%; animation-delay: 1s; }
+
+        /* ━━━━━━━━━━ Navbar ━━━━━━━━━━ */
+        .navbar {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            background: rgba(10,14,23,.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,.06);
+            padding: .8rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            animation: fadeIn .5s ease-out;
+        }
+        .navbar-brand {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+        }
+        .navbar-brand span {
+            background: linear-gradient(135deg, #FF0050, #00F2EA);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .navbar-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+        .navbar-links a {
+            color: rgba(255,255,255,.6);
+            text-decoration: none;
+            font-size: .9rem;
+            font-weight: 500;
+            transition: color .25s ease;
+            position: relative;
+        }
+        .navbar-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px; left: 0;
+            width: 0; height: 2px;
+            background: #FF0050;
+            transition: width .3s ease;
+        }
+        .navbar-links a:hover { color: #fff; }
+        .navbar-links a:hover::after { width: 100%; }
+
+        /* ━━━━━━━━━━ Hero ━━━━━━━━━━ */
+        .hero {
+            position: relative;
+            z-index: 1;
+            min-height: 55vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8rem 2rem 4rem;
+            background: radial-gradient(ellipse at 30% 20%, rgba(255,0,80,.12) 0%, transparent 60%),
+                        radial-gradient(ellipse at 70% 80%, rgba(0,242,234,.08) 0%, transparent 60%);
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            background: rgba(255,0,80,.1);
+            border: 1px solid rgba(255,0,80,.25);
+            border-radius: 50px;
+            padding: .4rem 1.2rem;
+            font-size: .82rem;
+            font-weight: 600;
+            color: #FF6B9D;
+            margin-bottom: 1.5rem;
+            animation: popIn .6s ease-out both;
+        }
+        .hero-badge .dot {
+            width: 6px; height: 6px;
+            background: #FF0050;
+            border-radius: 50%;
+            animation: pulseRing 2s ease-in-out infinite;
+        }
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 1rem;
+            animation: fadeSlideUp .7s ease-out .1s both;
+        }
+        .hero h1 .gradient-text {
+            background: linear-gradient(135deg, #FF0050, #FF6B00, #00F2EA);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmer 4s linear infinite;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,.6);
+            max-width: 600px;
+            animation: fadeSlideUp .7s ease-out .25s both;
+        }
+        .hero-platforms {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2.5rem;
+            animation: fadeSlideUp .7s ease-out .4s both;
+        }
+        .hero-platform-chip {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            background: rgba(255,255,255,.06);
+            border: 1px solid rgba(255,255,255,.1);
+            border-radius: 50px;
+            padding: .6rem 1.5rem;
+            font-size: .95rem;
+            font-weight: 600;
+            color: #fff;
+            cursor: pointer;
+            transition: all .3s ease;
+        }
+        .hero-platform-chip:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,.3);
+        }
+        .hero-platform-chip.tiktok:hover { border-color: #FF0050; background: rgba(255,0,80,.1); }
+        .hero-platform-chip.shopee:hover { border-color: #FF6B00; background: rgba(255,107,0,.1); }
+        .hero-platform-chip .emoji { font-size: 1.3rem; }
+
+        /* ━━━━━━━━━━ Section ━━━━━━━━━━ */
+        .section {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .section-header .platform-icon {
+            font-size: 3rem;
+            margin-bottom: .5rem;
+            animation: iconBounce 2s ease-in-out infinite;
+            display: inline-block;
+        }
+        .section-header h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: .5rem;
+        }
+        .section-header .underline {
+            display: block;
+            height: 3px;
+            border-radius: 2px;
+            margin: .8rem auto 0;
+            animation: borderDraw .8s ease-out both;
+        }
+        .section-header p {
+            color: rgba(255,255,255,.5);
+            font-size: .95rem;
+        }
+        .tiktok-section .section-header .underline { background: linear-gradient(90deg, #FF0050, #00F2EA); }
+        .shopee-section .section-header .underline { background: linear-gradient(90deg, #FF6B00, #FFD700); }
+
+        .divider {
+            border: none;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,.08), transparent);
+            margin: 2rem 0;
+        }
+        .section-divider {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(255,0,80,.2), rgba(0,242,234,.2), transparent);
+            margin: 4rem auto;
+            max-width: 400px;
+        }
+
+        /* ━━━━━━━━━━ Guide Card ━━━━━━━━━━ */
+        .guide-card {
+            background: rgba(255,255,255,.03);
+            border: 1px solid rgba(255,255,255,.07);
+            border-radius: 16px;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            transition: border-color .3s ease, box-shadow .3s ease;
+            animation: glowPulse 4s ease-in-out infinite;
+            animation-play-state: paused;
+        }
+        .guide-card:hover {
+            border-color: rgba(255,255,255,.15);
+            animation-play-state: running;
+        }
+        .guide-card-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.2rem 1.5rem;
+            cursor: pointer;
+            transition: background .25s ease;
+            user-select: none;
+        }
+        .guide-card-header:hover {
+            background: rgba(255,255,255,.03);
+        }
+        .guide-number {
+            width: 40px; height: 40px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #fff;
+            flex-shrink: 0;
+            transition: transform .3s ease;
+        }
+        .guide-card-header:hover .guide-number { transform: scale(1.1) rotate(-5deg); }
+        .tiktok-section .guide-number { background: linear-gradient(135deg, #FF0050, #C70039); }
+        .shopee-section .guide-number { background: linear-gradient(135deg, #FF6B00, #E65C00); }
+        .guide-card-header h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #fff;
+            flex: 1;
+        }
+        .guide-toggle {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,.4);
+            transition: transform .3s ease, color .3s ease;
+        }
+        .guide-card.open .guide-toggle {
+            transform: rotate(180deg);
+            color: #FF0050;
+        }
+        .guide-card-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .5s cubic-bezier(.4,0,.2,1), padding .3s ease;
+            padding: 0 1.5rem;
+        }
+        .guide-card.open .guide-card-body {
+            max-height: 3000px;
+            padding: 0 1.5rem 1.5rem;
+        }
+
+        /* ━━━━━━━━━━ Steps ━━━━━━━━━━ */
+        .steps {
+            list-style: none;
+            position: relative;
+            padding-left: 2rem;
+        }
+        .steps::before {
+            content: '';
+            position: absolute;
+            left: 11px;
+            top: 8px;
+            bottom: 8px;
+            width: 2px;
+            background: linear-gradient(180deg, rgba(255,0,80,.3), rgba(0,242,234,.3));
+            border-radius: 1px;
+        }
+        .shopee-section .steps::before {
+            background: linear-gradient(180deg, rgba(255,107,0,.3), rgba(255,215,0,.3));
+        }
+        .step {
+            position: relative;
+            padding: .6rem 0 .6rem .8rem;
+            font-size: .92rem;
+            color: rgba(255,255,255,.75);
+            transition: color .25s ease, transform .25s ease;
+        }
+        .step:hover {
+            color: #fff;
+            transform: translateX(4px);
+        }
+        .step::before {
+            content: '';
+            position: absolute;
+            left: -2rem;
+            top: 1rem;
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            border: 2px solid #FF0050;
+            background: #0a0e17;
+            transition: background .25s ease, transform .25s ease;
+        }
+        .step:hover::before {
+            background: #FF0050;
+            transform: scale(1.3);
+        }
+        .shopee-section .step::before { border-color: #FF6B00; }
+        .shopee-section .step:hover::before { background: #FF6B00; }
+
+        .step-highlight {
+            display: inline;
+            background: rgba(255,0,80,.12);
+            color: #FF6B9D;
+            padding: .1rem .5rem;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: .88rem;
+        }
+        .shopee-section .step-highlight {
+            background: rgba(255,107,0,.12);
+            color: #FFAA50;
+        }
+
+        /* ━━━━━━━━━━ File Info Box ━━━━━━━━━━ */
+        .file-info {
+            background: rgba(255,255,255,.04);
+            border: 1px solid rgba(255,255,255,.08);
+            border-radius: 12px;
+            padding: 1rem 1.2rem;
+            margin-top: 1rem;
+            display: grid;
+            gap: .6rem;
+            transition: border-color .3s ease, transform .3s ease;
+        }
+        .file-info:hover {
+            border-color: rgba(255,255,255,.15);
+            transform: translateY(-2px);
+        }
+        .file-info-row {
+            display: flex;
+            align-items: baseline;
+            gap: .5rem;
+            font-size: .85rem;
+        }
+        .file-info-label {
+            color: rgba(255,255,255,.4);
+            font-weight: 500;
+            white-space: nowrap;
+            min-width: 100px;
+        }
+        .file-info-value {
+            color: #00F2EA;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: .82rem;
+            word-break: break-all;
+        }
+        .shopee-section .file-info-value { color: #FFD700; }
+        .file-info-tab {
+            color: #FF6B9D;
+        }
+        .shopee-section .file-info-tab { color: #FFAA50; }
+
+        /* ━━━━━━━━━━ Footer ━━━━━━━━━━ */
+        .footer {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 3rem 2rem;
+            color: rgba(255,255,255,.3);
+            font-size: .82rem;
+            border-top: 1px solid rgba(255,255,255,.05);
+        }
+        .footer a {
+            color: rgba(255,255,255,.5);
+            text-decoration: none;
+            transition: color .25s;
+        }
+        .footer a:hover { color: #FF0050; }
+
+        /* ━━━━━━━━━━ Back to Top ━━━━━━━━━━ */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 99;
+            width: 48px; height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #FF0050, #C70039);
+            color: #fff;
+            border: none;
+            font-size: 1.3rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 16px rgba(255,0,80,.3);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity .3s ease, transform .3s ease, box-shadow .3s ease;
+            pointer-events: none;
+        }
+        .back-to-top.show {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+        .back-to-top:hover {
+            box-shadow: 0 6px 24px rgba(255,0,80,.5);
+            transform: translateY(-3px);
+        }
+
+        /* ━━━━━━━━━━ Responsive ━━━━━━━━━━ */
+        @media (max-width: 640px) {
+            .navbar-links { display: none; }
+            .hero { padding: 6rem 1.2rem 3rem; min-height: 45vh; }
+            .hero h1 { font-size: 1.6rem; }
+            .hero-platforms { flex-direction: column; align-items: center; }
+            .section { padding: 2rem 1rem; }
+            .guide-card-header { padding: 1rem; }
+            .guide-card-header h3 { font-size: .95rem; }
+            .file-info-row { flex-direction: column; gap: .2rem; }
+            .file-info-label { min-width: auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Particles -->
+    <div class="bg-particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="#" class="navbar-brand">📊 <span>คู่มือ E-Commerce</span></a>
+        <ul class="navbar-links">
+            <li><a href="#tiktok">TikTok Shop</a></li>
+            <li><a href="#shopee">Shopee</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-badge"><div class="dot"></div> คู่มือสำหรับทีมบัญชี</div>
+        <h1>วิธีดึงข้อมูลจาก<br><span class="gradient-text">E-Commerce Platform</span></h1>
+        <p>คู่มือแบบ step-by-step สำหรับดาวน์โหลดรายงาน คำสั่งซื้อ · รายรับ · คืนสินค้า · ค่าใช้จ่ายแพลตฟอร์ม</p>
+        <div class="hero-platforms">
+            <a href="#tiktok" class="hero-platform-chip tiktok"><span class="emoji">🎵</span> TikTok Seller Center</a>
+            <a href="#shopee" class="hero-platform-chip shopee"><span class="emoji">🛒</span> Shopee Seller Centre</a>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════ -->
+    <!--  TIKTOK SECTION                                -->
+    <!-- ══════════════════════════════════════════════ -->
+    <section class="section tiktok-section" id="tiktok">
+        <div class="section-header animate-on-scroll">
+            <div class="platform-icon">🎵</div>
+            <h2>TikTok Seller Center</h2>
+            <p>การดึงข้อมูลจาก TikTok Shop — 4 ประเภทรายงาน</p>
+            <span class="underline"></span>
+        </div>
+
+        <!-- Guide 1: All Orders -->
+        <div class="guide-card open animate-on-scroll" data-index="1">
+            <div class="guide-card-header" onclick="toggleGuide(this)">
+                <div class="guide-number">1</div>
+                <h3>โหลดข้อมูลคำสั่งซื้อแบบครบวงจร (All Orders)</h3>
+                <span class="guide-toggle">▼</span>
+            </div>
+            <div class="guide-card-body">
+                <ol class="steps">
+                    <li class="step">ล็อกอินเข้า <span class="step-highlight">TikTok Seller Center</span></li>
+                    <li class="step">มองหาแถบเมนูสีดำด้านซ้ายมือสุด คลิกที่หัวข้อ <span class="step-highlight">คำสั่งซื้อ</span> แล้วเลือกเมนูย่อย <span class="step-highlight">จัดการคำสั่งซื้อ</span></li>
+                    <li class="step">ตรงกลางหน้าจอจะมีแท็บสถานะต่างๆ ให้เลือกแท็บ <span class="step-highlight">ทั้งหมด</span></li>
+                    <li class="step">มองไปที่มุมขวาบน (เหนือรายการคำสั่งซื้อ) จะเห็นปุ่ม <span class="step-highlight">ส่งออก</span> ให้คลิกที่ปุ่มนี้</li>
+                    <li class="step">จะมีหน้าต่างเล็กๆ เด้งขึ้นมากลางจอ ให้สังเกตหัวข้อ "รูปแบบการส่งออก" ต้องติ๊กเลือกวงกลมคำว่า <span class="step-highlight">Excel</span> จากนั้นกดปุ่ม <span class="step-highlight">ส่งออก</span> สีเขียว</li>
+                    <li class="step">คลิกที่ข้อความลิงก์คำว่า <span class="step-highlight">ประวัติการส่งออก</span> (อยู่ข้างๆ ปุ่มส่งออก)</li>
+                    <li class="step">หน้าต่างประวัติจะเปิดขึ้นมา ให้ดูไฟล์บรรทัดบนสุด แล้วคลิกปุ่ม <span class="step-highlight">ดาวน์โหลด</span> เพื่อบันทึกไฟล์ Excel ลงเครื่อง</li>
+                </ol>
+                <div class="file-info">
+                    <div class="file-info-row">
+                        <span class="file-info-label">📄 ชื่อไฟล์ (TH)</span>
+                        <span class="file-info-value">ทั้งหมด คำสั่งซื้อ-XXXX-XX-XX-XX_XX.xlsx</span>
+                    </div>
+                    <div class="file-info-row">
+                        <span class="file-info-label">📄 ชื่อไฟล์ (EN)</span>
+                        <span class="file-info-value">All order-XXXX-XX-XX-XX:XX.xlsx</span>
+                    </div>
+                    <div class="file-info-row">
+                        <span class="file-info-label">📑 ชื่อแท็บ</span>
+                        <span class="file-info-value file-info-tab">OrderSKUList</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Guide 2: รายรับของฉัน -->
+        <div class="guide-card animate-on-scroll" data-index="2">
+            <div class="guide-card-header" onclick="toggleGuide(this)">
+                <div class="guide-number">2</div>
+                <h3>ดาวน์โหลด "รายรับของฉัน"</h3>
+                <span class="guide-toggle">▼</span>
+            </div>
+            <div class="guide-card-body">
+                <ol class="steps">
+                    <li class="step">ที่แถบเมนูด้านซ้าย คลิกหัวข้อ <span class="step-highlight">การเงิน</span> แล้วเลือก <span class="step-highlight">ธุรกรรม</span></li>
+                    <li class="step">ในหน้าธุรกรรม ให้คลิกเลือกแท็บ <span class="step-highlight">ชำระเงินแล้ว</span></li>
+                    <li class="step">ใช้ช่องปฏิทินเพื่อระบุ <span class="step-highlight">วันที่เริ่มต้น</span> และ <span class="step-highlight">วันที่สิ้นสุด</span> ที่ต้องการ</li>
+                    <li class="step">กดปุ่ม <span class="step-highlight">ส่งออก</span> และเลือกรูปแบบไฟล์เป็น <span class="step-highlight">Excel</span> จากนั้นไปที่ประวัติการส่งออกเพื่อกดดาวน์โหลดไฟล์</li>
+                </ol>
+                <div class="file-info">
+                    <div class="file-info-row">
+                        <span class="file-info-label">📄 ชื่อไฟล์</span>
+                        <span class="file-info-value">income_XXXXXX-XX_XX_XX(UTC+7).xlsx</span>
+                    </div>
+                    <div class="file-info-row">
+                        <span class="file-info-label">📑 ชื่อแท็บ</span>
+                        <span class="file-info-value file-info-tab">รายละเอียดคำสั่งซื้อ, รายงาน, บันทึกการถอน, คำอธิบายค่าธรรมเนียม</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Guide 3: คืนสินค้า/คืนเงิน -->
+        <div class="guide-card animate-on-scroll" data-index="3">
+            <div class="guide-card-header" onclick="toggleGuide(this)">
+                <div class="guide-number">3</div>
+                <h3>โหลดข้อมูลการคืนสินค้าและการคืนเงิน</h3>
+                <span class="guide-toggle">▼</span>
+            </div>
+            <div class="guide-card-body">
+                <ol class="steps">
+                    <li class="step">ที่แถบเมนูด้านซ้าย คลิกที่หัวข้อ <span class="step-highlight">คำสั่งซื้อ</span> แล้วเลือกเมนู <span class="step-highlight">จัดการการคืนสินค้า</span></li>
+                    <li class="step">คลิกไอคอน <span class="step-highlight">ตัวกรอง</span> เลือกช่วงวันที่ที่ต้องการ แล้วกด <span class="step-highlight">นำไปใช้</span></li>
+                    <li class="step">เมื่อรายการแสดงผลแล้ว ให้คลิกไอคอน <span class="step-highlight">ส่งออก</span> เลือกรูปแบบเป็น <span class="step-highlight">Excel</span> แล้วกด <span class="step-highlight">ส่งออก</span></li>
+                    <li class="step">คลิกที่ลิงก์ <span class="step-highlight">ประวัติการส่งออก</span> เพื่อดาวน์โหลดไฟล์</li>
+                </ol>
+                <div class="file-info">
+                    <div class="file-info-row">
+                        <span class="file-info-label">📄 ชื่อไฟล์ (TH)</span>
+                        <span class="file-info-value">คำสั่งซื้อที่ส่งคืน/คืนเงิน-XXXX-XX-XX-XX_XX.xlsx</span>
+                    </div>
+                    <div class="file-info-row">
+                        <span class="file-info-label">📄 ชื่อไฟล์ (EN)</span>
+                        <span class="file-info-value">Return/Refund Orders-XXXX-XX-XX-XX:XX.xlsx</span>
+                    </div>
+                    <div class="file-info-row">
+                        <span class="file-info-label">📑 ชื่อแท็บ</span>
+                        <span class="file-info-value file-info-tab">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Guide 4: ค่าใช้จ่ายแพลตฟอร์ม -->
+        <div class="guide-card animate-on-scroll" data-index="4">
+            <div class="guide-card-header" onclick="toggleGuide(this)">
+                <div class="guide-number">4</div>
+                <h3>โหลดข้อมูลค่าใช้จ่ายแพลตฟอร์ม</h3>
+                <span class="guide-toggle">▼</span>
+            </div>
+            <div class="guide-card-body">
+                <ol class="steps">
+                    <li class="step">ที่แถบเมนูด้านซ้าย คลิกหัวข้อ <span class="step-highlight">การเงิน</span> แล้วเลือกเมนู <span class="step-highlight">เอกสารทางภาษี</span></li>
+                    <li class="step">เลือกแท็บ <span class="step-highlight">ใบแจ้งหนี้ของแพลตฟอร์ม</span> คลิกปุ่ม <span class="step-highlight">ดาวน์โหลดเป็นชุด</span></li>
+                    <li class="step">เลือกเดือนที่ต้องการ แล้วกด <span class="step-highlight">ส่งออก</span></li>
+                    <li class="step">ในหน้าป๊อปอัป "รายงานที่ส่งออก" ให้คลิกปุ่ม <span class="step-highlight">ดาวน์โหลด</span></li>
+                </ol>
+                <div class="file-info">
+                    <div class="file-info-row">
+                        <span class="file-info-label">📦 ชื่อไฟล์ ZIP</span>
+                        <span class="file-info-value">invoice_XXXXXX_1.zip</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ══════════════════════════════════════════════ -->
+    <!--  SHOPEE SECTION                                -->
+    <!-- ══════════════════════════════════════════════ -->
+    <section class="section shopee-section" id="shopee">
+        <div class="section-header animate-on-scroll">
+            <div class="platform-icon">🛒</div>
+            <h2>Shopee Seller Centre</h2>
+            <p>การดึงข้อมูลจาก Shopee — 5 ประเภทรายงาน</p>
+            <span class="underline"></span>
+        </div>
+
+        <!-- Guide 1: คำสั่งซื้อ -->
+        <div class="guide-card animate-on-scroll" data-index="1">
+            <div class="guide-card-header" onclick="toggleGuide(this)">
+                <div class="guide-number">1</div>
+                <h3>ดาวน์โหลดข้อมูลคำสั่งซื้อสินค้า</h3>
+                <span class="guide-toggle">▼</span>
+            </div>
+            <div class="guide-card-body">
+                <ol class="steps">
+                    <li class="step">ที่แถบเมนูด้านซ้าย ในหมวด "คำสั่งซื้อ" คลิกเมนู <span class="step-highlight">คำสั่งซื้อของฉัน</span></li>
+                    <li class="step">คลิกปุ่ม <span class="step-highlight">ดาวน์โหลด</span> ที่มุมขวาบน เลือกช่วงวันที่ที่ต้องการ</li>
+                    <li class="step">กดปุ่ม <span class="step-highlight">ดาวน์โหลด</span> สีส้ม แล้วกดดาวน์โหลดไฟล์ใน <span class="step-highlight">ประวัติการดาวน์โหลด</span></li>
+                </ol>
+                <div class="file-info">
+                    <div class="file-info-row">
+                        <span class="file-info-label">📄 ชื่อไฟล์</span>
+                        <span class="file-info-value">Order.all.XXXXXXXX_XXXXXXXX.xlsx</span>
+                    </div>
+                    <div class="file-info-row">
+                        <span class="file-info-label">📑 ชื่อแท็บ</span>
+                        <span class="file-info-value file-info-tab">orders</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Guide 2: รายรับ -->
+        <div class="guide-card animate-on-scroll" data-index="2">
+            <div class="guide-card-header" onclick="toggleGuide(this)">
+                <div class="guide-number">2</div>
+                <h3>ดาวน์โหลดข้อมูลรายรับ</h3>
+                <span class="guide-toggle">▼</span>
+            </div>
+            <div class="guide-card-body">
+                <ol class="steps">
+                    <li class="step">ในหมวด "การเงิน" คลิกเมนู <span class="step-highlight">รายรับของฉัน</span> แล้วเลือกแท็บ <span class="step-highlight">โอนเงินแล้ว</span></li>
+                    <li class="step">เลือกช่วงวันที่ที่ต้องการ และคลิกปุ่ม <span class="step-highlight">ดาวน์โหลด</span></li>
+                </ol>
+                <div class="file-info">
+                    <div class="file-info-row">
+                        <span class="file-info-label">📄 ชื่อไฟล์</span>
+                        <span class="file-info-value">income_XXXXXX_XX_XX(UTC+7).xlsx</span>
+                    </div>
+                    <div class="file-info-row">
+                        <span class="file-info-label">📑 ชื่อแท็บ</span>
+                        <span class="file-info-value file-info-tab">Summary, Income, Service Fee Details, Adjustment</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Guide 3: เงินเข้าธนาคาร -->
+        <div class="guide-card animate-on-scroll" data-index="3">
+            <div class="guide-card-header" onclick="toggleGuide(this)">
+                <div class="guide-number">3</div>
+                <h3>โหลดข้อมูลเงินเข้าธนาคาร</h3>
+                <span class="guide-toggle">▼</span>
+            </div>
+            <div class="guide-card-body">
+                <ol class="steps">
+                    <li class="step">ไปที่หน้า <span class="step-highlight">รายรับของฉัน</span> คลิกที่ลิงก์ <span class="step-highlight">ดูเพิ่มเติม</span> ในกล่อง "รายงานการเงิน"</li>
+                    <li class="step">เลือกช่วงเดือนที่ต้องการ แล้วคลิกปุ่ม <span class="step-highlight">ดาวน์โหลดทั้งหมด</span></li>
+                </ol>
+                <div class="file-info">
+                    <div class="file-info-row">
+                        <span class="file-info-label">📄 ชื่อไฟล์</span>
+                        <span class="file-info-value">monthly_report_XXXXXXXX.pdf</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Guide 4: ค่าใช้จ่ายแพลตฟอร์ม -->
+        <div class="guide-card animate-on-scroll" data-index="4">
+            <div class="guide-card-header" onclick="toggleGuide(this)">
+                <div class="guide-number">4</div>
+                <h3>ดาวน์โหลดข้อมูลค่าใช้จ่ายแพลตฟอร์ม (ใบกำกับภาษี)</h3>
+                <span class="guide-toggle">▼</span>
+            </div>
+            <div class="guide-card-body">
+                <ol class="steps">
+                    <li class="step">ไปที่หน้า <span class="step-highlight">รายรับของฉัน</span> คลิก <span class="step-highlight">My Tax Invoices ></span></li>
+                    <li class="step">ระบุช่วงวันที่ที่ต้องการ แล้วกดปุ่ม <span class="step-highlight">เลือก</span></li>
+                    <li class="step">คลิกปุ่ม <span class="step-highlight">ดาวน์โหลดทั้งหมด</span> ในคอลัมน์ "ใบกำกับภาษีแบบเต็มรูป"</li>
+                </ol>
+                <div class="file-info">
+                    <div class="file-info-row">
+                        <span class="file-info-label">📦 ชื่อไฟล์ ZIP</span>
+                        <span class="file-info-value">XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX-XXXXXXXXXXXXXX.ZIP</span>
+                    </div>
+                    <div class="file-info-row">
+                        <span class="file-info-label">📄 ไฟล์ภายใน</span>
+                        <span class="file-info-value">SPX Express-RCT-NRSPXSPB00-00000-XXXXXX-XXXXXXX</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Guide 5: คืนสินค้า -->
+        <div class="guide-card animate-on-scroll" data-index="5">
+            <div class="guide-card-header" onclick="toggleGuide(this)">
+                <div class="guide-number">5</div>
+                <h3>ดาวน์โหลดข้อมูลการคืนสินค้าและการคืนเงิน</h3>
+                <span class="guide-toggle">▼</span>
+            </div>
+            <div class="guide-card-body">
+                <ol class="steps">
+                    <li class="step">ทำขั้นตอนเหมือนการดาวน์โหลดคำสั่งซื้อของ Shopee (ข้อ 1) แต่เลือกหมวด <span class="step-highlight">คืนสินค้า/คืนเงิน</span></li>
+                </ol>
+                <div class="file-info">
+                    <div class="file-info-row">
+                        <span class="file-info-label">📄 ชื่อไฟล์</span>
+                        <span class="file-info-value">Order.return_refund_cancel.xlsx</span>
+                    </div>
+                    <div class="file-info-row">
+                        <span class="file-info-label">📑 ชื่อแท็บ</span>
+                        <span class="file-info-value file-info-tab">orders</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>คู่มือดึงข้อมูล E-Commerce สำหรับทีมบัญชี</p>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0})">↑</button>
+
+    <!-- ━━━━━━━━━━ JavaScript ━━━━━━━━━━ -->
+    <script>
+        // ── Toggle Guide Card (Accordion) ──
+        function toggleGuide(header) {
+            const card = header.parentElement;
+            const isOpen = card.classList.contains('open');
+
+            // ปิดการ์ดอื่นในกลุ่มเดียวกัน (optional — comment ออกถ้าอยากเปิดพร้อมกันได้)
+            // const section = card.closest('.section');
+            // section.querySelectorAll('.guide-card.open').forEach(c => {
+            //     if (c !== card) c.classList.remove('open');
+            // });
+
+            card.classList.toggle('open');
+        }
+
+        // ── Scroll Animation (Intersection Observer) ──
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    // เพิ่ม delay ตาม data-index เพื่อ stagger animation
+                    const card = entry.target;
+                    const idx = card.getAttribute('data-index') || 0;
+                    const delay = idx * 100; // ms
+                    setTimeout(() => {
+                        card.classList.add('visible');
+                    }, delay);
+                    observer.unobserve(card);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // ── Back to Top Button ──
+        const backBtn = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) {
+                backBtn.classList.add('show');
+            } else {
+                backBtn.classList.remove('show');
+            }
+        });
+
+        // ── Smooth scroll สำหรับ anchor links ──
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = document.querySelector(link.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
