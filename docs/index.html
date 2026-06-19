@@ -95,8 +95,34 @@
         .chip:hover { transform:translateY(-2px); box-shadow:0 6px 20px rgba(0,0,0,.2); background:rgba(255,255,255,.18); }
         .chip .ico { width:20px; height:20px; }
 
-        /* ━━━━━━━━━━ Main Content ━━━━━━━━━━ */
-        .main { position:relative; z-index:2; max-width:880px; margin:0 auto; padding:2.5rem 1.5rem 3rem; }
+        /* ━━━━━━━━━━ Layout ━━━━━━━━━━ */
+        .layout { position:relative; z-index:2; max-width:1100px; margin:0 auto; padding:2.5rem 1.5rem 3rem; display:grid; grid-template-columns:220px 1fr; gap:2.5rem; }
+        .main { min-width:0; }
+
+        /* ━━━━━━━━━━ Sidebar ━━━━━━━━━━ */
+        .sidebar {
+            position:sticky; top:72px; align-self:start;
+            max-height:calc(100vh - 90px); overflow-y:auto;
+            background:#fff; border:1px solid #e5e8ed; border-radius:12px;
+            padding:1rem 0; box-shadow:0 1px 4px rgba(0,0,0,.04);
+        }
+        .sidebar::-webkit-scrollbar { width:3px; }
+        .sidebar::-webkit-scrollbar-thumb { background:#d0d5dd; border-radius:3px; }
+        .sb-cat {
+            font-size:.7rem; font-weight:700; text-transform:uppercase; letter-spacing:.5px;
+            color:#8896a7; padding:.6rem 1.2rem .3rem; margin-top:.3rem;
+        }
+        .sb-cat:first-child { margin-top:0; }
+        .sb-link {
+            display:flex; align-items:center; gap:.5rem;
+            padding:.5rem 1.2rem; font-size:.82rem; font-weight:500;
+            color:#4a5568; text-decoration:none; border-left:3px solid transparent;
+            transition:all .2s;
+        }
+        .sb-link:hover { color:#1a2744; background:#f5f6f8; border-left-color:#d0d5dd; }
+        .sb-link.active { color:#1a2744; font-weight:600; background:#f0f4ff; border-left-color:#1a2744; }
+        .sb-link .sb-dot { width:6px; height:6px; border-radius:50%; flex-shrink:0; }
+        .sb-divider { height:1px; background:#e5e8ed; margin:.5rem 1.2rem; }
 
         /* ━━━━━━━━━━ Section ━━━━━━━━━━ */
         .sec-head { text-align:center; margin-bottom:2rem; padding-top:1rem; }
@@ -255,13 +281,16 @@
         .ss-grid.cols2 { grid-template-columns:1fr 1fr; }
         @media(max-width:640px) { .ss-grid.cols2 { grid-template-columns:1fr; } }
 
-        /* ━━━━━━━━━━ Responsive ━━━━━━━━━━ */
+        @media(max-width:900px) {
+            .layout { grid-template-columns:1fr; }
+            .sidebar { display:none; }
+        }
         @media(max-width:640px) {
             .navbar-links { display:none; }
             .hero { padding:5rem 1.2rem 3rem; }
             .hero h1 { font-size:1.4rem; }
             .hero-chips { flex-direction:column; align-items:center; }
-            .main { padding:1.5rem 1rem; }
+            .layout { padding:1.5rem 1rem; }
             .fi-r { flex-direction:column; gap:.1rem; }
             .fi-l { min-width:auto; }
         }
@@ -308,7 +337,21 @@
     </div>
 </section>
 
-<!-- ── Main Content (White) ── -->
+<!-- ── Layout: Sidebar + Main ── -->
+<div class="layout">
+
+<!-- ── Sidebar TOC ── -->
+<aside class="sidebar">
+    <div class="sb-cat">📥 วิธีดึงข้อมูล</div>
+    <a href="#tiktok" class="sb-link active"><span class="sb-dot" style="background:#FE2C55;"></span>TikTok Seller Center</a>
+    <a href="#shopee" class="sb-link"><span class="sb-dot" style="background:#EE4D2D;"></span>Shopee Seller Centre</a>
+    <div class="sb-divider"></div>
+    <div class="sb-cat">💻 วิธีใช้โปรแกรม</div>
+    <a href="#pg-orders" class="sb-link"><span class="sb-dot" style="background:#1a2744;"></span>คำสั่งซื้อ</a>
+    <a href="#pg-income" class="sb-link"><span class="sb-dot" style="background:#d4a843;"></span>รายรับของฉัน</a>
+</aside>
+
+<!-- ── Main Content ── -->
 <div class="main">
 
     <!-- ━━━━━━━━━━ CATEGORY 1: วิธีดึงข้อมูล ━━━━━━━━━━ -->
@@ -519,7 +562,7 @@
         </div>
 
         <!-- PG 1: คำสั่งซื้อ -->
-        <div class="gc open anim" data-i="1">
+        <div class="gc open anim" data-i="1" id="pg-orders">
             <div class="gc-h" onclick="tog(this)"><div class="gc-n">1</div><h3>นำเข้าข้อมูลคำสั่งซื้อ</h3><span class="gc-t">▼</span></div>
             <div class="gc-b">
                 <p style="font-size:.85rem;color:#7a8a9e;margin-bottom:.8rem;">ที่แถบเมนูด้านซ้าย ในหมวด E-Commerce คลิกเมนู <span class="hl">คำสั่งซื้อ</span> แล้วคลิกปุ่ม <span class="hl">นำเข้าคำสั่งซื้อ</span> สีเขียว ที่มุมขวาบน</p>
@@ -552,7 +595,7 @@
         </div>
 
         <!-- PG 2: รายรับของฉัน -->
-        <div class="gc anim" data-i="2">
+        <div class="gc anim" data-i="2" id="pg-income">
             <div class="gc-h" onclick="tog(this)"><div class="gc-n">2</div><h3>นำเข้าข้อมูลรายรับของฉัน</h3><span class="gc-t">▼</span></div>
             <div class="gc-b">
                 <p style="font-size:.85rem;color:#7a8a9e;margin-bottom:.8rem;">ที่แถบเมนูด้านซ้าย ในหมวด E-Commerce คลิกเมนู <span class="hl">รายรับของฉัน</span> แล้วคลิกปุ่ม <span class="hl">นำเข้า</span> ที่มุมขวาบน</p>
@@ -576,7 +619,8 @@
             </div>
         </div>
     </section>
-</div>
+</div><!-- /main -->
+</div><!-- /layout -->
 
 <footer class="footer"><p>คู่มือดึงข้อมูล E-Commerce สำหรับทีมบัญชี</p></footer>
 <button class="btt" id="btt" onclick="window.scrollTo({top:0})">↑</button>
@@ -587,6 +631,11 @@ const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){const 
 document.querySelectorAll('.anim').forEach(e=>obs.observe(e));
 const b=document.getElementById('btt');window.addEventListener('scroll',()=>{b.classList.toggle('show',scrollY>350)});
 document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();document.querySelector(a.getAttribute('href'))?.scrollIntoView({behavior:'smooth'})}));
+
+// Sidebar active link on scroll
+const sections=['tiktok','shopee','pg-orders','pg-income'];
+const sbObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){document.querySelectorAll('.sb-link').forEach(l=>l.classList.remove('active'));const a=document.querySelector('.sb-link[href="#'+e.target.id+'"]');if(a)a.classList.add('active');}});},{threshold:0.2,rootMargin:'-80px 0px -50% 0px'});
+sections.forEach(id=>{const el=document.getElementById(id);if(el)sbObs.observe(el);});
 </script>
 </body>
 </html>
