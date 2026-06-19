@@ -150,6 +150,9 @@
         }
         .sb-indicator.vis { opacity:1; }
 
+        /* Filter out */
+        .fout { display:none !important; }
+
         /* ━━━━━━━━━━ Section ━━━━━━━━━━ */
         .sec-head { text-align:center; margin-bottom:2rem; padding-top:1rem; }
         .sec-head .sec-logo { animation:iconFloat 3s ease-in-out infinite; display:inline-block; margin-bottom:.5rem; }
@@ -688,13 +691,70 @@
 
 <script>
 function tog(h){h.parentElement.classList.toggle('open')}
-function sbTog(el,e){e.preventDefault();el.classList.toggle('open');const sub=el.nextElementSibling;if(sub&&sub.classList.contains('sb-sub'))sub.classList.toggle('open');}
+
+// Filter: show only one card
+function filterView(targetId){
+    const target=document.getElementById(targetId);
+    if(!target)return;
+    const parentSec=target.closest('section');
+    // Hide other sections + dividers
+    document.querySelectorAll('#tiktok,#shopee,.pg-sec').forEach(s=>s.classList.toggle('fout',s!==parentSec));
+    document.querySelectorAll('.sec-div').forEach(d=>d.classList.add('fout'));
+    // In parent, hide other cards
+    parentSec.querySelectorAll('.gc[id]').forEach(c=>c.classList.toggle('fout',c.id!==targetId));
+    // Open + scroll
+    target.classList.add('open','vis');
+    parentSec.scrollIntoView({behavior:'smooth'});
+}
+
+// Show all cards in a section
+function showSection(sectionId){
+    const sec=document.getElementById(sectionId);
+    if(!sec)return;
+    document.querySelectorAll('#tiktok,#shopee,.pg-sec').forEach(s=>s.classList.toggle('fout',s!==sec));
+    document.querySelectorAll('.sec-div').forEach(d=>d.classList.add('fout'));
+    sec.querySelectorAll('.gc[id]').forEach(c=>c.classList.remove('fout'));
+    sec.scrollIntoView({behavior:'smooth'});
+}
+
+// Toggle sidebar sub-menu + show all in section
+function sbTog(el,e){
+    e.preventDefault();
+    el.classList.toggle('open');
+    const sub=el.nextElementSibling;
+    if(sub&&sub.classList.contains('sb-sub'))sub.classList.toggle('open');
+    const href=el.getAttribute('href').slice(1);
+    showSection(href);
+}
+
 const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){const d=(x.target.getAttribute('data-i')||0)*80;setTimeout(()=>x.target.classList.add('vis'),d);obs.unobserve(x.target)}})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.anim').forEach(e=>obs.observe(e));
 const b=document.getElementById('btt');
 const nav=document.querySelector('.navbar');
 window.addEventListener('scroll',()=>{b.classList.toggle('show',scrollY>350);nav.classList.toggle('scrolled',scrollY>20);});
-document.querySelectorAll('a[href^="#"]').forEach(a=>{if(!a.classList.contains('has-sub'))a.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(a.getAttribute('href'));if(t){if(t.classList.contains('gc')&&!t.classList.contains('open'))t.classList.add('open');t.scrollIntoView({behavior:'smooth'})}})});
+
+// Click handlers for sidebar links
+document.querySelectorAll('.sb-sub-link').forEach(a=>{
+    a.addEventListener('click',e=>{
+        e.preventDefault();
+        const id=a.getAttribute('href').slice(1);
+        filterView(id);
+    });
+});
+
+// Click handlers for program section links (no sub-menu)
+document.querySelectorAll('.sb-link:not(.has-sub)').forEach(a=>{
+    a.addEventListener('click',e=>{
+        e.preventDefault();
+        const id=a.getAttribute('href').slice(1);
+        const target=document.getElementById(id);
+        if(target&&target.classList.contains('gc')){
+            filterView(id);
+        }else{
+            target?.scrollIntoView({behavior:'smooth'});
+        }
+    });
+});
 
 // Sidebar sliding indicator
 const indicator=document.createElement('div');indicator.className='sb-indicator';document.querySelector('.sidebar')?.appendChild(indicator);
