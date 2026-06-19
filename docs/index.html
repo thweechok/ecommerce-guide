@@ -378,7 +378,7 @@
 
         <!-- TK 1 -->
         <div class="gc open anim" data-i="1" id="tk-1">
-            <div class="gc-h" onclick="tog(this)"><div class="gc-n">1</div><h3>โหลดข้อมูลคำสั่งซื้อแบบครบวงจร (All Orders)</h3><span class="gc-t">▼</span></div>
+            <div class="gc-h" onclick="tog(this)"><div class="gc-n">1</div><h3>ดาวน์โหลดข้อมูลคำสั่งซื้อแบบครบวงจร (All Orders)</h3><span class="gc-t">▼</span></div>
             <div class="gc-b"><ol class="steps">
                 <li class="step">ล็อกอินเข้าสู่ระบบ <span class="hl">TikTok Seller Center</span></li>
                 <li class="step">ที่แถบเมนูด้านซ้ายมือสุด ให้คลิกที่หัวข้อ <span class="hl">คำสั่งซื้อ</span> แล้วเลือกเมนูย่อย <span class="hl">จัดการคำสั่งซื้อ</span></li>
@@ -415,7 +415,7 @@
 
         <!-- TK 3 -->
         <div class="gc anim" data-i="3" id="tk-3">
-            <div class="gc-h" onclick="tog(this)"><div class="gc-n">3</div><h3>โหลดข้อมูลการคืนสินค้าและการคืนเงิน</h3><span class="gc-t">▼</span></div>
+            <div class="gc-h" onclick="tog(this)"><div class="gc-n">3</div><h3>ดาวน์โหลดข้อมูลการคืนสินค้าและการคืนเงิน</h3><span class="gc-t">▼</span></div>
             <div class="gc-b"><ol class="steps">
                 <li class="step">ที่แถบเมนูด้านซ้าย คลิกที่หัวข้อ <span class="hl">คำสั่งซื้อ</span> แล้วเลือกเมนู <span class="hl">จัดการการคืนสินค้า</span></li>
                 <li class="step">มองไปที่มุมขวาบนของหน้าจอ จะเห็นไอคอน <span class="hl">ตัวกรอง</span> (รูปแว่นขยายหรือสัญลักษณ์เส้นขีดๆ) ให้คลิกที่ไอคอนนี้</li>
@@ -433,7 +433,7 @@
 
         <!-- TK 4 -->
         <div class="gc anim" data-i="4" id="tk-4">
-            <div class="gc-h" onclick="tog(this)"><div class="gc-n">4</div><h3>โหลดข้อมูลค่าใช้จ่ายแพลตฟอร์ม</h3><span class="gc-t">▼</span></div>
+            <div class="gc-h" onclick="tog(this)"><div class="gc-n">4</div><h3>ดาวน์โหลดข้อมูลค่าใช้จ่ายแพลตฟอร์ม</h3><span class="gc-t">▼</span></div>
             <div class="gc-b"><ol class="steps">
                 <li class="step">ที่แถบเมนูด้านซ้าย คลิกหัวข้อ <span class="hl">การเงิน</span> แล้วเลือกเมนู <span class="hl">เอกสารทางภาษี</span></li>
                 <li class="step">ในหน้าหลัก สังเกตแท็บด้านบน ให้เลือกแท็บ <span class="hl">ใบแจ้งหนี้ของแพลตฟอร์ม</span></li>
@@ -499,7 +499,7 @@
 
         <!-- SP 3 -->
         <div class="gc anim" data-i="3" id="sp-3">
-            <div class="gc-h" onclick="tog(this)"><div class="gc-n">3</div><h3>โหลดข้อมูลเงินเข้าธนาคาร</h3><span class="gc-t">▼</span></div>
+            <div class="gc-h" onclick="tog(this)"><div class="gc-n">3</div><h3>ดาวน์โหลดข้อมูลเงินเข้าธนาคาร</h3><span class="gc-t">▼</span></div>
             <div class="gc-b"><ol class="steps">
                 <li class="step">ไปที่หน้า <span class="hl">รายรับของฉัน</span> แล้วมองไปที่กล่องเมนูทางด้านขวามือของหน้าจอ ที่เขียนว่า "รายงานการเงิน" ให้คลิกที่ลิงก์ <span class="hl">ดูเพิ่มเติม ></span></li>
                 <li class="step">ในหน้าต่างรายงานการเงิน ให้คลิกเมนูแบบเลื่อนลง (Dropdown) เพื่อเลือก <span class="hl">เดือนและปี</span> ที่ต้องการ</li>
@@ -627,7 +627,7 @@ function sbTog(el,e){e.preventDefault();el.classList.toggle('open');const sub=el
 const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){const d=(x.target.getAttribute('data-i')||0)*80;setTimeout(()=>x.target.classList.add('vis'),d);obs.unobserve(x.target)}})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.anim').forEach(e=>obs.observe(e));
 const b=document.getElementById('btt');window.addEventListener('scroll',()=>{b.classList.toggle('show',scrollY>350)});
-document.querySelectorAll('a[href^="#"]').forEach(a=>{if(!a.classList.contains('has-sub'))a.addEventListener('click',e=>{e.preventDefault();document.querySelector(a.getAttribute('href'))?.scrollIntoView({behavior:'smooth'})})});
+document.querySelectorAll('a[href^="#"]').forEach(a=>{if(!a.classList.contains('has-sub'))a.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(a.getAttribute('href'));if(t){if(t.classList.contains('gc')&&!t.classList.contains('open'))t.classList.add('open');t.scrollIntoView({behavior:'smooth'})}})});
 
 // Sidebar active sub-link on scroll
 const allIds=['tk-1','tk-2','tk-3','tk-4','sp-1','sp-2','sp-3','sp-4','sp-5','pg-orders','pg-income'];
