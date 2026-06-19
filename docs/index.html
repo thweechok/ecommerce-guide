@@ -122,7 +122,18 @@
         .sb-link:hover { color:#1a2744; background:#f5f6f8; border-left-color:#d0d5dd; }
         .sb-link.active { color:#1a2744; font-weight:600; background:#f0f4ff; border-left-color:#1a2744; }
         .sb-link .sb-dot { width:6px; height:6px; border-radius:50%; flex-shrink:0; }
+        .sb-link .sb-arrow { margin-left:auto; font-size:.6rem; transition:transform .25s; color:#8896a7; }
+        .sb-link.has-sub.open .sb-arrow { transform:rotate(90deg); }
         .sb-divider { height:1px; background:#e5e8ed; margin:.5rem 1.2rem; }
+        .sb-sub { max-height:0; overflow:hidden; transition:max-height .3s ease; }
+        .sb-sub.open { max-height:300px; }
+        .sb-sub-link {
+            display:block; padding:.3rem 1.2rem .3rem 2.5rem;
+            font-size:.76rem; color:#7a8a9e; text-decoration:none;
+            transition:all .15s; border-left:3px solid transparent;
+        }
+        .sb-sub-link:hover { color:#1a2744; background:#f5f6f8; }
+        .sb-sub-link.active { color:#1a2744; font-weight:600; background:#f0f4ff; border-left-color:#1a2744; }
 
         /* ━━━━━━━━━━ Section ━━━━━━━━━━ */
         .sec-head { text-align:center; margin-bottom:2rem; padding-top:1rem; }
@@ -329,8 +340,21 @@
 <!-- ── Sidebar TOC ── -->
 <aside class="sidebar">
     <div class="sb-cat">📥 วิธีดึงข้อมูล</div>
-    <a href="#tiktok" class="sb-link active"><span class="sb-dot" style="background:#000;"></span>TikTok Seller Center</a>
-    <a href="#shopee" class="sb-link"><span class="sb-dot" style="background:#EE4D2D;"></span>Shopee Seller Centre</a>
+    <a href="#tiktok" class="sb-link has-sub open" onclick="sbTog(this,event)"><span class="sb-dot" style="background:#000;"></span>TikTok Seller Center<span class="sb-arrow">▶</span></a>
+    <div class="sb-sub open">
+        <a href="#tk-1" class="sb-sub-link">คำสั่งซื้อ (All Orders)</a>
+        <a href="#tk-2" class="sb-sub-link">รายรับของฉัน</a>
+        <a href="#tk-3" class="sb-sub-link">คืนสินค้า/คืนเงิน</a>
+        <a href="#tk-4" class="sb-sub-link">ค่าใช้จ่ายแพลตฟอร์ม</a>
+    </div>
+    <a href="#shopee" class="sb-link has-sub" onclick="sbTog(this,event)"><span class="sb-dot" style="background:#EE4D2D;"></span>Shopee Seller Centre<span class="sb-arrow">▶</span></a>
+    <div class="sb-sub">
+        <a href="#sp-1" class="sb-sub-link">คำสั่งซื้อสินค้า</a>
+        <a href="#sp-2" class="sb-sub-link">รายรับ</a>
+        <a href="#sp-3" class="sb-sub-link">เงินเข้าธนาคาร</a>
+        <a href="#sp-4" class="sb-sub-link">ค่าใช้จ่ายแพลตฟอร์ม</a>
+        <a href="#sp-5" class="sb-sub-link">คืนสินค้า/คืนเงิน</a>
+    </div>
     <div class="sb-divider"></div>
     <div class="sb-cat">💻 วิธีใช้โปรแกรม</div>
     <a href="#pg-orders" class="sb-link"><span class="sb-dot" style="background:#1a2744;"></span>คำสั่งซื้อ</a>
@@ -353,7 +377,7 @@
         </div>
 
         <!-- TK 1 -->
-        <div class="gc open anim" data-i="1">
+        <div class="gc open anim" data-i="1" id="tk-1">
             <div class="gc-h" onclick="tog(this)"><div class="gc-n">1</div><h3>โหลดข้อมูลคำสั่งซื้อแบบครบวงจร (All Orders)</h3><span class="gc-t">▼</span></div>
             <div class="gc-b"><ol class="steps">
                 <li class="step">ล็อกอินเข้าสู่ระบบ <span class="hl">TikTok Seller Center</span></li>
@@ -373,7 +397,7 @@
         </div>
 
         <!-- TK 2 -->
-        <div class="gc anim" data-i="2">
+        <div class="gc anim" data-i="2" id="tk-2">
             <div class="gc-h" onclick="tog(this)"><div class="gc-n">2</div><h3>ดาวน์โหลด "รายรับของฉัน"</h3><span class="gc-t">▼</span></div>
             <div class="gc-b"><ol class="steps">
                 <li class="step">ที่แถบเมนูด้านซ้าย เลื่อนลงมาคลิกหัวข้อ <span class="hl">การเงิน</span> แล้วเลือก <span class="hl">ธุรกรรม</span> (หรือเมนูที่เกี่ยวข้องกับการถอนเงิน/สถานะบัญชี)</li>
@@ -390,7 +414,7 @@
         </div>
 
         <!-- TK 3 -->
-        <div class="gc anim" data-i="3">
+        <div class="gc anim" data-i="3" id="tk-3">
             <div class="gc-h" onclick="tog(this)"><div class="gc-n">3</div><h3>โหลดข้อมูลการคืนสินค้าและการคืนเงิน</h3><span class="gc-t">▼</span></div>
             <div class="gc-b"><ol class="steps">
                 <li class="step">ที่แถบเมนูด้านซ้าย คลิกที่หัวข้อ <span class="hl">คำสั่งซื้อ</span> แล้วเลือกเมนู <span class="hl">จัดการการคืนสินค้า</span></li>
@@ -408,7 +432,7 @@
         </div>
 
         <!-- TK 4 -->
-        <div class="gc anim" data-i="4">
+        <div class="gc anim" data-i="4" id="tk-4">
             <div class="gc-h" onclick="tog(this)"><div class="gc-n">4</div><h3>โหลดข้อมูลค่าใช้จ่ายแพลตฟอร์ม</h3><span class="gc-t">▼</span></div>
             <div class="gc-b"><ol class="steps">
                 <li class="step">ที่แถบเมนูด้านซ้าย คลิกหัวข้อ <span class="hl">การเงิน</span> แล้วเลือกเมนู <span class="hl">เอกสารทางภาษี</span></li>
@@ -439,7 +463,7 @@
         </div>
 
         <!-- SP 1 -->
-        <div class="gc anim" data-i="1">
+        <div class="gc anim" data-i="1" id="sp-1">
             <div class="gc-h" onclick="tog(this)"><div class="gc-n">1</div><h3>ดาวน์โหลดข้อมูลคำสั่งซื้อสินค้า</h3><span class="gc-t">▼</span></div>
             <div class="gc-b"><ol class="steps">
                 <li class="step">ล็อกอินเข้าสู่ระบบ <span class="hl">Shopee Seller Centre</span></li>
@@ -457,7 +481,7 @@
         </div>
 
         <!-- SP 2 -->
-        <div class="gc anim" data-i="2">
+        <div class="gc anim" data-i="2" id="sp-2">
             <div class="gc-h" onclick="tog(this)"><div class="gc-n">2</div><h3>ดาวน์โหลดข้อมูลรายรับ</h3><span class="gc-t">▼</span></div>
             <div class="gc-b"><ol class="steps">
                 <li class="step">ที่แถบเมนูด้านซ้าย ในหมวด "การเงิน" ให้คลิกเมนู <span class="hl">รายรับของฉัน</span> (ระบบอาจขอให้ใส่รหัสผ่านร้านค้าหรือรหัส OTP เพื่อความปลอดภัย)</li>
@@ -474,7 +498,7 @@
         </div>
 
         <!-- SP 3 -->
-        <div class="gc anim" data-i="3">
+        <div class="gc anim" data-i="3" id="sp-3">
             <div class="gc-h" onclick="tog(this)"><div class="gc-n">3</div><h3>โหลดข้อมูลเงินเข้าธนาคาร</h3><span class="gc-t">▼</span></div>
             <div class="gc-b"><ol class="steps">
                 <li class="step">ไปที่หน้า <span class="hl">รายรับของฉัน</span> แล้วมองไปที่กล่องเมนูทางด้านขวามือของหน้าจอ ที่เขียนว่า "รายงานการเงิน" ให้คลิกที่ลิงก์ <span class="hl">ดูเพิ่มเติม ></span></li>
@@ -488,7 +512,7 @@
         </div>
 
         <!-- SP 4 -->
-        <div class="gc anim" data-i="4">
+        <div class="gc anim" data-i="4" id="sp-4">
             <div class="gc-h" onclick="tog(this)"><div class="gc-n">4</div><h3>ดาวน์โหลดข้อมูลค่าใช้จ่ายแพลตฟอร์ม (ใบกำกับภาษี)</h3><span class="gc-t">▼</span></div>
             <div class="gc-b"><ol class="steps">
                 <li class="step">ที่แถบเมนูด้านซ้าย ในหมวด "การเงิน" คลิกเมนู <span class="hl">รายรับของฉัน</span></li>
@@ -505,7 +529,7 @@
         </div>
 
         <!-- SP 5 -->
-        <div class="gc anim" data-i="5">
+        <div class="gc anim" data-i="5" id="sp-5">
             <div class="gc-h" onclick="tog(this)"><div class="gc-n">5</div><h3>ดาวน์โหลดข้อมูลการคืนสินค้าและการคืนเงิน</h3><span class="gc-t">▼</span></div>
             <div class="gc-b"><ol class="steps">
                 <li class="step">ที่แถบเมนูด้านซ้าย ในหมวด "คำสั่งซื้อ" ให้คลิกเมนู <span class="hl">การคืนเงิน/คืนสินค้า</span></li>
@@ -599,15 +623,16 @@
 
 <script>
 function tog(h){h.parentElement.classList.toggle('open')}
+function sbTog(el,e){e.preventDefault();el.classList.toggle('open');const sub=el.nextElementSibling;if(sub&&sub.classList.contains('sb-sub'))sub.classList.toggle('open');}
 const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){const d=(x.target.getAttribute('data-i')||0)*80;setTimeout(()=>x.target.classList.add('vis'),d);obs.unobserve(x.target)}})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.anim').forEach(e=>obs.observe(e));
 const b=document.getElementById('btt');window.addEventListener('scroll',()=>{b.classList.toggle('show',scrollY>350)});
-document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();document.querySelector(a.getAttribute('href'))?.scrollIntoView({behavior:'smooth'})}));
+document.querySelectorAll('a[href^="#"]').forEach(a=>{if(!a.classList.contains('has-sub'))a.addEventListener('click',e=>{e.preventDefault();document.querySelector(a.getAttribute('href'))?.scrollIntoView({behavior:'smooth'})})});
 
-// Sidebar active link on scroll
-const sections=['tiktok','shopee','pg-orders','pg-income'];
-const sbObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){document.querySelectorAll('.sb-link').forEach(l=>l.classList.remove('active'));const a=document.querySelector('.sb-link[href="#'+e.target.id+'"]');if(a)a.classList.add('active');}});},{threshold:0.2,rootMargin:'-80px 0px -50% 0px'});
-sections.forEach(id=>{const el=document.getElementById(id);if(el)sbObs.observe(el);});
+// Sidebar active sub-link on scroll
+const allIds=['tk-1','tk-2','tk-3','tk-4','sp-1','sp-2','sp-3','sp-4','sp-5','pg-orders','pg-income'];
+const sbObs2=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){document.querySelectorAll('.sb-sub-link,.sb-link').forEach(l=>l.classList.remove('active'));const id=e.target.id;const a=document.querySelector('.sb-sub-link[href="#'+id+'"]')||document.querySelector('.sb-link[href="#'+id+'"]');if(a)a.classList.add('active');}});},{threshold:0.15,rootMargin:'-80px 0px -50% 0px'});
+allIds.forEach(id=>{const el=document.getElementById(id);if(el)sbObs2.observe(el);});
 </script>
 </body>
 </html>
