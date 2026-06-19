@@ -140,6 +140,16 @@
         .pg-sec .hl { background:#f5f0e0; color:#8b6914; }
         .pg-sec .step:hover::before { transform:scale(1.15); box-shadow:0 2px 8px rgba(26,39,68,.2); }
 
+        /* ━━━━━━━━━━ Sub-Steps ━━━━━━━━━━ */
+        .sub-steps { list-style:none; padding:.3rem 0 .3rem 1.2rem; margin:0; border-left:2px solid #e5e8ed; margin-left:.3rem; }
+        .sub-step { padding:.35rem 0 .35rem .8rem; font-size:.84rem; color:#4a5568; position:relative; }
+        .sub-step::before { content:attr(data-n); font-weight:700; color:#1a2744; margin-right:.4rem; }
+        .sub-rec {
+            display:inline-block; font-size:.65rem; font-weight:700; color:#fff;
+            background:linear-gradient(135deg, #22c55e, #16a34a); padding:.15rem .5rem;
+            border-radius:50px; margin-left:.4rem; vertical-align:middle;
+        }
+
         /* ━━━━━━━━━━ Category Banner ━━━━━━━━━━ */
         .cat-banner {
             text-align:center; padding:1.8rem 1.5rem; margin-bottom:2rem;
@@ -567,22 +577,19 @@
             <div class="gc-b">
                 <p style="font-size:.85rem;color:#7a8a9e;margin-bottom:.8rem;">ที่แถบเมนูด้านซ้าย ในหมวด E-Commerce คลิกเมนู <span class="hl">คำสั่งซื้อ</span> แล้วคลิกปุ่ม <span class="hl">นำเข้าคำสั่งซื้อ</span> สีเขียว ที่มุมขวาบน</p>
 
-                <div style="background:#f8f9fb;border:1px solid #e8ebf0;border-radius:10px;padding:.9rem 1rem;margin-bottom:.8rem;">
-                    <p style="font-size:.82rem;font-weight:600;color:#1a2744;margin-bottom:.5rem;">เลือกวิธีนำเข้าไฟล์ (เลือกวิธีใดวิธีหนึ่ง):</p>
-                    <p style="font-size:.8rem;color:#7a8a9e;margin-bottom:.3rem;">📁 <strong>แท็บ "ไฟล์"</strong> — ลากไฟล์ Excel มาวาง หรือคลิกเลือกจากเครื่อง (.xls .xlsx .csv)</p>
-                    <p style="font-size:.8rem;color:#7a8a9e;margin-bottom:.3rem;">☁️ <strong>แท็บ "โฟลเดอร์ Drive"</strong> — วาง Drive Folder URL เลือกเดือน/ปี แล้วกดค้นหาไฟล์</p>
-                    <p style="font-size:.8rem;color:#7a8a9e;">🔗 <strong>แท็บ "Excel URL"</strong> — วาง URL ไฟล์ Google Sheets ตรงๆ</p>
-                </div>
-
                 <ol class="steps">
                     <li class="step">คลิกปุ่ม <span class="hl">นำเข้าคำสั่งซื้อ</span> สีเขียว ที่มุมขวาบน</li>
-                    <li class="step">หน้าต่าง <span class="hl">อัปโหลดข้อมูลคำสั่งซื้อ</span> จะเด้งขึ้นมา — เลือกแท็บวิธีนำเข้าที่ต้องการ (ไฟล์ / โฟลเดอร์ Drive / Excel URL)</li>
-                    <li class="step"><strong>แท็บ "ไฟล์":</strong> ลากไฟล์ Excel มาวางในกรอบเส้นประ หรือคลิกเพื่อเลือกไฟล์จากเครื่อง</li>
-                    <li class="step"><strong>แท็บ "โฟลเดอร์ Drive":</strong> วาง Drive Folder URL ในช่อง → เลือก <span class="hl">เดือน</span> และ <span class="hl">ปี</span> → กดปุ่ม <span class="hl">ค้นหาไฟล์</span></li>
-                    <li class="step"><strong>แท็บ "Excel URL":</strong> วาง URL ไฟล์ Google Sheets ลงในช่อง</li>
+                    <li class="step">หน้าต่าง <span class="hl">อัปโหลดข้อมูลคำสั่งซื้อ</span> จะเด้งขึ้นมา</li>
+                    <li class="step">เลือกวิธีนำเข้าไฟล์ (เลือก<strong>วิธีใดวิธีหนึ่ง</strong>):
+                        <ul class="sub-steps">
+                            <li class="sub-step" data-n="3.1">แท็บ <span class="hl">ไฟล์</span> — ลากไฟล์ Excel มาวางในกรอบเส้นประ หรือคลิกเลือกจากเครื่อง (.xls .xlsx .csv) <span class="sub-rec">★ แนะนำ</span></li>
+                            <li class="sub-step" data-n="3.2">แท็บ <span class="hl">โฟลเดอร์ Drive</span> — วาง Drive Folder URL ในช่อง → เลือกเดือน/ปี → กดปุ่ม <span class="hl">ค้นหาไฟล์</span></li>
+                            <li class="sub-step" data-n="3.3">แท็บ <span class="hl">Excel URL</span> — วาง URL ไฟล์ Google Sheets ลงในช่อง</li>
+                        </ul>
+                    </li>
                     <li class="step">เลือกไฟล์ที่ต้องการนำเข้า (ถ้าใช้แท็บ "ไฟล์" ให้คลิก Dropdown เลือก Platform: <span class="hl">TikTok</span> / <span class="hl">Shopee</span> / <span class="hl">Lazada</span>)</li>
                     <li class="step">กดปุ่ม <span class="hl">อัปโหลด X ไฟล์</span> สีเขียว</li>
-                    <li class="step">รอระบบประมวลผล — จะมีแถบ progress bar แสดงความคืบหน้าแต่ละขั้นตอน</li>
+                    <li class="step">รอระบบประมวลผล — จะมีแถบ progress bar แสดงความคืบหน้า</li>
                     <li class="step">เมื่อเสร็จจะแสดง <span class="hl">อัปโหลดสำเร็จ ✅</span> พร้อมสรุปผล → กดปุ่ม <span class="hl">เสร็จสิ้น</span></li>
                 </ol>
 
@@ -602,10 +609,14 @@
 
                 <ol class="steps">
                     <li class="step">คลิกปุ่ม <span class="hl">นำเข้า</span> ที่มุมขวาบน</li>
-                    <li class="step">หน้าต่าง <span class="hl">อัปโหลดข้อมูล</span> จะเด้งขึ้นมา — เลือกแท็บวิธีนำเข้าที่ต้องการ (ไฟล์ / โฟลเดอร์ Drive / Excel URL)</li>
-                    <li class="step"><strong>แท็บ "ไฟล์":</strong> ลากไฟล์ Excel มาวางในกรอบเส้นประ หรือคลิกเพื่อเลือกไฟล์จากเครื่อง</li>
-                    <li class="step"><strong>แท็บ "โฟลเดอร์ Drive":</strong> วาง Drive Folder URL → เลือก <span class="hl">เดือน</span> และ <span class="hl">ปี</span> → กดปุ่ม <span class="hl">ค้นหาไฟล์</span></li>
-                    <li class="step"><strong>แท็บ "Excel URL":</strong> วาง URL ไฟล์ Google Sheets ลงในช่อง</li>
+                    <li class="step">หน้าต่าง <span class="hl">อัปโหลดข้อมูล</span> จะเด้งขึ้นมา</li>
+                    <li class="step">เลือกวิธีนำเข้าไฟล์ (เลือก<strong>วิธีใดวิธีหนึ่ง</strong>):
+                        <ul class="sub-steps">
+                            <li class="sub-step" data-n="3.1">แท็บ <span class="hl">ไฟล์</span> — ลากไฟล์ Excel มาวาง หรือคลิกเลือกจากเครื่อง <span class="sub-rec">★ แนะนำ</span></li>
+                            <li class="sub-step" data-n="3.2">แท็บ <span class="hl">โฟลเดอร์ Drive</span> — วาง Drive Folder URL → เลือกเดือน/ปี → กดปุ่ม <span class="hl">ค้นหาไฟล์</span></li>
+                            <li class="sub-step" data-n="3.3">แท็บ <span class="hl">Excel URL</span> — วาง URL ไฟล์ Google Sheets ลงในช่อง</li>
+                        </ul>
+                    </li>
                     <li class="step">เลือกไฟล์ที่ต้องการนำเข้า แล้วกดปุ่ม <span class="hl">อัปโหลด X ไฟล์</span> สีเขียว</li>
                     <li class="step">รอระบบประมวลผล — จะมีแถบ progress bar แสดงความคืบหน้า</li>
                     <li class="step">เมื่อเสร็จจะแสดง <span class="hl">อัปโหลดสำเร็จ ✅</span> พร้อมสรุปผล → กดปุ่ม <span class="hl">เสร็จสิ้น</span></li>
