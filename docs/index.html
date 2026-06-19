@@ -107,6 +107,12 @@
         .sec-head p { color:#7a8a9e; font-size:.88rem; }
         .tk-sec .uline { background:linear-gradient(90deg, #FE2C55, #25F4EE); }
         .sp-sec .uline { background:linear-gradient(90deg, #EE4D2D, #F7931E); }
+        .pg-sec .uline { background:linear-gradient(90deg, #1a2744, #d4a843); }
+        .pg-sec .gc-n { background:linear-gradient(135deg, #1a2744, #d4a843); }
+        .pg-sec .step::before { background:linear-gradient(135deg, #1a2744, #d4a843); }
+        .pg-sec .steps::before { background:linear-gradient(180deg, #1a2744 0%, #d4a843 100%); opacity:.25; }
+        .pg-sec .hl { background:#f5f0e0; color:#8b6914; }
+        .pg-sec .step:hover::before { transform:scale(1.15); box-shadow:0 2px 8px rgba(26,39,68,.2); }
 
         .sec-div {
             border:none; height:1px;
@@ -258,14 +264,15 @@
             <svg class="nav-logo" viewBox="0 0 48 48" fill="none"><path d="M24 4c-4.4 0-8 3.1-8 7v2H8l2 28h28l2-28H32v-2c0-3.9-3.6-7-8-7zm0 3c2.8 0 5 1.8 5 4v2H19v-2c0-2.2 2.2-4 5-4z" fill="#fff"/><text x="19.5" y="34" font-size="14" font-weight="800" fill="#fff" font-family="Arial">S</text></svg>
             Shopee
         </a></li>
+        <li><a href="#program">💻 วิธีใช้โปรแกรม</a></li>
     </ul>
 </nav>
 
 <!-- ── Hero ── -->
 <section class="hero">
     <div class="hero-badge"><div class="dot"></div> คู่มือสำหรับทีมบัญชี</div>
-    <h1>วิธีดึงข้อมูลจาก <span class="grad">E-Commerce Platform</span></h1>
-    <p>คู่มือแบบ step-by-step สำหรับดาวน์โหลดรายงาน คำสั่งซื้อ · รายรับ · คืนสินค้า · ค่าใช้จ่ายแพลตฟอร์ม</p>
+    <h1>คู่มือ <span class="grad">E-Commerce Platform</span></h1>
+    <p>วิธีดึงข้อมูลจากแพลตฟอร์ม + วิธีใช้โปรแกรม สำหรับทีมบัญชี</p>
     <div class="hero-chips">
         <a href="#tiktok" class="chip">
             <svg class="ico" viewBox="0 0 48 48" fill="none"><path d="M33.3 8.2A8.1 8.1 0 0 1 28.1 3h-5.7l-.01 27.7a5.4 5.4 0 1 1-3.7-5.1V19.7a11.2 11.2 0 1 0 9.5 11.1V17.5A14 14 0 0 0 36.3 20v-5.8a8.1 8.1 0 0 1-3-6z" fill="#fff"/></svg>
@@ -274,6 +281,9 @@
         <a href="#shopee" class="chip">
             <svg class="ico" viewBox="0 0 48 48" fill="none"><path d="M24 4c-4.4 0-8 3.1-8 7v2H8l2 28h28l2-28H32v-2c0-3.9-3.6-7-8-7zm0 3c2.8 0 5 1.8 5 4v2H19v-2c0-2.2 2.2-4 5-4z" fill="#EE4D2D"/><text x="19.5" y="34" font-size="14" font-weight="800" fill="#EE4D2D" font-family="Arial">S</text></svg>
             Shopee Seller Centre
+        </a>
+        <a href="#program" class="chip">
+            💻 วิธีใช้โปรแกรม
         </a>
     </div>
 </section>
@@ -458,6 +468,76 @@
                 <div class="fi-r"><span class="fi-l">📄 ชื่อไฟล์ (EN)</span><span class="fi-v">Order.return_refund_cancel.xlsx</span></div>
                 <div class="fi-r"><span class="fi-l">📑 ชื่อแท็บ</span><span class="fi-v fi-t">orders</span></div>
             </div></div>
+        </div>
+    </section>
+
+    <hr class="sec-div">
+
+    <!-- ══════════════ PROGRAM GUIDE ══════════════ -->
+    <section class="pg-sec" id="program">
+        <div class="sec-head anim">
+            <div class="sec-logo" style="font-size:2.5rem;">💻</div>
+            <h2>วิธีใช้โปรแกรม</h2>
+            <p>การนำเข้าข้อมูลเข้าสู่ระบบ — 2 ประเภท</p>
+            <span class="uline"></span>
+        </div>
+
+        <!-- PG 1: คำสั่งซื้อ -->
+        <div class="gc open anim" data-i="1">
+            <div class="gc-h" onclick="tog(this)"><div class="gc-n">1</div><h3>นำเข้าข้อมูลคำสั่งซื้อ</h3><span class="gc-t">▼</span></div>
+            <div class="gc-b">
+                <p style="font-size:.85rem;color:#7a8a9e;margin-bottom:.8rem;">ที่แถบเมนูด้านซ้าย ในหมวด E-Commerce คลิกเมนู <span class="hl">คำสั่งซื้อ</span> แล้วคลิกปุ่ม <span class="hl">นำเข้าคำสั่งซื้อ</span> สีเขียว ที่มุมขวาบน</p>
+
+                <div style="background:#f8f9fb;border:1px solid #e8ebf0;border-radius:10px;padding:.9rem 1rem;margin-bottom:.8rem;">
+                    <p style="font-size:.82rem;font-weight:600;color:#1a2744;margin-bottom:.5rem;">เลือกวิธีนำเข้าไฟล์ (เลือกวิธีใดวิธีหนึ่ง):</p>
+                    <p style="font-size:.8rem;color:#7a8a9e;margin-bottom:.3rem;">📁 <strong>แท็บ "ไฟล์"</strong> — ลากไฟล์ Excel มาวาง หรือคลิกเลือกจากเครื่อง (.xls .xlsx .csv)</p>
+                    <p style="font-size:.8rem;color:#7a8a9e;margin-bottom:.3rem;">☁️ <strong>แท็บ "โฟลเดอร์ Drive"</strong> — วาง Drive Folder URL เลือกเดือน/ปี แล้วกดค้นหาไฟล์</p>
+                    <p style="font-size:.8rem;color:#7a8a9e;">🔗 <strong>แท็บ "Excel URL"</strong> — วาง URL ไฟล์ Google Sheets ตรงๆ</p>
+                </div>
+
+                <ol class="steps">
+                    <li class="step">คลิกปุ่ม <span class="hl">นำเข้าคำสั่งซื้อ</span> สีเขียว ที่มุมขวาบน</li>
+                    <li class="step">หน้าต่าง <span class="hl">อัปโหลดข้อมูลคำสั่งซื้อ</span> จะเด้งขึ้นมา — เลือกแท็บวิธีนำเข้าที่ต้องการ (ไฟล์ / โฟลเดอร์ Drive / Excel URL)</li>
+                    <li class="step"><strong>แท็บ "ไฟล์":</strong> ลากไฟล์ Excel มาวางในกรอบเส้นประ หรือคลิกเพื่อเลือกไฟล์จากเครื่อง</li>
+                    <li class="step"><strong>แท็บ "โฟลเดอร์ Drive":</strong> วาง Drive Folder URL ในช่อง → เลือก <span class="hl">เดือน</span> และ <span class="hl">ปี</span> → กดปุ่ม <span class="hl">ค้นหาไฟล์</span></li>
+                    <li class="step"><strong>แท็บ "Excel URL":</strong> วาง URL ไฟล์ Google Sheets ลงในช่อง</li>
+                    <li class="step">เลือกไฟล์ที่ต้องการนำเข้า (ถ้าใช้แท็บ "ไฟล์" ให้คลิก Dropdown เลือก Platform: <span class="hl">TikTok</span> / <span class="hl">Shopee</span> / <span class="hl">Lazada</span>)</li>
+                    <li class="step">กดปุ่ม <span class="hl">อัปโหลด X ไฟล์</span> สีเขียว</li>
+                    <li class="step">รอระบบประมวลผล — จะมีแถบ progress bar แสดงความคืบหน้าแต่ละขั้นตอน</li>
+                    <li class="step">เมื่อเสร็จจะแสดง <span class="hl">อัปโหลดสำเร็จ ✅</span> พร้อมสรุปผล → กดปุ่ม <span class="hl">เสร็จสิ้น</span></li>
+                </ol>
+
+                <div class="fi">
+                    <div class="fi-r"><span class="fi-l">📄 ชื่อไฟล์ (TH)</span><span class="fi-v">ทั้งหมด คำสั่งซื้อ-XXXX-XX-XX-XX_XX.xlsx</span></div>
+                    <div class="fi-r"><span class="fi-l">📄 ชื่อไฟล์ (EN)</span><span class="fi-v">All order-XXXX-XX-XX-XX:XX.xlsx</span></div>
+                    <div class="fi-r"><span class="fi-l">📑 ชื่อแท็บ</span><span class="fi-v fi-t">OrderSKUList</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PG 2: รายรับของฉัน -->
+        <div class="gc anim" data-i="2">
+            <div class="gc-h" onclick="tog(this)"><div class="gc-n">2</div><h3>นำเข้าข้อมูลรายรับของฉัน</h3><span class="gc-t">▼</span></div>
+            <div class="gc-b">
+                <p style="font-size:.85rem;color:#7a8a9e;margin-bottom:.8rem;">ที่แถบเมนูด้านซ้าย ในหมวด E-Commerce คลิกเมนู <span class="hl">รายรับของฉัน</span> แล้วคลิกปุ่ม <span class="hl">นำเข้า</span> ที่มุมขวาบน</p>
+
+                <ol class="steps">
+                    <li class="step">คลิกปุ่ม <span class="hl">นำเข้า</span> ที่มุมขวาบน</li>
+                    <li class="step">หน้าต่าง <span class="hl">อัปโหลดข้อมูล</span> จะเด้งขึ้นมา — เลือกแท็บวิธีนำเข้าที่ต้องการ (ไฟล์ / โฟลเดอร์ Drive / Excel URL)</li>
+                    <li class="step"><strong>แท็บ "ไฟล์":</strong> ลากไฟล์ Excel มาวางในกรอบเส้นประ หรือคลิกเพื่อเลือกไฟล์จากเครื่อง</li>
+                    <li class="step"><strong>แท็บ "โฟลเดอร์ Drive":</strong> วาง Drive Folder URL → เลือก <span class="hl">เดือน</span> และ <span class="hl">ปี</span> → กดปุ่ม <span class="hl">ค้นหาไฟล์</span></li>
+                    <li class="step"><strong>แท็บ "Excel URL":</strong> วาง URL ไฟล์ Google Sheets ลงในช่อง</li>
+                    <li class="step">เลือกไฟล์ที่ต้องการนำเข้า แล้วกดปุ่ม <span class="hl">อัปโหลด X ไฟล์</span> สีเขียว</li>
+                    <li class="step">รอระบบประมวลผล — จะมีแถบ progress bar แสดงความคืบหน้า</li>
+                    <li class="step">เมื่อเสร็จจะแสดง <span class="hl">อัปโหลดสำเร็จ ✅</span> พร้อมสรุปผล → กดปุ่ม <span class="hl">เสร็จสิ้น</span></li>
+                </ol>
+
+                <div class="fi">
+                    <div class="fi-r"><span class="fi-l">📄 ชื่อไฟล์ (TH)</span><span class="fi-v">income_XXXXXX-XX_XX_XX(UTC+7).xlsx</span></div>
+                    <div class="fi-r"><span class="fi-l">📄 ชื่อไฟล์ (EN)</span><span class="fi-v">income_XXXXXX-XX_XX_XX(UTC+7).xlsx</span></div>
+                    <div class="fi-r"><span class="fi-l">📑 ชื่อแท็บ</span><span class="fi-v fi-t">รายละเอียดคำสั่งซื้อ, รายงาน, บันทึกการถอน, คำอธิบายค่าธรรมเนียม</span></div>
+                </div>
+            </div>
         </div>
     </section>
 </div>
