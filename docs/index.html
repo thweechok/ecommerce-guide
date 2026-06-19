@@ -379,6 +379,7 @@
     <a href="#pg-orders" class="sb-link"><span class="sb-dot" style="background:#1a2744;"></span>คำสั่งซื้อ</a>
     <a href="#pg-income" class="sb-link"><span class="sb-dot" style="background:#1a2744;"></span>รายรับของฉัน</a>
     <a href="#pg-bank" class="sb-link"><span class="sb-dot" style="background:#1a2744;"></span>เงินเข้าธนาคาร</a>
+    <a href="#pg-expense" class="sb-link"><span class="sb-dot" style="background:#1a2744;"></span>ค่าใช้จ่ายแพลตฟอร์ม</a>
 </aside>
 
 <!-- ── Main Content ── -->
@@ -572,7 +573,7 @@
         <div class="sec-head anim">
             <div class="sec-logo" style="font-size:2.5rem;">💻</div>
             <h2>วิธีใช้โปรแกรม</h2>
-            <p>การนำเข้าข้อมูลเข้าสู่ระบบ — 3 ประเภท</p>
+            <p>การนำเข้าข้อมูลเข้าสู่ระบบ — 4 ประเภท</p>
             <span class="uline"></span>
         </div>
 
@@ -656,6 +657,27 @@
             </ol>
             </div>
         </div>
+
+        <!-- PG 4: ค่าใช้จ่ายแพลตฟอร์ม -->
+        <div class="gc anim" data-i="4" id="pg-expense">
+            <div class="gc-h" onclick="tog(this)"><div class="gc-n">4</div><h3>นำเข้าบิลค่าใช้จ่ายแพลตฟอร์ม</h3><span class="gc-t">▼</span></div>
+            <div class="gc-b">
+                <p style="font-size:.85rem;color:#7a8a9e;margin-bottom:.8rem;">ที่แถบเมนูด้านซ้าย ในเมนู E-Commerce คลิกเมนู <span class="hl">ค่าใช้จ่ายแพลตฟอร์ม</span> แล้วกดปุ่ม <span class="hl">นำเข้าบิลค่าใช้จ่าย</span> สีเขียว</p>
+
+                <ol class="steps">
+                <li class="step">ที่แถบเมนูด้านซ้าย ในเมนู E-Commerce คลิกเมนู <span class="hl">ค่าใช้จ่ายแพลตฟอร์ม</span></li>
+                <li class="step">กดปุ่ม <span class="hl">นำเข้าบิลค่าใช้จ่าย</span> (สีเขียว)</li>
+                <li class="step">หน้าต่าง <span class="hl">AI Scan บิล</span> จะเด้งขึ้นมา เลือกวิธีนำเข้า (เลือก<strong>วิธีใดวิธีหนึ่ง</strong>):
+                    <ul class="sub-steps">
+                        <li class="sub-step" data-n="3.1">แท็บ <span class="hl">โฟลเดอร์ Drive</span> — วาง URL โฟลเดอร์ที่มีไฟล์ PDF → เลือกแพลตฟอร์ม → กดปุ่ม <span class="hl">สแกน + แม็ปบัญชีอัตโนมัติ</span> <span class="sub-rec">★ แนะนำ</span></li>
+                        <li class="sub-step" data-n="3.2">แท็บ <span class="hl">ไฟล์เดี่ยว</span> — ลาก PDF / รูปมาวาง แล้วกด <span class="hl">สแกน</span> หรือ <span class="hl">รับข้อมูลบัญชี</span></li>
+                    </ul>
+                </li>
+                <li class="step">รอระบบ AI ประมวลผล</li>
+                <li class="step">เมื่อเสร็จจะแสดง <span class="hl">เสร็จสิ้น ✅</span></li>
+            </ol>
+            </div>
+        </div>
     </section>
 
 </div><!-- /main -->
@@ -679,7 +701,7 @@ const indicator=document.createElement('div');indicator.className='sb-indicator'
 function moveIndicator(el){if(!el)return;const sb=document.querySelector('.sidebar');const rect=el.getBoundingClientRect();const sbRect=sb.getBoundingClientRect();indicator.style.top=(rect.top-sbRect.top+sb.scrollTop+4)+'px';indicator.classList.add('vis');}
 
 // Sidebar active sub-link on scroll
-const allIds=['tk-1','tk-2','tk-3','tk-4','sp-1','sp-2','sp-3','sp-4','sp-5','pg-orders','pg-income','pg-bank'];
+const allIds=['tk-1','tk-2','tk-3','tk-4','sp-1','sp-2','sp-3','sp-4','sp-5','pg-orders','pg-income','pg-bank','pg-expense'];
 const sbObs2=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){document.querySelectorAll('.sb-sub-link,.sb-link').forEach(l=>l.classList.remove('active'));const id=e.target.id;const a=document.querySelector('.sb-sub-link[href="#'+id+'"]')||document.querySelector('.sb-link[href="#'+id+'"]');if(a){a.classList.add('active');moveIndicator(a);}}});},{threshold:0.15,rootMargin:'-80px 0px -50% 0px'});
 allIds.forEach(id=>{const el=document.getElementById(id);if(el)sbObs2.observe(el);});
 </script>
