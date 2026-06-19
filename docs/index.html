@@ -114,6 +114,26 @@
         .pg-sec .hl { background:#f5f0e0; color:#8b6914; }
         .pg-sec .step:hover::before { transform:scale(1.15); box-shadow:0 2px 8px rgba(26,39,68,.2); }
 
+        /* ━━━━━━━━━━ Category Banner ━━━━━━━━━━ */
+        .cat-banner {
+            text-align:center; padding:1.8rem 1.5rem; margin-bottom:2rem;
+            border-radius:14px; position:relative; overflow:hidden;
+        }
+        .cat-banner::before {
+            content:''; position:absolute; inset:0;
+            border-radius:14px; padding:2px;
+            background:linear-gradient(135deg, var(--cb-c1), var(--cb-c2));
+            -webkit-mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite:xor; mask-composite:exclude;
+        }
+        .cat-banner .cat-icon { font-size:2rem; margin-bottom:.4rem; }
+        .cat-banner .cat-num {
+            display:inline-block; font-size:.7rem; font-weight:700; color:#fff;
+            padding:.2rem .7rem; border-radius:50px; margin-bottom:.5rem;
+        }
+        .cat-banner h2 { font-size:1.2rem; font-weight:800; color:#1a2744; margin-bottom:.3rem; }
+        .cat-banner p { font-size:.82rem; color:#7a8a9e; }
+
         .sec-div {
             border:none; height:1px;
             background:linear-gradient(90deg, transparent, #d0d5dd, transparent);
@@ -290,6 +310,14 @@
 
 <!-- ── Main Content (White) ── -->
 <div class="main">
+
+    <!-- ━━━━━━━━━━ CATEGORY 1: วิธีดึงข้อมูล ━━━━━━━━━━ -->
+    <div class="cat-banner anim" style="--cb-c1:#FE2C55;--cb-c2:#25F4EE; background:linear-gradient(135deg, rgba(254,44,85,.06), rgba(37,244,238,.06));">
+        <div class="cat-icon">📥</div>
+        <span class="cat-num" style="background:linear-gradient(135deg, #FE2C55, #25F4EE);">ส่วนที่ 1</span>
+        <h2>วิธีดึงข้อมูลจากแพลตฟอร์ม</h2>
+        <p>ขั้นตอนการดาวน์โหลดไฟล์จาก TikTok Seller Center และ Shopee Seller Centre</p>
+    </div>
 
     <!-- ══════════════ TIKTOK ══════════════ -->
     <section class="tk-sec" id="tiktok">
@@ -472,6 +500,14 @@
     </section>
 
     <hr class="sec-div">
+
+    <!-- ━━━━━━━━━━ CATEGORY 2: วิธีใช้โปรแกรม ━━━━━━━━━━ -->
+    <div class="cat-banner anim" style="--cb-c1:#1a2744;--cb-c2:#d4a843; background:linear-gradient(135deg, rgba(26,39,68,.06), rgba(212,168,67,.06));">
+        <div class="cat-icon">💻</div>
+        <span class="cat-num" style="background:linear-gradient(135deg, #1a2744, #d4a843);">ส่วนที่ 2</span>
+        <h2>วิธีใช้โปรแกรม (อัปโหลดไฟล์)</h2>
+        <p>ขั้นตอนการนำเข้าไฟล์ที่ดาวน์โหลดมาเข้าสู่ระบบ</p>
+    </div>
 
     <!-- ══════════════ PROGRAM GUIDE ══════════════ -->
     <section class="pg-sec" id="program">
