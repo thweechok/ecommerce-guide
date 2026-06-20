@@ -484,6 +484,7 @@
     <a href="#lazada" class="sb-link has-sub" onclick="sbTog(this,event)"><span class="sb-dot" style="background:#0F146D;"></span>Lazada Seller Center<span class="sb-arrow">▶</span></a>
     <div class="sb-sub">
         <a href="#lz-1" class="sb-sub-link">คำสั่งซื้อ</a>
+        <a href="#lz-2" class="sb-sub-link">รายรับของฉัน</a>
     </div>
     <div class="sb-divider"></div>
     <div class="sb-cat" data-i18n="sb-cat-program">💻 วิธีใช้โปรแกรม</div>
@@ -684,7 +685,7 @@
         <div class="sec-head anim">
             <div class="sec-logo" style="font-size:2.5rem;">🛒</div>
             <h2>Lazada Seller Center</h2>
-            <p>การดึงข้อมูลจาก Lazada — 1 ประเภทรายงาน</p>
+            <p>การดึงข้อมูลจาก Lazada — 2 ประเภทรายงาน</p>
             <span class="uline"></span>
         </div>
 
@@ -703,6 +704,23 @@
                 <div class="fi-r"><span class="fi-l">📄 ชื่อไฟล์</span><span class="fi-v">XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.xls (ชื่อเป็น hash code)</span></div>
                 <div class="fi-r"><span class="fi-l">📑 ชื่อแท็บ</span><span class="fi-v fi-t">sheet1</span></div>
                 <div class="fi-r"><span class="fi-l">📝 หมายเหตุ</span><span class="fi-v">หากต้องการดาวน์โหลดย้อนหลัง คลิก <strong>ดูประวัติ</strong> หรือ <strong>Export History</strong></span></div>
+            </div></div>
+        </div>
+
+        <!-- LZ 2 -->
+        <div class="gc anim" data-i="2" id="lz-2">
+            <div class="gc-h" onclick="tog(this)"><div class="gc-n">2</div><h3>ดาวน์โหลดข้อมูลรายรับของฉัน</h3><span class="gc-t">▼</span></div>
+            <div class="gc-b"><ol class="steps">
+                <li class="step">ที่แถบเมนูด้านซ้าย ในหมวด "การเงิน" คลิกเมนู <span class="hl">รายรับของฉัน</span></li>
+                <li class="step">มองไปที่มุมขวาบนของหน้าจอ จะเห็นกล่อง "รายงานรายรับ" ให้คลิก <span class="hl">เพิ่มเติม ></span></li>
+                <li class="step">ในหน้าต่าง "ดาวน์โหลดรายการทางบัญชี" ให้คลิกแท็บ <span class="hl">รายงานรายเดือน</span></li>
+                <li class="step">คลิกที่ช่อง "การเลือกเดือน" เพื่อเลือก <span class="hl">เดือนและปี</span> ที่ต้องการ</li>
+                <li class="step">ในช่อง "ดาวน์โหลดรูปแบบ" คลิก Dropdown เลือก <span class="hl">รายละเอียดธุรกรรม (excel)</span></li>
+                <li class="step">กดปุ่ม <span class="hl">ดาวน์โหลด</span> สีน้ำเงิน</li>
+                <li class="step">หน้าต่าง <span class="hl">ประวัติข้อมูลที่ดาวน์โหลด</span> จะเด้งขึ้นมา รอสถานะเป็น "Finished" แล้วคลิก <span class="hl">Download Result File</span></li>
+            </ol>
+            <div class="fi">
+                <div class="fi-r"><span class="fi-l">📄 ชื่อไฟล์</span><span class="fi-v">TH.XXXXX-TRANSACTION-XXXXXXXX-XXXXXXXX.xlsx</span></div>
             </div></div>
         </div>
     </section>
@@ -1075,7 +1093,7 @@ const indicator=document.createElement('div');indicator.className='sb-indicator'
 function moveIndicator(el){if(!el)return;const sb=document.querySelector('.sidebar');const rect=el.getBoundingClientRect();const sbRect=sb.getBoundingClientRect();indicator.style.top=(rect.top-sbRect.top+sb.scrollTop+4)+'px';indicator.classList.add('vis');}
 
 // Sidebar active sub-link on scroll
-const allIds=['tk-1','tk-2','tk-3','tk-4','sp-1','sp-2','sp-3','sp-4','sp-5','lz-1','pg-orders','pg-income','pg-bank','pg-expense'];
+const allIds=['tk-1','tk-2','tk-3','tk-4','sp-1','sp-2','sp-3','sp-4','sp-5','lz-1','lz-2','pg-orders','pg-income','pg-bank','pg-expense'];
 const sbObs2=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){document.querySelectorAll('.sb-sub-link,.sb-link').forEach(l=>l.classList.remove('active'));const id=e.target.id;const a=document.querySelector('.sb-sub-link[href="#'+id+'"]')||document.querySelector('.sb-link[href="#'+id+'"]');if(a){a.classList.add('active');moveIndicator(a);}}});},{threshold:0.15,rootMargin:'-80px 0px -50% 0px'});
 allIds.forEach(id=>{const el=document.getElementById(id);if(el)sbObs2.observe(el);});
 
