@@ -184,6 +184,7 @@
         .tk-sec .gc:hover { box-shadow:0 4px 20px rgba(254,44,85,.12), 0 0 0 1px rgba(254,44,85,.08); }
         .sp-sec .gc:hover { box-shadow:0 4px 20px rgba(238,77,45,.12), 0 0 0 1px rgba(238,77,45,.08); }
         .pg-sec .gc:hover { box-shadow:0 4px 20px rgba(26,39,68,.12), 0 0 0 1px rgba(26,39,68,.08); }
+        .lz-sec .gc:hover { box-shadow:0 4px 20px rgba(15,20,109,.12), 0 0 0 1px rgba(15,20,109,.08); }
 
         /* Dark Mode */
         .dark { background:#0f172a; color:#e2e8f0; }
@@ -230,6 +231,23 @@
         }
         .dark .theme-toggle { background:#fbbf24; color:#1e293b; }
         .theme-toggle:hover { transform:scale(1.1); }
+
+        /* Lang toggle */
+        .lang-toggle {
+            position:fixed; top:1rem; right:1.5rem; z-index:1001;
+            display:flex; gap:0; border-radius:20px; overflow:hidden;
+            border:1px solid rgba(255,255,255,.2); font-size:.8rem; font-weight:600;
+        }
+        .lang-btn {
+            padding:.35rem .8rem; cursor:pointer; border:none;
+            background:transparent; color:rgba(255,255,255,.5); transition:all .3s;
+        }
+        .lang-btn.active {
+            background:rgba(240,192,64,.2); color:#f0c040;
+        }
+        .dark .lang-toggle { border-color:#334155; }
+        .dark .lang-btn { color:#64748b; }
+        .dark .lang-btn.active { background:rgba(99,102,241,.2); color:#818cf8; }
 
         /* ━━━━━━━━━━ Section ━━━━━━━━━━ */
         .sec-head { text-align:center; margin-bottom:2rem; padding-top:1rem; }
@@ -423,16 +441,20 @@
 <nav class="navbar">
     <a href="#" class="navbar-brand">
         <div class="nb-icon">BK</div>
-        คู่มือ BKKHolding
+        <span data-i18n="nav-brand">คู่มือ BKKHolding</span>
     </a>
+    <div class="lang-toggle">
+        <button class="lang-btn active" id="btnTH" onclick="switchLang('th')">TH</button>
+        <button class="lang-btn" id="btnEN" onclick="switchLang('en')">EN</button>
+    </div>
 </nav>
 
 <!-- ── Hero ── -->
 <section class="hero">
     <div class="hero-aurora3"></div>
-    <div class="hero-badge"><div class="dot"></div> คู่มือสำหรับทีมบัญชี</div>
-    <h1>คู่มือ <span class="grad">BKKHolding</span></h1>
-    <p>วิธีดึงข้อมูลจากแพลตฟอร์ม + วิธีใช้โปรแกรม สำหรับทีมบัญชี</p>
+    <div class="hero-badge" data-i18n="hero-badge"><div class="dot"></div> คู่มือสำหรับทีมบัญชี</div>
+    <h1 data-i18n="hero-title">คู่มือ <span class="grad">BKKHolding</span></h1>
+    <p data-i18n="hero-desc">วิธีดึงข้อมูลจากแพลตฟอร์ม + วิธีใช้โปรแกรม สำหรับทีมบัญชี</p>
 </section>
 
 <!-- ── Layout: Sidebar + Main ── -->
@@ -440,28 +462,32 @@
 
 <!-- ── Sidebar TOC ── -->
 <aside class="sidebar">
-    <div class="sb-cat">📥 วิธีดึงข้อมูล</div>
+    <div class="sb-cat" data-i18n="sb-cat-extract">📥 วิธีดึงข้อมูล</div>
     <a href="#tiktok" class="sb-link has-sub open" onclick="sbTog(this,event)"><span class="sb-dot" style="background:#000;"></span>TikTok Seller Center<span class="sb-arrow">▶</span></a>
     <div class="sb-sub open">
-        <a href="#tk-1" class="sb-sub-link">คำสั่งซื้อ (All Orders)</a>
-        <a href="#tk-2" class="sb-sub-link">รายรับของฉัน</a>
-        <a href="#tk-3" class="sb-sub-link">คืนสินค้า/คืนเงิน</a>
-        <a href="#tk-4" class="sb-sub-link">ค่าใช้จ่ายแพลตฟอร์ม</a>
+        <a href="#tk-1" class="sb-sub-link" data-i18n="sb-tk1">คำสั่งซื้อ (All Orders)</a>
+        <a href="#tk-2" class="sb-sub-link" data-i18n="sb-tk2">รายรับของฉัน</a>
+        <a href="#tk-3" class="sb-sub-link" data-i18n="sb-tk3">คืนสินค้า/คืนเงิน</a>
+        <a href="#tk-4" class="sb-sub-link" data-i18n="sb-tk4">ค่าใช้จ่ายแพลตฟอร์ม</a>
     </div>
     <a href="#shopee" class="sb-link has-sub" onclick="sbTog(this,event)"><span class="sb-dot" style="background:#EE4D2D;"></span>Shopee Seller Centre<span class="sb-arrow">▶</span></a>
     <div class="sb-sub">
-        <a href="#sp-1" class="sb-sub-link">คำสั่งซื้อสินค้า</a>
-        <a href="#sp-2" class="sb-sub-link">รายรับ</a>
-        <a href="#sp-3" class="sb-sub-link">เงินเข้าธนาคาร</a>
-        <a href="#sp-4" class="sb-sub-link">ค่าใช้จ่ายแพลตฟอร์ม</a>
-        <a href="#sp-5" class="sb-sub-link">คืนสินค้า/คืนเงิน</a>
+        <a href="#sp-1" class="sb-sub-link" data-i18n="sb-sp1">คำสั่งซื้อสินค้า</a>
+        <a href="#sp-2" class="sb-sub-link" data-i18n="sb-sp2">รายรับ</a>
+        <a href="#sp-3" class="sb-sub-link" data-i18n="sb-sp3">เงินเข้าธนาคาร</a>
+        <a href="#sp-4" class="sb-sub-link" data-i18n="sb-sp4">ค่าใช้จ่ายแพลตฟอร์ม</a>
+        <a href="#sp-5" class="sb-sub-link" data-i18n="sb-sp5">คืนสินค้า/คืนเงิน</a>
+    </div>
+    <a href="#lazada" class="sb-link has-sub" onclick="sbTog(this,event)"><span class="sb-dot" style="background:#0F146D;"></span>Lazada Seller Center<span class="sb-arrow">▶</span></a>
+    <div class="sb-sub">
+        <a href="#lz-1" class="sb-sub-link">คำสั่งซื้อ</a>
     </div>
     <div class="sb-divider"></div>
-    <div class="sb-cat">💻 วิธีใช้โปรแกรม</div>
-    <a href="#pg-orders" class="sb-link"><span class="sb-dot" style="background:#1a2744;"></span>คำสั่งซื้อ</a>
-    <a href="#pg-income" class="sb-link"><span class="sb-dot" style="background:#1a2744;"></span>รายรับของฉัน</a>
-    <a href="#pg-bank" class="sb-link"><span class="sb-dot" style="background:#1a2744;"></span>เงินเข้าธนาคาร</a>
-    <a href="#pg-expense" class="sb-link"><span class="sb-dot" style="background:#1a2744;"></span>ค่าใช้จ่ายแพลตฟอร์ม</a>
+    <div class="sb-cat" data-i18n="sb-cat-program">💻 วิธีใช้โปรแกรม</div>
+    <a href="#pg-orders" class="sb-link"><span class="sb-dot" style="background:#1a2744;"></span><span data-i18n="sb-pg1">คำสั่งซื้อ</span></a>
+    <a href="#pg-income" class="sb-link"><span class="sb-dot" style="background:#1a2744;"></span><span data-i18n="sb-pg2">รายรับของฉัน</span></a>
+    <a href="#pg-bank" class="sb-link"><span class="sb-dot" style="background:#1a2744;"></span><span data-i18n="sb-pg3">เงินเข้าธนาคาร</span></a>
+    <a href="#pg-expense" class="sb-link"><span class="sb-dot" style="background:#1a2744;"></span><span data-i18n="sb-pg4">ค่าใช้จ่ายแพลตฟอร์ม</span></a>
 </aside>
 
 <!-- ── Main Content ── -->
@@ -475,79 +501,79 @@
                 <svg viewBox="0 0 48 48" fill="none"><path d="M33.3 8.2A8.1 8.1 0 0 1 28.1 3h-5.7l-.01 27.7a5.4 5.4 0 1 1-3.7-5.1V19.7a11.2 11.2 0 1 0 9.5 11.1V17.5A14 14 0 0 0 36.3 20v-5.8a8.1 8.1 0 0 1-3-6z" fill="#1a2744"/></svg>
             </div>
             <h2>TikTok Seller Center</h2>
-            <p>การดึงข้อมูลจาก TikTok Shop — 4 ประเภทรายงาน</p>
+            <p data-i18n="tk-desc">การดึงข้อมูลจาก TikTok Shop — 4 ประเภทรายงาน</p>
             <span class="uline"></span>
         </div>
 
         <!-- TK 1 -->
         <div class="gc open anim" data-i="1" id="tk-1">
-            <div class="gc-h" onclick="tog(this)"><div class="gc-n">1</div><h3>ดาวน์โหลดข้อมูลคำสั่งซื้อแบบครบวงจร (All Orders)</h3><span class="gc-t">▼</span></div>
+            <div class="gc-h" onclick="tog(this)"><div class="gc-n">1</div><h3 data-i18n="tk1-title">ดาวน์โหลดข้อมูลคำสั่งซื้อแบบครบวงจร (All Orders)</h3><span class="gc-t">▼</span></div>
             <div class="gc-b"><ol class="steps">
-                <li class="step">ล็อกอินเข้าสู่ระบบ <span class="hl">TikTok Seller Center</span></li>
-                <li class="step">ที่แถบเมนูด้านซ้ายมือสุด ให้คลิกที่หัวข้อ <span class="hl">คำสั่งซื้อ</span> แล้วเลือกเมนูย่อย <span class="hl">จัดการคำสั่งซื้อ</span></li>
-                <li class="step">ตรงกลางหน้าจอจะมีแท็บสถานะต่างๆ ให้คลิกเลือกแท็บ <span class="hl">ทั้งหมด</span></li>
-                <li class="step">คลิกที่ช่องปฏิทิน (เวลาที่สร้าง) เพื่อทำการระบุ <span class="hl">วันที่เริ่มต้น</span> และ <span class="hl">วันที่สิ้นสุด</span> ที่คุณต้องการดึงข้อมูล</li>
-                <li class="step">มองหาปุ่ม <span class="hl">ส่งออก</span> ที่อยู่บริเวณมุมขวาบนเหนือรายการคำสั่งซื้อ แล้วคลิกที่ปุ่มนั้น</li>
-                <li class="step">ในหน้าต่างป๊อปอัปที่ปรากฏขึ้นมา ให้สังเกตหัวข้อ "รูปแบบการส่งออก" ต้องติ๊กเลือกวงกลมคำว่า <span class="hl">Excel</span> ให้เรียบร้อย จากนั้นกดปุ่ม <span class="hl">ส่งออก</span> สีเขียว</li>
-                <li class="step">ระบบจะใช้เวลาสร้างไฟล์สักครู่ ให้คุณคลิกที่ข้อความลิงก์คำว่า <span class="hl">ประวัติการส่งออก</span> (จะอยู่ข้างๆ ปุ่มส่งออกในตอนแรก)</li>
-                <li class="step">หน้าต่างประวัติจะเปิดขึ้นมา ให้ดูไฟล์บรรทัดบนสุด (ไฟล์ล่าสุด) แล้วคลิกปุ่ม <span class="hl">ดาวน์โหลด</span> เพื่อบันทึกไฟล์ Excel ลงเครื่อง</li>
+                <li class="step" data-i18n="tk1-s1">ล็อกอินเข้าสู่ระบบ <span class="hl">TikTok Seller Center</span></li>
+                <li class="step" data-i18n="tk1-s2">ที่แถบเมนูด้านซ้ายมือสุด ให้คลิกที่หัวข้อ <span class="hl">คำสั่งซื้อ</span> แล้วเลือกเมนูย่อย <span class="hl">จัดการคำสั่งซื้อ</span></li>
+                <li class="step" data-i18n="tk1-s3">ตรงกลางหน้าจอจะมีแท็บสถานะต่างๆ ให้คลิกเลือกแท็บ <span class="hl">ทั้งหมด</span></li>
+                <li class="step" data-i18n="tk1-s4">คลิกที่ช่องปฏิทิน (เวลาที่สร้าง) เพื่อทำการระบุ <span class="hl">วันที่เริ่มต้น</span> และ <span class="hl">วันที่สิ้นสุด</span> ที่คุณต้องการดึงข้อมูล</li>
+                <li class="step" data-i18n="tk1-s5">มองหาปุ่ม <span class="hl">ส่งออก</span> ที่อยู่บริเวณมุมขวาบนเหนือรายการคำสั่งซื้อ แล้วคลิกที่ปุ่มนั้น</li>
+                <li class="step" data-i18n="tk1-s6">ในหน้าต่างป๊อปอัปที่ปรากฏขึ้นมา ให้สังเกตหัวข้อ "รูปแบบการส่งออก" ต้องติ๊กเลือกวงกลมคำว่า <span class="hl">Excel</span> ให้เรียบร้อย จากนั้นกดปุ่ม <span class="hl">ส่งออก</span> สีเขียว</li>
+                <li class="step" data-i18n="tk1-s7">ระบบจะใช้เวลาสร้างไฟล์สักครู่ ให้คุณคลิกที่ข้อความลิงก์คำว่า <span class="hl">ประวัติการส่งออก</span> (จะอยู่ข้างๆ ปุ่มส่งออกในตอนแรก)</li>
+                <li class="step" data-i18n="tk1-s8">หน้าต่างประวัติจะเปิดขึ้นมา ให้ดูไฟล์บรรทัดบนสุด (ไฟล์ล่าสุด) แล้วคลิกปุ่ม <span class="hl">ดาวน์โหลด</span> เพื่อบันทึกไฟล์ Excel ลงเครื่อง</li>
             </ol>
             <div class="fi">
-                <div class="fi-r"><span class="fi-l">📄 ชื่อไฟล์ (TH)</span><span class="fi-v">ทั้งหมด คำสั่งซื้อ-XXXX-XX-XX-XX_XX.xlsx</span></div>
-                <div class="fi-r"><span class="fi-l">📄 ชื่อไฟล์ (EN)</span><span class="fi-v">All order-XXXX-XX-XX-XX:XX.xlsx</span></div>
-                <div class="fi-r"><span class="fi-l">📑 ชื่อแท็บ</span><span class="fi-v fi-t">OrderSKUList</span></div>
+                <div class="fi-r"><span class="fi-l" data-i18n="fi-name-th">📄 ชื่อไฟล์ (TH)</span><span class="fi-v">ทั้งหมด คำสั่งซื้อ-XXXX-XX-XX-XX_XX.xlsx</span></div>
+                <div class="fi-r"><span class="fi-l" data-i18n="fi-name-en">📄 ชื่อไฟล์ (EN)</span><span class="fi-v">All order-XXXX-XX-XX-XX:XX.xlsx</span></div>
+                <div class="fi-r"><span class="fi-l" data-i18n="fi-tab">📑 ชื่อแท็บ</span><span class="fi-v fi-t">OrderSKUList</span></div>
             </div></div>
         </div>
 
         <!-- TK 2 -->
         <div class="gc anim" data-i="2" id="tk-2">
-            <div class="gc-h" onclick="tog(this)"><div class="gc-n">2</div><h3>ดาวน์โหลด "รายรับของฉัน"</h3><span class="gc-t">▼</span></div>
+            <div class="gc-h" onclick="tog(this)"><div class="gc-n">2</div><h3 data-i18n="tk2-title">ดาวน์โหลด "รายรับของฉัน"</h3><span class="gc-t">▼</span></div>
             <div class="gc-b"><ol class="steps">
-                <li class="step">ที่แถบเมนูด้านซ้าย เลื่อนลงมาคลิกหัวข้อ <span class="hl">การเงิน</span> แล้วเลือก <span class="hl">ธุรกรรม</span> (หรือเมนูที่เกี่ยวข้องกับการถอนเงิน/สถานะบัญชี)</li>
-                <li class="step">ในหน้าธุรกรรม ให้คลิกเลือกแท็บ <span class="hl">ชำระเงินแล้ว</span> หรือแท็บที่แสดงรายการเงินที่เข้าบัญชีแล้ว</li>
-                <li class="step">คลิกที่ช่องปฏิทิน เพื่อทำการระบุ <span class="hl">วันที่เริ่มต้น</span> และ <span class="hl">วันที่สิ้นสุด</span> ที่คุณต้องการตรวจสอบยอดเงิน</li>
-                <li class="step">กดปุ่ม <span class="hl">ส่งออก</span></li>
-                <li class="step">หน้าต่างเด้งขึ้นมาให้เลือกรูปแบบไฟล์เป็น <span class="hl">Excel</span> แล้วกดยืนยันการส่งออก จากนั้นไปที่ <span class="hl">ประวัติการส่งออก</span> เพื่อกดดาวน์โหลดไฟล์</li>
+                <li class="step" data-i18n="tk2-s1">ที่แถบเมนูด้านซ้าย เลื่อนลงมาคลิกหัวข้อ <span class="hl">การเงิน</span> แล้วเลือก <span class="hl">ธุรกรรม</span> (หรือเมนูที่เกี่ยวข้องกับการถอนเงิน/สถานะบัญชี)</li>
+                <li class="step" data-i18n="tk2-s2">ในหน้าธุรกรรม ให้คลิกเลือกแท็บ <span class="hl">ชำระเงินแล้ว</span> หรือแท็บที่แสดงรายการเงินที่เข้าบัญชีแล้ว</li>
+                <li class="step" data-i18n="tk2-s3">คลิกที่ช่องปฏิทิน เพื่อทำการระบุ <span class="hl">วันที่เริ่มต้น</span> และ <span class="hl">วันที่สิ้นสุด</span> ที่คุณต้องการตรวจสอบยอดเงิน</li>
+                <li class="step" data-i18n="tk2-s4">กดปุ่ม <span class="hl">ส่งออก</span></li>
+                <li class="step" data-i18n="tk2-s5">หน้าต่างเด้งขึ้นมาให้เลือกรูปแบบไฟล์เป็น <span class="hl">Excel</span> แล้วกดยืนยันการส่งออก จากนั้นไปที่ <span class="hl">ประวัติการส่งออก</span> เพื่อกดดาวน์โหลดไฟล์</li>
             </ol>
             <div class="fi">
-                <div class="fi-r"><span class="fi-l">📄 ชื่อไฟล์ (TH)</span><span class="fi-v">income_XXXXXX-XX_XX_XX(UTC+7).xlsx</span></div>
-                <div class="fi-r"><span class="fi-l">📄 ชื่อไฟล์ (EN)</span><span class="fi-v">income_XXXXXX-XX_XX_XX(UTC+7).xlsx</span></div>
-                <div class="fi-r"><span class="fi-l">📑 ชื่อแท็บ</span><span class="fi-v fi-t">รายละเอียดคำสั่งซื้อ, รายงาน, บันทึกการถอน, คำอธิบายค่าธรรมเนียม</span></div>
+                <div class="fi-r"><span class="fi-l" data-i18n="fi-name-th">📄 ชื่อไฟล์ (TH)</span><span class="fi-v">income_XXXXXX-XX_XX_XX(UTC+7).xlsx</span></div>
+                <div class="fi-r"><span class="fi-l" data-i18n="fi-name-en">📄 ชื่อไฟล์ (EN)</span><span class="fi-v">income_XXXXXX-XX_XX_XX(UTC+7).xlsx</span></div>
+                <div class="fi-r"><span class="fi-l" data-i18n="fi-tab">📑 ชื่อแท็บ</span><span class="fi-v fi-t">รายละเอียดคำสั่งซื้อ, รายงาน, บันทึกการถอน, คำอธิบายค่าธรรมเนียม</span></div>
             </div></div>
         </div>
 
         <!-- TK 3 -->
         <div class="gc anim" data-i="3" id="tk-3">
-            <div class="gc-h" onclick="tog(this)"><div class="gc-n">3</div><h3>ดาวน์โหลดข้อมูลการคืนสินค้าและการคืนเงิน</h3><span class="gc-t">▼</span></div>
+            <div class="gc-h" onclick="tog(this)"><div class="gc-n">3</div><h3 data-i18n="tk3-title">ดาวน์โหลดข้อมูลการคืนสินค้าและการคืนเงิน</h3><span class="gc-t">▼</span></div>
             <div class="gc-b"><ol class="steps">
-                <li class="step">ที่แถบเมนูด้านซ้าย คลิกที่หัวข้อ <span class="hl">คำสั่งซื้อ</span> แล้วเลือกเมนู <span class="hl">จัดการการคืนสินค้า</span></li>
-                <li class="step">มองไปที่มุมขวาบนของหน้าจอ จะเห็นไอคอน <span class="hl">ตัวกรอง</span> (รูปแว่นขยายหรือสัญลักษณ์เส้นขีดๆ) ให้คลิกที่ไอคอนนี้</li>
-                <li class="step">หน้าต่างตัวกรองจะเปิดออกมาทางขวา ตรงหัวข้อ "เวลาที่สร้าง" ให้คลิกเลือก <span class="hl">วันที่เริ่มต้น</span> และ <span class="hl">วันที่สิ้นสุด</span> ที่คุณต้องการค้นหา เสร็จแล้วกดปุ่ม <span class="hl">นำไปใช้</span> สีเขียวด้านล่าง</li>
-                <li class="step">เมื่อรายการแสดงผลตามวันที่เลือกแล้ว ให้คลิก <span class="hl">ไอคอนส่งออก</span> (รูปกล่องมีลูกศรชี้ลง) ที่อยู่ติดกับปุ่มตัวกรอง</li>
-                <li class="step">เช็คให้ชัวร์ว่าหน้าต่างป๊อปอัปเลือกรูปแบบเป็น <span class="hl">Excel</span> แล้วกดปุ่ม <span class="hl">ส่งออก</span> สีเขียว</li>
-                <li class="step">คลิกที่ลิงก์ <span class="hl">ประวัติการส่งออก</span> เพื่อเข้าไปกดดาวน์โหลดไฟล์ล่าสุด</li>
+                <li class="step" data-i18n="tk3-s1">ที่แถบเมนูด้านซ้าย คลิกที่หัวข้อ <span class="hl">คำสั่งซื้อ</span> แล้วเลือกเมนู <span class="hl">จัดการการคืนสินค้า</span></li>
+                <li class="step" data-i18n="tk3-s2">มองไปที่มุมขวาบนของหน้าจอ จะเห็นไอคอน <span class="hl">ตัวกรอง</span> (รูปแว่นขยายหรือสัญลักษณ์เส้นขีดๆ) ให้คลิกที่ไอคอนนี้</li>
+                <li class="step" data-i18n="tk3-s3">หน้าต่างตัวกรองจะเปิดออกมาทางขวา ตรงหัวข้อ "เวลาที่สร้าง" ให้คลิกเลือก <span class="hl">วันที่เริ่มต้น</span> และ <span class="hl">วันที่สิ้นสุด</span> ที่คุณต้องการค้นหา เสร็จแล้วกดปุ่ม <span class="hl">นำไปใช้</span> สีเขียวด้านล่าง</li>
+                <li class="step" data-i18n="tk3-s4">เมื่อรายการแสดงผลตามวันที่เลือกแล้ว ให้คลิก <span class="hl">ไอคอนส่งออก</span> (รูปกล่องมีลูกศรชี้ลง) ที่อยู่ติดกับปุ่มตัวกรอง</li>
+                <li class="step" data-i18n="tk3-s5">เช็คให้ชัวร์ว่าหน้าต่างป๊อปอัปเลือกรูปแบบเป็น <span class="hl">Excel</span> แล้วกดปุ่ม <span class="hl">ส่งออก</span> สีเขียว</li>
+                <li class="step" data-i18n="tk3-s6">คลิกที่ลิงก์ <span class="hl">ประวัติการส่งออก</span> เพื่อเข้าไปกดดาวน์โหลดไฟล์ล่าสุด</li>
             </ol>
             <div class="fi">
-                <div class="fi-r"><span class="fi-l">📄 ชื่อไฟล์ (TH)</span><span class="fi-v">คำสั่งซื้อที่ส่งคืน/คืนเงิน-XXXX-XX-XX-XX_XX.xlsx</span></div>
-                <div class="fi-r"><span class="fi-l">📄 ชื่อไฟล์ (EN)</span><span class="fi-v">Return/Refund Orders-XXXX-XX-XX-XX:XX.xlsx</span></div>
-                <div class="fi-r"><span class="fi-l">📑 ชื่อแท็บ</span><span class="fi-v fi-t">0</span></div>
+                <div class="fi-r"><span class="fi-l" data-i18n="fi-name-th">📄 ชื่อไฟล์ (TH)</span><span class="fi-v">คำสั่งซื้อที่ส่งคืน/คืนเงิน-XXXX-XX-XX-XX_XX.xlsx</span></div>
+                <div class="fi-r"><span class="fi-l" data-i18n="fi-name-en">📄 ชื่อไฟล์ (EN)</span><span class="fi-v">Return/Refund Orders-XXXX-XX-XX-XX:XX.xlsx</span></div>
+                <div class="fi-r"><span class="fi-l" data-i18n="fi-tab">📑 ชื่อแท็บ</span><span class="fi-v fi-t">0</span></div>
             </div></div>
         </div>
 
         <!-- TK 4 -->
         <div class="gc anim" data-i="4" id="tk-4">
-            <div class="gc-h" onclick="tog(this)"><div class="gc-n">4</div><h3>ดาวน์โหลดข้อมูลค่าใช้จ่ายแพลตฟอร์ม</h3><span class="gc-t">▼</span></div>
+            <div class="gc-h" onclick="tog(this)"><div class="gc-n">4</div><h3 data-i18n="tk4-title">ดาวน์โหลดข้อมูลค่าใช้จ่ายแพลตฟอร์ม</h3><span class="gc-t">▼</span></div>
             <div class="gc-b"><ol class="steps">
-                <li class="step">ที่แถบเมนูด้านซ้าย คลิกหัวข้อ <span class="hl">การเงิน</span> แล้วเลือกเมนู <span class="hl">เอกสารทางภาษี</span></li>
-                <li class="step">ในหน้าหลัก สังเกตแท็บด้านบน ให้เลือกแท็บ <span class="hl">ใบแจ้งหนี้ของแพลตฟอร์ม</span></li>
-                <li class="step">เหนือตารางข้อมูล จะมีปุ่มข้อความว่า <span class="hl">ดาวน์โหลดเป็นชุด</span> ให้คลิกที่ปุ่มนี้</li>
-                <li class="step">หน้าต่างป๊อปอัปจะเด้งขึ้นมา ให้ติ๊กเลือกประเภทเป็น "ใบแจ้งหนี้ของแพลตฟอร์ม" และคลิกที่ช่องปฏิทินเพื่อเลือก <span class="hl">เดือนและปี</span> ที่ต้องการ</li>
-                <li class="step">กดปุ่ม <span class="hl">ส่งออก</span> สีฟ้า</li>
-                <li class="step">จะมีป๊อปอัป "รายงานที่ส่งออก" แสดงรายการไฟล์ที่เราเพิ่งสั่งดึงข้อมูล ให้คลิกปุ่ม <span class="hl">ดาวน์โหลด</span> ที่ไฟล์ .zip ล่าสุด</li>
+                <li class="step" data-i18n="tk4-s1">ที่แถบเมนูด้านซ้าย คลิกหัวข้อ <span class="hl">การเงิน</span> แล้วเลือกเมนู <span class="hl">เอกสารทางภาษี</span></li>
+                <li class="step" data-i18n="tk4-s2">ในหน้าหลัก สังเกตแท็บด้านบน ให้เลือกแท็บ <span class="hl">ใบแจ้งหนี้ของแพลตฟอร์ม</span></li>
+                <li class="step" data-i18n="tk4-s3">เหนือตารางข้อมูล จะมีปุ่มข้อความว่า <span class="hl">ดาวน์โหลดเป็นชุด</span> ให้คลิกที่ปุ่มนี้</li>
+                <li class="step" data-i18n="tk4-s4">หน้าต่างป๊อปอัปจะเด้งขึ้นมา ให้ติ๊กเลือกประเภทเป็น "ใบแจ้งหนี้ของแพลตฟอร์ม" และคลิกที่ช่องปฏิทินเพื่อเลือก <span class="hl">เดือนและปี</span> ที่ต้องการ</li>
+                <li class="step" data-i18n="tk4-s5">กดปุ่ม <span class="hl">ส่งออก</span> สีฟ้า</li>
+                <li class="step" data-i18n="tk4-s6">จะมีป๊อปอัป "รายงานที่ส่งออก" แสดงรายการไฟล์ที่เราเพิ่งสั่งดึงข้อมูล ให้คลิกปุ่ม <span class="hl">ดาวน์โหลด</span> ที่ไฟล์ .zip ล่าสุด</li>
             </ol>
             <div class="fi">
-                <div class="fi-r"><span class="fi-l">📦 ชื่อไฟล์ ZIP</span><span class="fi-v">invoice_XXXXXX_1.zip</span></div>
-                <div class="fi-r"><span class="fi-l">📝 หมายเหตุ</span><span class="fi-v">พอแตกไฟล์จะได้ไฟล์ PDF มา</span></div>
+                <div class="fi-r"><span class="fi-l" data-i18n="fi-zip">📦 ชื่อไฟล์ ZIP</span><span class="fi-v">invoice_XXXXXX_1.zip</span></div>
+                <div class="fi-r"><span class="fi-l" data-i18n="fi-note">📝 หมายเหตุ</span><span class="fi-v" data-i18n="tk4-note">พอแตกไฟล์จะได้ไฟล์ PDF มา</span></div>
             </div></div>
         </div>
     </section>
@@ -561,89 +587,119 @@
                 <svg viewBox="0 0 48 48" fill="none"><path d="M24 4c-4.4 0-8 3.1-8 7v2H8l2 28h28l2-28H32v-2c0-3.9-3.6-7-8-7zm0 3c2.8 0 5 1.8 5 4v2H19v-2c0-2.2 2.2-4 5-4z" fill="#EE4D2D"/><text x="19.5" y="34" font-size="14" font-weight="800" fill="#EE4D2D" font-family="Arial">S</text></svg>
             </div>
             <h2>Shopee Seller Centre</h2>
-            <p>การดึงข้อมูลจาก Shopee — 5 ประเภทรายงาน</p>
+            <p data-i18n="sp-desc">การดึงข้อมูลจาก Shopee — 5 ประเภทรายงาน</p>
             <span class="uline"></span>
         </div>
 
         <!-- SP 1 -->
         <div class="gc anim" data-i="1" id="sp-1">
-            <div class="gc-h" onclick="tog(this)"><div class="gc-n">1</div><h3>ดาวน์โหลดข้อมูลคำสั่งซื้อสินค้า</h3><span class="gc-t">▼</span></div>
+            <div class="gc-h" onclick="tog(this)"><div class="gc-n">1</div><h3 data-i18n="sp1-title">ดาวน์โหลดข้อมูลคำสั่งซื้อสินค้า</h3><span class="gc-t">▼</span></div>
             <div class="gc-b"><ol class="steps">
-                <li class="step">ล็อกอินเข้าสู่ระบบ <span class="hl">Shopee Seller Centre</span></li>
-                <li class="step">ที่แถบเมนูด้านซ้าย ในหมวด "คำสั่งซื้อ" ให้คลิกเมนู <span class="hl">คำสั่งซื้อของฉัน</span></li>
-                <li class="step">มองไปที่มุมขวาบนของหน้าจอ (ใต้ชื่อบัญชีผู้ใช้) จะเห็นปุ่ม <span class="hl">ดาวน์โหลด</span> ให้คลิกปุ่มนี้</li>
-                <li class="step">จะมีหน้าต่าง "ดาวน์โหลดคำสั่งซื้อทั้งหมด" เด้งขึ้นมา ให้คลิกที่ช่องปฏิทินเพื่อระบุ <span class="hl">วันที่เริ่มต้น</span> และ <span class="hl">วันที่สิ้นสุด</span> ที่ต้องการ</li>
-                <li class="step">กดปุ่ม <span class="hl">ดาวน์โหลด</span> สีส้ม</li>
-                <li class="step">รอระบบโหลดสักครู่ จะมีกล่องข้อความ "รายงานล่าสุด" เด้งลงมา (หรือคลิกที่ปุ่ม <span class="hl">ประวัติการดาวน์โหลด</span>) ให้หาไฟล์ชื่อที่ขึ้นต้นด้วย <span class="hl">Order.all...</span> (.xlsx) แล้วคลิกปุ่ม <span class="hl">ดาวน์โหลด</span> สีส้มด้านหลังไฟล์นั้น</li>
+                <li class="step" data-i18n="sp1-s1">ล็อกอินเข้าสู่ระบบ <span class="hl">Shopee Seller Centre</span></li>
+                <li class="step" data-i18n="sp1-s2">ที่แถบเมนูด้านซ้าย ในหมวด "คำสั่งซื้อ" ให้คลิกเมนู <span class="hl">คำสั่งซื้อของฉัน</span></li>
+                <li class="step" data-i18n="sp1-s3">มองไปที่มุมขวาบนของหน้าจอ (ใต้ชื่อบัญชีผู้ใช้) จะเห็นปุ่ม <span class="hl">ดาวน์โหลด</span> ให้คลิกปุ่มนี้</li>
+                <li class="step" data-i18n="sp1-s4">จะมีหน้าต่าง "ดาวน์โหลดคำสั่งซื้อทั้งหมด" เด้งขึ้นมา ให้คลิกที่ช่องปฏิทินเพื่อระบุ <span class="hl">วันที่เริ่มต้น</span> และ <span class="hl">วันที่สิ้นสุด</span> ที่ต้องการ</li>
+                <li class="step" data-i18n="sp1-s5">กดปุ่ม <span class="hl">ดาวน์โหลด</span> สีส้ม</li>
+                <li class="step" data-i18n="sp1-s6">รอระบบโหลดสักครู่ จะมีกล่องข้อความ "รายงานล่าสุด" เด้งลงมา (หรือคลิกที่ปุ่ม <span class="hl">ประวัติการดาวน์โหลด</span>) ให้หาไฟล์ชื่อที่ขึ้นต้นด้วย <span class="hl">Order.all...</span> (.xlsx) แล้วคลิกปุ่ม <span class="hl">ดาวน์โหลด</span> สีส้มด้านหลังไฟล์นั้น</li>
             </ol>
             <div class="fi">
-                <div class="fi-r"><span class="fi-l">📄 ชื่อไฟล์ (TH)</span><span class="fi-v">Order.all.XXXXXXXX_XXXXXXXX.xlsx</span></div>
-                <div class="fi-r"><span class="fi-l">📄 ชื่อไฟล์ (EN)</span><span class="fi-v">Order.all.XXXXXXXX_XXXXXXXX.xlsx</span></div>
-                <div class="fi-r"><span class="fi-l">📑 ชื่อแท็บ</span><span class="fi-v fi-t">orders</span></div>
+                <div class="fi-r"><span class="fi-l" data-i18n="fi-name-th">📄 ชื่อไฟล์ (TH)</span><span class="fi-v">Order.all.XXXXXXXX_XXXXXXXX.xlsx</span></div>
+                <div class="fi-r"><span class="fi-l" data-i18n="fi-name-en">📄 ชื่อไฟล์ (EN)</span><span class="fi-v">Order.all.XXXXXXXX_XXXXXXXX.xlsx</span></div>
+                <div class="fi-r"><span class="fi-l" data-i18n="fi-tab">📑 ชื่อแท็บ</span><span class="fi-v fi-t">orders</span></div>
             </div></div>
         </div>
 
         <!-- SP 2 -->
         <div class="gc anim" data-i="2" id="sp-2">
-            <div class="gc-h" onclick="tog(this)"><div class="gc-n">2</div><h3>ดาวน์โหลดข้อมูลรายรับ</h3><span class="gc-t">▼</span></div>
+            <div class="gc-h" onclick="tog(this)"><div class="gc-n">2</div><h3 data-i18n="sp2-title">ดาวน์โหลดข้อมูลรายรับ</h3><span class="gc-t">▼</span></div>
             <div class="gc-b"><ol class="steps">
-                <li class="step">ที่แถบเมนูด้านซ้าย ในหมวด "การเงิน" ให้คลิกเมนู <span class="hl">รายรับของฉัน</span> (ระบบอาจขอให้ใส่รหัสผ่านร้านค้าหรือรหัส OTP เพื่อความปลอดภัย)</li>
-                <li class="step">เลื่อนลงมาตรงหัวข้อ "รายละเอียดรายรับของฉัน" จะมีแท็บให้เลือก ให้คลิกเลือกแท็บ <span class="hl">โอนเงินแล้ว</span> (ตัวหนังสือสีส้ม)</li>
-                <li class="step">บรรทัดถัดลงมาจะมีช่องปฏิทิน ให้คลิกเลือก <span class="hl">วันที่เริ่มต้น</span> และ <span class="hl">วันที่สิ้นสุด</span> ที่คุณต้องการตรวจสอบยอดเงินเข้า</li>
-                <li class="step">มองไปทางขวาสุดของแถบปฏิทิน จะมีปุ่ม <span class="hl">ดาวน์โหลด</span> ให้คลิกปุ่มนี้</li>
-                <li class="step">กล่องข้อความ "รายงานล่าสุด" จะแสดงรายการไฟล์ขึ้นมา ให้หาไฟล์ชื่อที่ขึ้นต้นด้วย <span class="hl">income...</span> แล้วคลิกปุ่ม <span class="hl">ดาวน์โหลด</span> สีส้มด้านหลังเพื่อบันทึกไฟล์ Excel</li>
+                <li class="step" data-i18n="sp2-s1">ที่แถบเมนูด้านซ้าย ในหมวด "การเงิน" ให้คลิกเมนู <span class="hl">รายรับของฉัน</span> (ระบบอาจขอให้ใส่รหัสผ่านร้านค้าหรือรหัส OTP เพื่อความปลอดภัย)</li>
+                <li class="step" data-i18n="sp2-s2">เลื่อนลงมาตรงหัวข้อ "รายละเอียดรายรับของฉัน" จะมีแท็บให้เลือก ให้คลิกเลือกแท็บ <span class="hl">โอนเงินแล้ว</span> (ตัวหนังสือสีส้ม)</li>
+                <li class="step" data-i18n="sp2-s3">บรรทัดถัดลงมาจะมีช่องปฏิทิน ให้คลิกเลือก <span class="hl">วันที่เริ่มต้น</span> และ <span class="hl">วันที่สิ้นสุด</span> ที่คุณต้องการตรวจสอบยอดเงินเข้า</li>
+                <li class="step" data-i18n="sp2-s4">มองไปทางขวาสุดของแถบปฏิทิน จะมีปุ่ม <span class="hl">ดาวน์โหลด</span> ให้คลิกปุ่มนี้</li>
+                <li class="step" data-i18n="sp2-s5">กล่องข้อความ "รายงานล่าสุด" จะแสดงรายการไฟล์ขึ้นมา ให้หาไฟล์ชื่อที่ขึ้นต้นด้วย <span class="hl">income...</span> แล้วคลิกปุ่ม <span class="hl">ดาวน์โหลด</span> สีส้มด้านหลังเพื่อบันทึกไฟล์ Excel</li>
             </ol>
             <div class="fi">
-                <div class="fi-r"><span class="fi-l">📄 ชื่อไฟล์ (TH)</span><span class="fi-v">income_XXXXXX_XX_XX(UTC+7).xlsx</span></div>
-                <div class="fi-r"><span class="fi-l">📄 ชื่อไฟล์ (EN)</span><span class="fi-v">income_XXXXXX_XX_XX(UTC+7).xlsx</span></div>
-                <div class="fi-r"><span class="fi-l">📑 ชื่อแท็บ</span><span class="fi-v fi-t">Summary, Income, Service Fee Details, Adjustment</span></div>
+                <div class="fi-r"><span class="fi-l" data-i18n="fi-name-th">📄 ชื่อไฟล์ (TH)</span><span class="fi-v">income_XXXXXX_XX_XX(UTC+7).xlsx</span></div>
+                <div class="fi-r"><span class="fi-l" data-i18n="fi-name-en">📄 ชื่อไฟล์ (EN)</span><span class="fi-v">income_XXXXXX_XX_XX(UTC+7).xlsx</span></div>
+                <div class="fi-r"><span class="fi-l" data-i18n="fi-tab">📑 ชื่อแท็บ</span><span class="fi-v fi-t">Summary, Income, Service Fee Details, Adjustment</span></div>
             </div></div>
         </div>
 
         <!-- SP 3 -->
         <div class="gc anim" data-i="3" id="sp-3">
-            <div class="gc-h" onclick="tog(this)"><div class="gc-n">3</div><h3>ดาวน์โหลดข้อมูลเงินเข้าธนาคาร</h3><span class="gc-t">▼</span></div>
+            <div class="gc-h" onclick="tog(this)"><div class="gc-n">3</div><h3 data-i18n="sp3-title">ดาวน์โหลดข้อมูลเงินเข้าธนาคาร</h3><span class="gc-t">▼</span></div>
             <div class="gc-b"><ol class="steps">
-                <li class="step">ไปที่หน้า <span class="hl">รายรับของฉัน</span> แล้วมองไปที่กล่องเมนูทางด้านขวามือของหน้าจอ ที่เขียนว่า "รายงานการเงิน" ให้คลิกที่ลิงก์ <span class="hl">ดูเพิ่มเติม ></span></li>
-                <li class="step">ในหน้าต่างรายงานการเงิน ให้คลิกเมนูแบบเลื่อนลง (Dropdown) เพื่อเลือก <span class="hl">เดือนและปี</span> ที่ต้องการ</li>
-                <li class="step">คลิกไอคอนดาวน์โหลด (รูปลูกศรชี้ลง) ด้านหลังเดือนนั้น หรือคลิกปุ่ม <span class="hl">ดาวน์โหลดทั้งหมด</span></li>
+                <li class="step" data-i18n="sp3-s1">ไปที่หน้า <span class="hl">รายรับของฉัน</span> แล้วมองไปที่กล่องเมนูทางด้านขวามือของหน้าจอ ที่เขียนว่า "รายงานการเงิน" ให้คลิกที่ลิงก์ <span class="hl">ดูเพิ่มเติม ></span></li>
+                <li class="step" data-i18n="sp3-s2">ในหน้าต่างรายงานการเงิน ให้คลิกเมนูแบบเลื่อนลง (Dropdown) เพื่อเลือก <span class="hl">เดือนและปี</span> ที่ต้องการ</li>
+                <li class="step" data-i18n="sp3-s3">คลิกไอคอนดาวน์โหลด (รูปลูกศรชี้ลง) ด้านหลังเดือนนั้น หรือคลิกปุ่ม <span class="hl">ดาวน์โหลดทั้งหมด</span></li>
             </ol>
             <div class="fi">
-                <div class="fi-r"><span class="fi-l">📄 ชื่อไฟล์ (TH)</span><span class="fi-v">monthly_report_XXXXXXXX.pdf</span></div>
-                <div class="fi-r"><span class="fi-l">📄 ชื่อไฟล์ (EN)</span><span class="fi-v">monthly_report_XXXXXXXX.pdf</span></div>
+                <div class="fi-r"><span class="fi-l" data-i18n="fi-name-th">📄 ชื่อไฟล์ (TH)</span><span class="fi-v">monthly_report_XXXXXXXX.pdf</span></div>
+                <div class="fi-r"><span class="fi-l" data-i18n="fi-name-en">📄 ชื่อไฟล์ (EN)</span><span class="fi-v">monthly_report_XXXXXXXX.pdf</span></div>
             </div></div>
         </div>
 
         <!-- SP 4 -->
         <div class="gc anim" data-i="4" id="sp-4">
-            <div class="gc-h" onclick="tog(this)"><div class="gc-n">4</div><h3>ดาวน์โหลดข้อมูลค่าใช้จ่ายแพลตฟอร์ม (ใบกำกับภาษี)</h3><span class="gc-t">▼</span></div>
+            <div class="gc-h" onclick="tog(this)"><div class="gc-n">4</div><h3 data-i18n="sp4-title">ดาวน์โหลดข้อมูลค่าใช้จ่ายแพลตฟอร์ม (ใบกำกับภาษี)</h3><span class="gc-t">▼</span></div>
             <div class="gc-b"><ol class="steps">
-                <li class="step">ที่แถบเมนูด้านซ้าย ในหมวด "การเงิน" คลิกเมนู <span class="hl">รายรับของฉัน</span></li>
-                <li class="step">มองไปที่กล่องเมนูทางด้านขวามือของหน้าจอ ที่เขียนว่า "รายงานการเงิน" ให้สังเกตด้านล่างสุดของกล่องนั้น จะมีลิงก์คำว่า <span class="hl">My Tax Invoices ></span> ให้คลิกเข้าไป</li>
-                <li class="step">ระบบจะเปิดหน้าต่างใหม่พาไปที่หน้า <span class="hl">ระบบออกใบกำกับภาษี</span> (e-Tax Web Portal)</li>
-                <li class="step">ตรงกลางหน้าจอหัวข้อ "ดาวน์โหลดใบเสร็จรับเงิน..." จะมีช่องปฏิทิน 2 ช่อง ให้คลิกเลือก <span class="hl">วันที่เริ่มต้น</span> ในช่องซ้าย และ <span class="hl">วันที่สิ้นสุด</span> ในช่องขวา</li>
-                <li class="step">กดปุ่ม <span class="hl">เลือก</span> สีส้ม</li>
-                <li class="step">รายการค่าใช้จ่ายจะแสดงขึ้นมาในตารางด้านล่าง ให้มองไปที่มุมขวาของหัวตารางในคอลัมน์ "ใบกำกับภาษีแบบเต็มรูป" แล้วคลิกปุ่มสีฟ้าที่เขียนว่า <span class="hl">ดาวน์โหลดทั้งหมด</span></li>
+                <li class="step" data-i18n="sp4-s1">ที่แถบเมนูด้านซ้าย ในหมวด "การเงิน" คลิกเมนู <span class="hl">รายรับของฉัน</span></li>
+                <li class="step" data-i18n="sp4-s2">มองไปที่กล่องเมนูทางด้านขวามือของหน้าจอ ที่เขียนว่า "รายงานการเงิน" ให้สังเกตด้านล่างสุดของกล่องนั้น จะมีลิงก์คำว่า <span class="hl">My Tax Invoices ></span> ให้คลิกเข้าไป</li>
+                <li class="step" data-i18n="sp4-s3">ระบบจะเปิดหน้าต่างใหม่พาไปที่หน้า <span class="hl">ระบบออกใบกำกับภาษี</span> (e-Tax Web Portal)</li>
+                <li class="step" data-i18n="sp4-s4">ตรงกลางหน้าจอหัวข้อ "ดาวน์โหลดใบเสร็จรับเงิน..." จะมีช่องปฏิทิน 2 ช่อง ให้คลิกเลือก <span class="hl">วันที่เริ่มต้น</span> ในช่องซ้าย และ <span class="hl">วันที่สิ้นสุด</span> ในช่องขวา</li>
+                <li class="step" data-i18n="sp4-s5">กดปุ่ม <span class="hl">เลือก</span> สีส้ม</li>
+                <li class="step" data-i18n="sp4-s6">รายการค่าใช้จ่ายจะแสดงขึ้นมาในตารางด้านล่าง ให้มองไปที่มุมขวาของหัวตารางในคอลัมน์ "ใบกำกับภาษีแบบเต็มรูป" แล้วคลิกปุ่มสีฟ้าที่เขียนว่า <span class="hl">ดาวน์โหลดทั้งหมด</span></li>
             </ol>
             <div class="fi">
-                <div class="fi-r"><span class="fi-l">📦 ชื่อไฟล์ ZIP</span><span class="fi-v">XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX-XXXXXXXXXXXXXX.ZIP</span></div>
-                <div class="fi-r"><span class="fi-l">📄 ไฟล์ภายใน</span><span class="fi-v">SPX Express-RCT-NRSPXSPB00-00000-XXXXXX-XXXXXXX.pdf</span></div>
+                <div class="fi-r"><span class="fi-l" data-i18n="fi-zip">📦 ชื่อไฟล์ ZIP</span><span class="fi-v">XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX-XXXXXXXXXXXXXX.ZIP</span></div>
+                <div class="fi-r"><span class="fi-l" data-i18n="fi-inside">📄 ไฟล์ภายใน</span><span class="fi-v">SPX Express-RCT-NRSPXSPB00-00000-XXXXXX-XXXXXXX.pdf</span></div>
             </div></div>
         </div>
 
         <!-- SP 5 -->
         <div class="gc anim" data-i="5" id="sp-5">
-            <div class="gc-h" onclick="tog(this)"><div class="gc-n">5</div><h3>ดาวน์โหลดข้อมูลการคืนสินค้าและการคืนเงิน</h3><span class="gc-t">▼</span></div>
+            <div class="gc-h" onclick="tog(this)"><div class="gc-n">5</div><h3 data-i18n="sp5-title">ดาวน์โหลดข้อมูลการคืนสินค้าและการคืนเงิน</h3><span class="gc-t">▼</span></div>
             <div class="gc-b"><ol class="steps">
-                <li class="step">ที่แถบเมนูด้านซ้าย ในหมวด "คำสั่งซื้อ" ให้คลิกเมนู <span class="hl">การคืนเงิน/คืนสินค้า</span></li>
-                <li class="step">มองไปที่มุมขวาบน จะเห็นปุ่มสำหรับ <span class="hl">ส่งออก</span></li>
-                <li class="step">คลิกที่ช่องปฏิทินเพื่อระบุ <span class="hl">วันที่เริ่มต้น</span> และ <span class="hl">วันที่สิ้นสุด</span> ที่ต้องการ</li>
-                <li class="step">กดปุ่มเพื่อส่งออกเป็นไฟล์ <span class="hl">Excel</span> แล้วไปกดรับไฟล์ที่ช่อง <span class="hl">ประวัติการส่งออก</span> (ทำขั้นตอนคล้ายกับการดาวน์โหลดคำสั่งซื้อ)</li>
+                <li class="step" data-i18n="sp5-s1">ที่แถบเมนูด้านซ้าย ในหมวด "คำสั่งซื้อ" ให้คลิกเมนู <span class="hl">การคืนเงิน/คืนสินค้า</span></li>
+                <li class="step" data-i18n="sp5-s2">มองไปที่มุมขวาบน จะเห็นปุ่มสำหรับ <span class="hl">ส่งออก</span></li>
+                <li class="step" data-i18n="sp5-s3">คลิกที่ช่องปฏิทินเพื่อระบุ <span class="hl">วันที่เริ่มต้น</span> และ <span class="hl">วันที่สิ้นสุด</span> ที่ต้องการ</li>
+                <li class="step" data-i18n="sp5-s4">กดปุ่มเพื่อส่งออกเป็นไฟล์ <span class="hl">Excel</span> แล้วไปกดรับไฟล์ที่ช่อง <span class="hl">ประวัติการส่งออก</span> (ทำขั้นตอนคล้ายกับการดาวน์โหลดคำสั่งซื้อ)</li>
             </ol>
             <div class="fi">
-                <div class="fi-r"><span class="fi-l">📄 ชื่อไฟล์ (TH)</span><span class="fi-v">Order.return_refund_cancel.xlsx</span></div>
-                <div class="fi-r"><span class="fi-l">📄 ชื่อไฟล์ (EN)</span><span class="fi-v">Order.return_refund_cancel.xlsx</span></div>
-                <div class="fi-r"><span class="fi-l">📑 ชื่อแท็บ</span><span class="fi-v fi-t">orders</span></div>
+                <div class="fi-r"><span class="fi-l" data-i18n="fi-name-th">📄 ชื่อไฟล์ (TH)</span><span class="fi-v">Order.return_refund_cancel.xlsx</span></div>
+                <div class="fi-r"><span class="fi-l" data-i18n="fi-name-en">📄 ชื่อไฟล์ (EN)</span><span class="fi-v">Order.return_refund_cancel.xlsx</span></div>
+                <div class="fi-r"><span class="fi-l" data-i18n="fi-tab">📑 ชื่อแท็บ</span><span class="fi-v fi-t">orders</span></div>
+            </div></div>
+        </div>
+    </section>
+
+    <hr class="sec-div">
+
+    <!-- ══════════════ LAZADA ══════════════ -->
+    <section class="lz-sec" id="lazada">
+        <div class="sec-head anim">
+            <div class="sec-logo" style="font-size:2.5rem;">🛒</div>
+            <h2>Lazada Seller Center</h2>
+            <p>การดึงข้อมูลจาก Lazada — 1 ประเภทรายงาน</p>
+            <span class="uline"></span>
+        </div>
+
+        <!-- LZ 1 -->
+        <div class="gc open anim" data-i="1" id="lz-1">
+            <div class="gc-h" onclick="tog(this)"><div class="gc-n">1</div><h3>ดาวน์โหลดข้อมูลคำสั่งซื้อ</h3><span class="gc-t">▼</span></div>
+            <div class="gc-b"><ol class="steps">
+                <li class="step">ล็อกอินเข้าสู่ระบบ <span class="hl">Lazada Seller Center</span></li>
+                <li class="step">ที่แถบเมนูด้านซ้าย คลิกเมนู <span class="hl">คำสั่งซื้อ</span> → <span class="hl">คำสั่งซื้อ</span> (เมนูย่อย)</li>
+                <li class="step">ที่แถบตัวกรองด้านบน คลิกเลือก <span class="hl">กำหนดเอง</span> แล้วระบุ <span class="hl">วันที่เริ่มต้น</span> และ <span class="hl">วันที่สิ้นสุด</span> ที่ต้องการ</li>
+                <li class="step">ติ๊กเลือก ☑ <span class="hl">Selected X items</span> (เลือกทั้งหมด) ที่ด้านล่างซ้ายของตาราง</li>
+                <li class="step">คลิก Dropdown <span class="hl">ส่งออก</span> → เลือก <span class="hl">Export Selected</span></li>
+                <li class="step">หน้าต่าง <span class="hl">ข้อมูลการส่งออก</span> จะเด้งขึ้นมา แสดง ✅ "งานรั่งประสบความสำเร็จ!" — ไฟล์จะดาวน์โหลดลงเครื่องอัตโนมัติ</li>
+            </ol>
+            <div class="fi">
+                <div class="fi-r"><span class="fi-l">📄 ชื่อไฟล์</span><span class="fi-v">XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.xls (ชื่อเป็น hash code)</span></div>
+                <div class="fi-r"><span class="fi-l">📑 ชื่อแท็บ</span><span class="fi-v fi-t">sheet1</span></div>
+                <div class="fi-r"><span class="fi-l">📝 หมายเหตุ</span><span class="fi-v">หากต้องการดาวน์โหลดย้อนหลัง คลิก <strong>ดูประวัติ</strong> หรือ <strong>Export History</strong></span></div>
             </div></div>
         </div>
     </section>
@@ -654,109 +710,109 @@
     <section class="pg-sec" id="program">
         <div class="sec-head anim">
             <div class="sec-logo" style="font-size:2.5rem;">💻</div>
-            <h2>วิธีใช้โปรแกรม</h2>
-            <p>การนำเข้าข้อมูลเข้าสู่ระบบ — 4 ประเภท</p>
+            <h2 data-i18n="pg-title">วิธีใช้โปรแกรม</h2>
+            <p data-i18n="pg-desc">การนำเข้าข้อมูลเข้าสู่ระบบ — 4 ประเภท</p>
             <span class="uline"></span>
         </div>
 
         <!-- PG 1: คำสั่งซื้อ -->
         <div class="gc open anim" data-i="1" id="pg-orders">
-            <div class="gc-h" onclick="tog(this)"><div class="gc-n">1</div><h3>นำเข้าข้อมูลคำสั่งซื้อ</h3><span class="gc-t">▼</span></div>
+            <div class="gc-h" onclick="tog(this)"><div class="gc-n">1</div><h3 data-i18n="pg1-title">นำเข้าข้อมูลคำสั่งซื้อ</h3><span class="gc-t">▼</span></div>
             <div class="gc-b">
-                <p style="font-size:.85rem;color:#7a8a9e;margin-bottom:.8rem;">ที่แถบเมนูด้านซ้าย ในหมวด E-Commerce คลิกเมนู <span class="hl">คำสั่งซื้อ</span> แล้วคลิกปุ่ม <span class="hl">นำเข้าคำสั่งซื้อ</span> สีเขียว ที่มุมขวาบน</p>
+                <p style="font-size:.85rem;color:#7a8a9e;margin-bottom:.8rem;" data-i18n="pg1-intro">ที่แถบเมนูด้านซ้าย ในหมวด E-Commerce คลิกเมนู <span class="hl">คำสั่งซื้อ</span> แล้วคลิกปุ่ม <span class="hl">นำเข้าคำสั่งซื้อ</span> สีเขียว ที่มุมขวาบน</p>
 
                 <ol class="steps">
-                    <li class="step">คลิกปุ่ม <span class="hl">นำเข้าคำสั่งซื้อ</span> สีเขียว ที่มุมขวาบน</li>
-                    <li class="step">หน้าต่าง <span class="hl">อัปโหลดข้อมูลคำสั่งซื้อ</span> จะเด้งขึ้นมา</li>
-                    <li class="step">เลือกวิธีนำเข้าไฟล์ (เลือก<strong>วิธีใดวิธีหนึ่ง</strong>):
+                    <li class="step" data-i18n="pg1-s1">คลิกปุ่ม <span class="hl">นำเข้าคำสั่งซื้อ</span> สีเขียว ที่มุมขวาบน</li>
+                    <li class="step" data-i18n="pg1-s2">หน้าต่าง <span class="hl">อัปโหลดข้อมูลคำสั่งซื้อ</span> จะเด้งขึ้นมา</li>
+                    <li class="step" data-i18n="pg1-s3">เลือกวิธีนำเข้าไฟล์ (เลือก<strong>วิธีใดวิธีหนึ่ง</strong>):
                         <ul class="sub-steps">
-                            <li class="sub-step" data-n="3.1">แท็บ <span class="hl">ไฟล์</span> — ลากไฟล์ Excel มาวางในกรอบเส้นประ หรือคลิกเลือกจากเครื่อง (.xls .xlsx .csv) <span class="sub-rec">★ แนะนำ</span></li>
-                            <li class="sub-step" data-n="3.2">แท็บ <span class="hl">โฟลเดอร์ Drive</span> — วาง Drive Folder URL ในช่อง → เลือกเดือน/ปี → กดปุ่ม <span class="hl">ค้นหาไฟล์</span></li>
-                            <li class="sub-step" data-n="3.3">แท็บ <span class="hl">Excel URL</span> — วาง URL ไฟล์ Google Sheets ลงในช่อง</li>
+                            <li class="sub-step" data-n="3.1" data-i18n="pg1-s3a">แท็บ <span class="hl">ไฟล์</span> — ลากไฟล์ Excel มาวางในกรอบเส้นประ หรือคลิกเลือกจากเครื่อง (.xls .xlsx .csv) <span class="sub-rec">★ แนะนำ</span></li>
+                            <li class="sub-step" data-n="3.2" data-i18n="pg1-s3b">แท็บ <span class="hl">โฟลเดอร์ Drive</span> — วาง Drive Folder URL ในช่อง → เลือกเดือน/ปี → กดปุ่ม <span class="hl">ค้นหาไฟล์</span></li>
+                            <li class="sub-step" data-n="3.3" data-i18n="pg1-s3c">แท็บ <span class="hl">Excel URL</span> — วาง URL ไฟล์ Google Sheets ลงในช่อง</li>
                         </ul>
                     </li>
-                    <li class="step">เลือกไฟล์ที่ต้องการนำเข้า (ถ้าใช้แท็บ "ไฟล์" ให้คลิก Dropdown เลือก Platform: <span class="hl">TikTok</span> / <span class="hl">Shopee</span> / <span class="hl">Lazada</span>)</li>
-                    <li class="step">กดปุ่ม <span class="hl">อัปโหลด X ไฟล์</span> สีเขียว</li>
-                    <li class="step">รอระบบประมวลผล — จะมีแถบ progress bar แสดงความคืบหน้า</li>
-                    <li class="step">เมื่อเสร็จจะแสดง <span class="hl">อัปโหลดสำเร็จ ✅</span> พร้อมสรุปผล → กดปุ่ม <span class="hl">เสร็จสิ้น</span></li>
+                    <li class="step" data-i18n="pg1-s4">เลือกไฟล์ที่ต้องการนำเข้า (ถ้าใช้แท็บ "ไฟล์" ให้คลิก Dropdown เลือก Platform: <span class="hl">TikTok</span> / <span class="hl">Shopee</span> / <span class="hl">Lazada</span>)</li>
+                    <li class="step" data-i18n="pg1-s5">กดปุ่ม <span class="hl">อัปโหลด X ไฟล์</span> สีเขียว</li>
+                    <li class="step" data-i18n="pg1-s6">รอระบบประมวลผล — จะมีแถบ progress bar แสดงความคืบหน้า</li>
+                    <li class="step" data-i18n="pg1-s7">เมื่อเสร็จจะแสดง <span class="hl">อัปโหลดสำเร็จ ✅</span> พร้อมสรุปผล → กดปุ่ม <span class="hl">เสร็จสิ้น</span></li>
                 </ol>
 
                 <div class="fi">
-                    <div class="fi-r"><span class="fi-l">📄 ชื่อไฟล์ (TH)</span><span class="fi-v">ทั้งหมด คำสั่งซื้อ-XXXX-XX-XX-XX_XX.xlsx</span></div>
-                    <div class="fi-r"><span class="fi-l">📄 ชื่อไฟล์ (EN)</span><span class="fi-v">All order-XXXX-XX-XX-XX:XX.xlsx</span></div>
-                    <div class="fi-r"><span class="fi-l">📑 ชื่อแท็บ</span><span class="fi-v fi-t">OrderSKUList</span></div>
+                    <div class="fi-r"><span class="fi-l" data-i18n="fi-name-th">📄 ชื่อไฟล์ (TH)</span><span class="fi-v">ทั้งหมด คำสั่งซื้อ-XXXX-XX-XX-XX_XX.xlsx</span></div>
+                    <div class="fi-r"><span class="fi-l" data-i18n="fi-name-en">📄 ชื่อไฟล์ (EN)</span><span class="fi-v">All order-XXXX-XX-XX-XX:XX.xlsx</span></div>
+                    <div class="fi-r"><span class="fi-l" data-i18n="fi-tab">📑 ชื่อแท็บ</span><span class="fi-v fi-t">OrderSKUList</span></div>
                 </div>
             </div>
         </div>
 
         <!-- PG 2: รายรับของฉัน -->
         <div class="gc anim" data-i="2" id="pg-income">
-            <div class="gc-h" onclick="tog(this)"><div class="gc-n">2</div><h3>นำเข้าข้อมูลรายรับของฉัน</h3><span class="gc-t">▼</span></div>
+            <div class="gc-h" onclick="tog(this)"><div class="gc-n">2</div><h3 data-i18n="pg2-title">นำเข้าข้อมูลรายรับของฉัน</h3><span class="gc-t">▼</span></div>
             <div class="gc-b">
-                <p style="font-size:.85rem;color:#7a8a9e;margin-bottom:.8rem;">ที่แถบเมนูด้านซ้าย ในหมวด E-Commerce คลิกเมนู <span class="hl">รายรับของฉัน</span> แล้วคลิกปุ่ม <span class="hl">นำเข้า</span> ที่มุมขวาบน</p>
+                <p style="font-size:.85rem;color:#7a8a9e;margin-bottom:.8rem;" data-i18n="pg2-intro">ที่แถบเมนูด้านซ้าย ในหมวด E-Commerce คลิกเมนู <span class="hl">รายรับของฉัน</span> แล้วคลิกปุ่ม <span class="hl">นำเข้า</span> ที่มุมขวาบน</p>
 
                 <ol class="steps">
-                    <li class="step">คลิกปุ่ม <span class="hl">นำเข้า</span> ที่มุมขวาบน</li>
-                    <li class="step">หน้าต่าง <span class="hl">อัปโหลดข้อมูล</span> จะเด้งขึ้นมา</li>
-                    <li class="step">เลือกวิธีนำเข้าไฟล์ (เลือก<strong>วิธีใดวิธีหนึ่ง</strong>):
+                    <li class="step" data-i18n="pg2-s1">คลิกปุ่ม <span class="hl">นำเข้า</span> ที่มุมขวาบน</li>
+                    <li class="step" data-i18n="pg2-s2">หน้าต่าง <span class="hl">อัปโหลดข้อมูล</span> จะเด้งขึ้นมา</li>
+                    <li class="step" data-i18n="pg2-s3">เลือกวิธีนำเข้าไฟล์ (เลือก<strong>วิธีใดวิธีหนึ่ง</strong>):
                         <ul class="sub-steps">
-                            <li class="sub-step" data-n="3.1">แท็บ <span class="hl">ไฟล์</span> — ลากไฟล์ Excel มาวาง หรือคลิกเลือกจากเครื่อง <span class="sub-rec">★ แนะนำ</span></li>
-                            <li class="sub-step" data-n="3.2">แท็บ <span class="hl">โฟลเดอร์ Drive</span> — วาง Drive Folder URL → เลือกเดือน/ปี → กดปุ่ม <span class="hl">ค้นหาไฟล์</span></li>
-                            <li class="sub-step" data-n="3.3">แท็บ <span class="hl">Excel URL</span> — วาง URL ไฟล์ Google Sheets ลงในช่อง</li>
+                            <li class="sub-step" data-n="3.1" data-i18n="pg2-s3a">แท็บ <span class="hl">ไฟล์</span> — ลากไฟล์ Excel มาวาง หรือคลิกเลือกจากเครื่อง <span class="sub-rec">★ แนะนำ</span></li>
+                            <li class="sub-step" data-n="3.2" data-i18n="pg2-s3b">แท็บ <span class="hl">โฟลเดอร์ Drive</span> — วาง Drive Folder URL → เลือกเดือน/ปี → กดปุ่ม <span class="hl">ค้นหาไฟล์</span></li>
+                            <li class="sub-step" data-n="3.3" data-i18n="pg2-s3c">แท็บ <span class="hl">Excel URL</span> — วาง URL ไฟล์ Google Sheets ลงในช่อง</li>
                         </ul>
                     </li>
-                    <li class="step">เลือกไฟล์ที่ต้องการนำเข้า แล้วกดปุ่ม <span class="hl">อัปโหลด X ไฟล์</span> สีเขียว</li>
-                    <li class="step">รอระบบประมวลผล — จะมีแถบ progress bar แสดงความคืบหน้า</li>
-                    <li class="step">เมื่อเสร็จจะแสดง <span class="hl">อัปโหลดสำเร็จ ✅</span> พร้อมสรุปผล → กดปุ่ม <span class="hl">เสร็จสิ้น</span></li>
+                    <li class="step" data-i18n="pg2-s4">เลือกไฟล์ที่ต้องการนำเข้า แล้วกดปุ่ม <span class="hl">อัปโหลด X ไฟล์</span> สีเขียว</li>
+                    <li class="step" data-i18n="pg2-s5">รอระบบประมวลผล — จะมีแถบ progress bar แสดงความคืบหน้า</li>
+                    <li class="step" data-i18n="pg2-s6">เมื่อเสร็จจะแสดง <span class="hl">อัปโหลดสำเร็จ ✅</span> พร้อมสรุปผล → กดปุ่ม <span class="hl">เสร็จสิ้น</span></li>
                 </ol>
 
                 <div class="fi">
-                    <div class="fi-r"><span class="fi-l">📄 ชื่อไฟล์ (TH)</span><span class="fi-v">income_XXXXXX-XX_XX_XX(UTC+7).xlsx</span></div>
-                    <div class="fi-r"><span class="fi-l">📄 ชื่อไฟล์ (EN)</span><span class="fi-v">income_XXXXXX-XX_XX_XX(UTC+7).xlsx</span></div>
-                    <div class="fi-r"><span class="fi-l">📑 ชื่อแท็บ</span><span class="fi-v fi-t">รายละเอียดคำสั่งซื้อ, รายงาน, บันทึกการถอน, คำอธิบายค่าธรรมเนียม</span></div>
+                    <div class="fi-r"><span class="fi-l" data-i18n="fi-name-th">📄 ชื่อไฟล์ (TH)</span><span class="fi-v">income_XXXXXX-XX_XX_XX(UTC+7).xlsx</span></div>
+                    <div class="fi-r"><span class="fi-l" data-i18n="fi-name-en">📄 ชื่อไฟล์ (EN)</span><span class="fi-v">income_XXXXXX-XX_XX_XX(UTC+7).xlsx</span></div>
+                    <div class="fi-r"><span class="fi-l" data-i18n="fi-tab">📑 ชื่อแท็บ</span><span class="fi-v fi-t">รายละเอียดคำสั่งซื้อ, รายงาน, บันทึกการถอน, คำอธิบายค่าธรรมเนียม</span></div>
                 </div>
             </div>
         </div>
 
         <!-- PG 3: เงินเข้าธนาคาร -->
         <div class="gc anim" data-i="3" id="pg-bank">
-            <div class="gc-h" onclick="tog(this)"><div class="gc-n">3</div><h3>นำเข้าข้อมูลเงินเข้าธนาคาร</h3><span class="gc-t">▼</span></div>
+            <div class="gc-h" onclick="tog(this)"><div class="gc-n">3</div><h3 data-i18n="pg3-title">นำเข้าข้อมูลเงินเข้าธนาคาร</h3><span class="gc-t">▼</span></div>
             <div class="gc-b">
-                <p style="font-size:.85rem;color:#7a8a9e;margin-bottom:.8rem;">ที่แถบเมนูด้านซ้าย ในเมนู E-Commerce คลิกเมนู <span class="hl">รับเงินเข้าธนาคาร</span> แล้วกดปุ่ม <span class="hl">รับเงินเข้าธนาคารทั้งหมด</span> สีเขียว แล้วเลือก <span class="hl">นำเข้ารับเงินจากไฟล์</span></p>
+                <p style="font-size:.85rem;color:#7a8a9e;margin-bottom:.8rem;" data-i18n="pg3-intro">ที่แถบเมนูด้านซ้าย ในเมนู E-Commerce คลิกเมนู <span class="hl">รับเงินเข้าธนาคาร</span> แล้วกดปุ่ม <span class="hl">รับเงินเข้าธนาคารทั้งหมด</span> สีเขียว แล้วเลือก <span class="hl">นำเข้ารับเงินจากไฟล์</span></p>
 
                 <ol class="steps">
-                <li class="step">ที่แถบเมนูด้านซ้าย ในเมนู E-Commerce คลิกเมนู <span class="hl">รับเงินเข้าธนาคาร</span></li>
-                <li class="step">กดปุ่ม <span class="hl">รับเงินเข้าธนาคารทั้งหมด</span> (สีเขียว) แล้วเลือก <span class="hl">นำเข้ารับเงินจากไฟล์</span></li>
-                <li class="step">หน้าต่าง <span class="hl">นำเข้ารายการถอนเงิน</span> จะเด้งขึ้นมา เลือก Platform: <span class="hl">TikTok</span> หรือ <span class="hl">Shopee</span>
+                <li class="step" data-i18n="pg3-s1">ที่แถบเมนูด้านซ้าย ในเมนู E-Commerce คลิกเมนู <span class="hl">รับเงินเข้าธนาคาร</span></li>
+                <li class="step" data-i18n="pg3-s2">กดปุ่ม <span class="hl">รับเงินเข้าธนาคารทั้งหมด</span> (สีเขียว) แล้วเลือก <span class="hl">นำเข้ารับเงินจากไฟล์</span></li>
+                <li class="step" data-i18n="pg3-s3">หน้าต่าง <span class="hl">นำเข้ารายการถอนเงิน</span> จะเด้งขึ้นมา เลือก Platform: <span class="hl">TikTok</span> หรือ <span class="hl">Shopee</span>
                     <ul class="sub-steps">
-                        <li class="sub-step" data-n="3.1">เลือก <span class="hl">ไฟล์ Excel / PDF</span> — ลากไฟล์มาวาง หรือคลิกเลือกไฟล์ <span class="sub-rec">★ แนะนำ</span></li>
-                        <li class="sub-step" data-n="3.2">เลือก <span class="hl">Google Drive</span> — วาง URL ของ Google Drive Folder</li>
+                        <li class="sub-step" data-n="3.1" data-i18n="pg3-s3a">เลือก <span class="hl">ไฟล์ Excel / PDF</span> — ลากไฟล์มาวาง หรือคลิกเลือกไฟล์ <span class="sub-rec">★ แนะนำ</span></li>
+                        <li class="sub-step" data-n="3.2" data-i18n="pg3-s3b">เลือก <span class="hl">Google Drive</span> — วาง URL ของ Google Drive Folder</li>
                     </ul>
                 </li>
-                <li class="step">กดปุ่ม <span class="hl">นำเข้าข้อมูล</span></li>
-                <li class="step">ตรวจสอบข้อมูล → กด <span class="hl">บันทึก</span></li>
-                <li class="step">เมื่อเสร็จจะแสดง <span class="hl">เสร็จสิ้น ✅</span></li>
+                <li class="step" data-i18n="pg3-s4">กดปุ่ม <span class="hl">นำเข้าข้อมูล</span></li>
+                <li class="step" data-i18n="pg3-s5">ตรวจสอบข้อมูล → กด <span class="hl">บันทึก</span></li>
+                <li class="step" data-i18n="pg3-s6">เมื่อเสร็จจะแสดง <span class="hl">เสร็จสิ้น ✅</span></li>
             </ol>
             </div>
         </div>
 
         <!-- PG 4: ค่าใช้จ่ายแพลตฟอร์ม -->
         <div class="gc anim" data-i="4" id="pg-expense">
-            <div class="gc-h" onclick="tog(this)"><div class="gc-n">4</div><h3>นำเข้าบิลค่าใช้จ่ายแพลตฟอร์ม</h3><span class="gc-t">▼</span></div>
+            <div class="gc-h" onclick="tog(this)"><div class="gc-n">4</div><h3 data-i18n="pg4-title">นำเข้าบิลค่าใช้จ่ายแพลตฟอร์ม</h3><span class="gc-t">▼</span></div>
             <div class="gc-b">
-                <p style="font-size:.85rem;color:#7a8a9e;margin-bottom:.8rem;">ที่แถบเมนูด้านซ้าย ในเมนู E-Commerce คลิกเมนู <span class="hl">ค่าใช้จ่ายแพลตฟอร์ม</span> แล้วกดปุ่ม <span class="hl">นำเข้าบิลค่าใช้จ่าย</span> สีเขียว</p>
+                <p style="font-size:.85rem;color:#7a8a9e;margin-bottom:.8rem;" data-i18n="pg4-intro">ที่แถบเมนูด้านซ้าย ในเมนู E-Commerce คลิกเมนู <span class="hl">ค่าใช้จ่ายแพลตฟอร์ม</span> แล้วกดปุ่ม <span class="hl">นำเข้าบิลค่าใช้จ่าย</span> สีเขียว</p>
 
                 <ol class="steps">
-                <li class="step">ที่แถบเมนูด้านซ้าย ในเมนู E-Commerce คลิกเมนู <span class="hl">ค่าใช้จ่ายแพลตฟอร์ม</span></li>
-                <li class="step">กดปุ่ม <span class="hl">นำเข้าบิลค่าใช้จ่าย</span> (สีเขียว)</li>
-                <li class="step">หน้าต่าง <span class="hl">AI Scan บิล</span> จะเด้งขึ้นมา เลือกวิธีนำเข้า (เลือก<strong>วิธีใดวิธีหนึ่ง</strong>):
+                <li class="step" data-i18n="pg4-s1">ที่แถบเมนูด้านซ้าย ในเมนู E-Commerce คลิกเมนู <span class="hl">ค่าใช้จ่ายแพลตฟอร์ม</span></li>
+                <li class="step" data-i18n="pg4-s2">กดปุ่ม <span class="hl">นำเข้าบิลค่าใช้จ่าย</span> (สีเขียว)</li>
+                <li class="step" data-i18n="pg4-s3">หน้าต่าง <span class="hl">AI Scan บิล</span> จะเด้งขึ้นมา เลือกวิธีนำเข้า (เลือก<strong>วิธีใดวิธีหนึ่ง</strong>):
                     <ul class="sub-steps">
-                        <li class="sub-step" data-n="3.1">แท็บ <span class="hl">โฟลเดอร์ Drive</span> — วาง URL โฟลเดอร์ที่มีไฟล์ PDF → เลือกแพลตฟอร์ม → กดปุ่ม <span class="hl">สแกน + แม็ปบัญชีอัตโนมัติ</span> <span class="sub-rec">★ แนะนำ</span></li>
-                        <li class="sub-step" data-n="3.2">แท็บ <span class="hl">ไฟล์เดี่ยว</span> — ลาก PDF / รูปมาวาง แล้วกด <span class="hl">สแกน</span> หรือ <span class="hl">รับข้อมูลบัญชี</span></li>
+                        <li class="sub-step" data-n="3.1" data-i18n="pg4-s3a">แท็บ <span class="hl">โฟลเดอร์ Drive</span> — วาง URL โฟลเดอร์ที่มีไฟล์ PDF → เลือกแพลตฟอร์ม → กดปุ่ม <span class="hl">สแกน + แม็ปบัญชีอัตโนมัติ</span> <span class="sub-rec">★ แนะนำ</span></li>
+                        <li class="sub-step" data-n="3.2" data-i18n="pg4-s3b">แท็บ <span class="hl">ไฟล์เดี่ยว</span> — ลาก PDF / รูปมาวาง แล้วกด <span class="hl">สแกน</span> หรือ <span class="hl">รับข้อมูลบัญชี</span></li>
                     </ul>
                 </li>
-                <li class="step">รอระบบ AI ประมวลผล</li>
-                <li class="step">เมื่อเสร็จจะแสดง <span class="hl">เสร็จสิ้น ✅</span></li>
+                <li class="step" data-i18n="pg4-s4">รอระบบ AI ประมวลผล</li>
+                <li class="step" data-i18n="pg4-s5">เมื่อเสร็จจะแสดง <span class="hl">เสร็จสิ้น ✅</span></li>
             </ol>
             </div>
         </div>
@@ -765,11 +821,186 @@
 </div><!-- /main -->
 </div><!-- /layout -->
 
-<footer class="footer"><p>คู่มือ BKKHolding สำหรับทีมบัญชี</p></footer>
+<footer class="footer"><p data-i18n="footer">คู่มือ BKKHolding สำหรับทีมบัญชี</p></footer>
 <button class="btt" id="btt" onclick="window.scrollTo({top:0})">↑</button>
 <button class="theme-toggle" id="themeToggle" onclick="toggleDark()">🌙</button>
 
 <script>
+// ━━━━━━━━━━ Language Toggle System ━━━━━━━━━━
+const i18n = {
+  'nav-brand':     { th: 'คู่มือ BKKHolding', en: 'BKKHolding Guide' },
+  'hero-badge':    { th: '<div class="dot"></div> คู่มือสำหรับทีมบัญชี', en: '<div class="dot"></div> Guide for Accounting Team' },
+  'hero-title':    { th: 'คู่มือ <span class="grad">BKKHolding</span>', en: '<span class="grad">BKKHolding</span> Guide' },
+  'hero-desc':     { th: 'วิธีดึงข้อมูลจากแพลตฟอร์ม + วิธีใช้โปรแกรม สำหรับทีมบัญชี', en: 'How to extract data from platforms + How to use the program — for accounting team' },
+  'footer':        { th: 'คู่มือ BKKHolding สำหรับทีมบัญชี', en: 'BKKHolding Guide for Accounting Team' },
+
+  // Sidebar
+  'sb-cat-extract':{ th: '📥 วิธีดึงข้อมูล', en: '📥 Data Extraction' },
+  'sb-tk1':        { th: 'คำสั่งซื้อ (All Orders)', en: 'Orders (All Orders)' },
+  'sb-tk2':        { th: 'รายรับของฉัน', en: 'My Income' },
+  'sb-tk3':        { th: 'คืนสินค้า/คืนเงิน', en: 'Returns / Refunds' },
+  'sb-tk4':        { th: 'ค่าใช้จ่ายแพลตฟอร์ม', en: 'Platform Expenses' },
+  'sb-sp1':        { th: 'คำสั่งซื้อสินค้า', en: 'Product Orders' },
+  'sb-sp2':        { th: 'รายรับ', en: 'Income' },
+  'sb-sp3':        { th: 'เงินเข้าธนาคาร', en: 'Bank Deposits' },
+  'sb-sp4':        { th: 'ค่าใช้จ่ายแพลตฟอร์ม', en: 'Platform Expenses' },
+  'sb-sp5':        { th: 'คืนสินค้า/คืนเงิน', en: 'Returns / Refunds' },
+  'sb-cat-program':{ th: '💻 วิธีใช้โปรแกรม', en: '💻 Program Guide' },
+  'sb-pg1':        { th: 'คำสั่งซื้อ', en: 'Orders' },
+  'sb-pg2':        { th: 'รายรับของฉัน', en: 'My Income' },
+  'sb-pg3':        { th: 'เงินเข้าธนาคาร', en: 'Bank Deposits' },
+  'sb-pg4':        { th: 'ค่าใช้จ่ายแพลตฟอร์ม', en: 'Platform Expenses' },
+
+  // File info labels (shared)
+  'fi-name-th':    { th: '📄 ชื่อไฟล์ (TH)', en: '📄 Filename (TH)' },
+  'fi-name-en':    { th: '📄 ชื่อไฟล์ (EN)', en: '📄 Filename (EN)' },
+  'fi-tab':        { th: '📑 ชื่อแท็บ', en: '📑 Sheet Tab Name' },
+  'fi-zip':        { th: '📦 ชื่อไฟล์ ZIP', en: '📦 ZIP Filename' },
+  'fi-note':       { th: '📝 หมายเหตุ', en: '📝 Note' },
+  'fi-inside':     { th: '📄 ไฟล์ภายใน', en: '📄 File Inside' },
+
+  // TikTok section
+  'tk-desc':       { th: 'การดึงข้อมูลจาก TikTok Shop — 4 ประเภทรายงาน', en: 'Data extraction from TikTok Shop — 4 report types' },
+  'tk1-title':     { th: 'ดาวน์โหลดข้อมูลคำสั่งซื้อแบบครบวงจร (All Orders)', en: 'Download All Orders Data' },
+  'tk1-s1':        { th: 'ล็อกอินเข้าสู่ระบบ <span class="hl">TikTok Seller Center</span>', en: 'Log in to <span class="hl">TikTok Seller Center</span>' },
+  'tk1-s2':        { th: 'ที่แถบเมนูด้านซ้ายมือสุด ให้คลิกที่หัวข้อ <span class="hl">คำสั่งซื้อ</span> แล้วเลือกเมนูย่อย <span class="hl">จัดการคำสั่งซื้อ</span>', en: 'In the left sidebar, click <span class="hl">Orders</span> then select <span class="hl">Manage Orders</span>' },
+  'tk1-s3':        { th: 'ตรงกลางหน้าจอจะมีแท็บสถานะต่างๆ ให้คลิกเลือกแท็บ <span class="hl">ทั้งหมด</span>', en: 'In the center of the screen, click the <span class="hl">All</span> status tab' },
+  'tk1-s4':        { th: 'คลิกที่ช่องปฏิทิน (เวลาที่สร้าง) เพื่อทำการระบุ <span class="hl">วันที่เริ่มต้น</span> และ <span class="hl">วันที่สิ้นสุด</span> ที่คุณต้องการดึงข้อมูล', en: 'Click the calendar field (Created time) and set the <span class="hl">Start Date</span> and <span class="hl">End Date</span> for the data you want to extract' },
+  'tk1-s5':        { th: 'มองหาปุ่ม <span class="hl">ส่งออก</span> ที่อยู่บริเวณมุมขวาบนเหนือรายการคำสั่งซื้อ แล้วคลิกที่ปุ่มนั้น', en: 'Find the <span class="hl">Export</span> button at the top-right above the order list and click it' },
+  'tk1-s6':        { th: 'ในหน้าต่างป๊อปอัปที่ปรากฏขึ้นมา ให้สังเกตหัวข้อ "รูปแบบการส่งออก" ต้องติ๊กเลือกวงกลมคำว่า <span class="hl">Excel</span> ให้เรียบร้อย จากนั้นกดปุ่ม <span class="hl">ส่งออก</span> สีเขียว', en: 'In the popup, under "Export format" make sure <span class="hl">Excel</span> is selected, then click the green <span class="hl">Export</span> button' },
+  'tk1-s7':        { th: 'ระบบจะใช้เวลาสร้างไฟล์สักครู่ ให้คุณคลิกที่ข้อความลิงก์คำว่า <span class="hl">ประวัติการส่งออก</span> (จะอยู่ข้างๆ ปุ่มส่งออกในตอนแรก)', en: 'The system will take a moment to generate the file. Click the <span class="hl">Export History</span> link (next to the Export button)' },
+  'tk1-s8':        { th: 'หน้าต่างประวัติจะเปิดขึ้นมา ให้ดูไฟล์บรรทัดบนสุด (ไฟล์ล่าสุด) แล้วคลิกปุ่ม <span class="hl">ดาวน์โหลด</span> เพื่อบันทึกไฟล์ Excel ลงเครื่อง', en: 'In the history window, find the top file (most recent) and click <span class="hl">Download</span> to save the Excel file to your computer' },
+
+  'tk2-title':     { th: 'ดาวน์โหลด "รายรับของฉัน"', en: 'Download "My Income" Data' },
+  'tk2-s1':        { th: 'ที่แถบเมนูด้านซ้าย เลื่อนลงมาคลิกหัวข้อ <span class="hl">การเงิน</span> แล้วเลือก <span class="hl">ธุรกรรม</span> (หรือเมนูที่เกี่ยวข้องกับการถอนเงิน/สถานะบัญชี)', en: 'In the left sidebar, scroll down and click <span class="hl">Finance</span>, then select <span class="hl">Transactions</span> (or the menu related to withdrawals/account status)' },
+  'tk2-s2':        { th: 'ในหน้าธุรกรรม ให้คลิกเลือกแท็บ <span class="hl">ชำระเงินแล้ว</span> หรือแท็บที่แสดงรายการเงินที่เข้าบัญชีแล้ว', en: 'On the Transactions page, click the <span class="hl">Paid</span> tab or the tab showing settled payments' },
+  'tk2-s3':        { th: 'คลิกที่ช่องปฏิทิน เพื่อทำการระบุ <span class="hl">วันที่เริ่มต้น</span> และ <span class="hl">วันที่สิ้นสุด</span> ที่คุณต้องการตรวจสอบยอดเงิน', en: 'Click the calendar field and set the <span class="hl">Start Date</span> and <span class="hl">End Date</span> you want to check' },
+  'tk2-s4':        { th: 'กดปุ่ม <span class="hl">ส่งออก</span>', en: 'Click the <span class="hl">Export</span> button' },
+  'tk2-s5':        { th: 'หน้าต่างเด้งขึ้นมาให้เลือกรูปแบบไฟล์เป็น <span class="hl">Excel</span> แล้วกดยืนยันการส่งออก จากนั้นไปที่ <span class="hl">ประวัติการส่งออก</span> เพื่อกดดาวน์โหลดไฟล์', en: 'In the popup, select <span class="hl">Excel</span> format and confirm the export. Then go to <span class="hl">Export History</span> to download the file' },
+
+  'tk3-title':     { th: 'ดาวน์โหลดข้อมูลการคืนสินค้าและการคืนเงิน', en: 'Download Returns & Refunds Data' },
+  'tk3-s1':        { th: 'ที่แถบเมนูด้านซ้าย คลิกที่หัวข้อ <span class="hl">คำสั่งซื้อ</span> แล้วเลือกเมนู <span class="hl">จัดการการคืนสินค้า</span>', en: 'In the left sidebar, click <span class="hl">Orders</span> then select <span class="hl">Manage Returns</span>' },
+  'tk3-s2':        { th: 'มองไปที่มุมขวาบนของหน้าจอ จะเห็นไอคอน <span class="hl">ตัวกรอง</span> (รูปแว่นขยายหรือสัญลักษณ์เส้นขีดๆ) ให้คลิกที่ไอคอนนี้', en: 'At the top-right corner, find the <span class="hl">Filter</span> icon (magnifying glass or filter lines) and click it' },
+  'tk3-s3':        { th: 'หน้าต่างตัวกรองจะเปิดออกมาทางขวา ตรงหัวข้อ "เวลาที่สร้าง" ให้คลิกเลือก <span class="hl">วันที่เริ่มต้น</span> และ <span class="hl">วันที่สิ้นสุด</span> ที่คุณต้องการค้นหา เสร็จแล้วกดปุ่ม <span class="hl">นำไปใช้</span> สีเขียวด้านล่าง', en: 'The filter panel will open on the right. Under "Created time", set the <span class="hl">Start Date</span> and <span class="hl">End Date</span>, then click the green <span class="hl">Apply</span> button at the bottom' },
+  'tk3-s4':        { th: 'เมื่อรายการแสดงผลตามวันที่เลือกแล้ว ให้คลิก <span class="hl">ไอคอนส่งออก</span> (รูปกล่องมีลูกศรชี้ลง) ที่อยู่ติดกับปุ่มตัวกรอง', en: 'Once the list is filtered, click the <span class="hl">Export icon</span> (box with down arrow) next to the filter button' },
+  'tk3-s5':        { th: 'เช็คให้ชัวร์ว่าหน้าต่างป๊อปอัปเลือกรูปแบบเป็น <span class="hl">Excel</span> แล้วกดปุ่ม <span class="hl">ส่งออก</span> สีเขียว', en: 'Make sure the popup format is set to <span class="hl">Excel</span>, then click the green <span class="hl">Export</span> button' },
+  'tk3-s6':        { th: 'คลิกที่ลิงก์ <span class="hl">ประวัติการส่งออก</span> เพื่อเข้าไปกดดาวน์โหลดไฟล์ล่าสุด', en: 'Click the <span class="hl">Export History</span> link to download the latest file' },
+
+  'tk4-title':     { th: 'ดาวน์โหลดข้อมูลค่าใช้จ่ายแพลตฟอร์ม', en: 'Download Platform Expenses Data' },
+  'tk4-s1':        { th: 'ที่แถบเมนูด้านซ้าย คลิกหัวข้อ <span class="hl">การเงิน</span> แล้วเลือกเมนู <span class="hl">เอกสารทางภาษี</span>', en: 'In the left sidebar, click <span class="hl">Finance</span> then select <span class="hl">Tax Documents</span>' },
+  'tk4-s2':        { th: 'ในหน้าหลัก สังเกตแท็บด้านบน ให้เลือกแท็บ <span class="hl">ใบแจ้งหนี้ของแพลตฟอร์ม</span>', en: 'On the main page, select the <span class="hl">Platform Invoices</span> tab at the top' },
+  'tk4-s3':        { th: 'เหนือตารางข้อมูล จะมีปุ่มข้อความว่า <span class="hl">ดาวน์โหลดเป็นชุด</span> ให้คลิกที่ปุ่มนี้', en: 'Above the data table, find and click the <span class="hl">Batch Download</span> button' },
+  'tk4-s4':        { th: 'หน้าต่างป๊อปอัปจะเด้งขึ้นมา ให้ติ๊กเลือกประเภทเป็น "ใบแจ้งหนี้ของแพลตฟอร์ม" และคลิกที่ช่องปฏิทินเพื่อเลือก <span class="hl">เดือนและปี</span> ที่ต้องการ', en: 'In the popup, select type "Platform Invoices" and use the calendar to choose the desired <span class="hl">month and year</span>' },
+  'tk4-s5':        { th: 'กดปุ่ม <span class="hl">ส่งออก</span> สีฟ้า', en: 'Click the blue <span class="hl">Export</span> button' },
+  'tk4-s6':        { th: 'จะมีป๊อปอัป "รายงานที่ส่งออก" แสดงรายการไฟล์ที่เราเพิ่งสั่งดึงข้อมูล ให้คลิกปุ่ม <span class="hl">ดาวน์โหลด</span> ที่ไฟล์ .zip ล่าสุด', en: 'An "Exported Reports" popup will show the file list. Click <span class="hl">Download</span> on the latest .zip file' },
+  'tk4-note':      { th: 'พอแตกไฟล์จะได้ไฟล์ PDF มา', en: 'Extracting the archive will yield PDF files' },
+
+  // Shopee section
+  'sp-desc':       { th: 'การดึงข้อมูลจาก Shopee — 5 ประเภทรายงาน', en: 'Data extraction from Shopee — 5 report types' },
+  'sp1-title':     { th: 'ดาวน์โหลดข้อมูลคำสั่งซื้อสินค้า', en: 'Download Product Orders Data' },
+  'sp1-s1':        { th: 'ล็อกอินเข้าสู่ระบบ <span class="hl">Shopee Seller Centre</span>', en: 'Log in to <span class="hl">Shopee Seller Centre</span>' },
+  'sp1-s2':        { th: 'ที่แถบเมนูด้านซ้าย ในหมวด "คำสั่งซื้อ" ให้คลิกเมนู <span class="hl">คำสั่งซื้อของฉัน</span>', en: 'In the left sidebar, under "Orders" click <span class="hl">My Orders</span>' },
+  'sp1-s3':        { th: 'มองไปที่มุมขวาบนของหน้าจอ (ใต้ชื่อบัญชีผู้ใช้) จะเห็นปุ่ม <span class="hl">ดาวน์โหลด</span> ให้คลิกปุ่มนี้', en: 'At the top-right (below account name), find and click the <span class="hl">Download</span> button' },
+  'sp1-s4':        { th: 'จะมีหน้าต่าง "ดาวน์โหลดคำสั่งซื้อทั้งหมด" เด้งขึ้นมา ให้คลิกที่ช่องปฏิทินเพื่อระบุ <span class="hl">วันที่เริ่มต้น</span> และ <span class="hl">วันที่สิ้นสุด</span> ที่ต้องการ', en: 'A "Download All Orders" popup will appear. Use the calendar fields to set the <span class="hl">Start Date</span> and <span class="hl">End Date</span>' },
+  'sp1-s5':        { th: 'กดปุ่ม <span class="hl">ดาวน์โหลด</span> สีส้ม', en: 'Click the orange <span class="hl">Download</span> button' },
+  'sp1-s6':        { th: 'รอระบบโหลดสักครู่ จะมีกล่องข้อความ "รายงานล่าสุด" เด้งลงมา (หรือคลิกที่ปุ่ม <span class="hl">ประวัติการดาวน์โหลด</span>) ให้หาไฟล์ชื่อที่ขึ้นต้นด้วย <span class="hl">Order.all...</span> (.xlsx) แล้วคลิกปุ่ม <span class="hl">ดาวน์โหลด</span> สีส้มด้านหลังไฟล์นั้น', en: 'Wait a moment. A "Latest Reports" box will appear (or click <span class="hl">Download History</span>). Find the file starting with <span class="hl">Order.all...</span> (.xlsx) and click the orange <span class="hl">Download</span> button next to it' },
+
+  'sp2-title':     { th: 'ดาวน์โหลดข้อมูลรายรับ', en: 'Download Income Data' },
+  'sp2-s1':        { th: 'ที่แถบเมนูด้านซ้าย ในหมวด "การเงิน" ให้คลิกเมนู <span class="hl">รายรับของฉัน</span> (ระบบอาจขอให้ใส่รหัสผ่านร้านค้าหรือรหัส OTP เพื่อความปลอดภัย)', en: 'In the left sidebar, under "Finance" click <span class="hl">My Income</span> (the system may ask for your shop password or OTP for security)' },
+  'sp2-s2':        { th: 'เลื่อนลงมาตรงหัวข้อ "รายละเอียดรายรับของฉัน" จะมีแท็บให้เลือก ให้คลิกเลือกแท็บ <span class="hl">โอนเงินแล้ว</span> (ตัวหนังสือสีส้ม)', en: 'Scroll down to "My Income Details" and click the <span class="hl">Transferred</span> tab (orange text)' },
+  'sp2-s3':        { th: 'บรรทัดถัดลงมาจะมีช่องปฏิทิน ให้คลิกเลือก <span class="hl">วันที่เริ่มต้น</span> และ <span class="hl">วันที่สิ้นสุด</span> ที่คุณต้องการตรวจสอบยอดเงินเข้า', en: 'In the row below, use the calendar fields to set the <span class="hl">Start Date</span> and <span class="hl">End Date</span> you want to check' },
+  'sp2-s4':        { th: 'มองไปทางขวาสุดของแถบปฏิทิน จะมีปุ่ม <span class="hl">ดาวน์โหลด</span> ให้คลิกปุ่มนี้', en: 'At the far right of the calendar bar, click the <span class="hl">Download</span> button' },
+  'sp2-s5':        { th: 'กล่องข้อความ "รายงานล่าสุด" จะแสดงรายการไฟล์ขึ้นมา ให้หาไฟล์ชื่อที่ขึ้นต้นด้วย <span class="hl">income...</span> แล้วคลิกปุ่ม <span class="hl">ดาวน์โหลด</span> สีส้มด้านหลังเพื่อบันทึกไฟล์ Excel', en: 'The "Latest Reports" box will show file list. Find the file starting with <span class="hl">income...</span> and click the orange <span class="hl">Download</span> button to save the Excel file' },
+
+  'sp3-title':     { th: 'ดาวน์โหลดข้อมูลเงินเข้าธนาคาร', en: 'Download Bank Deposit Data' },
+  'sp3-s1':        { th: 'ไปที่หน้า <span class="hl">รายรับของฉัน</span> แล้วมองไปที่กล่องเมนูทางด้านขวามือของหน้าจอ ที่เขียนว่า "รายงานการเงิน" ให้คลิกที่ลิงก์ <span class="hl">ดูเพิ่มเติม ></span>', en: 'Go to the <span class="hl">My Income</span> page. Look at the right-side panel labeled "Financial Reports" and click the <span class="hl">View More ></span> link' },
+  'sp3-s2':        { th: 'ในหน้าต่างรายงานการเงิน ให้คลิกเมนูแบบเลื่อนลง (Dropdown) เพื่อเลือก <span class="hl">เดือนและปี</span> ที่ต้องการ', en: 'In the Financial Reports page, use the dropdown to select the desired <span class="hl">month and year</span>' },
+  'sp3-s3':        { th: 'คลิกไอคอนดาวน์โหลด (รูปลูกศรชี้ลง) ด้านหลังเดือนนั้น หรือคลิกปุ่ม <span class="hl">ดาวน์โหลดทั้งหมด</span>', en: 'Click the download icon (down arrow) next to the month, or click <span class="hl">Download All</span>' },
+
+  'sp4-title':     { th: 'ดาวน์โหลดข้อมูลค่าใช้จ่ายแพลตฟอร์ม (ใบกำกับภาษี)', en: 'Download Platform Expenses (Tax Invoices)' },
+  'sp4-s1':        { th: 'ที่แถบเมนูด้านซ้าย ในหมวด "การเงิน" คลิกเมนู <span class="hl">รายรับของฉัน</span>', en: 'In the left sidebar, under "Finance" click <span class="hl">My Income</span>' },
+  'sp4-s2':        { th: 'มองไปที่กล่องเมนูทางด้านขวามือของหน้าจอ ที่เขียนว่า "รายงานการเงิน" ให้สังเกตด้านล่างสุดของกล่องนั้น จะมีลิงก์คำว่า <span class="hl">My Tax Invoices ></span> ให้คลิกเข้าไป', en: 'On the right-side panel labeled "Financial Reports", find the link <span class="hl">My Tax Invoices ></span> at the bottom and click it' },
+  'sp4-s3':        { th: 'ระบบจะเปิดหน้าต่างใหม่พาไปที่หน้า <span class="hl">ระบบออกใบกำกับภาษี</span> (e-Tax Web Portal)', en: 'A new window will open to the <span class="hl">e-Tax Invoice System</span> (e-Tax Web Portal)' },
+  'sp4-s4':        { th: 'ตรงกลางหน้าจอหัวข้อ "ดาวน์โหลดใบเสร็จรับเงิน..." จะมีช่องปฏิทิน 2 ช่อง ให้คลิกเลือก <span class="hl">วันที่เริ่มต้น</span> ในช่องซ้าย และ <span class="hl">วันที่สิ้นสุด</span> ในช่องขวา', en: 'In the center, under "Download receipts...", use the two calendar fields to set the <span class="hl">Start Date</span> (left) and <span class="hl">End Date</span> (right)' },
+  'sp4-s5':        { th: 'กดปุ่ม <span class="hl">เลือก</span> สีส้ม', en: 'Click the orange <span class="hl">Select</span> button' },
+  'sp4-s6':        { th: 'รายการค่าใช้จ่ายจะแสดงขึ้นมาในตารางด้านล่าง ให้มองไปที่มุมขวาของหัวตารางในคอลัมน์ "ใบกำกับภาษีแบบเต็มรูป" แล้วคลิกปุ่มสีฟ้าที่เขียนว่า <span class="hl">ดาวน์โหลดทั้งหมด</span>', en: 'Expenses will appear in the table below. In the "Full Tax Invoice" column header, click the blue <span class="hl">Download All</span> button' },
+
+  'sp5-title':     { th: 'ดาวน์โหลดข้อมูลการคืนสินค้าและการคืนเงิน', en: 'Download Returns & Refunds Data' },
+  'sp5-s1':        { th: 'ที่แถบเมนูด้านซ้าย ในหมวด "คำสั่งซื้อ" ให้คลิกเมนู <span class="hl">การคืนเงิน/คืนสินค้า</span>', en: 'In the left sidebar, under "Orders" click <span class="hl">Return/Refund</span>' },
+  'sp5-s2':        { th: 'มองไปที่มุมขวาบน จะเห็นปุ่มสำหรับ <span class="hl">ส่งออก</span>', en: 'At the top-right, find the <span class="hl">Export</span> button' },
+  'sp5-s3':        { th: 'คลิกที่ช่องปฏิทินเพื่อระบุ <span class="hl">วันที่เริ่มต้น</span> และ <span class="hl">วันที่สิ้นสุด</span> ที่ต้องการ', en: 'Use the calendar fields to set the <span class="hl">Start Date</span> and <span class="hl">End Date</span>' },
+  'sp5-s4':        { th: 'กดปุ่มเพื่อส่งออกเป็นไฟล์ <span class="hl">Excel</span> แล้วไปกดรับไฟล์ที่ช่อง <span class="hl">ประวัติการส่งออก</span> (ทำขั้นตอนคล้ายกับการดาวน์โหลดคำสั่งซื้อ)', en: 'Click to export as <span class="hl">Excel</span>, then download the file from <span class="hl">Export History</span> (same steps as downloading orders)' },
+
+  // Program Guide section
+  'pg-title':      { th: 'วิธีใช้โปรแกรม', en: 'Program Guide' },
+  'pg-desc':       { th: 'การนำเข้าข้อมูลเข้าสู่ระบบ — 4 ประเภท', en: 'Importing data into the system — 4 types' },
+
+  'pg1-title':     { th: 'นำเข้าข้อมูลคำสั่งซื้อ', en: 'Import Order Data' },
+  'pg1-intro':     { th: 'ที่แถบเมนูด้านซ้าย ในหมวด E-Commerce คลิกเมนู <span class="hl">คำสั่งซื้อ</span> แล้วคลิกปุ่ม <span class="hl">นำเข้าคำสั่งซื้อ</span> สีเขียว ที่มุมขวาบน', en: 'In the left sidebar under E-Commerce, click <span class="hl">Orders</span>, then click the green <span class="hl">Import Orders</span> button at the top-right' },
+  'pg1-s1':        { th: 'คลิกปุ่ม <span class="hl">นำเข้าคำสั่งซื้อ</span> สีเขียว ที่มุมขวาบน', en: 'Click the green <span class="hl">Import Orders</span> button at the top-right' },
+  'pg1-s2':        { th: 'หน้าต่าง <span class="hl">อัปโหลดข้อมูลคำสั่งซื้อ</span> จะเด้งขึ้นมา', en: 'The <span class="hl">Upload Order Data</span> dialog will appear' },
+  'pg1-s3':        { th: 'เลือกวิธีนำเข้าไฟล์ (เลือก<strong>วิธีใดวิธีหนึ่ง</strong>):', en: 'Choose an import method (pick <strong>one</strong>):' },
+  'pg1-s3a':       { th: 'แท็บ <span class="hl">ไฟล์</span> — ลากไฟล์ Excel มาวางในกรอบเส้นประ หรือคลิกเลือกจากเครื่อง (.xls .xlsx .csv) <span class="sub-rec">★ แนะนำ</span>', en: '<span class="hl">File</span> tab — Drag and drop Excel files into the dashed box, or click to browse (.xls .xlsx .csv) <span class="sub-rec">★ Recommended</span>' },
+  'pg1-s3b':       { th: 'แท็บ <span class="hl">โฟลเดอร์ Drive</span> — วาง Drive Folder URL ในช่อง → เลือกเดือน/ปี → กดปุ่ม <span class="hl">ค้นหาไฟล์</span>', en: '<span class="hl">Drive Folder</span> tab — Paste the Drive Folder URL → select month/year → click <span class="hl">Find Files</span>' },
+  'pg1-s3c':       { th: 'แท็บ <span class="hl">Excel URL</span> — วาง URL ไฟล์ Google Sheets ลงในช่อง', en: '<span class="hl">Excel URL</span> tab — Paste the Google Sheets file URL' },
+  'pg1-s4':        { th: 'เลือกไฟล์ที่ต้องการนำเข้า (ถ้าใช้แท็บ "ไฟล์" ให้คลิก Dropdown เลือก Platform: <span class="hl">TikTok</span> / <span class="hl">Shopee</span> / <span class="hl">Lazada</span>)', en: 'Select the files to import (if using the "File" tab, use the dropdown to select Platform: <span class="hl">TikTok</span> / <span class="hl">Shopee</span> / <span class="hl">Lazada</span>)' },
+  'pg1-s5':        { th: 'กดปุ่ม <span class="hl">อัปโหลด X ไฟล์</span> สีเขียว', en: 'Click the green <span class="hl">Upload X Files</span> button' },
+  'pg1-s6':        { th: 'รอระบบประมวลผล — จะมีแถบ progress bar แสดงความคืบหน้า', en: 'Wait for processing — a progress bar will show the status' },
+  'pg1-s7':        { th: 'เมื่อเสร็จจะแสดง <span class="hl">อัปโหลดสำเร็จ ✅</span> พร้อมสรุปผล → กดปุ่ม <span class="hl">เสร็จสิ้น</span>', en: 'When done, <span class="hl">Upload Successful ✅</span> will appear with a summary → click <span class="hl">Done</span>' },
+
+  'pg2-title':     { th: 'นำเข้าข้อมูลรายรับของฉัน', en: 'Import My Income Data' },
+  'pg2-intro':     { th: 'ที่แถบเมนูด้านซ้าย ในหมวด E-Commerce คลิกเมนู <span class="hl">รายรับของฉัน</span> แล้วคลิกปุ่ม <span class="hl">นำเข้า</span> ที่มุมขวาบน', en: 'In the left sidebar under E-Commerce, click <span class="hl">My Income</span>, then click the <span class="hl">Import</span> button at the top-right' },
+  'pg2-s1':        { th: 'คลิกปุ่ม <span class="hl">นำเข้า</span> ที่มุมขวาบน', en: 'Click the <span class="hl">Import</span> button at the top-right' },
+  'pg2-s2':        { th: 'หน้าต่าง <span class="hl">อัปโหลดข้อมูล</span> จะเด้งขึ้นมา', en: 'The <span class="hl">Upload Data</span> dialog will appear' },
+  'pg2-s3':        { th: 'เลือกวิธีนำเข้าไฟล์ (เลือก<strong>วิธีใดวิธีหนึ่ง</strong>):', en: 'Choose an import method (pick <strong>one</strong>):' },
+  'pg2-s3a':       { th: 'แท็บ <span class="hl">ไฟล์</span> — ลากไฟล์ Excel มาวาง หรือคลิกเลือกจากเครื่อง <span class="sub-rec">★ แนะนำ</span>', en: '<span class="hl">File</span> tab — Drag and drop Excel files or click to browse <span class="sub-rec">★ Recommended</span>' },
+  'pg2-s3b':       { th: 'แท็บ <span class="hl">โฟลเดอร์ Drive</span> — วาง Drive Folder URL → เลือกเดือน/ปี → กดปุ่ม <span class="hl">ค้นหาไฟล์</span>', en: '<span class="hl">Drive Folder</span> tab — Paste the Drive Folder URL → select month/year → click <span class="hl">Find Files</span>' },
+  'pg2-s3c':       { th: 'แท็บ <span class="hl">Excel URL</span> — วาง URL ไฟล์ Google Sheets ลงในช่อง', en: '<span class="hl">Excel URL</span> tab — Paste the Google Sheets file URL' },
+  'pg2-s4':        { th: 'เลือกไฟล์ที่ต้องการนำเข้า แล้วกดปุ่ม <span class="hl">อัปโหลด X ไฟล์</span> สีเขียว', en: 'Select the files to import, then click the green <span class="hl">Upload X Files</span> button' },
+  'pg2-s5':        { th: 'รอระบบประมวลผล — จะมีแถบ progress bar แสดงความคืบหน้า', en: 'Wait for processing — a progress bar will show the status' },
+  'pg2-s6':        { th: 'เมื่อเสร็จจะแสดง <span class="hl">อัปโหลดสำเร็จ ✅</span> พร้อมสรุปผล → กดปุ่ม <span class="hl">เสร็จสิ้น</span>', en: 'When done, <span class="hl">Upload Successful ✅</span> will appear with a summary → click <span class="hl">Done</span>' },
+
+  'pg3-title':     { th: 'นำเข้าข้อมูลเงินเข้าธนาคาร', en: 'Import Bank Deposit Data' },
+  'pg3-intro':     { th: 'ที่แถบเมนูด้านซ้าย ในเมนู E-Commerce คลิกเมนู <span class="hl">รับเงินเข้าธนาคาร</span> แล้วกดปุ่ม <span class="hl">รับเงินเข้าธนาคารทั้งหมด</span> สีเขียว แล้วเลือก <span class="hl">นำเข้ารับเงินจากไฟล์</span>', en: 'In the left sidebar under E-Commerce, click <span class="hl">Bank Deposits</span>, then click the green <span class="hl">All Bank Deposits</span> button and select <span class="hl">Import from File</span>' },
+  'pg3-s1':        { th: 'ที่แถบเมนูด้านซ้าย ในเมนู E-Commerce คลิกเมนู <span class="hl">รับเงินเข้าธนาคาร</span>', en: 'In the left sidebar under E-Commerce, click <span class="hl">Bank Deposits</span>' },
+  'pg3-s2':        { th: 'กดปุ่ม <span class="hl">รับเงินเข้าธนาคารทั้งหมด</span> (สีเขียว) แล้วเลือก <span class="hl">นำเข้ารับเงินจากไฟล์</span>', en: 'Click the green <span class="hl">All Bank Deposits</span> button, then select <span class="hl">Import from File</span>' },
+  'pg3-s3':        { th: 'หน้าต่าง <span class="hl">นำเข้ารายการถอนเงิน</span> จะเด้งขึ้นมา เลือก Platform: <span class="hl">TikTok</span> หรือ <span class="hl">Shopee</span>', en: 'The <span class="hl">Import Withdrawal Records</span> dialog will appear. Select Platform: <span class="hl">TikTok</span> or <span class="hl">Shopee</span>' },
+  'pg3-s3a':       { th: 'เลือก <span class="hl">ไฟล์ Excel / PDF</span> — ลากไฟล์มาวาง หรือคลิกเลือกไฟล์ <span class="sub-rec">★ แนะนำ</span>', en: 'Select <span class="hl">Excel / PDF File</span> — Drag and drop or click to browse <span class="sub-rec">★ Recommended</span>' },
+  'pg3-s3b':       { th: 'เลือก <span class="hl">Google Drive</span> — วาง URL ของ Google Drive Folder', en: 'Select <span class="hl">Google Drive</span> — Paste the Google Drive Folder URL' },
+  'pg3-s4':        { th: 'กดปุ่ม <span class="hl">นำเข้าข้อมูล</span>', en: 'Click the <span class="hl">Import Data</span> button' },
+  'pg3-s5':        { th: 'ตรวจสอบข้อมูล → กด <span class="hl">บันทึก</span>', en: 'Review the data → click <span class="hl">Save</span>' },
+  'pg3-s6':        { th: 'เมื่อเสร็จจะแสดง <span class="hl">เสร็จสิ้น ✅</span>', en: 'When done, <span class="hl">Complete ✅</span> will be displayed' },
+
+  'pg4-title':     { th: 'นำเข้าบิลค่าใช้จ่ายแพลตฟอร์ม', en: 'Import Platform Expense Bills' },
+  'pg4-intro':     { th: 'ที่แถบเมนูด้านซ้าย ในเมนู E-Commerce คลิกเมนู <span class="hl">ค่าใช้จ่ายแพลตฟอร์ม</span> แล้วกดปุ่ม <span class="hl">นำเข้าบิลค่าใช้จ่าย</span> สีเขียว', en: 'In the left sidebar under E-Commerce, click <span class="hl">Platform Expenses</span>, then click the green <span class="hl">Import Expense Bills</span> button' },
+  'pg4-s1':        { th: 'ที่แถบเมนูด้านซ้าย ในเมนู E-Commerce คลิกเมนู <span class="hl">ค่าใช้จ่ายแพลตฟอร์ม</span>', en: 'In the left sidebar under E-Commerce, click <span class="hl">Platform Expenses</span>' },
+  'pg4-s2':        { th: 'กดปุ่ม <span class="hl">นำเข้าบิลค่าใช้จ่าย</span> (สีเขียว)', en: 'Click the green <span class="hl">Import Expense Bills</span> button' },
+  'pg4-s3':        { th: 'หน้าต่าง <span class="hl">AI Scan บิล</span> จะเด้งขึ้นมา เลือกวิธีนำเข้า (เลือก<strong>วิธีใดวิธีหนึ่ง</strong>):', en: 'The <span class="hl">AI Bill Scan</span> dialog will appear. Choose an import method (pick <strong>one</strong>):' },
+  'pg4-s3a':       { th: 'แท็บ <span class="hl">โฟลเดอร์ Drive</span> — วาง URL โฟลเดอร์ที่มีไฟล์ PDF → เลือกแพลตฟอร์ม → กดปุ่ม <span class="hl">สแกน + แม็ปบัญชีอัตโนมัติ</span> <span class="sub-rec">★ แนะนำ</span>', en: '<span class="hl">Drive Folder</span> tab — Paste the folder URL with PDF files → select platform → click <span class="hl">Scan + Auto Map Accounts</span> <span class="sub-rec">★ Recommended</span>' },
+  'pg4-s3b':       { th: 'แท็บ <span class="hl">ไฟล์เดี่ยว</span> — ลาก PDF / รูปมาวาง แล้วกด <span class="hl">สแกน</span> หรือ <span class="hl">รับข้อมูลบัญชี</span>', en: '<span class="hl">Single File</span> tab — Drag and drop PDF / image, then click <span class="hl">Scan</span> or <span class="hl">Get Account Data</span>' },
+  'pg4-s4':        { th: 'รอระบบ AI ประมวลผล', en: 'Wait for AI processing' },
+  'pg4-s5':        { th: 'เมื่อเสร็จจะแสดง <span class="hl">เสร็จสิ้น ✅</span>', en: 'When done, <span class="hl">Complete ✅</span> will be displayed' },
+};
+
+function switchLang(lang) {
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (i18n[key] && i18n[key][lang]) {
+      el.innerHTML = i18n[key][lang];
+    }
+  });
+  document.getElementById('btnTH').classList.toggle('active', lang === 'th');
+  document.getElementById('btnEN').classList.toggle('active', lang === 'en');
+  localStorage.setItem('lang', lang);
+}
+
+// Restore saved language
+(function(){
+  const saved = localStorage.getItem('lang');
+  if (saved && saved !== 'th') switchLang(saved);
+})();
+
 function tog(h){h.parentElement.classList.toggle('open')}
 
 // Filter: show only one card
@@ -778,7 +1009,7 @@ function filterView(targetId){
     if(!target)return;
     const parentSec=target.closest('section');
     // Hide other sections + dividers
-    document.querySelectorAll('#tiktok,#shopee,.pg-sec').forEach(s=>s.classList.toggle('fout',s!==parentSec));
+    document.querySelectorAll('#tiktok,#shopee,#lazada,.pg-sec').forEach(s=>s.classList.toggle('fout',s!==parentSec));
     document.querySelectorAll('.sec-div').forEach(d=>d.classList.add('fout'));
     // In parent, hide other cards
     parentSec.querySelectorAll('.gc[id]').forEach(c=>c.classList.toggle('fout',c.id!==targetId));
@@ -791,7 +1022,7 @@ function filterView(targetId){
 function showSection(sectionId){
     const sec=document.getElementById(sectionId);
     if(!sec)return;
-    document.querySelectorAll('#tiktok,#shopee,.pg-sec').forEach(s=>s.classList.toggle('fout',s!==sec));
+    document.querySelectorAll('#tiktok,#shopee,#lazada,.pg-sec').forEach(s=>s.classList.toggle('fout',s!==sec));
     document.querySelectorAll('.sec-div').forEach(d=>d.classList.add('fout'));
     sec.querySelectorAll('.gc[id]').forEach(c=>c.classList.remove('fout'));
     sec.scrollIntoView({behavior:'smooth'});
@@ -841,7 +1072,7 @@ const indicator=document.createElement('div');indicator.className='sb-indicator'
 function moveIndicator(el){if(!el)return;const sb=document.querySelector('.sidebar');const rect=el.getBoundingClientRect();const sbRect=sb.getBoundingClientRect();indicator.style.top=(rect.top-sbRect.top+sb.scrollTop+4)+'px';indicator.classList.add('vis');}
 
 // Sidebar active sub-link on scroll
-const allIds=['tk-1','tk-2','tk-3','tk-4','sp-1','sp-2','sp-3','sp-4','sp-5','pg-orders','pg-income','pg-bank','pg-expense'];
+const allIds=['tk-1','tk-2','tk-3','tk-4','sp-1','sp-2','sp-3','sp-4','sp-5','lz-1','pg-orders','pg-income','pg-bank','pg-expense'];
 const sbObs2=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){document.querySelectorAll('.sb-sub-link,.sb-link').forEach(l=>l.classList.remove('active'));const id=e.target.id;const a=document.querySelector('.sb-sub-link[href="#'+id+'"]')||document.querySelector('.sb-link[href="#'+id+'"]');if(a){a.classList.add('active');moveIndicator(a);}}});},{threshold:0.15,rootMargin:'-80px 0px -50% 0px'});
 allIds.forEach(id=>{const el=document.getElementById(id);if(el)sbObs2.observe(el);});
 
