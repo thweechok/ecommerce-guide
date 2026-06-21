@@ -1147,12 +1147,13 @@ function filterView(targetId){
     // Hide other sections + dividers
     document.querySelectorAll('#tiktok,#shopee,#lazada,.pg-sec').forEach(s=>s.classList.toggle('fout',s!==parentSec));
     document.querySelectorAll('.sec-div').forEach(d=>d.classList.add('fout'));
+    // Hide sec-head (icon+title+description) to remove gap
+    document.querySelectorAll('.sec-head').forEach(h=>h.classList.add('fout'));
     // In parent, hide other cards
     parentSec.querySelectorAll('.gc[id]').forEach(c=>c.classList.toggle('fout',c.id!==targetId));
     // Open + force visible + scroll to card
     target.classList.add('open','vis');
     parentSec.classList.add('vis');
-    parentSec.querySelector('.sec-head')?.classList.add('vis');
     setTimeout(()=>target.scrollIntoView({behavior:'smooth',block:'start'}),100);
 }
 
@@ -1162,9 +1163,12 @@ function showSection(sectionId){
     if(!sec)return;
     document.querySelectorAll('#tiktok,#shopee,#lazada,.pg-sec').forEach(s=>s.classList.toggle('fout',s!==sec));
     document.querySelectorAll('.sec-div').forEach(d=>d.classList.add('fout'));
+    // Restore sec-head for this section
+    document.querySelectorAll('.sec-head').forEach(h=>h.classList.add('fout'));
+    const head=sec.querySelector('.sec-head');
+    if(head){head.classList.remove('fout');head.classList.add('vis');}
     sec.querySelectorAll('.gc[id]').forEach(c=>{c.classList.remove('fout');c.classList.add('vis');});
     sec.classList.add('vis');
-    sec.querySelector('.sec-head')?.classList.add('vis');
     sec.scrollIntoView({behavior:'smooth'});
 }
 
