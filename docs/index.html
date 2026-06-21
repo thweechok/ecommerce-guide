@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="คู่มือการดึงข้อมูลจาก TikTok Seller Center และ Shopee Seller Centre สำหรับงานบัญชี">
-    <title>คู่มือ BKKHolding | TikTok & Shopee</title>
+    <meta name="description" content="เธเธนเนเธกเธทเธญเธเธฒเธฃเธ”เธถเธเธเนเธญเธกเธนเธฅเธเธฒเธ TikTok Seller Center เนเธฅเธฐ Shopee Seller Centre เธชเธณเธซเธฃเธฑเธเธเธฒเธเธเธฑเธเธเธต">
+    <title>เธเธนเนเธกเธทเธญ BKKHolding | TikTok & Shopee</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
@@ -18,7 +18,7 @@
             overflow-x: hidden;
         }
 
-        /* ━━━━━━━━━━ Keyframes ━━━━━━━━━━ */
+        /* โ”โ”โ”โ”โ”โ”โ”โ”โ”โ” Keyframes โ”โ”โ”โ”โ”โ”โ”โ”โ”โ” */
         @keyframes fadeSlideUp { from { opacity:0; transform:translateY(35px); } to { opacity:1; transform:translateY(0); } }
         @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
         @keyframes popIn { 0% { opacity:0; transform:scale(.85); } 60% { transform:scale(1.03); } 100% { opacity:1; transform:scale(1); } }
@@ -34,11 +34,11 @@
         @keyframes aurora3 { 0%,100% { transform:translate(0,0) scale(1.1); opacity:.2; } 50% { transform:translate(50px,30px) scale(.9); opacity:.35; } }
         @keyframes gradientText { 0% { background-position:0% 50%; } 50% { background-position:100% 50%; } 100% { background-position:0% 50%; } }
 
-        /* ━━━━━━━━━━ Scroll Animation ━━━━━━━━━━ */
+        /* โ”โ”โ”โ”โ”โ”โ”โ”โ”โ” Scroll Animation โ”โ”โ”โ”โ”โ”โ”โ”โ”โ” */
         .anim { opacity:0; transform:translateY(30px); transition:opacity .6s ease-out, transform .6s ease-out; }
         .anim.vis { opacity:1; transform:translateY(0); }
 
-        /* ━━━━━━━━━━ Navbar ━━━━━━━━━━ */
+        /* โ”โ”โ”โ”โ”โ”โ”โ”โ”โ” Navbar โ”โ”โ”โ”โ”โ”โ”โ”โ”โ” */
         .navbar {
             position:fixed; top:0; left:0; right:0; z-index:100;
             background: linear-gradient(135deg, #1a2744 0%, #243b6e 100%);
@@ -71,7 +71,7 @@
         .navbar-links a:hover { color:#fff; background:rgba(255,255,255,.08); border-bottom-color:#d4a843; }
         .nav-logo { width:16px; height:16px; }
 
-        /* ━━━━━━━━━━ Hero ━━━━━━━━━━ */
+        /* โ”โ”โ”โ”โ”โ”โ”โ”โ”โ” Hero โ”โ”โ”โ”โ”โ”โ”โ”โ”โ” */
         .hero {
             position:relative; z-index:1; overflow:hidden;
             background: linear-gradient(135deg, #0d1b2e 0%, #1a2744 30%, #1e3560 60%, #1a2744 100%);
@@ -125,11 +125,11 @@
         .chip:hover { transform:translateY(-2px); box-shadow:0 6px 20px rgba(0,0,0,.2); background:rgba(255,255,255,.18); }
         .chip .ico { width:20px; height:20px; }
 
-        /* ━━━━━━━━━━ Layout ━━━━━━━━━━ */
+        /* โ”โ”โ”โ”โ”โ”โ”โ”โ”โ” Layout โ”โ”โ”โ”โ”โ”โ”โ”โ”โ” */
         .layout { position:relative; z-index:2; max-width:1100px; margin:0 auto; padding:2.5rem 1.5rem 3rem; display:grid; grid-template-columns:220px 1fr; gap:2.5rem; }
         .main { min-width:0; }
 
-        /* ━━━━━━━━━━ Sidebar ━━━━━━━━━━ */
+        /* โ”โ”โ”โ”โ”โ”โ”โ”โ”โ” Sidebar โ”โ”โ”โ”โ”โ”โ”โ”โ”โ” */
         .sidebar {
             position:sticky; top:72px; align-self:start;
             max-height:calc(100vh - 90px); overflow-y:auto;
@@ -162,7 +162,7 @@
             font-size:.76rem; color:#7a8a9e; text-decoration:none;
             transition:all .15s; border-left:3px solid transparent;
         }
-        .sb-sub-link::before { content:'—'; margin-right:.4rem; opacity:.35; font-size:.7rem; }
+        .sb-sub-link::before { content:'โ€”'; margin-right:.4rem; opacity:.35; font-size:.7rem; }
         .sb-sub-link:hover { color:#1a2744; background:#f5f6f8; }
         .sb-sub-link.active { color:#1a2744; font-weight:600; background:#f0f4ff; border-left-color:#1a2744; }
 
@@ -250,7 +250,7 @@
         .dark .lang-btn { color:#64748b; }
         .dark .lang-btn.active { background:rgba(99,102,241,.2); color:#818cf8; }
 
-        /* ━━━━━━━━━━ Section ━━━━━━━━━━ */
+        /* โ”โ”โ”โ”โ”โ”โ”โ”โ”โ” Section โ”โ”โ”โ”โ”โ”โ”โ”โ”โ” */
         .sec-head { text-align:center; margin-bottom:2rem; padding-top:1rem; }
         .sec-head .sec-logo { animation:iconFloat 3s ease-in-out infinite; display:inline-block; margin-bottom:.5rem; }
         .sec-head .sec-logo svg { width:44px; height:44px; }
@@ -266,7 +266,7 @@
         .pg-sec .hl { background:#e8edf5; color:#1a2744; }
         .pg-sec .step:hover::before { transform:scale(1.15); box-shadow:0 2px 8px rgba(26,39,68,.25); }
 
-        /* ━━━━━━━━━━ Sub-Steps ━━━━━━━━━━ */
+        /* โ”โ”โ”โ”โ”โ”โ”โ”โ”โ” Sub-Steps โ”โ”โ”โ”โ”โ”โ”โ”โ”โ” */
         .sub-steps { list-style:none; padding:.3rem 0 .3rem 1.2rem; margin:0; border-left:2px solid #e5e8ed; margin-left:.3rem; }
         .sub-step { padding:.35rem 0 .35rem .8rem; font-size:.84rem; color:#4a5568; position:relative; }
         .sub-step::before { content:attr(data-n); font-weight:700; color:#1a2744; margin-right:.4rem; }
@@ -276,7 +276,7 @@
             border-radius:50px; margin-left:.4rem; vertical-align:middle;
         }
 
-        /* ━━━━━━━━━━ Category Banner ━━━━━━━━━━ */
+        /* โ”โ”โ”โ”โ”โ”โ”โ”โ”โ” Category Banner โ”โ”โ”โ”โ”โ”โ”โ”โ”โ” */
         .cat-banner {
             text-align:center; padding:1.8rem 1.5rem; margin-bottom:2rem;
             border-radius:14px; position:relative; overflow:hidden;
@@ -302,7 +302,7 @@
             margin:2.5rem auto; max-width:300px;
         }
 
-        /* ━━━━━━━━━━ Guide Card ━━━━━━━━━━ */
+        /* โ”โ”โ”โ”โ”โ”โ”โ”โ”โ” Guide Card โ”โ”โ”โ”โ”โ”โ”โ”โ”โ” */
         .gc {
             background:#fff; border:1px solid #e5e8ed;
             border-radius:12px; margin-bottom:1rem; overflow:hidden;
@@ -339,7 +339,7 @@
         }
         .gc.open .gc-b { max-height:3000px; padding:0 1.2rem 1.2rem; opacity:1; }
 
-        /* ━━━━━━━━━━ Steps ━━━━━━━━━━ */
+        /* โ”โ”โ”โ”โ”โ”โ”โ”โ”โ” Steps โ”โ”โ”โ”โ”โ”โ”โ”โ”โ” */
         .steps { list-style:none; position:relative; padding-left:2.6rem; counter-reset:step-counter; }
         .steps::before {
             content:''; position:absolute; left:13px; top:6px; bottom:6px;
@@ -374,7 +374,7 @@
         .sp-sec .hl { background:#fff3ee; color:#d44a24; }
         .lz-sec .hl { background:rgba(15,20,109,.08); color:#0F146D; }
 
-        /* ━━━━━━━━━━ File Info ━━━━━━━━━━ */
+        /* โ”โ”โ”โ”โ”โ”โ”โ”โ”โ” File Info โ”โ”โ”โ”โ”โ”โ”โ”โ”โ” */
         .fi {
             background:#f8f9fb; border:1px solid #e8ebf0;
             border-radius:10px; padding:.9rem 1rem; margin-top:.8rem;
@@ -386,14 +386,14 @@
         .fi-v { color:#2563eb; font-family:'Consolas','Monaco',monospace; font-size:.8rem; word-break:break-all; }
         .fi-t { color:#b8912e; font-weight:600; }
 
-        /* ━━━━━━━━━━ Footer ━━━━━━━━━━ */
+        /* โ”โ”โ”โ”โ”โ”โ”โ”โ”โ” Footer โ”โ”โ”โ”โ”โ”โ”โ”โ”โ” */
         .footer {
             position:relative; z-index:2; text-align:center; padding:2rem;
             color:#a0aab8; font-size:.78rem;
             border-top:1px solid #e5e8ed; background:#fff;
         }
 
-        /* ━━━━━━━━━━ Back to Top ━━━━━━━━━━ */
+        /* โ”โ”โ”โ”โ”โ”โ”โ”โ”โ” Back to Top โ”โ”โ”โ”โ”โ”โ”โ”โ”โ” */
         .btt {
             position:fixed; bottom:1.5rem; right:1.5rem; z-index:99;
             width:42px; height:42px; border-radius:10px;
@@ -407,7 +407,7 @@
         .btt.show { opacity:1; transform:translateY(0); pointer-events:auto; }
         .btt:hover { box-shadow:0 6px 22px rgba(26,39,68,.45); transform:translateY(-2px); }
 
-        /* ━━━━━━━━━━ Screenshots ━━━━━━━━━━ */
+        /* โ”โ”โ”โ”โ”โ”โ”โ”โ”โ” Screenshots โ”โ”โ”โ”โ”โ”โ”โ”โ”โ” */
         .ss-wrap { margin:1rem 0 .5rem; }
         .ss-wrap img {
             width:100%; border-radius:10px;
@@ -417,7 +417,7 @@
             cursor:zoom-in;
         }
         .ss-wrap img:hover { transform:scale(1.02); box-shadow:0 6px 24px rgba(0,0,0,.12); }
-        /* ━━━━━━━━━━ Hamburger Button ━━━━━━━━━━ */
+        /* โ”โ”โ”โ”โ”โ”โ”โ”โ”โ” Hamburger Button โ”โ”โ”โ”โ”โ”โ”โ”โ”โ” */
         .hamburger {
             display:none; background:none; border:none; cursor:pointer;
             width:36px; height:36px; padding:6px;
@@ -431,7 +431,7 @@
         .hamburger.active span:nth-child(2) { opacity:0; }
         .hamburger.active span:nth-child(3) { transform:rotate(-45deg) translate(5px,-5px); }
 
-        /* ━━━━━━━━━━ Sidebar Overlay ━━━━━━━━━━ */
+        /* โ”โ”โ”โ”โ”โ”โ”โ”โ”โ” Sidebar Overlay โ”โ”โ”โ”โ”โ”โ”โ”โ”โ” */
         .sb-overlay {
             display:none; position:fixed; top:0; left:0; right:0; bottom:0;
             background:rgba(0,0,0,.35); z-index:998;
@@ -448,7 +448,7 @@
         .ss-grid.cols2 { grid-template-columns:1fr 1fr; }
         @media(max-width:640px) { .ss-grid.cols2 { grid-template-columns:1fr; } }
 
-        /* ━━━━━━━━━━ Mobile Responsive ━━━━━━━━━━ */
+        /* โ”โ”โ”โ”โ”โ”โ”โ”โ”โ” Mobile Responsive โ”โ”โ”โ”โ”โ”โ”โ”โ”โ” */
         @media(max-width:768px) {
             .hamburger { display:flex; }
             .navbar { padding:0 1rem; }
@@ -515,14 +515,14 @@
 </head>
 <body>
 
-<!-- ── Navbar ── -->
+<!-- โ”€โ”€ Navbar โ”€โ”€ -->
 <nav class="navbar">
     <button class="hamburger" id="menuToggle" onclick="toggleMobileSidebar()">
         <span></span><span></span><span></span>
     </button>
     <a href="#" class="navbar-brand">
         <div class="nb-icon">BK</div>
-        <span data-i18n="nav-brand">คู่มือ BKKHolding</span>
+        <span data-i18n="nav-brand">เธเธนเนเธกเธทเธญ BKKHolding</span>
     </a>
     <div class="lang-toggle">
         <button class="lang-btn active" id="btnTH" onclick="switchLang('th')">TH</button>
@@ -531,572 +531,571 @@
 </nav>
 <div class="sb-overlay" id="sbOverlay" onclick="toggleMobileSidebar()"></div>
 
-<!-- ── Hero ── -->
+<!-- โ”€โ”€ Hero โ”€โ”€ -->
 <section class="hero">
     <div class="hero-aurora3"></div>
-    <div class="hero-badge" data-i18n="hero-badge"><div class="dot"></div> คู่มือสำหรับทีมบัญชี</div>
-    <h1 data-i18n="hero-title">คู่มือ <span class="grad">BKKHolding</span></h1>
-    <p data-i18n="hero-desc">วิธีดึงข้อมูลจากแพลตฟอร์ม + วิธีใช้โปรแกรม สำหรับทีมบัญชี</p>
+    <div class="hero-badge" data-i18n="hero-badge"><div class="dot"></div> เธเธนเนเธกเธทเธญเธชเธณเธซเธฃเธฑเธเธ—เธตเธกเธเธฑเธเธเธต</div>
+    <h1 data-i18n="hero-title">เธเธนเนเธกเธทเธญ <span class="grad">BKKHolding</span></h1>
+    <p data-i18n="hero-desc">เธงเธดเธเธตเธ”เธถเธเธเนเธญเธกเธนเธฅเธเธฒเธเนเธเธฅเธ•เธเธญเธฃเนเธก + เธงเธดเธเธตเนเธเนเนเธเธฃเนเธเธฃเธก เธชเธณเธซเธฃเธฑเธเธ—เธตเธกเธเธฑเธเธเธต</p>
 </section>
 
-<!-- ── Layout: Sidebar + Main ── -->
+<!-- โ”€โ”€ Layout: Sidebar + Main โ”€โ”€ -->
 <div class="layout">
 
-<!-- ── Sidebar TOC ── -->
+<!-- โ”€โ”€ Sidebar TOC โ”€โ”€ -->
 <aside class="sidebar">
-    <div class="sb-cat" data-i18n="sb-cat-extract">📥 วิธีดึงข้อมูล</div>
-    <a href="#tiktok" class="sb-link has-sub open" onclick="sbTog(this,event)"><span class="sb-dot" style="background:#000;"></span>TikTok Seller Center<span class="sb-arrow">▶</span></a>
-    <div class="sb-sub open">
-        <a href="#tk-1" class="sb-sub-link" data-i18n="sb-tk1">วิธีดาวน์โหลดคำสั่งซื้อสินค้า</a>
-        <a href="#tk-2" class="sb-sub-link" data-i18n="sb-tk2">วิธีดาวน์โหลดรายรับของฉัน</a>
-        <a href="#tk-3" class="sb-sub-link" data-i18n="sb-tk3">วิธีดาวน์โหลดคืนสินค้า/คืนเงิน</a>
-        <a href="#tk-4" class="sb-sub-link" data-i18n="sb-tk4">วิธีดาวน์โหลดค่าใช้จ่ายแพลตฟอร์ม</a>
-    </div>
-    <a href="#shopee" class="sb-link has-sub" onclick="sbTog(this,event)"><span class="sb-dot" style="background:#EE4D2D;"></span>Shopee Seller Centre<span class="sb-arrow">▶</span></a>
-    <div class="sb-sub">
-        <a href="#sp-1" class="sb-sub-link" data-i18n="sb-sp1">วิธีดาวน์โหลดคำสั่งซื้อสินค้า</a>
-        <a href="#sp-2" class="sb-sub-link" data-i18n="sb-sp2">วิธีดาวน์โหลดรายรับ</a>
-        <a href="#sp-3" class="sb-sub-link" data-i18n="sb-sp3">วิธีดาวน์โหลดเงินเข้าธนาคาร</a>
-        <a href="#sp-4" class="sb-sub-link" data-i18n="sb-sp4">วิธีดาวน์โหลดค่าใช้จ่ายแพลตฟอร์ม</a>
-        <a href="#sp-5" class="sb-sub-link" data-i18n="sb-sp5">วิธีดาวน์โหลดคืนสินค้า/คืนเงิน</a>
-    </div>
-    <a href="#lazada" class="sb-link has-sub" onclick="sbTog(this,event)"><span class="sb-dot" style="background:#0F146D;"></span>Lazada Seller Center<span class="sb-arrow">▶</span></a>
-    <div class="sb-sub">
-        <a href="#lz-1" class="sb-sub-link">วิธีดาวน์โหลดคำสั่งซื้อ</a>
-        <a href="#lz-2" class="sb-sub-link">วิธีดาวน์โหลดรายรับของฉัน</a>
-        <a href="#lz-3" class="sb-sub-link">วิธีดาวน์โหลดเงินเข้าธนาคาร</a>
-    </div>
+    <div class="sb-cat" data-i18n="sb-cat-program">๐’ป เธงเธดเธเธตเนเธเนเนเธเธฃเนเธเธฃเธก</div>
+    <a href="#pg-orders" class="sb-link"><span class="sb-dot" style="background:#1a2744;"></span><span data-i18n="sb-pg1">เธเธณเธชเธฑเนเธเธเธทเนเธญ</span></a>
+    <a href="#pg-income" class="sb-link"><span class="sb-dot" style="background:#1a2744;"></span><span data-i18n="sb-pg2">เธฃเธฒเธขเธฃเธฑเธเธเธญเธเธเธฑเธ</span></a>
+    <a href="#pg-bank" class="sb-link"><span class="sb-dot" style="background:#1a2744;"></span><span data-i18n="sb-pg3">เน€เธเธดเธเน€เธเนเธฒเธเธเธฒเธเธฒเธฃ</span></a>
+    <a href="#pg-expense" class="sb-link"><span class="sb-dot" style="background:#1a2744;"></span><span data-i18n="sb-pg4">เธเนเธฒเนเธเนเธเนเธฒเธขเนเธเธฅเธ•เธเธญเธฃเนเธก</span></a>
     <div class="sb-divider"></div>
-    <div class="sb-cat" data-i18n="sb-cat-program">💻 วิธีใช้โปรแกรม</div>
-    <a href="#pg-orders" class="sb-link"><span class="sb-dot" style="background:#1a2744;"></span><span data-i18n="sb-pg1">คำสั่งซื้อ</span></a>
-    <a href="#pg-income" class="sb-link"><span class="sb-dot" style="background:#1a2744;"></span><span data-i18n="sb-pg2">รายรับของฉัน</span></a>
-    <a href="#pg-bank" class="sb-link"><span class="sb-dot" style="background:#1a2744;"></span><span data-i18n="sb-pg3">เงินเข้าธนาคาร</span></a>
-    <a href="#pg-expense" class="sb-link"><span class="sb-dot" style="background:#1a2744;"></span><span data-i18n="sb-pg4">ค่าใช้จ่ายแพลตฟอร์ม</span></a>
+    <div class="sb-cat" data-i18n="sb-cat-extract">๐“ฅ เธงเธดเธเธตเธ”เธถเธเธเนเธญเธกเธนเธฅ</div>
+    <a href="#tiktok" class="sb-link has-sub open" onclick="sbTog(this,event)"><span class="sb-dot" style="background:#000;"></span>TikTok Seller Center<span class="sb-arrow">โ–ถ</span></a>
+    <div class="sb-sub open">
+        <a href="#tk-1" class="sb-sub-link" data-i18n="sb-tk1">เธงเธดเธเธตเธ”เธฒเธงเธเนเนเธซเธฅเธ”เธเธณเธชเธฑเนเธเธเธทเนเธญเธชเธดเธเธเนเธฒ</a>
+        <a href="#tk-2" class="sb-sub-link" data-i18n="sb-tk2">เธงเธดเธเธตเธ”เธฒเธงเธเนเนเธซเธฅเธ”เธฃเธฒเธขเธฃเธฑเธเธเธญเธเธเธฑเธ</a>
+        <a href="#tk-3" class="sb-sub-link" data-i18n="sb-tk3">เธงเธดเธเธตเธ”เธฒเธงเธเนเนเธซเธฅเธ”เธเธทเธเธชเธดเธเธเนเธฒ/เธเธทเธเน€เธเธดเธ</a>
+        <a href="#tk-4" class="sb-sub-link" data-i18n="sb-tk4">เธงเธดเธเธตเธ”เธฒเธงเธเนเนเธซเธฅเธ”เธเนเธฒเนเธเนเธเนเธฒเธขเนเธเธฅเธ•เธเธญเธฃเนเธก</a>
+    </div>
+    <a href="#shopee" class="sb-link has-sub" onclick="sbTog(this,event)"><span class="sb-dot" style="background:#EE4D2D;"></span>Shopee Seller Centre<span class="sb-arrow">โ–ถ</span></a>
+    <div class="sb-sub">
+        <a href="#sp-1" class="sb-sub-link" data-i18n="sb-sp1">เธงเธดเธเธตเธ”เธฒเธงเธเนเนเธซเธฅเธ”เธเธณเธชเธฑเนเธเธเธทเนเธญเธชเธดเธเธเนเธฒ</a>
+        <a href="#sp-2" class="sb-sub-link" data-i18n="sb-sp2">เธงเธดเธเธตเธ”เธฒเธงเธเนเนเธซเธฅเธ”เธฃเธฒเธขเธฃเธฑเธ</a>
+        <a href="#sp-3" class="sb-sub-link" data-i18n="sb-sp3">เธงเธดเธเธตเธ”เธฒเธงเธเนเนเธซเธฅเธ”เน€เธเธดเธเน€เธเนเธฒเธเธเธฒเธเธฒเธฃ</a>
+        <a href="#sp-4" class="sb-sub-link" data-i18n="sb-sp4">เธงเธดเธเธตเธ”เธฒเธงเธเนเนเธซเธฅเธ”เธเนเธฒเนเธเนเธเนเธฒเธขเนเธเธฅเธ•เธเธญเธฃเนเธก</a>
+        <a href="#sp-5" class="sb-sub-link" data-i18n="sb-sp5">เธงเธดเธเธตเธ”เธฒเธงเธเนเนเธซเธฅเธ”เธเธทเธเธชเธดเธเธเนเธฒ/เธเธทเธเน€เธเธดเธ</a>
+    </div>
+    <a href="#lazada" class="sb-link has-sub" onclick="sbTog(this,event)"><span class="sb-dot" style="background:#0F146D;"></span>Lazada Seller Center<span class="sb-arrow">โ–ถ</span></a>
+    <div class="sb-sub">
+        <a href="#lz-1" class="sb-sub-link">เธงเธดเธเธตเธ”เธฒเธงเธเนเนเธซเธฅเธ”เธเธณเธชเธฑเนเธเธเธทเนเธญ</a>
+        <a href="#lz-2" class="sb-sub-link">เธงเธดเธเธตเธ”เธฒเธงเธเนเนเธซเธฅเธ”เธฃเธฒเธขเธฃเธฑเธเธเธญเธเธเธฑเธ</a>
+        <a href="#lz-3" class="sb-sub-link">เธงเธดเธเธตเธ”เธฒเธงเธเนเนเธซเธฅเธ”เน€เธเธดเธเน€เธเนเธฒเธเธเธฒเธเธฒเธฃ</a>
+    </div>
 </aside>
 
-<!-- ── Main Content ── -->
+<!-- โ”€โ”€ Main Content โ”€โ”€ -->
 <div class="main">
 
 
-    <!-- ══════════════ TIKTOK ══════════════ -->
+    <section class="pg-sec" id="program">
+        <div class="sec-head anim">
+            <div class="sec-logo" style="font-size:2.5rem;">๐’ป</div>
+            <h2 data-i18n="pg-title">เธงเธดเธเธตเนเธเนเนเธเธฃเนเธเธฃเธก</h2>
+            <p data-i18n="pg-desc">เธเธฒเธฃเธเธณเน€เธเนเธฒเธเนเธญเธกเธนเธฅเน€เธเนเธฒเธชเธนเนเธฃเธฐเธเธ โ€” 4 เธเธฃเธฐเน€เธ เธ—</p>
+            <span class="uline"></span>
+        </div>
+
+        <!-- PG 1: เธเธณเธชเธฑเนเธเธเธทเนเธญ -->
+        <div class="gc open anim" data-i="1" id="pg-orders">
+            <div class="gc-h" onclick="tog(this)"><div class="gc-n">1</div><h3 data-i18n="pg1-title">เธเธณเน€เธเนเธฒเธเนเธญเธกเธนเธฅเธเธณเธชเธฑเนเธเธเธทเนเธญ</h3><span class="gc-t">โ–ผ</span></div>
+            <div class="gc-b">
+                <p style="font-size:.85rem;color:#7a8a9e;margin-bottom:.8rem;" data-i18n="pg1-intro">เธ—เธตเนเนเธ–เธเน€เธกเธเธนเธ”เนเธฒเธเธเนเธฒเธข เนเธเธซเธกเธงเธ” E-Commerce เธเธฅเธดเธเน€เธกเธเธน <span class="hl">เธเธณเธชเธฑเนเธเธเธทเนเธญ</span> เนเธฅเนเธงเธเธฅเธดเธเธเธธเนเธก <span class="hl">เธเธณเน€เธเนเธฒเธเธณเธชเธฑเนเธเธเธทเนเธญ</span> เธชเธตเน€เธเธตเธขเธง เธ—เธตเนเธกเธธเธกเธเธงเธฒเธเธ</p>
+
+                <ol class="steps">
+                    <li class="step" data-i18n="pg1-s1">เธเธฅเธดเธเธเธธเนเธก <span class="hl">เธเธณเน€เธเนเธฒเธเธณเธชเธฑเนเธเธเธทเนเธญ</span> เธชเธตเน€เธเธตเธขเธง เธ—เธตเนเธกเธธเธกเธเธงเธฒเธเธ</li>
+                    <li class="step" data-i18n="pg1-s2">เธซเธเนเธฒเธ•เนเธฒเธ <span class="hl">เธญเธฑเธเนเธซเธฅเธ”เธเนเธญเธกเธนเธฅเธเธณเธชเธฑเนเธเธเธทเนเธญ</span> เธเธฐเน€เธ”เนเธเธเธถเนเธเธกเธฒ</li>
+                    <li class="step" data-i18n="pg1-s3">เน€เธฅเธทเธญเธเธงเธดเธเธตเธเธณเน€เธเนเธฒเนเธเธฅเน (เน€เธฅเธทเธญเธ<strong>เธงเธดเธเธตเนเธ”เธงเธดเธเธตเธซเธเธถเนเธ</strong>):
+                        <ul class="sub-steps">
+                            <li class="sub-step" data-n="3.1" data-i18n="pg1-s3a">เนเธ—เนเธ <span class="hl">เนเธเธฅเน</span> โ€” เธฅเธฒเธเนเธเธฅเน Excel เธกเธฒเธงเธฒเธเนเธเธเธฃเธญเธเน€เธชเนเธเธเธฃเธฐ เธซเธฃเธทเธญเธเธฅเธดเธเน€เธฅเธทเธญเธเธเธฒเธเน€เธเธฃเธทเนเธญเธ (.xls .xlsx .csv) <span class="sub-rec">โ… เนเธเธฐเธเธณ</span></li>
+                            <li class="sub-step" data-n="3.2" data-i18n="pg1-s3b">เนเธ—เนเธ <span class="hl">เนเธเธฅเน€เธ”เธญเธฃเน Drive</span> โ€” เธงเธฒเธ Drive Folder URL เนเธเธเนเธญเธ โ’ เน€เธฅเธทเธญเธเน€เธ”เธทเธญเธ/เธเธต โ’ เธเธ”เธเธธเนเธก <span class="hl">เธเนเธเธซเธฒเนเธเธฅเน</span></li>
+                            <li class="sub-step" data-n="3.3" data-i18n="pg1-s3c">เนเธ—เนเธ <span class="hl">Excel URL</span> โ€” เธงเธฒเธ URL เนเธเธฅเน Google Sheets เธฅเธเนเธเธเนเธญเธ</li>
+                        </ul>
+                    </li>
+                    <li class="step" data-i18n="pg1-s4">เน€เธฅเธทเธญเธเนเธเธฅเนเธ—เธตเนเธ•เนเธญเธเธเธฒเธฃเธเธณเน€เธเนเธฒ (เธ–เนเธฒเนเธเนเนเธ—เนเธ "เนเธเธฅเน" เนเธซเนเธเธฅเธดเธ Dropdown เน€เธฅเธทเธญเธ Platform: <span class="hl">TikTok</span> / <span class="hl">Shopee</span> / <span class="hl">Lazada</span>)</li>
+                    <li class="step" data-i18n="pg1-s5">เธเธ”เธเธธเนเธก <span class="hl">เธญเธฑเธเนเธซเธฅเธ” X เนเธเธฅเน</span> เธชเธตเน€เธเธตเธขเธง</li>
+                    <li class="step" data-i18n="pg1-s6">เธฃเธญเธฃเธฐเธเธเธเธฃเธฐเธกเธงเธฅเธเธฅ โ€” เธเธฐเธกเธตเนเธ–เธ progress bar เนเธชเธ”เธเธเธงเธฒเธกเธเธทเธเธซเธเนเธฒ</li>
+                    <li class="step" data-i18n="pg1-s7">เน€เธกเธทเนเธญเน€เธชเธฃเนเธเธเธฐเนเธชเธ”เธ <span class="hl">เธญเธฑเธเนเธซเธฅเธ”เธชเธณเน€เธฃเนเธ โ…</span> เธเธฃเนเธญเธกเธชเธฃเธธเธเธเธฅ โ’ เธเธ”เธเธธเนเธก <span class="hl">เน€เธชเธฃเนเธเธชเธดเนเธ</span></li>
+                </ol>
+
+                <div class="fi">
+                    <div class="fi-r"><span class="fi-l" data-i18n="fi-name-th">๐“ เธเธทเนเธญเนเธเธฅเน (TH)</span><span class="fi-v">เธ—เธฑเนเธเธซเธกเธ” เธเธณเธชเธฑเนเธเธเธทเนเธญ-XXXX-XX-XX-XX_XX.xlsx</span></div>
+                    <div class="fi-r"><span class="fi-l" data-i18n="fi-name-en">๐“ เธเธทเนเธญเนเธเธฅเน (EN)</span><span class="fi-v">All order-XXXX-XX-XX-XX:XX.xlsx</span></div>
+                    <div class="fi-r"><span class="fi-l" data-i18n="fi-tab">๐“‘ เธเธทเนเธญเนเธ—เนเธ</span><span class="fi-v fi-t">OrderSKUList</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PG 2: เธฃเธฒเธขเธฃเธฑเธเธเธญเธเธเธฑเธ -->
+        <div class="gc anim" data-i="2" id="pg-income">
+            <div class="gc-h" onclick="tog(this)"><div class="gc-n">2</div><h3 data-i18n="pg2-title">เธเธณเน€เธเนเธฒเธเนเธญเธกเธนเธฅเธฃเธฒเธขเธฃเธฑเธเธเธญเธเธเธฑเธ</h3><span class="gc-t">โ–ผ</span></div>
+            <div class="gc-b">
+                <p style="font-size:.85rem;color:#7a8a9e;margin-bottom:.8rem;" data-i18n="pg2-intro">เธ—เธตเนเนเธ–เธเน€เธกเธเธนเธ”เนเธฒเธเธเนเธฒเธข เนเธเธซเธกเธงเธ” E-Commerce เธเธฅเธดเธเน€เธกเธเธน <span class="hl">เธฃเธฒเธขเธฃเธฑเธเธเธญเธเธเธฑเธ</span> เนเธฅเนเธงเธเธฅเธดเธเธเธธเนเธก <span class="hl">เธเธณเน€เธเนเธฒ</span> เธ—เธตเนเธกเธธเธกเธเธงเธฒเธเธ</p>
+
+                <ol class="steps">
+                    <li class="step" data-i18n="pg2-s1">เธเธฅเธดเธเธเธธเนเธก <span class="hl">เธเธณเน€เธเนเธฒ</span> เธ—เธตเนเธกเธธเธกเธเธงเธฒเธเธ</li>
+                    <li class="step" data-i18n="pg2-s2">เธซเธเนเธฒเธ•เนเธฒเธ <span class="hl">เธญเธฑเธเนเธซเธฅเธ”เธเนเธญเธกเธนเธฅ</span> เธเธฐเน€เธ”เนเธเธเธถเนเธเธกเธฒ</li>
+                    <li class="step" data-i18n="pg2-s3">เน€เธฅเธทเธญเธเธงเธดเธเธตเธเธณเน€เธเนเธฒเนเธเธฅเน (เน€เธฅเธทเธญเธ<strong>เธงเธดเธเธตเนเธ”เธงเธดเธเธตเธซเธเธถเนเธ</strong>):
+                        <ul class="sub-steps">
+                            <li class="sub-step" data-n="3.1" data-i18n="pg2-s3a">เนเธ—เนเธ <span class="hl">เนเธเธฅเน</span> โ€” เธฅเธฒเธเนเธเธฅเน Excel เธกเธฒเธงเธฒเธ เธซเธฃเธทเธญเธเธฅเธดเธเน€เธฅเธทเธญเธเธเธฒเธเน€เธเธฃเธทเนเธญเธ <span class="sub-rec">โ… เนเธเธฐเธเธณ</span></li>
+                            <li class="sub-step" data-n="3.2" data-i18n="pg2-s3b">เนเธ—เนเธ <span class="hl">เนเธเธฅเน€เธ”เธญเธฃเน Drive</span> โ€” เธงเธฒเธ Drive Folder URL โ’ เน€เธฅเธทเธญเธเน€เธ”เธทเธญเธ/เธเธต โ’ เธเธ”เธเธธเนเธก <span class="hl">เธเนเธเธซเธฒเนเธเธฅเน</span></li>
+                            <li class="sub-step" data-n="3.3" data-i18n="pg2-s3c">เนเธ—เนเธ <span class="hl">Excel URL</span> โ€” เธงเธฒเธ URL เนเธเธฅเน Google Sheets เธฅเธเนเธเธเนเธญเธ</li>
+                        </ul>
+                    </li>
+                    <li class="step" data-i18n="pg2-s4">เน€เธฅเธทเธญเธเนเธเธฅเนเธ—เธตเนเธ•เนเธญเธเธเธฒเธฃเธเธณเน€เธเนเธฒ เนเธฅเนเธงเธเธ”เธเธธเนเธก <span class="hl">เธญเธฑเธเนเธซเธฅเธ” X เนเธเธฅเน</span> เธชเธตเน€เธเธตเธขเธง</li>
+                    <li class="step" data-i18n="pg2-s5">เธฃเธญเธฃเธฐเธเธเธเธฃเธฐเธกเธงเธฅเธเธฅ โ€” เธเธฐเธกเธตเนเธ–เธ progress bar เนเธชเธ”เธเธเธงเธฒเธกเธเธทเธเธซเธเนเธฒ</li>
+                    <li class="step" data-i18n="pg2-s6">เน€เธกเธทเนเธญเน€เธชเธฃเนเธเธเธฐเนเธชเธ”เธ <span class="hl">เธญเธฑเธเนเธซเธฅเธ”เธชเธณเน€เธฃเนเธ โ…</span> เธเธฃเนเธญเธกเธชเธฃเธธเธเธเธฅ โ’ เธเธ”เธเธธเนเธก <span class="hl">เน€เธชเธฃเนเธเธชเธดเนเธ</span></li>
+                </ol>
+
+                <div class="fi">
+                    <div class="fi-r"><span class="fi-l" data-i18n="fi-name-th">๐“ เธเธทเนเธญเนเธเธฅเน (TH)</span><span class="fi-v">income_XXXXXX-XX_XX_XX(UTC+7).xlsx</span></div>
+                    <div class="fi-r"><span class="fi-l" data-i18n="fi-name-en">๐“ เธเธทเนเธญเนเธเธฅเน (EN)</span><span class="fi-v">income_XXXXXX-XX_XX_XX(UTC+7).xlsx</span></div>
+                    <div class="fi-r"><span class="fi-l" data-i18n="fi-tab">๐“‘ เธเธทเนเธญเนเธ—เนเธ</span><span class="fi-v fi-t">เธฃเธฒเธขเธฅเธฐเน€เธญเธตเธขเธ”เธเธณเธชเธฑเนเธเธเธทเนเธญ, เธฃเธฒเธขเธเธฒเธ, เธเธฑเธเธ—เธถเธเธเธฒเธฃเธ–เธญเธ, เธเธณเธญเธเธดเธเธฒเธขเธเนเธฒเธเธฃเธฃเธกเน€เธเธตเธขเธก</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PG 3: เน€เธเธดเธเน€เธเนเธฒเธเธเธฒเธเธฒเธฃ -->
+        <div class="gc anim" data-i="3" id="pg-bank">
+            <div class="gc-h" onclick="tog(this)"><div class="gc-n">3</div><h3 data-i18n="pg3-title">เธเธณเน€เธเนเธฒเธเนเธญเธกเธนเธฅเน€เธเธดเธเน€เธเนเธฒเธเธเธฒเธเธฒเธฃ</h3><span class="gc-t">โ–ผ</span></div>
+            <div class="gc-b">
+                <p style="font-size:.85rem;color:#7a8a9e;margin-bottom:.8rem;" data-i18n="pg3-intro">เธ—เธตเนเนเธ–เธเน€เธกเธเธนเธ”เนเธฒเธเธเนเธฒเธข เนเธเน€เธกเธเธน E-Commerce เธเธฅเธดเธเน€เธกเธเธน <span class="hl">เธฃเธฑเธเน€เธเธดเธเน€เธเนเธฒเธเธเธฒเธเธฒเธฃ</span> เนเธฅเนเธงเธเธ”เธเธธเนเธก <span class="hl">เธฃเธฑเธเน€เธเธดเธเน€เธเนเธฒเธเธเธฒเธเธฒเธฃเธ—เธฑเนเธเธซเธกเธ”</span> เธชเธตเน€เธเธตเธขเธง เนเธฅเนเธงเน€เธฅเธทเธญเธ <span class="hl">เธเธณเน€เธเนเธฒเธฃเธฑเธเน€เธเธดเธเธเธฒเธเนเธเธฅเน</span></p>
+
+                <ol class="steps">
+                <li class="step" data-i18n="pg3-s1">เธ—เธตเนเนเธ–เธเน€เธกเธเธนเธ”เนเธฒเธเธเนเธฒเธข เนเธเน€เธกเธเธน E-Commerce เธเธฅเธดเธเน€เธกเธเธน <span class="hl">เธฃเธฑเธเน€เธเธดเธเน€เธเนเธฒเธเธเธฒเธเธฒเธฃ</span></li>
+                <li class="step" data-i18n="pg3-s2">เธเธ”เธเธธเนเธก <span class="hl">เธฃเธฑเธเน€เธเธดเธเน€เธเนเธฒเธเธเธฒเธเธฒเธฃเธ—เธฑเนเธเธซเธกเธ”</span> (เธชเธตเน€เธเธตเธขเธง) เนเธฅเนเธงเน€เธฅเธทเธญเธ <span class="hl">เธเธณเน€เธเนเธฒเธฃเธฑเธเน€เธเธดเธเธเธฒเธเนเธเธฅเน</span></li>
+                <li class="step" data-i18n="pg3-s3">เธซเธเนเธฒเธ•เนเธฒเธ <span class="hl">เธเธณเน€เธเนเธฒเธฃเธฒเธขเธเธฒเธฃเธ–เธญเธเน€เธเธดเธ</span> เธเธฐเน€เธ”เนเธเธเธถเนเธเธกเธฒ เน€เธฅเธทเธญเธ Platform: <span class="hl">TikTok</span> เธซเธฃเธทเธญ <span class="hl">Shopee</span>
+                    <ul class="sub-steps">
+                        <li class="sub-step" data-n="3.1" data-i18n="pg3-s3a">เน€เธฅเธทเธญเธ <span class="hl">เนเธเธฅเน Excel / PDF</span> โ€” เธฅเธฒเธเนเธเธฅเนเธกเธฒเธงเธฒเธ เธซเธฃเธทเธญเธเธฅเธดเธเน€เธฅเธทเธญเธเนเธเธฅเน <span class="sub-rec">โ… เนเธเธฐเธเธณ</span></li>
+                        <li class="sub-step" data-n="3.2" data-i18n="pg3-s3b">เน€เธฅเธทเธญเธ <span class="hl">Google Drive</span> โ€” เธงเธฒเธ URL เธเธญเธ Google Drive Folder</li>
+                    </ul>
+                </li>
+                <li class="step" data-i18n="pg3-s4">เธเธ”เธเธธเนเธก <span class="hl">เธเธณเน€เธเนเธฒเธเนเธญเธกเธนเธฅ</span></li>
+                <li class="step" data-i18n="pg3-s5">เธ•เธฃเธงเธเธชเธญเธเธเนเธญเธกเธนเธฅ โ’ เธเธ” <span class="hl">เธเธฑเธเธ—เธถเธ</span></li>
+                <li class="step" data-i18n="pg3-s6">เน€เธกเธทเนเธญเน€เธชเธฃเนเธเธเธฐเนเธชเธ”เธ <span class="hl">เน€เธชเธฃเนเธเธชเธดเนเธ โ…</span></li>
+            </ol>
+            </div>
+        </div>
+
+        <!-- PG 4: เธเนเธฒเนเธเนเธเนเธฒเธขเนเธเธฅเธ•เธเธญเธฃเนเธก -->
+        <div class="gc anim" data-i="4" id="pg-expense">
+            <div class="gc-h" onclick="tog(this)"><div class="gc-n">4</div><h3 data-i18n="pg4-title">เธเธณเน€เธเนเธฒเธเธดเธฅเธเนเธฒเนเธเนเธเนเธฒเธขเนเธเธฅเธ•เธเธญเธฃเนเธก</h3><span class="gc-t">โ–ผ</span></div>
+            <div class="gc-b">
+                <p style="font-size:.85rem;color:#7a8a9e;margin-bottom:.8rem;" data-i18n="pg4-intro">เธ—เธตเนเนเธ–เธเน€เธกเธเธนเธ”เนเธฒเธเธเนเธฒเธข เนเธเน€เธกเธเธน E-Commerce เธเธฅเธดเธเน€เธกเธเธน <span class="hl">เธเนเธฒเนเธเนเธเนเธฒเธขเนเธเธฅเธ•เธเธญเธฃเนเธก</span> เนเธฅเนเธงเธเธ”เธเธธเนเธก <span class="hl">เธเธณเน€เธเนเธฒเธเธดเธฅเธเนเธฒเนเธเนเธเนเธฒเธข</span> เธชเธตเน€เธเธตเธขเธง</p>
+
+                <ol class="steps">
+                <li class="step" data-i18n="pg4-s1">เธ—เธตเนเนเธ–เธเน€เธกเธเธนเธ”เนเธฒเธเธเนเธฒเธข เนเธเน€เธกเธเธน E-Commerce เธเธฅเธดเธเน€เธกเธเธน <span class="hl">เธเนเธฒเนเธเนเธเนเธฒเธขเนเธเธฅเธ•เธเธญเธฃเนเธก</span></li>
+                <li class="step" data-i18n="pg4-s2">เธเธ”เธเธธเนเธก <span class="hl">เธเธณเน€เธเนเธฒเธเธดเธฅเธเนเธฒเนเธเนเธเนเธฒเธข</span> (เธชเธตเน€เธเธตเธขเธง)</li>
+                <li class="step" data-i18n="pg4-s3">เธซเธเนเธฒเธ•เนเธฒเธ <span class="hl">AI Scan เธเธดเธฅ</span> เธเธฐเน€เธ”เนเธเธเธถเนเธเธกเธฒ เน€เธฅเธทเธญเธเธงเธดเธเธตเธเธณเน€เธเนเธฒ (เน€เธฅเธทเธญเธ<strong>เธงเธดเธเธตเนเธ”เธงเธดเธเธตเธซเธเธถเนเธ</strong>):
+                    <ul class="sub-steps">
+                        <li class="sub-step" data-n="3.1" data-i18n="pg4-s3a">เนเธ—เนเธ <span class="hl">เนเธเธฅเน€เธ”เธญเธฃเน Drive</span> โ€” เธงเธฒเธ URL เนเธเธฅเน€เธ”เธญเธฃเนเธ—เธตเนเธกเธตเนเธเธฅเน PDF โ’ เน€เธฅเธทเธญเธเนเธเธฅเธ•เธเธญเธฃเนเธก โ’ เธเธ”เธเธธเนเธก <span class="hl">เธชเนเธเธ + เนเธกเนเธเธเธฑเธเธเธตเธญเธฑเธ•เนเธเธกเธฑเธ•เธด</span> <span class="sub-rec">โ… เนเธเธฐเธเธณ</span></li>
+                        <li class="sub-step" data-n="3.2" data-i18n="pg4-s3b">เนเธ—เนเธ <span class="hl">เนเธเธฅเนเน€เธ”เธตเนเธขเธง</span> โ€” เธฅเธฒเธ PDF / เธฃเธนเธเธกเธฒเธงเธฒเธ เนเธฅเนเธงเธเธ” <span class="hl">เธชเนเธเธ</span> เธซเธฃเธทเธญ <span class="hl">เธฃเธฑเธเธเนเธญเธกเธนเธฅเธเธฑเธเธเธต</span></li>
+                    </ul>
+                </li>
+                <li class="step" data-i18n="pg4-s4">เธฃเธญเธฃเธฐเธเธ AI เธเธฃเธฐเธกเธงเธฅเธเธฅ</li>
+                <li class="step" data-i18n="pg4-s5">เน€เธกเธทเนเธญเน€เธชเธฃเนเธเธเธฐเนเธชเธ”เธ <span class="hl">เน€เธชเธฃเนเธเธชเธดเนเธ โ…</span></li>
+            </ol>
+            </div>
+        </div>
+    </section>
+
+    <hr class="sec-div">
+
+    <!-- โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ• TIKTOK โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ• -->
     <section class="tk-sec" id="tiktok">
         <div class="sec-head anim">
             <div class="sec-logo">
                 <svg viewBox="0 0 48 48" fill="none"><path d="M33.3 8.2A8.1 8.1 0 0 1 28.1 3h-5.7l-.01 27.7a5.4 5.4 0 1 1-3.7-5.1V19.7a11.2 11.2 0 1 0 9.5 11.1V17.5A14 14 0 0 0 36.3 20v-5.8a8.1 8.1 0 0 1-3-6z" fill="#1a2744"/></svg>
             </div>
             <h2>TikTok Seller Center</h2>
-            <p data-i18n="tk-desc">การดึงข้อมูลจาก TikTok Shop — 4 ประเภทรายงาน</p>
+            <p data-i18n="tk-desc">เธเธฒเธฃเธ”เธถเธเธเนเธญเธกเธนเธฅเธเธฒเธ TikTok Shop โ€” 4 เธเธฃเธฐเน€เธ เธ—เธฃเธฒเธขเธเธฒเธ</p>
             <span class="uline"></span>
         </div>
 
         <!-- TK 1 -->
         <div class="gc open anim" data-i="1" id="tk-1">
-            <div class="gc-h" onclick="tog(this)"><div class="gc-n">1</div><h3 data-i18n="tk1-title">วิธีดาวน์โหลดข้อมูลคำสั่งซื้อสินค้า</h3><span class="gc-t">▼</span></div>
+            <div class="gc-h" onclick="tog(this)"><div class="gc-n">1</div><h3 data-i18n="tk1-title">เธงเธดเธเธตเธ”เธฒเธงเธเนเนเธซเธฅเธ”เธเนเธญเธกเธนเธฅเธเธณเธชเธฑเนเธเธเธทเนเธญเธชเธดเธเธเนเธฒ</h3><span class="gc-t">โ–ผ</span></div>
             <div class="gc-b"><ol class="steps">
-                <li class="step" data-i18n="tk1-s1">ล็อกอินเข้าสู่ระบบ <span class="hl">TikTok Seller Center</span></li>
-                <li class="step" data-i18n="tk1-s2">ที่แถบเมนูด้านซ้ายมือสุด ให้คลิกที่หัวข้อ <span class="hl">คำสั่งซื้อ</span> แล้วเลือกเมนูย่อย <span class="hl">จัดการคำสั่งซื้อ</span></li>
-                <li class="step" data-i18n="tk1-s3">ตรงกลางหน้าจอจะมีแท็บสถานะต่างๆ ให้คลิกเลือกแท็บ <span class="hl">ทั้งหมด</span></li>
-                <li class="step" data-i18n="tk1-s4">คลิกที่ช่องปฏิทิน (เวลาที่สร้าง) เพื่อทำการระบุ <span class="hl">วันที่เริ่มต้น</span> และ <span class="hl">วันที่สิ้นสุด</span> ที่คุณต้องการดึงข้อมูล</li>
-                <li class="step" data-i18n="tk1-s5">มองหาปุ่ม <span class="hl">ส่งออก</span> ที่อยู่บริเวณมุมขวาบนเหนือรายการคำสั่งซื้อ แล้วคลิกที่ปุ่มนั้น</li>
-                <li class="step" data-i18n="tk1-s6">ในหน้าต่างป๊อปอัปที่ปรากฏขึ้นมา ให้สังเกตหัวข้อ "รูปแบบการส่งออก" ต้องติ๊กเลือกวงกลมคำว่า <span class="hl">Excel</span> ให้เรียบร้อย จากนั้นกดปุ่ม <span class="hl">ส่งออก</span> สีเขียว</li>
-                <li class="step" data-i18n="tk1-s7">ระบบจะใช้เวลาสร้างไฟล์สักครู่ ให้คุณคลิกที่ข้อความลิงก์คำว่า <span class="hl">ประวัติการส่งออก</span> (จะอยู่ข้างๆ ปุ่มส่งออกในตอนแรก)</li>
-                <li class="step" data-i18n="tk1-s8">หน้าต่างประวัติจะเปิดขึ้นมา ให้ดูไฟล์บรรทัดบนสุด (ไฟล์ล่าสุด) แล้วคลิกปุ่ม <span class="hl">ดาวน์โหลด</span> เพื่อบันทึกไฟล์ Excel ลงเครื่อง</li>
+                <li class="step" data-i18n="tk1-s1">เธฅเนเธญเธเธญเธดเธเน€เธเนเธฒเธชเธนเนเธฃเธฐเธเธ <span class="hl">TikTok Seller Center</span></li>
+                <li class="step" data-i18n="tk1-s2">เธ—เธตเนเนเธ–เธเน€เธกเธเธนเธ”เนเธฒเธเธเนเธฒเธขเธกเธทเธญเธชเธธเธ” เนเธซเนเธเธฅเธดเธเธ—เธตเนเธซเธฑเธงเธเนเธญ <span class="hl">เธเธณเธชเธฑเนเธเธเธทเนเธญ</span> เนเธฅเนเธงเน€เธฅเธทเธญเธเน€เธกเธเธนเธขเนเธญเธข <span class="hl">เธเธฑเธ”เธเธฒเธฃเธเธณเธชเธฑเนเธเธเธทเนเธญ</span></li>
+                <li class="step" data-i18n="tk1-s3">เธ•เธฃเธเธเธฅเธฒเธเธซเธเนเธฒเธเธญเธเธฐเธกเธตเนเธ—เนเธเธชเธ–เธฒเธเธฐเธ•เนเธฒเธเน เนเธซเนเธเธฅเธดเธเน€เธฅเธทเธญเธเนเธ—เนเธ <span class="hl">เธ—เธฑเนเธเธซเธกเธ”</span></li>
+                <li class="step" data-i18n="tk1-s4">เธเธฅเธดเธเธ—เธตเนเธเนเธญเธเธเธเธดเธ—เธดเธ (เน€เธงเธฅเธฒเธ—เธตเนเธชเธฃเนเธฒเธ) เน€เธเธทเนเธญเธ—เธณเธเธฒเธฃเธฃเธฐเธเธธ <span class="hl">เธงเธฑเธเธ—เธตเนเน€เธฃเธดเนเธกเธ•เนเธ</span> เนเธฅเธฐ <span class="hl">เธงเธฑเธเธ—เธตเนเธชเธดเนเธเธชเธธเธ”</span> เธ—เธตเนเธเธธเธ“เธ•เนเธญเธเธเธฒเธฃเธ”เธถเธเธเนเธญเธกเธนเธฅ</li>
+                <li class="step" data-i18n="tk1-s5">เธกเธญเธเธซเธฒเธเธธเนเธก <span class="hl">เธชเนเธเธญเธญเธ</span> เธ—เธตเนเธญเธขเธนเนเธเธฃเธดเน€เธงเธ“เธกเธธเธกเธเธงเธฒเธเธเน€เธซเธเธทเธญเธฃเธฒเธขเธเธฒเธฃเธเธณเธชเธฑเนเธเธเธทเนเธญ เนเธฅเนเธงเธเธฅเธดเธเธ—เธตเนเธเธธเนเธกเธเธฑเนเธ</li>
+                <li class="step" data-i18n="tk1-s6">เนเธเธซเธเนเธฒเธ•เนเธฒเธเธเนเธญเธเธญเธฑเธเธ—เธตเนเธเธฃเธฒเธเธเธเธถเนเธเธกเธฒ เนเธซเนเธชเธฑเธเน€เธเธ•เธซเธฑเธงเธเนเธญ "เธฃเธนเธเนเธเธเธเธฒเธฃเธชเนเธเธญเธญเธ" เธ•เนเธญเธเธ•เธดเนเธเน€เธฅเธทเธญเธเธงเธเธเธฅเธกเธเธณเธงเนเธฒ <span class="hl">Excel</span> เนเธซเนเน€เธฃเธตเธขเธเธฃเนเธญเธข เธเธฒเธเธเธฑเนเธเธเธ”เธเธธเนเธก <span class="hl">เธชเนเธเธญเธญเธ</span> เธชเธตเน€เธเธตเธขเธง</li>
+                <li class="step" data-i18n="tk1-s7">เธฃเธฐเธเธเธเธฐเนเธเนเน€เธงเธฅเธฒเธชเธฃเนเธฒเธเนเธเธฅเนเธชเธฑเธเธเธฃเธนเน เนเธซเนเธเธธเธ“เธเธฅเธดเธเธ—เธตเนเธเนเธญเธเธงเธฒเธกเธฅเธดเธเธเนเธเธณเธงเนเธฒ <span class="hl">เธเธฃเธฐเธงเธฑเธ•เธดเธเธฒเธฃเธชเนเธเธญเธญเธ</span> (เธเธฐเธญเธขเธนเนเธเนเธฒเธเน เธเธธเนเธกเธชเนเธเธญเธญเธเนเธเธ•เธญเธเนเธฃเธ)</li>
+                <li class="step" data-i18n="tk1-s8">เธซเธเนเธฒเธ•เนเธฒเธเธเธฃเธฐเธงเธฑเธ•เธดเธเธฐเน€เธเธดเธ”เธเธถเนเธเธกเธฒ เนเธซเนเธ”เธนเนเธเธฅเนเธเธฃเธฃเธ—เธฑเธ”เธเธเธชเธธเธ” (เนเธเธฅเนเธฅเนเธฒเธชเธธเธ”) เนเธฅเนเธงเธเธฅเธดเธเธเธธเนเธก <span class="hl">เธ”เธฒเธงเธเนเนเธซเธฅเธ”</span> เน€เธเธทเนเธญเธเธฑเธเธ—เธถเธเนเธเธฅเน Excel เธฅเธเน€เธเธฃเธทเนเธญเธ</li>
             </ol>
             <div class="fi">
-                <div class="fi-r"><span class="fi-l" data-i18n="fi-name-th">📄 ชื่อไฟล์ (TH)</span><span class="fi-v">ทั้งหมด คำสั่งซื้อ-XXXX-XX-XX-XX_XX.xlsx</span></div>
-                <div class="fi-r"><span class="fi-l" data-i18n="fi-name-en">📄 ชื่อไฟล์ (EN)</span><span class="fi-v">All order-XXXX-XX-XX-XX:XX.xlsx</span></div>
-                <div class="fi-r"><span class="fi-l" data-i18n="fi-tab">📑 ชื่อแท็บ</span><span class="fi-v fi-t">OrderSKUList</span></div>
+                <div class="fi-r"><span class="fi-l" data-i18n="fi-name-th">๐“ เธเธทเนเธญเนเธเธฅเน (TH)</span><span class="fi-v">เธ—เธฑเนเธเธซเธกเธ” เธเธณเธชเธฑเนเธเธเธทเนเธญ-XXXX-XX-XX-XX_XX.xlsx</span></div>
+                <div class="fi-r"><span class="fi-l" data-i18n="fi-name-en">๐“ เธเธทเนเธญเนเธเธฅเน (EN)</span><span class="fi-v">All order-XXXX-XX-XX-XX:XX.xlsx</span></div>
+                <div class="fi-r"><span class="fi-l" data-i18n="fi-tab">๐“‘ เธเธทเนเธญเนเธ—เนเธ</span><span class="fi-v fi-t">OrderSKUList</span></div>
             </div></div>
         </div>
 
         <!-- TK 2 -->
         <div class="gc anim" data-i="2" id="tk-2">
-            <div class="gc-h" onclick="tog(this)"><div class="gc-n">2</div><h3 data-i18n="tk2-title">วิธีดาวน์โหลดรายรับของฉัน</h3><span class="gc-t">▼</span></div>
+            <div class="gc-h" onclick="tog(this)"><div class="gc-n">2</div><h3 data-i18n="tk2-title">เธงเธดเธเธตเธ”เธฒเธงเธเนเนเธซเธฅเธ”เธฃเธฒเธขเธฃเธฑเธเธเธญเธเธเธฑเธ</h3><span class="gc-t">โ–ผ</span></div>
             <div class="gc-b"><ol class="steps">
-                <li class="step" data-i18n="tk2-s1">ที่แถบเมนูด้านซ้าย เลื่อนลงมาคลิกหัวข้อ <span class="hl">การเงิน</span> แล้วเลือก <span class="hl">ธุรกรรม</span> (หรือเมนูที่เกี่ยวข้องกับการถอนเงิน/สถานะบัญชี)</li>
-                <li class="step" data-i18n="tk2-s2">ในหน้าธุรกรรม ให้คลิกเลือกแท็บ <span class="hl">ชำระเงินแล้ว</span> หรือแท็บที่แสดงรายการเงินที่เข้าบัญชีแล้ว</li>
-                <li class="step" data-i18n="tk2-s3">คลิกที่ช่องปฏิทิน เพื่อทำการระบุ <span class="hl">วันที่เริ่มต้น</span> และ <span class="hl">วันที่สิ้นสุด</span> ที่คุณต้องการตรวจสอบยอดเงิน</li>
-                <li class="step" data-i18n="tk2-s4">กดปุ่ม <span class="hl">ส่งออก</span></li>
-                <li class="step" data-i18n="tk2-s5">หน้าต่างเด้งขึ้นมาให้เลือกรูปแบบไฟล์เป็น <span class="hl">Excel</span> แล้วกดยืนยันการส่งออก จากนั้นไปที่ <span class="hl">ประวัติการส่งออก</span> เพื่อกดดาวน์โหลดไฟล์</li>
+                <li class="step" data-i18n="tk2-s1">เธ—เธตเนเนเธ–เธเน€เธกเธเธนเธ”เนเธฒเธเธเนเธฒเธข เน€เธฅเธทเนเธญเธเธฅเธเธกเธฒเธเธฅเธดเธเธซเธฑเธงเธเนเธญ <span class="hl">เธเธฒเธฃเน€เธเธดเธ</span> เนเธฅเนเธงเน€เธฅเธทเธญเธ <span class="hl">เธเธธเธฃเธเธฃเธฃเธก</span> (เธซเธฃเธทเธญเน€เธกเธเธนเธ—เธตเนเน€เธเธตเนเธขเธงเธเนเธญเธเธเธฑเธเธเธฒเธฃเธ–เธญเธเน€เธเธดเธ/เธชเธ–เธฒเธเธฐเธเธฑเธเธเธต)</li>
+                <li class="step" data-i18n="tk2-s2">เนเธเธซเธเนเธฒเธเธธเธฃเธเธฃเธฃเธก เนเธซเนเธเธฅเธดเธเน€เธฅเธทเธญเธเนเธ—เนเธ <span class="hl">เธเธณเธฃเธฐเน€เธเธดเธเนเธฅเนเธง</span> เธซเธฃเธทเธญเนเธ—เนเธเธ—เธตเนเนเธชเธ”เธเธฃเธฒเธขเธเธฒเธฃเน€เธเธดเธเธ—เธตเนเน€เธเนเธฒเธเธฑเธเธเธตเนเธฅเนเธง</li>
+                <li class="step" data-i18n="tk2-s3">เธเธฅเธดเธเธ—เธตเนเธเนเธญเธเธเธเธดเธ—เธดเธ เน€เธเธทเนเธญเธ—เธณเธเธฒเธฃเธฃเธฐเธเธธ <span class="hl">เธงเธฑเธเธ—เธตเนเน€เธฃเธดเนเธกเธ•เนเธ</span> เนเธฅเธฐ <span class="hl">เธงเธฑเธเธ—เธตเนเธชเธดเนเธเธชเธธเธ”</span> เธ—เธตเนเธเธธเธ“เธ•เนเธญเธเธเธฒเธฃเธ•เธฃเธงเธเธชเธญเธเธขเธญเธ”เน€เธเธดเธ</li>
+                <li class="step" data-i18n="tk2-s4">เธเธ”เธเธธเนเธก <span class="hl">เธชเนเธเธญเธญเธ</span></li>
+                <li class="step" data-i18n="tk2-s5">เธซเธเนเธฒเธ•เนเธฒเธเน€เธ”เนเธเธเธถเนเธเธกเธฒเนเธซเนเน€เธฅเธทเธญเธเธฃเธนเธเนเธเธเนเธเธฅเนเน€เธเนเธ <span class="hl">Excel</span> เนเธฅเนเธงเธเธ”เธขเธทเธเธขเธฑเธเธเธฒเธฃเธชเนเธเธญเธญเธ เธเธฒเธเธเธฑเนเธเนเธเธ—เธตเน <span class="hl">เธเธฃเธฐเธงเธฑเธ•เธดเธเธฒเธฃเธชเนเธเธญเธญเธ</span> เน€เธเธทเนเธญเธเธ”เธ”เธฒเธงเธเนเนเธซเธฅเธ”เนเธเธฅเน</li>
             </ol>
             <div class="fi">
-                <div class="fi-r"><span class="fi-l" data-i18n="fi-name-th">📄 ชื่อไฟล์ (TH)</span><span class="fi-v">income_XXXXXX-XX_XX_XX(UTC+7).xlsx</span></div>
-                <div class="fi-r"><span class="fi-l" data-i18n="fi-name-en">📄 ชื่อไฟล์ (EN)</span><span class="fi-v">income_XXXXXX-XX_XX_XX(UTC+7).xlsx</span></div>
-                <div class="fi-r"><span class="fi-l" data-i18n="fi-tab">📑 ชื่อแท็บ</span><span class="fi-v fi-t">รายละเอียดคำสั่งซื้อ, รายงาน, บันทึกการถอน, คำอธิบายค่าธรรมเนียม</span></div>
+                <div class="fi-r"><span class="fi-l" data-i18n="fi-name-th">๐“ เธเธทเนเธญเนเธเธฅเน (TH)</span><span class="fi-v">income_XXXXXX-XX_XX_XX(UTC+7).xlsx</span></div>
+                <div class="fi-r"><span class="fi-l" data-i18n="fi-name-en">๐“ เธเธทเนเธญเนเธเธฅเน (EN)</span><span class="fi-v">income_XXXXXX-XX_XX_XX(UTC+7).xlsx</span></div>
+                <div class="fi-r"><span class="fi-l" data-i18n="fi-tab">๐“‘ เธเธทเนเธญเนเธ—เนเธ</span><span class="fi-v fi-t">เธฃเธฒเธขเธฅเธฐเน€เธญเธตเธขเธ”เธเธณเธชเธฑเนเธเธเธทเนเธญ, เธฃเธฒเธขเธเธฒเธ, เธเธฑเธเธ—เธถเธเธเธฒเธฃเธ–เธญเธ, เธเธณเธญเธเธดเธเธฒเธขเธเนเธฒเธเธฃเธฃเธกเน€เธเธตเธขเธก</span></div>
             </div></div>
         </div>
 
         <!-- TK 3 -->
         <div class="gc anim" data-i="3" id="tk-3">
-            <div class="gc-h" onclick="tog(this)"><div class="gc-n">3</div><h3 data-i18n="tk3-title">วิธีดาวน์โหลดข้อมูลการคืนสินค้าและการคืนเงิน</h3><span class="gc-t">▼</span></div>
+            <div class="gc-h" onclick="tog(this)"><div class="gc-n">3</div><h3 data-i18n="tk3-title">เธงเธดเธเธตเธ”เธฒเธงเธเนเนเธซเธฅเธ”เธเนเธญเธกเธนเธฅเธเธฒเธฃเธเธทเธเธชเธดเธเธเนเธฒเนเธฅเธฐเธเธฒเธฃเธเธทเธเน€เธเธดเธ</h3><span class="gc-t">โ–ผ</span></div>
             <div class="gc-b"><ol class="steps">
-                <li class="step" data-i18n="tk3-s1">ที่แถบเมนูด้านซ้าย คลิกที่หัวข้อ <span class="hl">คำสั่งซื้อ</span> แล้วเลือกเมนู <span class="hl">จัดการการคืนสินค้า</span></li>
-                <li class="step" data-i18n="tk3-s2">มองไปที่มุมขวาบนของหน้าจอ จะเห็นไอคอน <span class="hl">ตัวกรอง</span> (รูปแว่นขยายหรือสัญลักษณ์เส้นขีดๆ) ให้คลิกที่ไอคอนนี้</li>
-                <li class="step" data-i18n="tk3-s3">หน้าต่างตัวกรองจะเปิดออกมาทางขวา ตรงหัวข้อ "เวลาที่สร้าง" ให้คลิกเลือก <span class="hl">วันที่เริ่มต้น</span> และ <span class="hl">วันที่สิ้นสุด</span> ที่คุณต้องการค้นหา เสร็จแล้วกดปุ่ม <span class="hl">นำไปใช้</span> สีเขียวด้านล่าง</li>
-                <li class="step" data-i18n="tk3-s4">เมื่อรายการแสดงผลตามวันที่เลือกแล้ว ให้คลิก <span class="hl">ไอคอนส่งออก</span> (รูปกล่องมีลูกศรชี้ลง) ที่อยู่ติดกับปุ่มตัวกรอง</li>
-                <li class="step" data-i18n="tk3-s5">เช็คให้ชัวร์ว่าหน้าต่างป๊อปอัปเลือกรูปแบบเป็น <span class="hl">Excel</span> แล้วกดปุ่ม <span class="hl">ส่งออก</span> สีเขียว</li>
-                <li class="step" data-i18n="tk3-s6">คลิกที่ลิงก์ <span class="hl">ประวัติการส่งออก</span> เพื่อเข้าไปกดดาวน์โหลดไฟล์ล่าสุด</li>
+                <li class="step" data-i18n="tk3-s1">เธ—เธตเนเนเธ–เธเน€เธกเธเธนเธ”เนเธฒเธเธเนเธฒเธข เธเธฅเธดเธเธ—เธตเนเธซเธฑเธงเธเนเธญ <span class="hl">เธเธณเธชเธฑเนเธเธเธทเนเธญ</span> เนเธฅเนเธงเน€เธฅเธทเธญเธเน€เธกเธเธน <span class="hl">เธเธฑเธ”เธเธฒเธฃเธเธฒเธฃเธเธทเธเธชเธดเธเธเนเธฒ</span></li>
+                <li class="step" data-i18n="tk3-s2">เธกเธญเธเนเธเธ—เธตเนเธกเธธเธกเธเธงเธฒเธเธเธเธญเธเธซเธเนเธฒเธเธญ เธเธฐเน€เธซเนเธเนเธญเธเธญเธ <span class="hl">เธ•เธฑเธงเธเธฃเธญเธ</span> (เธฃเธนเธเนเธงเนเธเธเธขเธฒเธขเธซเธฃเธทเธญเธชเธฑเธเธฅเธฑเธเธฉเธ“เนเน€เธชเนเธเธเธตเธ”เน) เนเธซเนเธเธฅเธดเธเธ—เธตเนเนเธญเธเธญเธเธเธตเน</li>
+                <li class="step" data-i18n="tk3-s3">เธซเธเนเธฒเธ•เนเธฒเธเธ•เธฑเธงเธเธฃเธญเธเธเธฐเน€เธเธดเธ”เธญเธญเธเธกเธฒเธ—เธฒเธเธเธงเธฒ เธ•เธฃเธเธซเธฑเธงเธเนเธญ "เน€เธงเธฅเธฒเธ—เธตเนเธชเธฃเนเธฒเธ" เนเธซเนเธเธฅเธดเธเน€เธฅเธทเธญเธ <span class="hl">เธงเธฑเธเธ—เธตเนเน€เธฃเธดเนเธกเธ•เนเธ</span> เนเธฅเธฐ <span class="hl">เธงเธฑเธเธ—เธตเนเธชเธดเนเธเธชเธธเธ”</span> เธ—เธตเนเธเธธเธ“เธ•เนเธญเธเธเธฒเธฃเธเนเธเธซเธฒ เน€เธชเธฃเนเธเนเธฅเนเธงเธเธ”เธเธธเนเธก <span class="hl">เธเธณเนเธเนเธเน</span> เธชเธตเน€เธเธตเธขเธงเธ”เนเธฒเธเธฅเนเธฒเธ</li>
+                <li class="step" data-i18n="tk3-s4">เน€เธกเธทเนเธญเธฃเธฒเธขเธเธฒเธฃเนเธชเธ”เธเธเธฅเธ•เธฒเธกเธงเธฑเธเธ—เธตเนเน€เธฅเธทเธญเธเนเธฅเนเธง เนเธซเนเธเธฅเธดเธ <span class="hl">เนเธญเธเธญเธเธชเนเธเธญเธญเธ</span> (เธฃเธนเธเธเธฅเนเธญเธเธกเธตเธฅเธนเธเธจเธฃเธเธตเนเธฅเธ) เธ—เธตเนเธญเธขเธนเนเธ•เธดเธ”เธเธฑเธเธเธธเนเธกเธ•เธฑเธงเธเธฃเธญเธ</li>
+                <li class="step" data-i18n="tk3-s5">เน€เธเนเธเนเธซเนเธเธฑเธงเธฃเนเธงเนเธฒเธซเธเนเธฒเธ•เนเธฒเธเธเนเธญเธเธญเธฑเธเน€เธฅเธทเธญเธเธฃเธนเธเนเธเธเน€เธเนเธ <span class="hl">Excel</span> เนเธฅเนเธงเธเธ”เธเธธเนเธก <span class="hl">เธชเนเธเธญเธญเธ</span> เธชเธตเน€เธเธตเธขเธง</li>
+                <li class="step" data-i18n="tk3-s6">เธเธฅเธดเธเธ—เธตเนเธฅเธดเธเธเน <span class="hl">เธเธฃเธฐเธงเธฑเธ•เธดเธเธฒเธฃเธชเนเธเธญเธญเธ</span> เน€เธเธทเนเธญเน€เธเนเธฒเนเธเธเธ”เธ”เธฒเธงเธเนเนเธซเธฅเธ”เนเธเธฅเนเธฅเนเธฒเธชเธธเธ”</li>
             </ol>
             <div class="fi">
-                <div class="fi-r"><span class="fi-l" data-i18n="fi-name-th">📄 ชื่อไฟล์ (TH)</span><span class="fi-v">คำสั่งซื้อที่ส่งคืน/คืนเงิน-XXXX-XX-XX-XX_XX.xlsx</span></div>
-                <div class="fi-r"><span class="fi-l" data-i18n="fi-name-en">📄 ชื่อไฟล์ (EN)</span><span class="fi-v">Return/Refund Orders-XXXX-XX-XX-XX:XX.xlsx</span></div>
-                <div class="fi-r"><span class="fi-l" data-i18n="fi-tab">📑 ชื่อแท็บ</span><span class="fi-v fi-t">0</span></div>
+                <div class="fi-r"><span class="fi-l" data-i18n="fi-name-th">๐“ เธเธทเนเธญเนเธเธฅเน (TH)</span><span class="fi-v">เธเธณเธชเธฑเนเธเธเธทเนเธญเธ—เธตเนเธชเนเธเธเธทเธ/เธเธทเธเน€เธเธดเธ-XXXX-XX-XX-XX_XX.xlsx</span></div>
+                <div class="fi-r"><span class="fi-l" data-i18n="fi-name-en">๐“ เธเธทเนเธญเนเธเธฅเน (EN)</span><span class="fi-v">Return/Refund Orders-XXXX-XX-XX-XX:XX.xlsx</span></div>
+                <div class="fi-r"><span class="fi-l" data-i18n="fi-tab">๐“‘ เธเธทเนเธญเนเธ—เนเธ</span><span class="fi-v fi-t">0</span></div>
             </div></div>
         </div>
 
         <!-- TK 4 -->
         <div class="gc anim" data-i="4" id="tk-4">
-            <div class="gc-h" onclick="tog(this)"><div class="gc-n">4</div><h3 data-i18n="tk4-title">วิธีดาวน์โหลดข้อมูลค่าใช้จ่ายแพลตฟอร์ม</h3><span class="gc-t">▼</span></div>
+            <div class="gc-h" onclick="tog(this)"><div class="gc-n">4</div><h3 data-i18n="tk4-title">เธงเธดเธเธตเธ”เธฒเธงเธเนเนเธซเธฅเธ”เธเนเธญเธกเธนเธฅเธเนเธฒเนเธเนเธเนเธฒเธขเนเธเธฅเธ•เธเธญเธฃเนเธก</h3><span class="gc-t">โ–ผ</span></div>
             <div class="gc-b"><ol class="steps">
-                <li class="step" data-i18n="tk4-s1">ที่แถบเมนูด้านซ้าย คลิกหัวข้อ <span class="hl">การเงิน</span> แล้วเลือกเมนู <span class="hl">เอกสารทางภาษี</span></li>
-                <li class="step" data-i18n="tk4-s2">ในหน้าหลัก สังเกตแท็บด้านบน ให้เลือกแท็บ <span class="hl">ใบแจ้งหนี้ของแพลตฟอร์ม</span></li>
-                <li class="step" data-i18n="tk4-s3">เหนือตารางข้อมูล จะมีปุ่มข้อความว่า <span class="hl">ดาวน์โหลดเป็นชุด</span> ให้คลิกที่ปุ่มนี้</li>
-                <li class="step" data-i18n="tk4-s4">หน้าต่างป๊อปอัปจะเด้งขึ้นมา ให้ติ๊กเลือกประเภทเป็น "ใบแจ้งหนี้ของแพลตฟอร์ม" และคลิกที่ช่องปฏิทินเพื่อเลือก <span class="hl">เดือนและปี</span> ที่ต้องการ</li>
-                <li class="step" data-i18n="tk4-s5">กดปุ่ม <span class="hl">ส่งออก</span> สีฟ้า</li>
-                <li class="step" data-i18n="tk4-s6">จะมีป๊อปอัป "รายงานที่ส่งออก" แสดงรายการไฟล์ที่เราเพิ่งสั่งดึงข้อมูล ให้คลิกปุ่ม <span class="hl">ดาวน์โหลด</span> ที่ไฟล์ .zip ล่าสุด</li>
+                <li class="step" data-i18n="tk4-s1">เธ—เธตเนเนเธ–เธเน€เธกเธเธนเธ”เนเธฒเธเธเนเธฒเธข เธเธฅเธดเธเธซเธฑเธงเธเนเธญ <span class="hl">เธเธฒเธฃเน€เธเธดเธ</span> เนเธฅเนเธงเน€เธฅเธทเธญเธเน€เธกเธเธน <span class="hl">เน€เธญเธเธชเธฒเธฃเธ—เธฒเธเธ เธฒเธฉเธต</span></li>
+                <li class="step" data-i18n="tk4-s2">เนเธเธซเธเนเธฒเธซเธฅเธฑเธ เธชเธฑเธเน€เธเธ•เนเธ—เนเธเธ”เนเธฒเธเธเธ เนเธซเนเน€เธฅเธทเธญเธเนเธ—เนเธ <span class="hl">เนเธเนเธเนเธเธซเธเธตเนเธเธญเธเนเธเธฅเธ•เธเธญเธฃเนเธก</span></li>
+                <li class="step" data-i18n="tk4-s3">เน€เธซเธเธทเธญเธ•เธฒเธฃเธฒเธเธเนเธญเธกเธนเธฅ เธเธฐเธกเธตเธเธธเนเธกเธเนเธญเธเธงเธฒเธกเธงเนเธฒ <span class="hl">เธ”เธฒเธงเธเนเนเธซเธฅเธ”เน€เธเนเธเธเธธเธ”</span> เนเธซเนเธเธฅเธดเธเธ—เธตเนเธเธธเนเธกเธเธตเน</li>
+                <li class="step" data-i18n="tk4-s4">เธซเธเนเธฒเธ•เนเธฒเธเธเนเธญเธเธญเธฑเธเธเธฐเน€เธ”เนเธเธเธถเนเธเธกเธฒ เนเธซเนเธ•เธดเนเธเน€เธฅเธทเธญเธเธเธฃเธฐเน€เธ เธ—เน€เธเนเธ "เนเธเนเธเนเธเธซเธเธตเนเธเธญเธเนเธเธฅเธ•เธเธญเธฃเนเธก" เนเธฅเธฐเธเธฅเธดเธเธ—เธตเนเธเนเธญเธเธเธเธดเธ—เธดเธเน€เธเธทเนเธญเน€เธฅเธทเธญเธ <span class="hl">เน€เธ”เธทเธญเธเนเธฅเธฐเธเธต</span> เธ—เธตเนเธ•เนเธญเธเธเธฒเธฃ</li>
+                <li class="step" data-i18n="tk4-s5">เธเธ”เธเธธเนเธก <span class="hl">เธชเนเธเธญเธญเธ</span> เธชเธตเธเนเธฒ</li>
+                <li class="step" data-i18n="tk4-s6">เธเธฐเธกเธตเธเนเธญเธเธญเธฑเธ "เธฃเธฒเธขเธเธฒเธเธ—เธตเนเธชเนเธเธญเธญเธ" เนเธชเธ”เธเธฃเธฒเธขเธเธฒเธฃเนเธเธฅเนเธ—เธตเนเน€เธฃเธฒเน€เธเธดเนเธเธชเธฑเนเธเธ”เธถเธเธเนเธญเธกเธนเธฅ เนเธซเนเธเธฅเธดเธเธเธธเนเธก <span class="hl">เธ”เธฒเธงเธเนเนเธซเธฅเธ”</span> เธ—เธตเนเนเธเธฅเน .zip เธฅเนเธฒเธชเธธเธ”</li>
             </ol>
             <div class="fi">
-                <div class="fi-r"><span class="fi-l" data-i18n="fi-zip">📦 ชื่อไฟล์ ZIP</span><span class="fi-v">invoice_XXXXXX_1.zip</span></div>
-                <div class="fi-r"><span class="fi-l" data-i18n="fi-note">📝 หมายเหตุ</span><span class="fi-v" data-i18n="tk4-note">พอแตกไฟล์จะได้ไฟล์ PDF มา</span></div>
+                <div class="fi-r"><span class="fi-l" data-i18n="fi-zip">๐“ฆ เธเธทเนเธญเนเธเธฅเน ZIP</span><span class="fi-v">invoice_XXXXXX_1.zip</span></div>
+                <div class="fi-r"><span class="fi-l" data-i18n="fi-note">๐“ เธซเธกเธฒเธขเน€เธซเธ•เธธ</span><span class="fi-v" data-i18n="tk4-note">เธเธญเนเธ•เธเนเธเธฅเนเธเธฐเนเธ”เนเนเธเธฅเน PDF เธกเธฒ</span></div>
             </div></div>
         </div>
     </section>
 
     <hr class="sec-div">
 
-    <!-- ══════════════ SHOPEE ══════════════ -->
+    <!-- โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ• SHOPEE โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ• -->
     <section class="sp-sec" id="shopee">
         <div class="sec-head anim">
             <div class="sec-logo">
                 <svg viewBox="0 0 48 48" fill="none"><path d="M24 4c-4.4 0-8 3.1-8 7v2H8l2 28h28l2-28H32v-2c0-3.9-3.6-7-8-7zm0 3c2.8 0 5 1.8 5 4v2H19v-2c0-2.2 2.2-4 5-4z" fill="#EE4D2D"/><text x="19.5" y="34" font-size="14" font-weight="800" fill="#EE4D2D" font-family="Arial">S</text></svg>
             </div>
             <h2>Shopee Seller Centre</h2>
-            <p data-i18n="sp-desc">การดึงข้อมูลจาก Shopee — 5 ประเภทรายงาน</p>
+            <p data-i18n="sp-desc">เธเธฒเธฃเธ”เธถเธเธเนเธญเธกเธนเธฅเธเธฒเธ Shopee โ€” 5 เธเธฃเธฐเน€เธ เธ—เธฃเธฒเธขเธเธฒเธ</p>
             <span class="uline"></span>
         </div>
 
         <!-- SP 1 -->
         <div class="gc anim" data-i="1" id="sp-1">
-            <div class="gc-h" onclick="tog(this)"><div class="gc-n">1</div><h3 data-i18n="sp1-title">วิธีดาวน์โหลดข้อมูลคำสั่งซื้อสินค้า</h3><span class="gc-t">▼</span></div>
+            <div class="gc-h" onclick="tog(this)"><div class="gc-n">1</div><h3 data-i18n="sp1-title">เธงเธดเธเธตเธ”เธฒเธงเธเนเนเธซเธฅเธ”เธเนเธญเธกเธนเธฅเธเธณเธชเธฑเนเธเธเธทเนเธญเธชเธดเธเธเนเธฒ</h3><span class="gc-t">โ–ผ</span></div>
             <div class="gc-b"><ol class="steps">
-                <li class="step" data-i18n="sp1-s1">ล็อกอินเข้าสู่ระบบ <span class="hl">Shopee Seller Centre</span></li>
-                <li class="step" data-i18n="sp1-s2">ที่แถบเมนูด้านซ้าย ในหมวด "คำสั่งซื้อ" ให้คลิกเมนู <span class="hl">คำสั่งซื้อของฉัน</span></li>
-                <li class="step" data-i18n="sp1-s3">มองไปที่มุมขวาบนของหน้าจอ (ใต้ชื่อบัญชีผู้ใช้) จะเห็นปุ่ม <span class="hl">ดาวน์โหลด</span> ให้คลิกปุ่มนี้</li>
-                <li class="step" data-i18n="sp1-s4">จะมีหน้าต่าง "ดาวน์โหลดคำสั่งซื้อทั้งหมด" เด้งขึ้นมา ให้คลิกที่ช่องปฏิทินเพื่อระบุ <span class="hl">วันที่เริ่มต้น</span> และ <span class="hl">วันที่สิ้นสุด</span> ที่ต้องการ</li>
-                <li class="step" data-i18n="sp1-s5">กดปุ่ม <span class="hl">ดาวน์โหลด</span> สีส้ม</li>
-                <li class="step" data-i18n="sp1-s6">รอระบบโหลดสักครู่ จะมีกล่องข้อความ "รายงานล่าสุด" เด้งลงมา (หรือคลิกที่ปุ่ม <span class="hl">ประวัติการดาวน์โหลด</span>) ให้หาไฟล์ชื่อที่ขึ้นต้นด้วย <span class="hl">Order.all...</span> (.xlsx) แล้วคลิกปุ่ม <span class="hl">ดาวน์โหลด</span> สีส้มด้านหลังไฟล์นั้น</li>
+                <li class="step" data-i18n="sp1-s1">เธฅเนเธญเธเธญเธดเธเน€เธเนเธฒเธชเธนเนเธฃเธฐเธเธ <span class="hl">Shopee Seller Centre</span></li>
+                <li class="step" data-i18n="sp1-s2">เธ—เธตเนเนเธ–เธเน€เธกเธเธนเธ”เนเธฒเธเธเนเธฒเธข เนเธเธซเธกเธงเธ” "เธเธณเธชเธฑเนเธเธเธทเนเธญ" เนเธซเนเธเธฅเธดเธเน€เธกเธเธน <span class="hl">เธเธณเธชเธฑเนเธเธเธทเนเธญเธเธญเธเธเธฑเธ</span></li>
+                <li class="step" data-i18n="sp1-s3">เธกเธญเธเนเธเธ—เธตเนเธกเธธเธกเธเธงเธฒเธเธเธเธญเธเธซเธเนเธฒเธเธญ (เนเธ•เนเธเธทเนเธญเธเธฑเธเธเธตเธเธนเนเนเธเน) เธเธฐเน€เธซเนเธเธเธธเนเธก <span class="hl">เธ”เธฒเธงเธเนเนเธซเธฅเธ”</span> เนเธซเนเธเธฅเธดเธเธเธธเนเธกเธเธตเน</li>
+                <li class="step" data-i18n="sp1-s4">เธเธฐเธกเธตเธซเธเนเธฒเธ•เนเธฒเธ "เธ”เธฒเธงเธเนเนเธซเธฅเธ”เธเธณเธชเธฑเนเธเธเธทเนเธญเธ—เธฑเนเธเธซเธกเธ”" เน€เธ”เนเธเธเธถเนเธเธกเธฒ เนเธซเนเธเธฅเธดเธเธ—เธตเนเธเนเธญเธเธเธเธดเธ—เธดเธเน€เธเธทเนเธญเธฃเธฐเธเธธ <span class="hl">เธงเธฑเธเธ—เธตเนเน€เธฃเธดเนเธกเธ•เนเธ</span> เนเธฅเธฐ <span class="hl">เธงเธฑเธเธ—เธตเนเธชเธดเนเธเธชเธธเธ”</span> เธ—เธตเนเธ•เนเธญเธเธเธฒเธฃ</li>
+                <li class="step" data-i18n="sp1-s5">เธเธ”เธเธธเนเธก <span class="hl">เธ”เธฒเธงเธเนเนเธซเธฅเธ”</span> เธชเธตเธชเนเธก</li>
+                <li class="step" data-i18n="sp1-s6">เธฃเธญเธฃเธฐเธเธเนเธซเธฅเธ”เธชเธฑเธเธเธฃเธนเน เธเธฐเธกเธตเธเธฅเนเธญเธเธเนเธญเธเธงเธฒเธก "เธฃเธฒเธขเธเธฒเธเธฅเนเธฒเธชเธธเธ”" เน€เธ”เนเธเธฅเธเธกเธฒ (เธซเธฃเธทเธญเธเธฅเธดเธเธ—เธตเนเธเธธเนเธก <span class="hl">เธเธฃเธฐเธงเธฑเธ•เธดเธเธฒเธฃเธ”เธฒเธงเธเนเนเธซเธฅเธ”</span>) เนเธซเนเธซเธฒเนเธเธฅเนเธเธทเนเธญเธ—เธตเนเธเธถเนเธเธ•เนเธเธ”เนเธงเธข <span class="hl">Order.all...</span> (.xlsx) เนเธฅเนเธงเธเธฅเธดเธเธเธธเนเธก <span class="hl">เธ”เธฒเธงเธเนเนเธซเธฅเธ”</span> เธชเธตเธชเนเธกเธ”เนเธฒเธเธซเธฅเธฑเธเนเธเธฅเนเธเธฑเนเธ</li>
             </ol>
             <div class="fi">
-                <div class="fi-r"><span class="fi-l" data-i18n="fi-name-th">📄 ชื่อไฟล์ (TH)</span><span class="fi-v">Order.all.XXXXXXXX_XXXXXXXX.xlsx</span></div>
-                <div class="fi-r"><span class="fi-l" data-i18n="fi-name-en">📄 ชื่อไฟล์ (EN)</span><span class="fi-v">Order.all.XXXXXXXX_XXXXXXXX.xlsx</span></div>
-                <div class="fi-r"><span class="fi-l" data-i18n="fi-tab">📑 ชื่อแท็บ</span><span class="fi-v fi-t">orders</span></div>
+                <div class="fi-r"><span class="fi-l" data-i18n="fi-name-th">๐“ เธเธทเนเธญเนเธเธฅเน (TH)</span><span class="fi-v">Order.all.XXXXXXXX_XXXXXXXX.xlsx</span></div>
+                <div class="fi-r"><span class="fi-l" data-i18n="fi-name-en">๐“ เธเธทเนเธญเนเธเธฅเน (EN)</span><span class="fi-v">Order.all.XXXXXXXX_XXXXXXXX.xlsx</span></div>
+                <div class="fi-r"><span class="fi-l" data-i18n="fi-tab">๐“‘ เธเธทเนเธญเนเธ—เนเธ</span><span class="fi-v fi-t">orders</span></div>
             </div></div>
         </div>
 
         <!-- SP 2 -->
         <div class="gc anim" data-i="2" id="sp-2">
-            <div class="gc-h" onclick="tog(this)"><div class="gc-n">2</div><h3 data-i18n="sp2-title">วิธีดาวน์โหลดข้อมูลรายรับ</h3><span class="gc-t">▼</span></div>
+            <div class="gc-h" onclick="tog(this)"><div class="gc-n">2</div><h3 data-i18n="sp2-title">เธงเธดเธเธตเธ”เธฒเธงเธเนเนเธซเธฅเธ”เธเนเธญเธกเธนเธฅเธฃเธฒเธขเธฃเธฑเธ</h3><span class="gc-t">โ–ผ</span></div>
             <div class="gc-b"><ol class="steps">
-                <li class="step" data-i18n="sp2-s1">ที่แถบเมนูด้านซ้าย ในหมวด "การเงิน" ให้คลิกเมนู <span class="hl">รายรับของฉัน</span> (ระบบอาจขอให้ใส่รหัสผ่านร้านค้าหรือรหัส OTP เพื่อความปลอดภัย)</li>
-                <li class="step" data-i18n="sp2-s2">เลื่อนลงมาตรงหัวข้อ "รายละเอียดรายรับของฉัน" จะมีแท็บให้เลือก ให้คลิกเลือกแท็บ <span class="hl">โอนเงินแล้ว</span> (ตัวหนังสือสีส้ม)</li>
-                <li class="step" data-i18n="sp2-s3">บรรทัดถัดลงมาจะมีช่องปฏิทิน ให้คลิกเลือก <span class="hl">วันที่เริ่มต้น</span> และ <span class="hl">วันที่สิ้นสุด</span> ที่คุณต้องการตรวจสอบยอดเงินเข้า</li>
-                <li class="step" data-i18n="sp2-s4">มองไปทางขวาสุดของแถบปฏิทิน จะมีปุ่ม <span class="hl">ดาวน์โหลด</span> ให้คลิกปุ่มนี้</li>
-                <li class="step" data-i18n="sp2-s5">กล่องข้อความ "รายงานล่าสุด" จะแสดงรายการไฟล์ขึ้นมา ให้หาไฟล์ชื่อที่ขึ้นต้นด้วย <span class="hl">income...</span> แล้วคลิกปุ่ม <span class="hl">ดาวน์โหลด</span> สีส้มด้านหลังเพื่อบันทึกไฟล์ Excel</li>
+                <li class="step" data-i18n="sp2-s1">เธ—เธตเนเนเธ–เธเน€เธกเธเธนเธ”เนเธฒเธเธเนเธฒเธข เนเธเธซเธกเธงเธ” "เธเธฒเธฃเน€เธเธดเธ" เนเธซเนเธเธฅเธดเธเน€เธกเธเธน <span class="hl">เธฃเธฒเธขเธฃเธฑเธเธเธญเธเธเธฑเธ</span> (เธฃเธฐเธเธเธญเธฒเธเธเธญเนเธซเนเนเธชเนเธฃเธซเธฑเธชเธเนเธฒเธเธฃเนเธฒเธเธเนเธฒเธซเธฃเธทเธญเธฃเธซเธฑเธช OTP เน€เธเธทเนเธญเธเธงเธฒเธกเธเธฅเธญเธ”เธ เธฑเธข)</li>
+                <li class="step" data-i18n="sp2-s2">เน€เธฅเธทเนเธญเธเธฅเธเธกเธฒเธ•เธฃเธเธซเธฑเธงเธเนเธญ "เธฃเธฒเธขเธฅเธฐเน€เธญเธตเธขเธ”เธฃเธฒเธขเธฃเธฑเธเธเธญเธเธเธฑเธ" เธเธฐเธกเธตเนเธ—เนเธเนเธซเนเน€เธฅเธทเธญเธ เนเธซเนเธเธฅเธดเธเน€เธฅเธทเธญเธเนเธ—เนเธ <span class="hl">เนเธญเธเน€เธเธดเธเนเธฅเนเธง</span> (เธ•เธฑเธงเธซเธเธฑเธเธชเธทเธญเธชเธตเธชเนเธก)</li>
+                <li class="step" data-i18n="sp2-s3">เธเธฃเธฃเธ—เธฑเธ”เธ–เธฑเธ”เธฅเธเธกเธฒเธเธฐเธกเธตเธเนเธญเธเธเธเธดเธ—เธดเธ เนเธซเนเธเธฅเธดเธเน€เธฅเธทเธญเธ <span class="hl">เธงเธฑเธเธ—เธตเนเน€เธฃเธดเนเธกเธ•เนเธ</span> เนเธฅเธฐ <span class="hl">เธงเธฑเธเธ—เธตเนเธชเธดเนเธเธชเธธเธ”</span> เธ—เธตเนเธเธธเธ“เธ•เนเธญเธเธเธฒเธฃเธ•เธฃเธงเธเธชเธญเธเธขเธญเธ”เน€เธเธดเธเน€เธเนเธฒ</li>
+                <li class="step" data-i18n="sp2-s4">เธกเธญเธเนเธเธ—เธฒเธเธเธงเธฒเธชเธธเธ”เธเธญเธเนเธ–เธเธเธเธดเธ—เธดเธ เธเธฐเธกเธตเธเธธเนเธก <span class="hl">เธ”เธฒเธงเธเนเนเธซเธฅเธ”</span> เนเธซเนเธเธฅเธดเธเธเธธเนเธกเธเธตเน</li>
+                <li class="step" data-i18n="sp2-s5">เธเธฅเนเธญเธเธเนเธญเธเธงเธฒเธก "เธฃเธฒเธขเธเธฒเธเธฅเนเธฒเธชเธธเธ”" เธเธฐเนเธชเธ”เธเธฃเธฒเธขเธเธฒเธฃเนเธเธฅเนเธเธถเนเธเธกเธฒ เนเธซเนเธซเธฒเนเธเธฅเนเธเธทเนเธญเธ—เธตเนเธเธถเนเธเธ•เนเธเธ”เนเธงเธข <span class="hl">income...</span> เนเธฅเนเธงเธเธฅเธดเธเธเธธเนเธก <span class="hl">เธ”เธฒเธงเธเนเนเธซเธฅเธ”</span> เธชเธตเธชเนเธกเธ”เนเธฒเธเธซเธฅเธฑเธเน€เธเธทเนเธญเธเธฑเธเธ—เธถเธเนเธเธฅเน Excel</li>
             </ol>
             <div class="fi">
-                <div class="fi-r"><span class="fi-l" data-i18n="fi-name-th">📄 ชื่อไฟล์ (TH)</span><span class="fi-v">income_XXXXXX_XX_XX(UTC+7).xlsx</span></div>
-                <div class="fi-r"><span class="fi-l" data-i18n="fi-name-en">📄 ชื่อไฟล์ (EN)</span><span class="fi-v">income_XXXXXX_XX_XX(UTC+7).xlsx</span></div>
-                <div class="fi-r"><span class="fi-l" data-i18n="fi-tab">📑 ชื่อแท็บ</span><span class="fi-v fi-t">Summary, Income, Service Fee Details, Adjustment</span></div>
+                <div class="fi-r"><span class="fi-l" data-i18n="fi-name-th">๐“ เธเธทเนเธญเนเธเธฅเน (TH)</span><span class="fi-v">income_XXXXXX_XX_XX(UTC+7).xlsx</span></div>
+                <div class="fi-r"><span class="fi-l" data-i18n="fi-name-en">๐“ เธเธทเนเธญเนเธเธฅเน (EN)</span><span class="fi-v">income_XXXXXX_XX_XX(UTC+7).xlsx</span></div>
+                <div class="fi-r"><span class="fi-l" data-i18n="fi-tab">๐“‘ เธเธทเนเธญเนเธ—เนเธ</span><span class="fi-v fi-t">Summary, Income, Service Fee Details, Adjustment</span></div>
             </div></div>
         </div>
 
         <!-- SP 3 -->
         <div class="gc anim" data-i="3" id="sp-3">
-            <div class="gc-h" onclick="tog(this)"><div class="gc-n">3</div><h3 data-i18n="sp3-title">วิธีดาวน์โหลดข้อมูลเงินเข้าธนาคาร</h3><span class="gc-t">▼</span></div>
+            <div class="gc-h" onclick="tog(this)"><div class="gc-n">3</div><h3 data-i18n="sp3-title">เธงเธดเธเธตเธ”เธฒเธงเธเนเนเธซเธฅเธ”เธเนเธญเธกเธนเธฅเน€เธเธดเธเน€เธเนเธฒเธเธเธฒเธเธฒเธฃ</h3><span class="gc-t">โ–ผ</span></div>
             <div class="gc-b"><ol class="steps">
-                <li class="step" data-i18n="sp3-s1">ไปที่หน้า <span class="hl">รายรับของฉัน</span> แล้วมองไปที่กล่องเมนูทางด้านขวามือของหน้าจอ ที่เขียนว่า "รายงานการเงิน" ให้คลิกที่ลิงก์ <span class="hl">ดูเพิ่มเติม ></span></li>
-                <li class="step" data-i18n="sp3-s2">ในหน้าต่างรายงานการเงิน ให้คลิกเมนูแบบเลื่อนลง (Dropdown) เพื่อเลือก <span class="hl">เดือนและปี</span> ที่ต้องการ</li>
-                <li class="step" data-i18n="sp3-s3">คลิกไอคอนดาวน์โหลด (รูปลูกศรชี้ลง) ด้านหลังเดือนนั้น หรือคลิกปุ่ม <span class="hl">ดาวน์โหลดทั้งหมด</span></li>
+                <li class="step" data-i18n="sp3-s1">เนเธเธ—เธตเนเธซเธเนเธฒ <span class="hl">เธฃเธฒเธขเธฃเธฑเธเธเธญเธเธเธฑเธ</span> เนเธฅเนเธงเธกเธญเธเนเธเธ—เธตเนเธเธฅเนเธญเธเน€เธกเธเธนเธ—เธฒเธเธ”เนเธฒเธเธเธงเธฒเธกเธทเธญเธเธญเธเธซเธเนเธฒเธเธญ เธ—เธตเนเน€เธเธตเธขเธเธงเนเธฒ "เธฃเธฒเธขเธเธฒเธเธเธฒเธฃเน€เธเธดเธ" เนเธซเนเธเธฅเธดเธเธ—เธตเนเธฅเธดเธเธเน <span class="hl">เธ”เธนเน€เธเธดเนเธกเน€เธ•เธดเธก ></span></li>
+                <li class="step" data-i18n="sp3-s2">เนเธเธซเธเนเธฒเธ•เนเธฒเธเธฃเธฒเธขเธเธฒเธเธเธฒเธฃเน€เธเธดเธ เนเธซเนเธเธฅเธดเธเน€เธกเธเธนเนเธเธเน€เธฅเธทเนเธญเธเธฅเธ (Dropdown) เน€เธเธทเนเธญเน€เธฅเธทเธญเธ <span class="hl">เน€เธ”เธทเธญเธเนเธฅเธฐเธเธต</span> เธ—เธตเนเธ•เนเธญเธเธเธฒเธฃ</li>
+                <li class="step" data-i18n="sp3-s3">เธเธฅเธดเธเนเธญเธเธญเธเธ”เธฒเธงเธเนเนเธซเธฅเธ” (เธฃเธนเธเธฅเธนเธเธจเธฃเธเธตเนเธฅเธ) เธ”เนเธฒเธเธซเธฅเธฑเธเน€เธ”เธทเธญเธเธเธฑเนเธ เธซเธฃเธทเธญเธเธฅเธดเธเธเธธเนเธก <span class="hl">เธ”เธฒเธงเธเนเนเธซเธฅเธ”เธ—เธฑเนเธเธซเธกเธ”</span></li>
             </ol>
             <div class="fi">
-                <div class="fi-r"><span class="fi-l" data-i18n="fi-name-th">📄 ชื่อไฟล์ (TH)</span><span class="fi-v">monthly_report_XXXXXXXX.pdf</span></div>
-                <div class="fi-r"><span class="fi-l" data-i18n="fi-name-en">📄 ชื่อไฟล์ (EN)</span><span class="fi-v">monthly_report_XXXXXXXX.pdf</span></div>
+                <div class="fi-r"><span class="fi-l" data-i18n="fi-name-th">๐“ เธเธทเนเธญเนเธเธฅเน (TH)</span><span class="fi-v">monthly_report_XXXXXXXX.pdf</span></div>
+                <div class="fi-r"><span class="fi-l" data-i18n="fi-name-en">๐“ เธเธทเนเธญเนเธเธฅเน (EN)</span><span class="fi-v">monthly_report_XXXXXXXX.pdf</span></div>
             </div></div>
         </div>
 
         <!-- SP 4 -->
         <div class="gc anim" data-i="4" id="sp-4">
-            <div class="gc-h" onclick="tog(this)"><div class="gc-n">4</div><h3 data-i18n="sp4-title">วิธีดาวน์โหลดข้อมูลค่าใช้จ่ายแพลตฟอร์ม (ใบกำกับภาษี)</h3><span class="gc-t">▼</span></div>
+            <div class="gc-h" onclick="tog(this)"><div class="gc-n">4</div><h3 data-i18n="sp4-title">เธงเธดเธเธตเธ”เธฒเธงเธเนเนเธซเธฅเธ”เธเนเธญเธกเธนเธฅเธเนเธฒเนเธเนเธเนเธฒเธขเนเธเธฅเธ•เธเธญเธฃเนเธก (เนเธเธเธณเธเธฑเธเธ เธฒเธฉเธต)</h3><span class="gc-t">โ–ผ</span></div>
             <div class="gc-b"><ol class="steps">
-                <li class="step" data-i18n="sp4-s1">ที่แถบเมนูด้านซ้าย ในหมวด "การเงิน" คลิกเมนู <span class="hl">รายรับของฉัน</span></li>
-                <li class="step" data-i18n="sp4-s2">มองไปที่กล่องเมนูทางด้านขวามือของหน้าจอ ที่เขียนว่า "รายงานการเงิน" ให้สังเกตด้านล่างสุดของกล่องนั้น จะมีลิงก์คำว่า <span class="hl">My Tax Invoices ></span> ให้คลิกเข้าไป</li>
-                <li class="step" data-i18n="sp4-s3">ระบบจะเปิดหน้าต่างใหม่พาไปที่หน้า <span class="hl">ระบบออกใบกำกับภาษี</span> (e-Tax Web Portal)</li>
-                <li class="step" data-i18n="sp4-s4">ตรงกลางหน้าจอหัวข้อ "ดาวน์โหลดใบเสร็จรับเงิน..." จะมีช่องปฏิทิน 2 ช่อง ให้คลิกเลือก <span class="hl">วันที่เริ่มต้น</span> ในช่องซ้าย และ <span class="hl">วันที่สิ้นสุด</span> ในช่องขวา</li>
-                <li class="step" data-i18n="sp4-s5">กดปุ่ม <span class="hl">เลือก</span> สีส้ม</li>
-                <li class="step" data-i18n="sp4-s6">รายการค่าใช้จ่ายจะแสดงขึ้นมาในตารางด้านล่าง ให้มองไปที่มุมขวาของหัวตารางในคอลัมน์ "ใบกำกับภาษีแบบเต็มรูป" แล้วคลิกปุ่มสีฟ้าที่เขียนว่า <span class="hl">ดาวน์โหลดทั้งหมด</span></li>
+                <li class="step" data-i18n="sp4-s1">เธ—เธตเนเนเธ–เธเน€เธกเธเธนเธ”เนเธฒเธเธเนเธฒเธข เนเธเธซเธกเธงเธ” "เธเธฒเธฃเน€เธเธดเธ" เธเธฅเธดเธเน€เธกเธเธน <span class="hl">เธฃเธฒเธขเธฃเธฑเธเธเธญเธเธเธฑเธ</span></li>
+                <li class="step" data-i18n="sp4-s2">เธกเธญเธเนเธเธ—เธตเนเธเธฅเนเธญเธเน€เธกเธเธนเธ—เธฒเธเธ”เนเธฒเธเธเธงเธฒเธกเธทเธญเธเธญเธเธซเธเนเธฒเธเธญ เธ—เธตเนเน€เธเธตเธขเธเธงเนเธฒ "เธฃเธฒเธขเธเธฒเธเธเธฒเธฃเน€เธเธดเธ" เนเธซเนเธชเธฑเธเน€เธเธ•เธ”เนเธฒเธเธฅเนเธฒเธเธชเธธเธ”เธเธญเธเธเธฅเนเธญเธเธเธฑเนเธ เธเธฐเธกเธตเธฅเธดเธเธเนเธเธณเธงเนเธฒ <span class="hl">My Tax Invoices ></span> เนเธซเนเธเธฅเธดเธเน€เธเนเธฒเนเธ</li>
+                <li class="step" data-i18n="sp4-s3">เธฃเธฐเธเธเธเธฐเน€เธเธดเธ”เธซเธเนเธฒเธ•เนเธฒเธเนเธซเธกเนเธเธฒเนเธเธ—เธตเนเธซเธเนเธฒ <span class="hl">เธฃเธฐเธเธเธญเธญเธเนเธเธเธณเธเธฑเธเธ เธฒเธฉเธต</span> (e-Tax Web Portal)</li>
+                <li class="step" data-i18n="sp4-s4">เธ•เธฃเธเธเธฅเธฒเธเธซเธเนเธฒเธเธญเธซเธฑเธงเธเนเธญ "เธ”เธฒเธงเธเนเนเธซเธฅเธ”เนเธเน€เธชเธฃเนเธเธฃเธฑเธเน€เธเธดเธ..." เธเธฐเธกเธตเธเนเธญเธเธเธเธดเธ—เธดเธ 2 เธเนเธญเธ เนเธซเนเธเธฅเธดเธเน€เธฅเธทเธญเธ <span class="hl">เธงเธฑเธเธ—เธตเนเน€เธฃเธดเนเธกเธ•เนเธ</span> เนเธเธเนเธญเธเธเนเธฒเธข เนเธฅเธฐ <span class="hl">เธงเธฑเธเธ—เธตเนเธชเธดเนเธเธชเธธเธ”</span> เนเธเธเนเธญเธเธเธงเธฒ</li>
+                <li class="step" data-i18n="sp4-s5">เธเธ”เธเธธเนเธก <span class="hl">เน€เธฅเธทเธญเธ</span> เธชเธตเธชเนเธก</li>
+                <li class="step" data-i18n="sp4-s6">เธฃเธฒเธขเธเธฒเธฃเธเนเธฒเนเธเนเธเนเธฒเธขเธเธฐเนเธชเธ”เธเธเธถเนเธเธกเธฒเนเธเธ•เธฒเธฃเธฒเธเธ”เนเธฒเธเธฅเนเธฒเธ เนเธซเนเธกเธญเธเนเธเธ—เธตเนเธกเธธเธกเธเธงเธฒเธเธญเธเธซเธฑเธงเธ•เธฒเธฃเธฒเธเนเธเธเธญเธฅเธฑเธกเธเน "เนเธเธเธณเธเธฑเธเธ เธฒเธฉเธตเนเธเธเน€เธ•เนเธกเธฃเธนเธ" เนเธฅเนเธงเธเธฅเธดเธเธเธธเนเธกเธชเธตเธเนเธฒเธ—เธตเนเน€เธเธตเธขเธเธงเนเธฒ <span class="hl">เธ”เธฒเธงเธเนเนเธซเธฅเธ”เธ—เธฑเนเธเธซเธกเธ”</span></li>
             </ol>
             <div class="fi">
-                <div class="fi-r"><span class="fi-l" data-i18n="fi-zip">📦 ชื่อไฟล์ ZIP</span><span class="fi-v">XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX-XXXXXXXXXXXXXX.ZIP</span></div>
-                <div class="fi-r"><span class="fi-l" data-i18n="fi-inside">📄 ไฟล์ภายใน</span><span class="fi-v">SPX Express-RCT-NRSPXSPB00-00000-XXXXXX-XXXXXXX.pdf</span></div>
+                <div class="fi-r"><span class="fi-l" data-i18n="fi-zip">๐“ฆ เธเธทเนเธญเนเธเธฅเน ZIP</span><span class="fi-v">XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX-XXXXXXXXXXXXXX.ZIP</span></div>
+                <div class="fi-r"><span class="fi-l" data-i18n="fi-inside">๐“ เนเธเธฅเนเธ เธฒเธขเนเธ</span><span class="fi-v">SPX Express-RCT-NRSPXSPB00-00000-XXXXXX-XXXXXXX.pdf</span></div>
             </div></div>
         </div>
 
         <!-- SP 5 -->
         <div class="gc anim" data-i="5" id="sp-5">
-            <div class="gc-h" onclick="tog(this)"><div class="gc-n">5</div><h3 data-i18n="sp5-title">วิธีดาวน์โหลดข้อมูลการคืนสินค้าและการคืนเงิน</h3><span class="gc-t">▼</span></div>
+            <div class="gc-h" onclick="tog(this)"><div class="gc-n">5</div><h3 data-i18n="sp5-title">เธงเธดเธเธตเธ”เธฒเธงเธเนเนเธซเธฅเธ”เธเนเธญเธกเธนเธฅเธเธฒเธฃเธเธทเธเธชเธดเธเธเนเธฒเนเธฅเธฐเธเธฒเธฃเธเธทเธเน€เธเธดเธ</h3><span class="gc-t">โ–ผ</span></div>
             <div class="gc-b"><ol class="steps">
-                <li class="step" data-i18n="sp5-s1">ที่แถบเมนูด้านซ้าย ในหมวด "คำสั่งซื้อ" ให้คลิกเมนู <span class="hl">การคืนเงิน/คืนสินค้า</span></li>
-                <li class="step" data-i18n="sp5-s2">มองไปที่มุมขวาบน จะเห็นปุ่มสำหรับ <span class="hl">ส่งออก</span></li>
-                <li class="step" data-i18n="sp5-s3">คลิกที่ช่องปฏิทินเพื่อระบุ <span class="hl">วันที่เริ่มต้น</span> และ <span class="hl">วันที่สิ้นสุด</span> ที่ต้องการ</li>
-                <li class="step" data-i18n="sp5-s4">กดปุ่มเพื่อส่งออกเป็นไฟล์ <span class="hl">Excel</span> แล้วไปกดรับไฟล์ที่ช่อง <span class="hl">ประวัติการส่งออก</span> (ทำขั้นตอนคล้ายกับการดาวน์โหลดคำสั่งซื้อ)</li>
+                <li class="step" data-i18n="sp5-s1">เธ—เธตเนเนเธ–เธเน€เธกเธเธนเธ”เนเธฒเธเธเนเธฒเธข เนเธเธซเธกเธงเธ” "เธเธณเธชเธฑเนเธเธเธทเนเธญ" เนเธซเนเธเธฅเธดเธเน€เธกเธเธน <span class="hl">เธเธฒเธฃเธเธทเธเน€เธเธดเธ/เธเธทเธเธชเธดเธเธเนเธฒ</span></li>
+                <li class="step" data-i18n="sp5-s2">เธกเธญเธเนเธเธ—เธตเนเธกเธธเธกเธเธงเธฒเธเธ เธเธฐเน€เธซเนเธเธเธธเนเธกเธชเธณเธซเธฃเธฑเธ <span class="hl">เธชเนเธเธญเธญเธ</span></li>
+                <li class="step" data-i18n="sp5-s3">เธเธฅเธดเธเธ—เธตเนเธเนเธญเธเธเธเธดเธ—เธดเธเน€เธเธทเนเธญเธฃเธฐเธเธธ <span class="hl">เธงเธฑเธเธ—เธตเนเน€เธฃเธดเนเธกเธ•เนเธ</span> เนเธฅเธฐ <span class="hl">เธงเธฑเธเธ—เธตเนเธชเธดเนเธเธชเธธเธ”</span> เธ—เธตเนเธ•เนเธญเธเธเธฒเธฃ</li>
+                <li class="step" data-i18n="sp5-s4">เธเธ”เธเธธเนเธกเน€เธเธทเนเธญเธชเนเธเธญเธญเธเน€เธเนเธเนเธเธฅเน <span class="hl">Excel</span> เนเธฅเนเธงเนเธเธเธ”เธฃเธฑเธเนเธเธฅเนเธ—เธตเนเธเนเธญเธ <span class="hl">เธเธฃเธฐเธงเธฑเธ•เธดเธเธฒเธฃเธชเนเธเธญเธญเธ</span> (เธ—เธณเธเธฑเนเธเธ•เธญเธเธเธฅเนเธฒเธขเธเธฑเธเธเธฒเธฃเธ”เธฒเธงเธเนเนเธซเธฅเธ”เธเธณเธชเธฑเนเธเธเธทเนเธญ)</li>
             </ol>
             <div class="fi">
-                <div class="fi-r"><span class="fi-l" data-i18n="fi-name-th">📄 ชื่อไฟล์ (TH)</span><span class="fi-v">Order.return_refund_cancel.xlsx</span></div>
-                <div class="fi-r"><span class="fi-l" data-i18n="fi-name-en">📄 ชื่อไฟล์ (EN)</span><span class="fi-v">Order.return_refund_cancel.xlsx</span></div>
-                <div class="fi-r"><span class="fi-l" data-i18n="fi-tab">📑 ชื่อแท็บ</span><span class="fi-v fi-t">orders</span></div>
+                <div class="fi-r"><span class="fi-l" data-i18n="fi-name-th">๐“ เธเธทเนเธญเนเธเธฅเน (TH)</span><span class="fi-v">Order.return_refund_cancel.xlsx</span></div>
+                <div class="fi-r"><span class="fi-l" data-i18n="fi-name-en">๐“ เธเธทเนเธญเนเธเธฅเน (EN)</span><span class="fi-v">Order.return_refund_cancel.xlsx</span></div>
+                <div class="fi-r"><span class="fi-l" data-i18n="fi-tab">๐“‘ เธเธทเนเธญเนเธ—เนเธ</span><span class="fi-v fi-t">orders</span></div>
             </div></div>
         </div>
     </section>
 
     <hr class="sec-div">
 
-    <!-- ══════════════ LAZADA ══════════════ -->
+    <!-- โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ• LAZADA โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ• -->
     <section class="lz-sec" id="lazada">
         <div class="sec-head anim">
-            <div class="sec-logo" style="font-size:2.5rem;">🛒</div>
+            <div class="sec-logo" style="font-size:2.5rem;">๐’</div>
             <h2>Lazada Seller Center</h2>
-            <p>การดึงข้อมูลจาก Lazada — 3 ประเภทรายงาน</p>
+            <p>เธเธฒเธฃเธ”เธถเธเธเนเธญเธกเธนเธฅเธเธฒเธ Lazada โ€” 3 เธเธฃเธฐเน€เธ เธ—เธฃเธฒเธขเธเธฒเธ</p>
             <span class="uline"></span>
         </div>
 
         <!-- LZ 1 -->
         <div class="gc open anim" data-i="1" id="lz-1">
-            <div class="gc-h" onclick="tog(this)"><div class="gc-n">1</div><h3>วิธีดาวน์โหลดข้อมูลคำสั่งซื้อ</h3><span class="gc-t">▼</span></div>
+            <div class="gc-h" onclick="tog(this)"><div class="gc-n">1</div><h3>เธงเธดเธเธตเธ”เธฒเธงเธเนเนเธซเธฅเธ”เธเนเธญเธกเธนเธฅเธเธณเธชเธฑเนเธเธเธทเนเธญ</h3><span class="gc-t">โ–ผ</span></div>
             <div class="gc-b"><ol class="steps">
-                <li class="step">ล็อกอินเข้าสู่ระบบ <span class="hl">Lazada Seller Center</span></li>
-                <li class="step">ที่แถบเมนูด้านซ้าย คลิกเมนู <span class="hl">คำสั่งซื้อ</span> → <span class="hl">คำสั่งซื้อ</span> (เมนูย่อย)</li>
-                <li class="step">ที่แถบตัวกรองด้านบน คลิกเลือก <span class="hl">กำหนดเอง</span> แล้วระบุ <span class="hl">วันที่เริ่มต้น</span> และ <span class="hl">วันที่สิ้นสุด</span> ที่ต้องการ</li>
-                <li class="step">ติ๊กเลือก ☑ <span class="hl">Selected X items</span> (เลือกทั้งหมด) ที่ด้านล่างซ้ายของตาราง</li>
-                <li class="step">คลิก Dropdown <span class="hl">ส่งออก</span> → เลือก <span class="hl">Export Selected</span></li>
-                <li class="step">หน้าต่าง <span class="hl">ข้อมูลการส่งออก</span> จะเด้งขึ้นมา แสดง ✅ "งานรั่งประสบความสำเร็จ!" — ไฟล์จะดาวน์โหลดลงเครื่องอัตโนมัติ</li>
+                <li class="step">เธฅเนเธญเธเธญเธดเธเน€เธเนเธฒเธชเธนเนเธฃเธฐเธเธ <span class="hl">Lazada Seller Center</span></li>
+                <li class="step">เธ—เธตเนเนเธ–เธเน€เธกเธเธนเธ”เนเธฒเธเธเนเธฒเธข เธเธฅเธดเธเน€เธกเธเธน <span class="hl">เธเธณเธชเธฑเนเธเธเธทเนเธญ</span> โ’ <span class="hl">เธเธณเธชเธฑเนเธเธเธทเนเธญ</span> (เน€เธกเธเธนเธขเนเธญเธข)</li>
+                <li class="step">เธ—เธตเนเนเธ–เธเธ•เธฑเธงเธเธฃเธญเธเธ”เนเธฒเธเธเธ เธเธฅเธดเธเน€เธฅเธทเธญเธ <span class="hl">เธเธณเธซเธเธ”เน€เธญเธ</span> เนเธฅเนเธงเธฃเธฐเธเธธ <span class="hl">เธงเธฑเธเธ—เธตเนเน€เธฃเธดเนเธกเธ•เนเธ</span> เนเธฅเธฐ <span class="hl">เธงเธฑเธเธ—เธตเนเธชเธดเนเธเธชเธธเธ”</span> เธ—เธตเนเธ•เนเธญเธเธเธฒเธฃ</li>
+                <li class="step">เธ•เธดเนเธเน€เธฅเธทเธญเธ โ‘ <span class="hl">Selected X items</span> (เน€เธฅเธทเธญเธเธ—เธฑเนเธเธซเธกเธ”) เธ—เธตเนเธ”เนเธฒเธเธฅเนเธฒเธเธเนเธฒเธขเธเธญเธเธ•เธฒเธฃเธฒเธ</li>
+                <li class="step">เธเธฅเธดเธ Dropdown <span class="hl">เธชเนเธเธญเธญเธ</span> โ’ เน€เธฅเธทเธญเธ <span class="hl">Export Selected</span></li>
+                <li class="step">เธซเธเนเธฒเธ•เนเธฒเธ <span class="hl">เธเนเธญเธกเธนเธฅเธเธฒเธฃเธชเนเธเธญเธญเธ</span> เธเธฐเน€เธ”เนเธเธเธถเนเธเธกเธฒ เนเธชเธ”เธ โ… "เธเธฒเธเธฃเธฑเนเธเธเธฃเธฐเธชเธเธเธงเธฒเธกเธชเธณเน€เธฃเนเธ!" โ€” เนเธเธฅเนเธเธฐเธ”เธฒเธงเธเนเนเธซเธฅเธ”เธฅเธเน€เธเธฃเธทเนเธญเธเธญเธฑเธ•เนเธเธกเธฑเธ•เธด</li>
             </ol>
             <div class="fi">
-                <div class="fi-r"><span class="fi-l">📄 ชื่อไฟล์</span><span class="fi-v">XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.xls (ชื่อเป็น hash code)</span></div>
-                <div class="fi-r"><span class="fi-l">📑 ชื่อแท็บ</span><span class="fi-v fi-t">sheet1</span></div>
-                <div class="fi-r"><span class="fi-l">📝 หมายเหตุ</span><span class="fi-v">หากต้องการดาวน์โหลดย้อนหลัง คลิก <strong>ดูประวัติ</strong> หรือ <strong>Export History</strong></span></div>
+                <div class="fi-r"><span class="fi-l">๐“ เธเธทเนเธญเนเธเธฅเน</span><span class="fi-v">XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.xls (เธเธทเนเธญเน€เธเนเธ hash code)</span></div>
+                <div class="fi-r"><span class="fi-l">๐“‘ เธเธทเนเธญเนเธ—เนเธ</span><span class="fi-v fi-t">sheet1</span></div>
+                <div class="fi-r"><span class="fi-l">๐“ เธซเธกเธฒเธขเน€เธซเธ•เธธ</span><span class="fi-v">เธซเธฒเธเธ•เนเธญเธเธเธฒเธฃเธ”เธฒเธงเธเนเนเธซเธฅเธ”เธขเนเธญเธเธซเธฅเธฑเธ เธเธฅเธดเธ <strong>เธ”เธนเธเธฃเธฐเธงเธฑเธ•เธด</strong> เธซเธฃเธทเธญ <strong>Export History</strong></span></div>
             </div></div>
         </div>
 
         <!-- LZ 2 -->
         <div class="gc anim" data-i="2" id="lz-2">
-            <div class="gc-h" onclick="tog(this)"><div class="gc-n">2</div><h3>วิธีดาวน์โหลดข้อมูลรายรับของฉัน</h3><span class="gc-t">▼</span></div>
+            <div class="gc-h" onclick="tog(this)"><div class="gc-n">2</div><h3>เธงเธดเธเธตเธ”เธฒเธงเธเนเนเธซเธฅเธ”เธเนเธญเธกเธนเธฅเธฃเธฒเธขเธฃเธฑเธเธเธญเธเธเธฑเธ</h3><span class="gc-t">โ–ผ</span></div>
             <div class="gc-b"><ol class="steps">
-                <li class="step">ที่แถบเมนูด้านซ้าย ในหมวด "การเงิน" คลิกเมนู <span class="hl">รายรับของฉัน</span></li>
-                <li class="step">มองไปที่มุมขวาบนของหน้าจอ จะเห็นกล่อง "รายงานรายรับ" ให้คลิก <span class="hl">เพิ่มเติม ></span></li>
-                <li class="step">ในหน้าต่าง "ดาวน์โหลดรายการทางบัญชี" ให้คลิกแท็บ <span class="hl">รายงานรายเดือน</span></li>
-                <li class="step">คลิกที่ช่อง "การเลือกเดือน" เพื่อเลือก <span class="hl">เดือนและปี</span> ที่ต้องการ</li>
-                <li class="step">ในช่อง "ดาวน์โหลดรูปแบบ" คลิก Dropdown เลือก <span class="hl">รายละเอียดธุรกรรม (excel)</span></li>
-                <li class="step">กดปุ่ม <span class="hl">ดาวน์โหลด</span> สีน้ำเงิน</li>
-                <li class="step">หน้าต่าง <span class="hl">ประวัติข้อมูลที่ดาวน์โหลด</span> จะเด้งขึ้นมา รอสถานะเป็น "Finished" แล้วคลิก <span class="hl">Download Result File</span></li>
+                <li class="step">เธ—เธตเนเนเธ–เธเน€เธกเธเธนเธ”เนเธฒเธเธเนเธฒเธข เนเธเธซเธกเธงเธ” "เธเธฒเธฃเน€เธเธดเธ" เธเธฅเธดเธเน€เธกเธเธน <span class="hl">เธฃเธฒเธขเธฃเธฑเธเธเธญเธเธเธฑเธ</span></li>
+                <li class="step">เธกเธญเธเนเธเธ—เธตเนเธกเธธเธกเธเธงเธฒเธเธเธเธญเธเธซเธเนเธฒเธเธญ เธเธฐเน€เธซเนเธเธเธฅเนเธญเธ "เธฃเธฒเธขเธเธฒเธเธฃเธฒเธขเธฃเธฑเธ" เนเธซเนเธเธฅเธดเธ <span class="hl">เน€เธเธดเนเธกเน€เธ•เธดเธก ></span></li>
+                <li class="step">เนเธเธซเธเนเธฒเธ•เนเธฒเธ "เธ”เธฒเธงเธเนเนเธซเธฅเธ”เธฃเธฒเธขเธเธฒเธฃเธ—เธฒเธเธเธฑเธเธเธต" เนเธซเนเธเธฅเธดเธเนเธ—เนเธ <span class="hl">เธฃเธฒเธขเธเธฒเธเธฃเธฒเธขเน€เธ”เธทเธญเธ</span></li>
+                <li class="step">เธเธฅเธดเธเธ—เธตเนเธเนเธญเธ "เธเธฒเธฃเน€เธฅเธทเธญเธเน€เธ”เธทเธญเธ" เน€เธเธทเนเธญเน€เธฅเธทเธญเธ <span class="hl">เน€เธ”เธทเธญเธเนเธฅเธฐเธเธต</span> เธ—เธตเนเธ•เนเธญเธเธเธฒเธฃ</li>
+                <li class="step">เนเธเธเนเธญเธ "เธ”เธฒเธงเธเนเนเธซเธฅเธ”เธฃเธนเธเนเธเธ" เธเธฅเธดเธ Dropdown เน€เธฅเธทเธญเธ <span class="hl">เธฃเธฒเธขเธฅเธฐเน€เธญเธตเธขเธ”เธเธธเธฃเธเธฃเธฃเธก (excel)</span></li>
+                <li class="step">เธเธ”เธเธธเนเธก <span class="hl">เธ”เธฒเธงเธเนเนเธซเธฅเธ”</span> เธชเธตเธเนเธณเน€เธเธดเธ</li>
+                <li class="step">เธซเธเนเธฒเธ•เนเธฒเธ <span class="hl">เธเธฃเธฐเธงเธฑเธ•เธดเธเนเธญเธกเธนเธฅเธ—เธตเนเธ”เธฒเธงเธเนเนเธซเธฅเธ”</span> เธเธฐเน€เธ”เนเธเธเธถเนเธเธกเธฒ เธฃเธญเธชเธ–เธฒเธเธฐเน€เธเนเธ "Finished" เนเธฅเนเธงเธเธฅเธดเธ <span class="hl">Download Result File</span></li>
             </ol>
             <div class="fi">
-                <div class="fi-r"><span class="fi-l">📄 ชื่อไฟล์</span><span class="fi-v">TH.XXXXX-TRANSACTION-XXXXXXXX-XXXXXXXX.xlsx</span></div>
-                <div class="fi-r"><span class="fi-l">📑 ชื่อแท็บ</span><span class="fi-v fi-t">Transaction Overview</span></div>
+                <div class="fi-r"><span class="fi-l">๐“ เธเธทเนเธญเนเธเธฅเน</span><span class="fi-v">TH.XXXXX-TRANSACTION-XXXXXXXX-XXXXXXXX.xlsx</span></div>
+                <div class="fi-r"><span class="fi-l">๐“‘ เธเธทเนเธญเนเธ—เนเธ</span><span class="fi-v fi-t">Transaction Overview</span></div>
             </div></div>
         </div>
 
         <!-- LZ 3 -->
         <div class="gc anim" data-i="3" id="lz-3">
-            <div class="gc-h" onclick="tog(this)"><div class="gc-n">3</div><h3>วิธีดาวน์โหลดข้อมูลเงินเข้าธนาคาร</h3><span class="gc-t">▼</span></div>
+            <div class="gc-h" onclick="tog(this)"><div class="gc-n">3</div><h3>เธงเธดเธเธตเธ”เธฒเธงเธเนเนเธซเธฅเธ”เธเนเธญเธกเธนเธฅเน€เธเธดเธเน€เธเนเธฒเธเธเธฒเธเธฒเธฃ</h3><span class="gc-t">โ–ผ</span></div>
             <div class="gc-b"><ol class="steps">
-                <li class="step">ที่แถบเมนูด้านซ้าย ในหมวด "การเงิน" คลิกเมนู <span class="hl">ยอดของฉัน</span></li>
-                <li class="step">เลื่อนลงมาที่หัวข้อ "ประวัติการทำรายการ" ระบุ <span class="hl">วันที่เริ่มต้น</span> และ <span class="hl">วันที่สิ้นสุด</span> ที่ต้องการ</li>
-                <li class="step">คลิก Dropdown <span class="hl">ดาวน์โหลดข้อมูล</span> → เลือก <span class="hl">ดาวน์โหลดข้อมูลทุกแถว (Excel)</span></li>
-                <li class="step">หน้าต่าง <span class="hl">ประวัติการดาวน์โหลด</span> จะเด้งขึ้นมา รอสถานะเป็น "Finished" แล้วคลิก <span class="hl">Download Result File</span></li>
+                <li class="step">เธ—เธตเนเนเธ–เธเน€เธกเธเธนเธ”เนเธฒเธเธเนเธฒเธข เนเธเธซเธกเธงเธ” "เธเธฒเธฃเน€เธเธดเธ" เธเธฅเธดเธเน€เธกเธเธน <span class="hl">เธขเธญเธ”เธเธญเธเธเธฑเธ</span></li>
+                <li class="step">เน€เธฅเธทเนเธญเธเธฅเธเธกเธฒเธ—เธตเนเธซเธฑเธงเธเนเธญ "เธเธฃเธฐเธงเธฑเธ•เธดเธเธฒเธฃเธ—เธณเธฃเธฒเธขเธเธฒเธฃ" เธฃเธฐเธเธธ <span class="hl">เธงเธฑเธเธ—เธตเนเน€เธฃเธดเนเธกเธ•เนเธ</span> เนเธฅเธฐ <span class="hl">เธงเธฑเธเธ—เธตเนเธชเธดเนเธเธชเธธเธ”</span> เธ—เธตเนเธ•เนเธญเธเธเธฒเธฃ</li>
+                <li class="step">เธเธฅเธดเธ Dropdown <span class="hl">เธ”เธฒเธงเธเนเนเธซเธฅเธ”เธเนเธญเธกเธนเธฅ</span> โ’ เน€เธฅเธทเธญเธ <span class="hl">เธ”เธฒเธงเธเนเนเธซเธฅเธ”เธเนเธญเธกเธนเธฅเธ—เธธเธเนเธ–เธง (Excel)</span></li>
+                <li class="step">เธซเธเนเธฒเธ•เนเธฒเธ <span class="hl">เธเธฃเธฐเธงเธฑเธ•เธดเธเธฒเธฃเธ”เธฒเธงเธเนเนเธซเธฅเธ”</span> เธเธฐเน€เธ”เนเธเธเธถเนเธเธกเธฒ เธฃเธญเธชเธ–เธฒเธเธฐเน€เธเนเธ "Finished" เนเธฅเนเธงเธเธฅเธดเธ <span class="hl">Download Result File</span></li>
             </ol>
             <div class="fi">
-                <div class="fi-r"><span class="fi-l">📄 ชื่อไฟล์</span><span class="fi-v">XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.xls (ชื่อเป็น hash code)</span></div>
-                <div class="fi-r"><span class="fi-l">📑 ชื่อแท็บ</span><span class="fi-v fi-t">Balance Transactions</span></div>
+                <div class="fi-r"><span class="fi-l">๐“ เธเธทเนเธญเนเธเธฅเน</span><span class="fi-v">XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.xls (เธเธทเนเธญเน€เธเนเธ hash code)</span></div>
+                <div class="fi-r"><span class="fi-l">๐“‘ เธเธทเนเธญเนเธ—เนเธ</span><span class="fi-v fi-t">Balance Transactions</span></div>
             </div></div>
-        </div>
-    </section>
-
-    <hr class="sec-div">
-
-    <!-- ══════════════ PROGRAM GUIDE ══════════════ -->
-    <section class="pg-sec" id="program">
-        <div class="sec-head anim">
-            <div class="sec-logo" style="font-size:2.5rem;">💻</div>
-            <h2 data-i18n="pg-title">วิธีใช้โปรแกรม</h2>
-            <p data-i18n="pg-desc">การนำเข้าข้อมูลเข้าสู่ระบบ — 4 ประเภท</p>
-            <span class="uline"></span>
-        </div>
-
-        <!-- PG 1: คำสั่งซื้อ -->
-        <div class="gc open anim" data-i="1" id="pg-orders">
-            <div class="gc-h" onclick="tog(this)"><div class="gc-n">1</div><h3 data-i18n="pg1-title">นำเข้าข้อมูลคำสั่งซื้อ</h3><span class="gc-t">▼</span></div>
-            <div class="gc-b">
-                <p style="font-size:.85rem;color:#7a8a9e;margin-bottom:.8rem;" data-i18n="pg1-intro">ที่แถบเมนูด้านซ้าย ในหมวด E-Commerce คลิกเมนู <span class="hl">คำสั่งซื้อ</span> แล้วคลิกปุ่ม <span class="hl">นำเข้าคำสั่งซื้อ</span> สีเขียว ที่มุมขวาบน</p>
-
-                <ol class="steps">
-                    <li class="step" data-i18n="pg1-s1">คลิกปุ่ม <span class="hl">นำเข้าคำสั่งซื้อ</span> สีเขียว ที่มุมขวาบน</li>
-                    <li class="step" data-i18n="pg1-s2">หน้าต่าง <span class="hl">อัปโหลดข้อมูลคำสั่งซื้อ</span> จะเด้งขึ้นมา</li>
-                    <li class="step" data-i18n="pg1-s3">เลือกวิธีนำเข้าไฟล์ (เลือก<strong>วิธีใดวิธีหนึ่ง</strong>):
-                        <ul class="sub-steps">
-                            <li class="sub-step" data-n="3.1" data-i18n="pg1-s3a">แท็บ <span class="hl">ไฟล์</span> — ลากไฟล์ Excel มาวางในกรอบเส้นประ หรือคลิกเลือกจากเครื่อง (.xls .xlsx .csv) <span class="sub-rec">★ แนะนำ</span></li>
-                            <li class="sub-step" data-n="3.2" data-i18n="pg1-s3b">แท็บ <span class="hl">โฟลเดอร์ Drive</span> — วาง Drive Folder URL ในช่อง → เลือกเดือน/ปี → กดปุ่ม <span class="hl">ค้นหาไฟล์</span></li>
-                            <li class="sub-step" data-n="3.3" data-i18n="pg1-s3c">แท็บ <span class="hl">Excel URL</span> — วาง URL ไฟล์ Google Sheets ลงในช่อง</li>
-                        </ul>
-                    </li>
-                    <li class="step" data-i18n="pg1-s4">เลือกไฟล์ที่ต้องการนำเข้า (ถ้าใช้แท็บ "ไฟล์" ให้คลิก Dropdown เลือก Platform: <span class="hl">TikTok</span> / <span class="hl">Shopee</span> / <span class="hl">Lazada</span>)</li>
-                    <li class="step" data-i18n="pg1-s5">กดปุ่ม <span class="hl">อัปโหลด X ไฟล์</span> สีเขียว</li>
-                    <li class="step" data-i18n="pg1-s6">รอระบบประมวลผล — จะมีแถบ progress bar แสดงความคืบหน้า</li>
-                    <li class="step" data-i18n="pg1-s7">เมื่อเสร็จจะแสดง <span class="hl">อัปโหลดสำเร็จ ✅</span> พร้อมสรุปผล → กดปุ่ม <span class="hl">เสร็จสิ้น</span></li>
-                </ol>
-
-                <div class="fi">
-                    <div class="fi-r"><span class="fi-l" data-i18n="fi-name-th">📄 ชื่อไฟล์ (TH)</span><span class="fi-v">ทั้งหมด คำสั่งซื้อ-XXXX-XX-XX-XX_XX.xlsx</span></div>
-                    <div class="fi-r"><span class="fi-l" data-i18n="fi-name-en">📄 ชื่อไฟล์ (EN)</span><span class="fi-v">All order-XXXX-XX-XX-XX:XX.xlsx</span></div>
-                    <div class="fi-r"><span class="fi-l" data-i18n="fi-tab">📑 ชื่อแท็บ</span><span class="fi-v fi-t">OrderSKUList</span></div>
-                </div>
-            </div>
-        </div>
-
-        <!-- PG 2: รายรับของฉัน -->
-        <div class="gc anim" data-i="2" id="pg-income">
-            <div class="gc-h" onclick="tog(this)"><div class="gc-n">2</div><h3 data-i18n="pg2-title">นำเข้าข้อมูลรายรับของฉัน</h3><span class="gc-t">▼</span></div>
-            <div class="gc-b">
-                <p style="font-size:.85rem;color:#7a8a9e;margin-bottom:.8rem;" data-i18n="pg2-intro">ที่แถบเมนูด้านซ้าย ในหมวด E-Commerce คลิกเมนู <span class="hl">รายรับของฉัน</span> แล้วคลิกปุ่ม <span class="hl">นำเข้า</span> ที่มุมขวาบน</p>
-
-                <ol class="steps">
-                    <li class="step" data-i18n="pg2-s1">คลิกปุ่ม <span class="hl">นำเข้า</span> ที่มุมขวาบน</li>
-                    <li class="step" data-i18n="pg2-s2">หน้าต่าง <span class="hl">อัปโหลดข้อมูล</span> จะเด้งขึ้นมา</li>
-                    <li class="step" data-i18n="pg2-s3">เลือกวิธีนำเข้าไฟล์ (เลือก<strong>วิธีใดวิธีหนึ่ง</strong>):
-                        <ul class="sub-steps">
-                            <li class="sub-step" data-n="3.1" data-i18n="pg2-s3a">แท็บ <span class="hl">ไฟล์</span> — ลากไฟล์ Excel มาวาง หรือคลิกเลือกจากเครื่อง <span class="sub-rec">★ แนะนำ</span></li>
-                            <li class="sub-step" data-n="3.2" data-i18n="pg2-s3b">แท็บ <span class="hl">โฟลเดอร์ Drive</span> — วาง Drive Folder URL → เลือกเดือน/ปี → กดปุ่ม <span class="hl">ค้นหาไฟล์</span></li>
-                            <li class="sub-step" data-n="3.3" data-i18n="pg2-s3c">แท็บ <span class="hl">Excel URL</span> — วาง URL ไฟล์ Google Sheets ลงในช่อง</li>
-                        </ul>
-                    </li>
-                    <li class="step" data-i18n="pg2-s4">เลือกไฟล์ที่ต้องการนำเข้า แล้วกดปุ่ม <span class="hl">อัปโหลด X ไฟล์</span> สีเขียว</li>
-                    <li class="step" data-i18n="pg2-s5">รอระบบประมวลผล — จะมีแถบ progress bar แสดงความคืบหน้า</li>
-                    <li class="step" data-i18n="pg2-s6">เมื่อเสร็จจะแสดง <span class="hl">อัปโหลดสำเร็จ ✅</span> พร้อมสรุปผล → กดปุ่ม <span class="hl">เสร็จสิ้น</span></li>
-                </ol>
-
-                <div class="fi">
-                    <div class="fi-r"><span class="fi-l" data-i18n="fi-name-th">📄 ชื่อไฟล์ (TH)</span><span class="fi-v">income_XXXXXX-XX_XX_XX(UTC+7).xlsx</span></div>
-                    <div class="fi-r"><span class="fi-l" data-i18n="fi-name-en">📄 ชื่อไฟล์ (EN)</span><span class="fi-v">income_XXXXXX-XX_XX_XX(UTC+7).xlsx</span></div>
-                    <div class="fi-r"><span class="fi-l" data-i18n="fi-tab">📑 ชื่อแท็บ</span><span class="fi-v fi-t">รายละเอียดคำสั่งซื้อ, รายงาน, บันทึกการถอน, คำอธิบายค่าธรรมเนียม</span></div>
-                </div>
-            </div>
-        </div>
-
-        <!-- PG 3: เงินเข้าธนาคาร -->
-        <div class="gc anim" data-i="3" id="pg-bank">
-            <div class="gc-h" onclick="tog(this)"><div class="gc-n">3</div><h3 data-i18n="pg3-title">นำเข้าข้อมูลเงินเข้าธนาคาร</h3><span class="gc-t">▼</span></div>
-            <div class="gc-b">
-                <p style="font-size:.85rem;color:#7a8a9e;margin-bottom:.8rem;" data-i18n="pg3-intro">ที่แถบเมนูด้านซ้าย ในเมนู E-Commerce คลิกเมนู <span class="hl">รับเงินเข้าธนาคาร</span> แล้วกดปุ่ม <span class="hl">รับเงินเข้าธนาคารทั้งหมด</span> สีเขียว แล้วเลือก <span class="hl">นำเข้ารับเงินจากไฟล์</span></p>
-
-                <ol class="steps">
-                <li class="step" data-i18n="pg3-s1">ที่แถบเมนูด้านซ้าย ในเมนู E-Commerce คลิกเมนู <span class="hl">รับเงินเข้าธนาคาร</span></li>
-                <li class="step" data-i18n="pg3-s2">กดปุ่ม <span class="hl">รับเงินเข้าธนาคารทั้งหมด</span> (สีเขียว) แล้วเลือก <span class="hl">นำเข้ารับเงินจากไฟล์</span></li>
-                <li class="step" data-i18n="pg3-s3">หน้าต่าง <span class="hl">นำเข้ารายการถอนเงิน</span> จะเด้งขึ้นมา เลือก Platform: <span class="hl">TikTok</span> หรือ <span class="hl">Shopee</span>
-                    <ul class="sub-steps">
-                        <li class="sub-step" data-n="3.1" data-i18n="pg3-s3a">เลือก <span class="hl">ไฟล์ Excel / PDF</span> — ลากไฟล์มาวาง หรือคลิกเลือกไฟล์ <span class="sub-rec">★ แนะนำ</span></li>
-                        <li class="sub-step" data-n="3.2" data-i18n="pg3-s3b">เลือก <span class="hl">Google Drive</span> — วาง URL ของ Google Drive Folder</li>
-                    </ul>
-                </li>
-                <li class="step" data-i18n="pg3-s4">กดปุ่ม <span class="hl">นำเข้าข้อมูล</span></li>
-                <li class="step" data-i18n="pg3-s5">ตรวจสอบข้อมูล → กด <span class="hl">บันทึก</span></li>
-                <li class="step" data-i18n="pg3-s6">เมื่อเสร็จจะแสดง <span class="hl">เสร็จสิ้น ✅</span></li>
-            </ol>
-            </div>
-        </div>
-
-        <!-- PG 4: ค่าใช้จ่ายแพลตฟอร์ม -->
-        <div class="gc anim" data-i="4" id="pg-expense">
-            <div class="gc-h" onclick="tog(this)"><div class="gc-n">4</div><h3 data-i18n="pg4-title">นำเข้าบิลค่าใช้จ่ายแพลตฟอร์ม</h3><span class="gc-t">▼</span></div>
-            <div class="gc-b">
-                <p style="font-size:.85rem;color:#7a8a9e;margin-bottom:.8rem;" data-i18n="pg4-intro">ที่แถบเมนูด้านซ้าย ในเมนู E-Commerce คลิกเมนู <span class="hl">ค่าใช้จ่ายแพลตฟอร์ม</span> แล้วกดปุ่ม <span class="hl">นำเข้าบิลค่าใช้จ่าย</span> สีเขียว</p>
-
-                <ol class="steps">
-                <li class="step" data-i18n="pg4-s1">ที่แถบเมนูด้านซ้าย ในเมนู E-Commerce คลิกเมนู <span class="hl">ค่าใช้จ่ายแพลตฟอร์ม</span></li>
-                <li class="step" data-i18n="pg4-s2">กดปุ่ม <span class="hl">นำเข้าบิลค่าใช้จ่าย</span> (สีเขียว)</li>
-                <li class="step" data-i18n="pg4-s3">หน้าต่าง <span class="hl">AI Scan บิล</span> จะเด้งขึ้นมา เลือกวิธีนำเข้า (เลือก<strong>วิธีใดวิธีหนึ่ง</strong>):
-                    <ul class="sub-steps">
-                        <li class="sub-step" data-n="3.1" data-i18n="pg4-s3a">แท็บ <span class="hl">โฟลเดอร์ Drive</span> — วาง URL โฟลเดอร์ที่มีไฟล์ PDF → เลือกแพลตฟอร์ม → กดปุ่ม <span class="hl">สแกน + แม็ปบัญชีอัตโนมัติ</span> <span class="sub-rec">★ แนะนำ</span></li>
-                        <li class="sub-step" data-n="3.2" data-i18n="pg4-s3b">แท็บ <span class="hl">ไฟล์เดี่ยว</span> — ลาก PDF / รูปมาวาง แล้วกด <span class="hl">สแกน</span> หรือ <span class="hl">รับข้อมูลบัญชี</span></li>
-                    </ul>
-                </li>
-                <li class="step" data-i18n="pg4-s4">รอระบบ AI ประมวลผล</li>
-                <li class="step" data-i18n="pg4-s5">เมื่อเสร็จจะแสดง <span class="hl">เสร็จสิ้น ✅</span></li>
-            </ol>
-            </div>
         </div>
     </section>
 
 </div><!-- /main -->
 </div><!-- /layout -->
 
-<footer class="footer"><p data-i18n="footer">คู่มือ BKKHolding สำหรับทีมบัญชี</p></footer>
-<button class="btt" id="btt" onclick="window.scrollTo({top:0})">↑</button>
-<button class="theme-toggle" id="themeToggle" onclick="toggleDark()">🌙</button>
+<footer class="footer"><p data-i18n="footer">เธเธนเนเธกเธทเธญ BKKHolding เธชเธณเธซเธฃเธฑเธเธ—เธตเธกเธเธฑเธเธเธต</p></footer>
+<button class="btt" id="btt" onclick="window.scrollTo({top:0})">โ‘</button>
+<button class="theme-toggle" id="themeToggle" onclick="toggleDark()">๐</button>
 
 <script>
-// ━━━━━━━━━━ Language Toggle System ━━━━━━━━━━
+// โ”โ”โ”โ”โ”โ”โ”โ”โ”โ” Language Toggle System โ”โ”โ”โ”โ”โ”โ”โ”โ”โ”
 const i18n = {
-  'nav-brand':     { th: 'คู่มือ BKKHolding', en: 'BKKHolding Guide' },
-  'hero-badge':    { th: '<div class="dot"></div> คู่มือสำหรับทีมบัญชี', en: '<div class="dot"></div> Guide for Accounting Team' },
-  'hero-title':    { th: 'คู่มือ <span class="grad">BKKHolding</span>', en: '<span class="grad">BKKHolding</span> Guide' },
-  'hero-desc':     { th: 'วิธีดึงข้อมูลจากแพลตฟอร์ม + วิธีใช้โปรแกรม สำหรับทีมบัญชี', en: 'How to extract data from platforms + How to use the program — for accounting team' },
-  'footer':        { th: 'คู่มือ BKKHolding สำหรับทีมบัญชี', en: 'BKKHolding Guide for Accounting Team' },
+  'nav-brand':     { th: 'เธเธนเนเธกเธทเธญ BKKHolding', en: 'BKKHolding Guide' },
+  'hero-badge':    { th: '<div class="dot"></div> เธเธนเนเธกเธทเธญเธชเธณเธซเธฃเธฑเธเธ—เธตเธกเธเธฑเธเธเธต', en: '<div class="dot"></div> Guide for Accounting Team' },
+  'hero-title':    { th: 'เธเธนเนเธกเธทเธญ <span class="grad">BKKHolding</span>', en: '<span class="grad">BKKHolding</span> Guide' },
+  'hero-desc':     { th: 'เธงเธดเธเธตเธ”เธถเธเธเนเธญเธกเธนเธฅเธเธฒเธเนเธเธฅเธ•เธเธญเธฃเนเธก + เธงเธดเธเธตเนเธเนเนเธเธฃเนเธเธฃเธก เธชเธณเธซเธฃเธฑเธเธ—เธตเธกเธเธฑเธเธเธต', en: 'How to extract data from platforms + How to use the program โ€” for accounting team' },
+  'footer':        { th: 'เธเธนเนเธกเธทเธญ BKKHolding เธชเธณเธซเธฃเธฑเธเธ—เธตเธกเธเธฑเธเธเธต', en: 'BKKHolding Guide for Accounting Team' },
 
   // Sidebar
-  'sb-cat-extract':{ th: '📥 วิธีดึงข้อมูล', en: '📥 Data Extraction' },
-  'sb-tk1':        { th: 'คำสั่งซื้อ (All Orders)', en: 'Orders (All Orders)' },
-  'sb-tk2':        { th: 'รายรับของฉัน', en: 'My Income' },
-  'sb-tk3':        { th: 'คืนสินค้า/คืนเงิน', en: 'Returns / Refunds' },
-  'sb-tk4':        { th: 'ค่าใช้จ่ายแพลตฟอร์ม', en: 'Platform Expenses' },
-  'sb-sp1':        { th: 'คำสั่งซื้อสินค้า', en: 'Product Orders' },
-  'sb-sp2':        { th: 'รายรับ', en: 'Income' },
-  'sb-sp3':        { th: 'เงินเข้าธนาคาร', en: 'Bank Deposits' },
-  'sb-sp4':        { th: 'ค่าใช้จ่ายแพลตฟอร์ม', en: 'Platform Expenses' },
-  'sb-sp5':        { th: 'คืนสินค้า/คืนเงิน', en: 'Returns / Refunds' },
-  'sb-cat-program':{ th: '💻 วิธีใช้โปรแกรม', en: '💻 Program Guide' },
-  'sb-pg1':        { th: 'คำสั่งซื้อ', en: 'Orders' },
-  'sb-pg2':        { th: 'รายรับของฉัน', en: 'My Income' },
-  'sb-pg3':        { th: 'เงินเข้าธนาคาร', en: 'Bank Deposits' },
-  'sb-pg4':        { th: 'ค่าใช้จ่ายแพลตฟอร์ม', en: 'Platform Expenses' },
+  'sb-cat-extract':{ th: '๐“ฅ เธงเธดเธเธตเธ”เธถเธเธเนเธญเธกเธนเธฅ', en: '๐“ฅ Data Extraction' },
+  'sb-tk1':        { th: 'เธเธณเธชเธฑเนเธเธเธทเนเธญ (All Orders)', en: 'Orders (All Orders)' },
+  'sb-tk2':        { th: 'เธฃเธฒเธขเธฃเธฑเธเธเธญเธเธเธฑเธ', en: 'My Income' },
+  'sb-tk3':        { th: 'เธเธทเธเธชเธดเธเธเนเธฒ/เธเธทเธเน€เธเธดเธ', en: 'Returns / Refunds' },
+  'sb-tk4':        { th: 'เธเนเธฒเนเธเนเธเนเธฒเธขเนเธเธฅเธ•เธเธญเธฃเนเธก', en: 'Platform Expenses' },
+  'sb-sp1':        { th: 'เธเธณเธชเธฑเนเธเธเธทเนเธญเธชเธดเธเธเนเธฒ', en: 'Product Orders' },
+  'sb-sp2':        { th: 'เธฃเธฒเธขเธฃเธฑเธ', en: 'Income' },
+  'sb-sp3':        { th: 'เน€เธเธดเธเน€เธเนเธฒเธเธเธฒเธเธฒเธฃ', en: 'Bank Deposits' },
+  'sb-sp4':        { th: 'เธเนเธฒเนเธเนเธเนเธฒเธขเนเธเธฅเธ•เธเธญเธฃเนเธก', en: 'Platform Expenses' },
+  'sb-sp5':        { th: 'เธเธทเธเธชเธดเธเธเนเธฒ/เธเธทเธเน€เธเธดเธ', en: 'Returns / Refunds' },
+  'sb-cat-program':{ th: '๐’ป เธงเธดเธเธตเนเธเนเนเธเธฃเนเธเธฃเธก', en: '๐’ป Program Guide' },
+  'sb-pg1':        { th: 'เธเธณเธชเธฑเนเธเธเธทเนเธญ', en: 'Orders' },
+  'sb-pg2':        { th: 'เธฃเธฒเธขเธฃเธฑเธเธเธญเธเธเธฑเธ', en: 'My Income' },
+  'sb-pg3':        { th: 'เน€เธเธดเธเน€เธเนเธฒเธเธเธฒเธเธฒเธฃ', en: 'Bank Deposits' },
+  'sb-pg4':        { th: 'เธเนเธฒเนเธเนเธเนเธฒเธขเนเธเธฅเธ•เธเธญเธฃเนเธก', en: 'Platform Expenses' },
 
   // File info labels (shared)
-  'fi-name-th':    { th: '📄 ชื่อไฟล์ (TH)', en: '📄 Filename (TH)' },
-  'fi-name-en':    { th: '📄 ชื่อไฟล์ (EN)', en: '📄 Filename (EN)' },
-  'fi-tab':        { th: '📑 ชื่อแท็บ', en: '📑 Sheet Tab Name' },
-  'fi-zip':        { th: '📦 ชื่อไฟล์ ZIP', en: '📦 ZIP Filename' },
-  'fi-note':       { th: '📝 หมายเหตุ', en: '📝 Note' },
-  'fi-inside':     { th: '📄 ไฟล์ภายใน', en: '📄 File Inside' },
+  'fi-name-th':    { th: '๐“ เธเธทเนเธญเนเธเธฅเน (TH)', en: '๐“ Filename (TH)' },
+  'fi-name-en':    { th: '๐“ เธเธทเนเธญเนเธเธฅเน (EN)', en: '๐“ Filename (EN)' },
+  'fi-tab':        { th: '๐“‘ เธเธทเนเธญเนเธ—เนเธ', en: '๐“‘ Sheet Tab Name' },
+  'fi-zip':        { th: '๐“ฆ เธเธทเนเธญเนเธเธฅเน ZIP', en: '๐“ฆ ZIP Filename' },
+  'fi-note':       { th: '๐“ เธซเธกเธฒเธขเน€เธซเธ•เธธ', en: '๐“ Note' },
+  'fi-inside':     { th: '๐“ เนเธเธฅเนเธ เธฒเธขเนเธ', en: '๐“ File Inside' },
 
   // TikTok section
-  'tk-desc':       { th: 'การดึงข้อมูลจาก TikTok Shop — 4 ประเภทรายงาน', en: 'Data extraction from TikTok Shop — 4 report types' },
-  'tk1-title':     { th: 'ดาวน์โหลดข้อมูลคำสั่งซื้อแบบครบวงจร (All Orders)', en: 'Download All Orders Data' },
-  'tk1-s1':        { th: 'ล็อกอินเข้าสู่ระบบ <span class="hl">TikTok Seller Center</span>', en: 'Log in to <span class="hl">TikTok Seller Center</span>' },
-  'tk1-s2':        { th: 'ที่แถบเมนูด้านซ้ายมือสุด ให้คลิกที่หัวข้อ <span class="hl">คำสั่งซื้อ</span> แล้วเลือกเมนูย่อย <span class="hl">จัดการคำสั่งซื้อ</span>', en: 'In the left sidebar, click <span class="hl">Orders</span> then select <span class="hl">Manage Orders</span>' },
-  'tk1-s3':        { th: 'ตรงกลางหน้าจอจะมีแท็บสถานะต่างๆ ให้คลิกเลือกแท็บ <span class="hl">ทั้งหมด</span>', en: 'In the center of the screen, click the <span class="hl">All</span> status tab' },
-  'tk1-s4':        { th: 'คลิกที่ช่องปฏิทิน (เวลาที่สร้าง) เพื่อทำการระบุ <span class="hl">วันที่เริ่มต้น</span> และ <span class="hl">วันที่สิ้นสุด</span> ที่คุณต้องการดึงข้อมูล', en: 'Click the calendar field (Created time) and set the <span class="hl">Start Date</span> and <span class="hl">End Date</span> for the data you want to extract' },
-  'tk1-s5':        { th: 'มองหาปุ่ม <span class="hl">ส่งออก</span> ที่อยู่บริเวณมุมขวาบนเหนือรายการคำสั่งซื้อ แล้วคลิกที่ปุ่มนั้น', en: 'Find the <span class="hl">Export</span> button at the top-right above the order list and click it' },
-  'tk1-s6':        { th: 'ในหน้าต่างป๊อปอัปที่ปรากฏขึ้นมา ให้สังเกตหัวข้อ "รูปแบบการส่งออก" ต้องติ๊กเลือกวงกลมคำว่า <span class="hl">Excel</span> ให้เรียบร้อย จากนั้นกดปุ่ม <span class="hl">ส่งออก</span> สีเขียว', en: 'In the popup, under "Export format" make sure <span class="hl">Excel</span> is selected, then click the green <span class="hl">Export</span> button' },
-  'tk1-s7':        { th: 'ระบบจะใช้เวลาสร้างไฟล์สักครู่ ให้คุณคลิกที่ข้อความลิงก์คำว่า <span class="hl">ประวัติการส่งออก</span> (จะอยู่ข้างๆ ปุ่มส่งออกในตอนแรก)', en: 'The system will take a moment to generate the file. Click the <span class="hl">Export History</span> link (next to the Export button)' },
-  'tk1-s8':        { th: 'หน้าต่างประวัติจะเปิดขึ้นมา ให้ดูไฟล์บรรทัดบนสุด (ไฟล์ล่าสุด) แล้วคลิกปุ่ม <span class="hl">ดาวน์โหลด</span> เพื่อบันทึกไฟล์ Excel ลงเครื่อง', en: 'In the history window, find the top file (most recent) and click <span class="hl">Download</span> to save the Excel file to your computer' },
+  'tk-desc':       { th: 'เธเธฒเธฃเธ”เธถเธเธเนเธญเธกเธนเธฅเธเธฒเธ TikTok Shop โ€” 4 เธเธฃเธฐเน€เธ เธ—เธฃเธฒเธขเธเธฒเธ', en: 'Data extraction from TikTok Shop โ€” 4 report types' },
+  'tk1-title':     { th: 'เธ”เธฒเธงเธเนเนเธซเธฅเธ”เธเนเธญเธกเธนเธฅเธเธณเธชเธฑเนเธเธเธทเนเธญเนเธเธเธเธฃเธเธงเธเธเธฃ (All Orders)', en: 'Download All Orders Data' },
+  'tk1-s1':        { th: 'เธฅเนเธญเธเธญเธดเธเน€เธเนเธฒเธชเธนเนเธฃเธฐเธเธ <span class="hl">TikTok Seller Center</span>', en: 'Log in to <span class="hl">TikTok Seller Center</span>' },
+  'tk1-s2':        { th: 'เธ—เธตเนเนเธ–เธเน€เธกเธเธนเธ”เนเธฒเธเธเนเธฒเธขเธกเธทเธญเธชเธธเธ” เนเธซเนเธเธฅเธดเธเธ—เธตเนเธซเธฑเธงเธเนเธญ <span class="hl">เธเธณเธชเธฑเนเธเธเธทเนเธญ</span> เนเธฅเนเธงเน€เธฅเธทเธญเธเน€เธกเธเธนเธขเนเธญเธข <span class="hl">เธเธฑเธ”เธเธฒเธฃเธเธณเธชเธฑเนเธเธเธทเนเธญ</span>', en: 'In the left sidebar, click <span class="hl">Orders</span> then select <span class="hl">Manage Orders</span>' },
+  'tk1-s3':        { th: 'เธ•เธฃเธเธเธฅเธฒเธเธซเธเนเธฒเธเธญเธเธฐเธกเธตเนเธ—เนเธเธชเธ–เธฒเธเธฐเธ•เนเธฒเธเน เนเธซเนเธเธฅเธดเธเน€เธฅเธทเธญเธเนเธ—เนเธ <span class="hl">เธ—เธฑเนเธเธซเธกเธ”</span>', en: 'In the center of the screen, click the <span class="hl">All</span> status tab' },
+  'tk1-s4':        { th: 'เธเธฅเธดเธเธ—เธตเนเธเนเธญเธเธเธเธดเธ—เธดเธ (เน€เธงเธฅเธฒเธ—เธตเนเธชเธฃเนเธฒเธ) เน€เธเธทเนเธญเธ—เธณเธเธฒเธฃเธฃเธฐเธเธธ <span class="hl">เธงเธฑเธเธ—เธตเนเน€เธฃเธดเนเธกเธ•เนเธ</span> เนเธฅเธฐ <span class="hl">เธงเธฑเธเธ—เธตเนเธชเธดเนเธเธชเธธเธ”</span> เธ—เธตเนเธเธธเธ“เธ•เนเธญเธเธเธฒเธฃเธ”เธถเธเธเนเธญเธกเธนเธฅ', en: 'Click the calendar field (Created time) and set the <span class="hl">Start Date</span> and <span class="hl">End Date</span> for the data you want to extract' },
+  'tk1-s5':        { th: 'เธกเธญเธเธซเธฒเธเธธเนเธก <span class="hl">เธชเนเธเธญเธญเธ</span> เธ—เธตเนเธญเธขเธนเนเธเธฃเธดเน€เธงเธ“เธกเธธเธกเธเธงเธฒเธเธเน€เธซเธเธทเธญเธฃเธฒเธขเธเธฒเธฃเธเธณเธชเธฑเนเธเธเธทเนเธญ เนเธฅเนเธงเธเธฅเธดเธเธ—เธตเนเธเธธเนเธกเธเธฑเนเธ', en: 'Find the <span class="hl">Export</span> button at the top-right above the order list and click it' },
+  'tk1-s6':        { th: 'เนเธเธซเธเนเธฒเธ•เนเธฒเธเธเนเธญเธเธญเธฑเธเธ—เธตเนเธเธฃเธฒเธเธเธเธถเนเธเธกเธฒ เนเธซเนเธชเธฑเธเน€เธเธ•เธซเธฑเธงเธเนเธญ "เธฃเธนเธเนเธเธเธเธฒเธฃเธชเนเธเธญเธญเธ" เธ•เนเธญเธเธ•เธดเนเธเน€เธฅเธทเธญเธเธงเธเธเธฅเธกเธเธณเธงเนเธฒ <span class="hl">Excel</span> เนเธซเนเน€เธฃเธตเธขเธเธฃเนเธญเธข เธเธฒเธเธเธฑเนเธเธเธ”เธเธธเนเธก <span class="hl">เธชเนเธเธญเธญเธ</span> เธชเธตเน€เธเธตเธขเธง', en: 'In the popup, under "Export format" make sure <span class="hl">Excel</span> is selected, then click the green <span class="hl">Export</span> button' },
+  'tk1-s7':        { th: 'เธฃเธฐเธเธเธเธฐเนเธเนเน€เธงเธฅเธฒเธชเธฃเนเธฒเธเนเธเธฅเนเธชเธฑเธเธเธฃเธนเน เนเธซเนเธเธธเธ“เธเธฅเธดเธเธ—เธตเนเธเนเธญเธเธงเธฒเธกเธฅเธดเธเธเนเธเธณเธงเนเธฒ <span class="hl">เธเธฃเธฐเธงเธฑเธ•เธดเธเธฒเธฃเธชเนเธเธญเธญเธ</span> (เธเธฐเธญเธขเธนเนเธเนเธฒเธเน เธเธธเนเธกเธชเนเธเธญเธญเธเนเธเธ•เธญเธเนเธฃเธ)', en: 'The system will take a moment to generate the file. Click the <span class="hl">Export History</span> link (next to the Export button)' },
+  'tk1-s8':        { th: 'เธซเธเนเธฒเธ•เนเธฒเธเธเธฃเธฐเธงเธฑเธ•เธดเธเธฐเน€เธเธดเธ”เธเธถเนเธเธกเธฒ เนเธซเนเธ”เธนเนเธเธฅเนเธเธฃเธฃเธ—เธฑเธ”เธเธเธชเธธเธ” (เนเธเธฅเนเธฅเนเธฒเธชเธธเธ”) เนเธฅเนเธงเธเธฅเธดเธเธเธธเนเธก <span class="hl">เธ”เธฒเธงเธเนเนเธซเธฅเธ”</span> เน€เธเธทเนเธญเธเธฑเธเธ—เธถเธเนเธเธฅเน Excel เธฅเธเน€เธเธฃเธทเนเธญเธ', en: 'In the history window, find the top file (most recent) and click <span class="hl">Download</span> to save the Excel file to your computer' },
 
-  'tk2-title':     { th: 'ดาวน์โหลด "รายรับของฉัน"', en: 'Download "My Income" Data' },
-  'tk2-s1':        { th: 'ที่แถบเมนูด้านซ้าย เลื่อนลงมาคลิกหัวข้อ <span class="hl">การเงิน</span> แล้วเลือก <span class="hl">ธุรกรรม</span> (หรือเมนูที่เกี่ยวข้องกับการถอนเงิน/สถานะบัญชี)', en: 'In the left sidebar, scroll down and click <span class="hl">Finance</span>, then select <span class="hl">Transactions</span> (or the menu related to withdrawals/account status)' },
-  'tk2-s2':        { th: 'ในหน้าธุรกรรม ให้คลิกเลือกแท็บ <span class="hl">ชำระเงินแล้ว</span> หรือแท็บที่แสดงรายการเงินที่เข้าบัญชีแล้ว', en: 'On the Transactions page, click the <span class="hl">Paid</span> tab or the tab showing settled payments' },
-  'tk2-s3':        { th: 'คลิกที่ช่องปฏิทิน เพื่อทำการระบุ <span class="hl">วันที่เริ่มต้น</span> และ <span class="hl">วันที่สิ้นสุด</span> ที่คุณต้องการตรวจสอบยอดเงิน', en: 'Click the calendar field and set the <span class="hl">Start Date</span> and <span class="hl">End Date</span> you want to check' },
-  'tk2-s4':        { th: 'กดปุ่ม <span class="hl">ส่งออก</span>', en: 'Click the <span class="hl">Export</span> button' },
-  'tk2-s5':        { th: 'หน้าต่างเด้งขึ้นมาให้เลือกรูปแบบไฟล์เป็น <span class="hl">Excel</span> แล้วกดยืนยันการส่งออก จากนั้นไปที่ <span class="hl">ประวัติการส่งออก</span> เพื่อกดดาวน์โหลดไฟล์', en: 'In the popup, select <span class="hl">Excel</span> format and confirm the export. Then go to <span class="hl">Export History</span> to download the file' },
+  'tk2-title':     { th: 'เธ”เธฒเธงเธเนเนเธซเธฅเธ” "เธฃเธฒเธขเธฃเธฑเธเธเธญเธเธเธฑเธ"', en: 'Download "My Income" Data' },
+  'tk2-s1':        { th: 'เธ—เธตเนเนเธ–เธเน€เธกเธเธนเธ”เนเธฒเธเธเนเธฒเธข เน€เธฅเธทเนเธญเธเธฅเธเธกเธฒเธเธฅเธดเธเธซเธฑเธงเธเนเธญ <span class="hl">เธเธฒเธฃเน€เธเธดเธ</span> เนเธฅเนเธงเน€เธฅเธทเธญเธ <span class="hl">เธเธธเธฃเธเธฃเธฃเธก</span> (เธซเธฃเธทเธญเน€เธกเธเธนเธ—เธตเนเน€เธเธตเนเธขเธงเธเนเธญเธเธเธฑเธเธเธฒเธฃเธ–เธญเธเน€เธเธดเธ/เธชเธ–เธฒเธเธฐเธเธฑเธเธเธต)', en: 'In the left sidebar, scroll down and click <span class="hl">Finance</span>, then select <span class="hl">Transactions</span> (or the menu related to withdrawals/account status)' },
+  'tk2-s2':        { th: 'เนเธเธซเธเนเธฒเธเธธเธฃเธเธฃเธฃเธก เนเธซเนเธเธฅเธดเธเน€เธฅเธทเธญเธเนเธ—เนเธ <span class="hl">เธเธณเธฃเธฐเน€เธเธดเธเนเธฅเนเธง</span> เธซเธฃเธทเธญเนเธ—เนเธเธ—เธตเนเนเธชเธ”เธเธฃเธฒเธขเธเธฒเธฃเน€เธเธดเธเธ—เธตเนเน€เธเนเธฒเธเธฑเธเธเธตเนเธฅเนเธง', en: 'On the Transactions page, click the <span class="hl">Paid</span> tab or the tab showing settled payments' },
+  'tk2-s3':        { th: 'เธเธฅเธดเธเธ—เธตเนเธเนเธญเธเธเธเธดเธ—เธดเธ เน€เธเธทเนเธญเธ—เธณเธเธฒเธฃเธฃเธฐเธเธธ <span class="hl">เธงเธฑเธเธ—เธตเนเน€เธฃเธดเนเธกเธ•เนเธ</span> เนเธฅเธฐ <span class="hl">เธงเธฑเธเธ—เธตเนเธชเธดเนเธเธชเธธเธ”</span> เธ—เธตเนเธเธธเธ“เธ•เนเธญเธเธเธฒเธฃเธ•เธฃเธงเธเธชเธญเธเธขเธญเธ”เน€เธเธดเธ', en: 'Click the calendar field and set the <span class="hl">Start Date</span> and <span class="hl">End Date</span> you want to check' },
+  'tk2-s4':        { th: 'เธเธ”เธเธธเนเธก <span class="hl">เธชเนเธเธญเธญเธ</span>', en: 'Click the <span class="hl">Export</span> button' },
+  'tk2-s5':        { th: 'เธซเธเนเธฒเธ•เนเธฒเธเน€เธ”เนเธเธเธถเนเธเธกเธฒเนเธซเนเน€เธฅเธทเธญเธเธฃเธนเธเนเธเธเนเธเธฅเนเน€เธเนเธ <span class="hl">Excel</span> เนเธฅเนเธงเธเธ”เธขเธทเธเธขเธฑเธเธเธฒเธฃเธชเนเธเธญเธญเธ เธเธฒเธเธเธฑเนเธเนเธเธ—เธตเน <span class="hl">เธเธฃเธฐเธงเธฑเธ•เธดเธเธฒเธฃเธชเนเธเธญเธญเธ</span> เน€เธเธทเนเธญเธเธ”เธ”เธฒเธงเธเนเนเธซเธฅเธ”เนเธเธฅเน', en: 'In the popup, select <span class="hl">Excel</span> format and confirm the export. Then go to <span class="hl">Export History</span> to download the file' },
 
-  'tk3-title':     { th: 'ดาวน์โหลดข้อมูลการคืนสินค้าและการคืนเงิน', en: 'Download Returns & Refunds Data' },
-  'tk3-s1':        { th: 'ที่แถบเมนูด้านซ้าย คลิกที่หัวข้อ <span class="hl">คำสั่งซื้อ</span> แล้วเลือกเมนู <span class="hl">จัดการการคืนสินค้า</span>', en: 'In the left sidebar, click <span class="hl">Orders</span> then select <span class="hl">Manage Returns</span>' },
-  'tk3-s2':        { th: 'มองไปที่มุมขวาบนของหน้าจอ จะเห็นไอคอน <span class="hl">ตัวกรอง</span> (รูปแว่นขยายหรือสัญลักษณ์เส้นขีดๆ) ให้คลิกที่ไอคอนนี้', en: 'At the top-right corner, find the <span class="hl">Filter</span> icon (magnifying glass or filter lines) and click it' },
-  'tk3-s3':        { th: 'หน้าต่างตัวกรองจะเปิดออกมาทางขวา ตรงหัวข้อ "เวลาที่สร้าง" ให้คลิกเลือก <span class="hl">วันที่เริ่มต้น</span> และ <span class="hl">วันที่สิ้นสุด</span> ที่คุณต้องการค้นหา เสร็จแล้วกดปุ่ม <span class="hl">นำไปใช้</span> สีเขียวด้านล่าง', en: 'The filter panel will open on the right. Under "Created time", set the <span class="hl">Start Date</span> and <span class="hl">End Date</span>, then click the green <span class="hl">Apply</span> button at the bottom' },
-  'tk3-s4':        { th: 'เมื่อรายการแสดงผลตามวันที่เลือกแล้ว ให้คลิก <span class="hl">ไอคอนส่งออก</span> (รูปกล่องมีลูกศรชี้ลง) ที่อยู่ติดกับปุ่มตัวกรอง', en: 'Once the list is filtered, click the <span class="hl">Export icon</span> (box with down arrow) next to the filter button' },
-  'tk3-s5':        { th: 'เช็คให้ชัวร์ว่าหน้าต่างป๊อปอัปเลือกรูปแบบเป็น <span class="hl">Excel</span> แล้วกดปุ่ม <span class="hl">ส่งออก</span> สีเขียว', en: 'Make sure the popup format is set to <span class="hl">Excel</span>, then click the green <span class="hl">Export</span> button' },
-  'tk3-s6':        { th: 'คลิกที่ลิงก์ <span class="hl">ประวัติการส่งออก</span> เพื่อเข้าไปกดดาวน์โหลดไฟล์ล่าสุด', en: 'Click the <span class="hl">Export History</span> link to download the latest file' },
+  'tk3-title':     { th: 'เธ”เธฒเธงเธเนเนเธซเธฅเธ”เธเนเธญเธกเธนเธฅเธเธฒเธฃเธเธทเธเธชเธดเธเธเนเธฒเนเธฅเธฐเธเธฒเธฃเธเธทเธเน€เธเธดเธ', en: 'Download Returns & Refunds Data' },
+  'tk3-s1':        { th: 'เธ—เธตเนเนเธ–เธเน€เธกเธเธนเธ”เนเธฒเธเธเนเธฒเธข เธเธฅเธดเธเธ—เธตเนเธซเธฑเธงเธเนเธญ <span class="hl">เธเธณเธชเธฑเนเธเธเธทเนเธญ</span> เนเธฅเนเธงเน€เธฅเธทเธญเธเน€เธกเธเธน <span class="hl">เธเธฑเธ”เธเธฒเธฃเธเธฒเธฃเธเธทเธเธชเธดเธเธเนเธฒ</span>', en: 'In the left sidebar, click <span class="hl">Orders</span> then select <span class="hl">Manage Returns</span>' },
+  'tk3-s2':        { th: 'เธกเธญเธเนเธเธ—เธตเนเธกเธธเธกเธเธงเธฒเธเธเธเธญเธเธซเธเนเธฒเธเธญ เธเธฐเน€เธซเนเธเนเธญเธเธญเธ <span class="hl">เธ•เธฑเธงเธเธฃเธญเธ</span> (เธฃเธนเธเนเธงเนเธเธเธขเธฒเธขเธซเธฃเธทเธญเธชเธฑเธเธฅเธฑเธเธฉเธ“เนเน€เธชเนเธเธเธตเธ”เน) เนเธซเนเธเธฅเธดเธเธ—เธตเนเนเธญเธเธญเธเธเธตเน', en: 'At the top-right corner, find the <span class="hl">Filter</span> icon (magnifying glass or filter lines) and click it' },
+  'tk3-s3':        { th: 'เธซเธเนเธฒเธ•เนเธฒเธเธ•เธฑเธงเธเธฃเธญเธเธเธฐเน€เธเธดเธ”เธญเธญเธเธกเธฒเธ—เธฒเธเธเธงเธฒ เธ•เธฃเธเธซเธฑเธงเธเนเธญ "เน€เธงเธฅเธฒเธ—เธตเนเธชเธฃเนเธฒเธ" เนเธซเนเธเธฅเธดเธเน€เธฅเธทเธญเธ <span class="hl">เธงเธฑเธเธ—เธตเนเน€เธฃเธดเนเธกเธ•เนเธ</span> เนเธฅเธฐ <span class="hl">เธงเธฑเธเธ—เธตเนเธชเธดเนเธเธชเธธเธ”</span> เธ—เธตเนเธเธธเธ“เธ•เนเธญเธเธเธฒเธฃเธเนเธเธซเธฒ เน€เธชเธฃเนเธเนเธฅเนเธงเธเธ”เธเธธเนเธก <span class="hl">เธเธณเนเธเนเธเน</span> เธชเธตเน€เธเธตเธขเธงเธ”เนเธฒเธเธฅเนเธฒเธ', en: 'The filter panel will open on the right. Under "Created time", set the <span class="hl">Start Date</span> and <span class="hl">End Date</span>, then click the green <span class="hl">Apply</span> button at the bottom' },
+  'tk3-s4':        { th: 'เน€เธกเธทเนเธญเธฃเธฒเธขเธเธฒเธฃเนเธชเธ”เธเธเธฅเธ•เธฒเธกเธงเธฑเธเธ—เธตเนเน€เธฅเธทเธญเธเนเธฅเนเธง เนเธซเนเธเธฅเธดเธ <span class="hl">เนเธญเธเธญเธเธชเนเธเธญเธญเธ</span> (เธฃเธนเธเธเธฅเนเธญเธเธกเธตเธฅเธนเธเธจเธฃเธเธตเนเธฅเธ) เธ—เธตเนเธญเธขเธนเนเธ•เธดเธ”เธเธฑเธเธเธธเนเธกเธ•เธฑเธงเธเธฃเธญเธ', en: 'Once the list is filtered, click the <span class="hl">Export icon</span> (box with down arrow) next to the filter button' },
+  'tk3-s5':        { th: 'เน€เธเนเธเนเธซเนเธเธฑเธงเธฃเนเธงเนเธฒเธซเธเนเธฒเธ•เนเธฒเธเธเนเธญเธเธญเธฑเธเน€เธฅเธทเธญเธเธฃเธนเธเนเธเธเน€เธเนเธ <span class="hl">Excel</span> เนเธฅเนเธงเธเธ”เธเธธเนเธก <span class="hl">เธชเนเธเธญเธญเธ</span> เธชเธตเน€เธเธตเธขเธง', en: 'Make sure the popup format is set to <span class="hl">Excel</span>, then click the green <span class="hl">Export</span> button' },
+  'tk3-s6':        { th: 'เธเธฅเธดเธเธ—เธตเนเธฅเธดเธเธเน <span class="hl">เธเธฃเธฐเธงเธฑเธ•เธดเธเธฒเธฃเธชเนเธเธญเธญเธ</span> เน€เธเธทเนเธญเน€เธเนเธฒเนเธเธเธ”เธ”เธฒเธงเธเนเนเธซเธฅเธ”เนเธเธฅเนเธฅเนเธฒเธชเธธเธ”', en: 'Click the <span class="hl">Export History</span> link to download the latest file' },
 
-  'tk4-title':     { th: 'ดาวน์โหลดข้อมูลค่าใช้จ่ายแพลตฟอร์ม', en: 'Download Platform Expenses Data' },
-  'tk4-s1':        { th: 'ที่แถบเมนูด้านซ้าย คลิกหัวข้อ <span class="hl">การเงิน</span> แล้วเลือกเมนู <span class="hl">เอกสารทางภาษี</span>', en: 'In the left sidebar, click <span class="hl">Finance</span> then select <span class="hl">Tax Documents</span>' },
-  'tk4-s2':        { th: 'ในหน้าหลัก สังเกตแท็บด้านบน ให้เลือกแท็บ <span class="hl">ใบแจ้งหนี้ของแพลตฟอร์ม</span>', en: 'On the main page, select the <span class="hl">Platform Invoices</span> tab at the top' },
-  'tk4-s3':        { th: 'เหนือตารางข้อมูล จะมีปุ่มข้อความว่า <span class="hl">ดาวน์โหลดเป็นชุด</span> ให้คลิกที่ปุ่มนี้', en: 'Above the data table, find and click the <span class="hl">Batch Download</span> button' },
-  'tk4-s4':        { th: 'หน้าต่างป๊อปอัปจะเด้งขึ้นมา ให้ติ๊กเลือกประเภทเป็น "ใบแจ้งหนี้ของแพลตฟอร์ม" และคลิกที่ช่องปฏิทินเพื่อเลือก <span class="hl">เดือนและปี</span> ที่ต้องการ', en: 'In the popup, select type "Platform Invoices" and use the calendar to choose the desired <span class="hl">month and year</span>' },
-  'tk4-s5':        { th: 'กดปุ่ม <span class="hl">ส่งออก</span> สีฟ้า', en: 'Click the blue <span class="hl">Export</span> button' },
-  'tk4-s6':        { th: 'จะมีป๊อปอัป "รายงานที่ส่งออก" แสดงรายการไฟล์ที่เราเพิ่งสั่งดึงข้อมูล ให้คลิกปุ่ม <span class="hl">ดาวน์โหลด</span> ที่ไฟล์ .zip ล่าสุด', en: 'An "Exported Reports" popup will show the file list. Click <span class="hl">Download</span> on the latest .zip file' },
-  'tk4-note':      { th: 'พอแตกไฟล์จะได้ไฟล์ PDF มา', en: 'Extracting the archive will yield PDF files' },
+  'tk4-title':     { th: 'เธ”เธฒเธงเธเนเนเธซเธฅเธ”เธเนเธญเธกเธนเธฅเธเนเธฒเนเธเนเธเนเธฒเธขเนเธเธฅเธ•เธเธญเธฃเนเธก', en: 'Download Platform Expenses Data' },
+  'tk4-s1':        { th: 'เธ—เธตเนเนเธ–เธเน€เธกเธเธนเธ”เนเธฒเธเธเนเธฒเธข เธเธฅเธดเธเธซเธฑเธงเธเนเธญ <span class="hl">เธเธฒเธฃเน€เธเธดเธ</span> เนเธฅเนเธงเน€เธฅเธทเธญเธเน€เธกเธเธน <span class="hl">เน€เธญเธเธชเธฒเธฃเธ—เธฒเธเธ เธฒเธฉเธต</span>', en: 'In the left sidebar, click <span class="hl">Finance</span> then select <span class="hl">Tax Documents</span>' },
+  'tk4-s2':        { th: 'เนเธเธซเธเนเธฒเธซเธฅเธฑเธ เธชเธฑเธเน€เธเธ•เนเธ—เนเธเธ”เนเธฒเธเธเธ เนเธซเนเน€เธฅเธทเธญเธเนเธ—เนเธ <span class="hl">เนเธเนเธเนเธเธซเธเธตเนเธเธญเธเนเธเธฅเธ•เธเธญเธฃเนเธก</span>', en: 'On the main page, select the <span class="hl">Platform Invoices</span> tab at the top' },
+  'tk4-s3':        { th: 'เน€เธซเธเธทเธญเธ•เธฒเธฃเธฒเธเธเนเธญเธกเธนเธฅ เธเธฐเธกเธตเธเธธเนเธกเธเนเธญเธเธงเธฒเธกเธงเนเธฒ <span class="hl">เธ”เธฒเธงเธเนเนเธซเธฅเธ”เน€เธเนเธเธเธธเธ”</span> เนเธซเนเธเธฅเธดเธเธ—เธตเนเธเธธเนเธกเธเธตเน', en: 'Above the data table, find and click the <span class="hl">Batch Download</span> button' },
+  'tk4-s4':        { th: 'เธซเธเนเธฒเธ•เนเธฒเธเธเนเธญเธเธญเธฑเธเธเธฐเน€เธ”เนเธเธเธถเนเธเธกเธฒ เนเธซเนเธ•เธดเนเธเน€เธฅเธทเธญเธเธเธฃเธฐเน€เธ เธ—เน€เธเนเธ "เนเธเนเธเนเธเธซเธเธตเนเธเธญเธเนเธเธฅเธ•เธเธญเธฃเนเธก" เนเธฅเธฐเธเธฅเธดเธเธ—เธตเนเธเนเธญเธเธเธเธดเธ—เธดเธเน€เธเธทเนเธญเน€เธฅเธทเธญเธ <span class="hl">เน€เธ”เธทเธญเธเนเธฅเธฐเธเธต</span> เธ—เธตเนเธ•เนเธญเธเธเธฒเธฃ', en: 'In the popup, select type "Platform Invoices" and use the calendar to choose the desired <span class="hl">month and year</span>' },
+  'tk4-s5':        { th: 'เธเธ”เธเธธเนเธก <span class="hl">เธชเนเธเธญเธญเธ</span> เธชเธตเธเนเธฒ', en: 'Click the blue <span class="hl">Export</span> button' },
+  'tk4-s6':        { th: 'เธเธฐเธกเธตเธเนเธญเธเธญเธฑเธ "เธฃเธฒเธขเธเธฒเธเธ—เธตเนเธชเนเธเธญเธญเธ" เนเธชเธ”เธเธฃเธฒเธขเธเธฒเธฃเนเธเธฅเนเธ—เธตเนเน€เธฃเธฒเน€เธเธดเนเธเธชเธฑเนเธเธ”เธถเธเธเนเธญเธกเธนเธฅ เนเธซเนเธเธฅเธดเธเธเธธเนเธก <span class="hl">เธ”เธฒเธงเธเนเนเธซเธฅเธ”</span> เธ—เธตเนเนเธเธฅเน .zip เธฅเนเธฒเธชเธธเธ”', en: 'An "Exported Reports" popup will show the file list. Click <span class="hl">Download</span> on the latest .zip file' },
+  'tk4-note':      { th: 'เธเธญเนเธ•เธเนเธเธฅเนเธเธฐเนเธ”เนเนเธเธฅเน PDF เธกเธฒ', en: 'Extracting the archive will yield PDF files' },
 
   // Shopee section
-  'sp-desc':       { th: 'การดึงข้อมูลจาก Shopee — 5 ประเภทรายงาน', en: 'Data extraction from Shopee — 5 report types' },
-  'sp1-title':     { th: 'ดาวน์โหลดข้อมูลคำสั่งซื้อสินค้า', en: 'Download Product Orders Data' },
-  'sp1-s1':        { th: 'ล็อกอินเข้าสู่ระบบ <span class="hl">Shopee Seller Centre</span>', en: 'Log in to <span class="hl">Shopee Seller Centre</span>' },
-  'sp1-s2':        { th: 'ที่แถบเมนูด้านซ้าย ในหมวด "คำสั่งซื้อ" ให้คลิกเมนู <span class="hl">คำสั่งซื้อของฉัน</span>', en: 'In the left sidebar, under "Orders" click <span class="hl">My Orders</span>' },
-  'sp1-s3':        { th: 'มองไปที่มุมขวาบนของหน้าจอ (ใต้ชื่อบัญชีผู้ใช้) จะเห็นปุ่ม <span class="hl">ดาวน์โหลด</span> ให้คลิกปุ่มนี้', en: 'At the top-right (below account name), find and click the <span class="hl">Download</span> button' },
-  'sp1-s4':        { th: 'จะมีหน้าต่าง "ดาวน์โหลดคำสั่งซื้อทั้งหมด" เด้งขึ้นมา ให้คลิกที่ช่องปฏิทินเพื่อระบุ <span class="hl">วันที่เริ่มต้น</span> และ <span class="hl">วันที่สิ้นสุด</span> ที่ต้องการ', en: 'A "Download All Orders" popup will appear. Use the calendar fields to set the <span class="hl">Start Date</span> and <span class="hl">End Date</span>' },
-  'sp1-s5':        { th: 'กดปุ่ม <span class="hl">ดาวน์โหลด</span> สีส้ม', en: 'Click the orange <span class="hl">Download</span> button' },
-  'sp1-s6':        { th: 'รอระบบโหลดสักครู่ จะมีกล่องข้อความ "รายงานล่าสุด" เด้งลงมา (หรือคลิกที่ปุ่ม <span class="hl">ประวัติการดาวน์โหลด</span>) ให้หาไฟล์ชื่อที่ขึ้นต้นด้วย <span class="hl">Order.all...</span> (.xlsx) แล้วคลิกปุ่ม <span class="hl">ดาวน์โหลด</span> สีส้มด้านหลังไฟล์นั้น', en: 'Wait a moment. A "Latest Reports" box will appear (or click <span class="hl">Download History</span>). Find the file starting with <span class="hl">Order.all...</span> (.xlsx) and click the orange <span class="hl">Download</span> button next to it' },
+  'sp-desc':       { th: 'เธเธฒเธฃเธ”เธถเธเธเนเธญเธกเธนเธฅเธเธฒเธ Shopee โ€” 5 เธเธฃเธฐเน€เธ เธ—เธฃเธฒเธขเธเธฒเธ', en: 'Data extraction from Shopee โ€” 5 report types' },
+  'sp1-title':     { th: 'เธ”เธฒเธงเธเนเนเธซเธฅเธ”เธเนเธญเธกเธนเธฅเธเธณเธชเธฑเนเธเธเธทเนเธญเธชเธดเธเธเนเธฒ', en: 'Download Product Orders Data' },
+  'sp1-s1':        { th: 'เธฅเนเธญเธเธญเธดเธเน€เธเนเธฒเธชเธนเนเธฃเธฐเธเธ <span class="hl">Shopee Seller Centre</span>', en: 'Log in to <span class="hl">Shopee Seller Centre</span>' },
+  'sp1-s2':        { th: 'เธ—เธตเนเนเธ–เธเน€เธกเธเธนเธ”เนเธฒเธเธเนเธฒเธข เนเธเธซเธกเธงเธ” "เธเธณเธชเธฑเนเธเธเธทเนเธญ" เนเธซเนเธเธฅเธดเธเน€เธกเธเธน <span class="hl">เธเธณเธชเธฑเนเธเธเธทเนเธญเธเธญเธเธเธฑเธ</span>', en: 'In the left sidebar, under "Orders" click <span class="hl">My Orders</span>' },
+  'sp1-s3':        { th: 'เธกเธญเธเนเธเธ—เธตเนเธกเธธเธกเธเธงเธฒเธเธเธเธญเธเธซเธเนเธฒเธเธญ (เนเธ•เนเธเธทเนเธญเธเธฑเธเธเธตเธเธนเนเนเธเน) เธเธฐเน€เธซเนเธเธเธธเนเธก <span class="hl">เธ”เธฒเธงเธเนเนเธซเธฅเธ”</span> เนเธซเนเธเธฅเธดเธเธเธธเนเธกเธเธตเน', en: 'At the top-right (below account name), find and click the <span class="hl">Download</span> button' },
+  'sp1-s4':        { th: 'เธเธฐเธกเธตเธซเธเนเธฒเธ•เนเธฒเธ "เธ”เธฒเธงเธเนเนเธซเธฅเธ”เธเธณเธชเธฑเนเธเธเธทเนเธญเธ—เธฑเนเธเธซเธกเธ”" เน€เธ”เนเธเธเธถเนเธเธกเธฒ เนเธซเนเธเธฅเธดเธเธ—เธตเนเธเนเธญเธเธเธเธดเธ—เธดเธเน€เธเธทเนเธญเธฃเธฐเธเธธ <span class="hl">เธงเธฑเธเธ—เธตเนเน€เธฃเธดเนเธกเธ•เนเธ</span> เนเธฅเธฐ <span class="hl">เธงเธฑเธเธ—เธตเนเธชเธดเนเธเธชเธธเธ”</span> เธ—เธตเนเธ•เนเธญเธเธเธฒเธฃ', en: 'A "Download All Orders" popup will appear. Use the calendar fields to set the <span class="hl">Start Date</span> and <span class="hl">End Date</span>' },
+  'sp1-s5':        { th: 'เธเธ”เธเธธเนเธก <span class="hl">เธ”เธฒเธงเธเนเนเธซเธฅเธ”</span> เธชเธตเธชเนเธก', en: 'Click the orange <span class="hl">Download</span> button' },
+  'sp1-s6':        { th: 'เธฃเธญเธฃเธฐเธเธเนเธซเธฅเธ”เธชเธฑเธเธเธฃเธนเน เธเธฐเธกเธตเธเธฅเนเธญเธเธเนเธญเธเธงเธฒเธก "เธฃเธฒเธขเธเธฒเธเธฅเนเธฒเธชเธธเธ”" เน€เธ”เนเธเธฅเธเธกเธฒ (เธซเธฃเธทเธญเธเธฅเธดเธเธ—เธตเนเธเธธเนเธก <span class="hl">เธเธฃเธฐเธงเธฑเธ•เธดเธเธฒเธฃเธ”เธฒเธงเธเนเนเธซเธฅเธ”</span>) เนเธซเนเธซเธฒเนเธเธฅเนเธเธทเนเธญเธ—เธตเนเธเธถเนเธเธ•เนเธเธ”เนเธงเธข <span class="hl">Order.all...</span> (.xlsx) เนเธฅเนเธงเธเธฅเธดเธเธเธธเนเธก <span class="hl">เธ”เธฒเธงเธเนเนเธซเธฅเธ”</span> เธชเธตเธชเนเธกเธ”เนเธฒเธเธซเธฅเธฑเธเนเธเธฅเนเธเธฑเนเธ', en: 'Wait a moment. A "Latest Reports" box will appear (or click <span class="hl">Download History</span>). Find the file starting with <span class="hl">Order.all...</span> (.xlsx) and click the orange <span class="hl">Download</span> button next to it' },
 
-  'sp2-title':     { th: 'ดาวน์โหลดข้อมูลรายรับ', en: 'Download Income Data' },
-  'sp2-s1':        { th: 'ที่แถบเมนูด้านซ้าย ในหมวด "การเงิน" ให้คลิกเมนู <span class="hl">รายรับของฉัน</span> (ระบบอาจขอให้ใส่รหัสผ่านร้านค้าหรือรหัส OTP เพื่อความปลอดภัย)', en: 'In the left sidebar, under "Finance" click <span class="hl">My Income</span> (the system may ask for your shop password or OTP for security)' },
-  'sp2-s2':        { th: 'เลื่อนลงมาตรงหัวข้อ "รายละเอียดรายรับของฉัน" จะมีแท็บให้เลือก ให้คลิกเลือกแท็บ <span class="hl">โอนเงินแล้ว</span> (ตัวหนังสือสีส้ม)', en: 'Scroll down to "My Income Details" and click the <span class="hl">Transferred</span> tab (orange text)' },
-  'sp2-s3':        { th: 'บรรทัดถัดลงมาจะมีช่องปฏิทิน ให้คลิกเลือก <span class="hl">วันที่เริ่มต้น</span> และ <span class="hl">วันที่สิ้นสุด</span> ที่คุณต้องการตรวจสอบยอดเงินเข้า', en: 'In the row below, use the calendar fields to set the <span class="hl">Start Date</span> and <span class="hl">End Date</span> you want to check' },
-  'sp2-s4':        { th: 'มองไปทางขวาสุดของแถบปฏิทิน จะมีปุ่ม <span class="hl">ดาวน์โหลด</span> ให้คลิกปุ่มนี้', en: 'At the far right of the calendar bar, click the <span class="hl">Download</span> button' },
-  'sp2-s5':        { th: 'กล่องข้อความ "รายงานล่าสุด" จะแสดงรายการไฟล์ขึ้นมา ให้หาไฟล์ชื่อที่ขึ้นต้นด้วย <span class="hl">income...</span> แล้วคลิกปุ่ม <span class="hl">ดาวน์โหลด</span> สีส้มด้านหลังเพื่อบันทึกไฟล์ Excel', en: 'The "Latest Reports" box will show file list. Find the file starting with <span class="hl">income...</span> and click the orange <span class="hl">Download</span> button to save the Excel file' },
+  'sp2-title':     { th: 'เธ”เธฒเธงเธเนเนเธซเธฅเธ”เธเนเธญเธกเธนเธฅเธฃเธฒเธขเธฃเธฑเธ', en: 'Download Income Data' },
+  'sp2-s1':        { th: 'เธ—เธตเนเนเธ–เธเน€เธกเธเธนเธ”เนเธฒเธเธเนเธฒเธข เนเธเธซเธกเธงเธ” "เธเธฒเธฃเน€เธเธดเธ" เนเธซเนเธเธฅเธดเธเน€เธกเธเธน <span class="hl">เธฃเธฒเธขเธฃเธฑเธเธเธญเธเธเธฑเธ</span> (เธฃเธฐเธเธเธญเธฒเธเธเธญเนเธซเนเนเธชเนเธฃเธซเธฑเธชเธเนเธฒเธเธฃเนเธฒเธเธเนเธฒเธซเธฃเธทเธญเธฃเธซเธฑเธช OTP เน€เธเธทเนเธญเธเธงเธฒเธกเธเธฅเธญเธ”เธ เธฑเธข)', en: 'In the left sidebar, under "Finance" click <span class="hl">My Income</span> (the system may ask for your shop password or OTP for security)' },
+  'sp2-s2':        { th: 'เน€เธฅเธทเนเธญเธเธฅเธเธกเธฒเธ•เธฃเธเธซเธฑเธงเธเนเธญ "เธฃเธฒเธขเธฅเธฐเน€เธญเธตเธขเธ”เธฃเธฒเธขเธฃเธฑเธเธเธญเธเธเธฑเธ" เธเธฐเธกเธตเนเธ—เนเธเนเธซเนเน€เธฅเธทเธญเธ เนเธซเนเธเธฅเธดเธเน€เธฅเธทเธญเธเนเธ—เนเธ <span class="hl">เนเธญเธเน€เธเธดเธเนเธฅเนเธง</span> (เธ•เธฑเธงเธซเธเธฑเธเธชเธทเธญเธชเธตเธชเนเธก)', en: 'Scroll down to "My Income Details" and click the <span class="hl">Transferred</span> tab (orange text)' },
+  'sp2-s3':        { th: 'เธเธฃเธฃเธ—เธฑเธ”เธ–เธฑเธ”เธฅเธเธกเธฒเธเธฐเธกเธตเธเนเธญเธเธเธเธดเธ—เธดเธ เนเธซเนเธเธฅเธดเธเน€เธฅเธทเธญเธ <span class="hl">เธงเธฑเธเธ—เธตเนเน€เธฃเธดเนเธกเธ•เนเธ</span> เนเธฅเธฐ <span class="hl">เธงเธฑเธเธ—เธตเนเธชเธดเนเธเธชเธธเธ”</span> เธ—เธตเนเธเธธเธ“เธ•เนเธญเธเธเธฒเธฃเธ•เธฃเธงเธเธชเธญเธเธขเธญเธ”เน€เธเธดเธเน€เธเนเธฒ', en: 'In the row below, use the calendar fields to set the <span class="hl">Start Date</span> and <span class="hl">End Date</span> you want to check' },
+  'sp2-s4':        { th: 'เธกเธญเธเนเธเธ—เธฒเธเธเธงเธฒเธชเธธเธ”เธเธญเธเนเธ–เธเธเธเธดเธ—เธดเธ เธเธฐเธกเธตเธเธธเนเธก <span class="hl">เธ”เธฒเธงเธเนเนเธซเธฅเธ”</span> เนเธซเนเธเธฅเธดเธเธเธธเนเธกเธเธตเน', en: 'At the far right of the calendar bar, click the <span class="hl">Download</span> button' },
+  'sp2-s5':        { th: 'เธเธฅเนเธญเธเธเนเธญเธเธงเธฒเธก "เธฃเธฒเธขเธเธฒเธเธฅเนเธฒเธชเธธเธ”" เธเธฐเนเธชเธ”เธเธฃเธฒเธขเธเธฒเธฃเนเธเธฅเนเธเธถเนเธเธกเธฒ เนเธซเนเธซเธฒเนเธเธฅเนเธเธทเนเธญเธ—เธตเนเธเธถเนเธเธ•เนเธเธ”เนเธงเธข <span class="hl">income...</span> เนเธฅเนเธงเธเธฅเธดเธเธเธธเนเธก <span class="hl">เธ”เธฒเธงเธเนเนเธซเธฅเธ”</span> เธชเธตเธชเนเธกเธ”เนเธฒเธเธซเธฅเธฑเธเน€เธเธทเนเธญเธเธฑเธเธ—เธถเธเนเธเธฅเน Excel', en: 'The "Latest Reports" box will show file list. Find the file starting with <span class="hl">income...</span> and click the orange <span class="hl">Download</span> button to save the Excel file' },
 
-  'sp3-title':     { th: 'ดาวน์โหลดข้อมูลเงินเข้าธนาคาร', en: 'Download Bank Deposit Data' },
-  'sp3-s1':        { th: 'ไปที่หน้า <span class="hl">รายรับของฉัน</span> แล้วมองไปที่กล่องเมนูทางด้านขวามือของหน้าจอ ที่เขียนว่า "รายงานการเงิน" ให้คลิกที่ลิงก์ <span class="hl">ดูเพิ่มเติม ></span>', en: 'Go to the <span class="hl">My Income</span> page. Look at the right-side panel labeled "Financial Reports" and click the <span class="hl">View More ></span> link' },
-  'sp3-s2':        { th: 'ในหน้าต่างรายงานการเงิน ให้คลิกเมนูแบบเลื่อนลง (Dropdown) เพื่อเลือก <span class="hl">เดือนและปี</span> ที่ต้องการ', en: 'In the Financial Reports page, use the dropdown to select the desired <span class="hl">month and year</span>' },
-  'sp3-s3':        { th: 'คลิกไอคอนดาวน์โหลด (รูปลูกศรชี้ลง) ด้านหลังเดือนนั้น หรือคลิกปุ่ม <span class="hl">ดาวน์โหลดทั้งหมด</span>', en: 'Click the download icon (down arrow) next to the month, or click <span class="hl">Download All</span>' },
+  'sp3-title':     { th: 'เธ”เธฒเธงเธเนเนเธซเธฅเธ”เธเนเธญเธกเธนเธฅเน€เธเธดเธเน€เธเนเธฒเธเธเธฒเธเธฒเธฃ', en: 'Download Bank Deposit Data' },
+  'sp3-s1':        { th: 'เนเธเธ—เธตเนเธซเธเนเธฒ <span class="hl">เธฃเธฒเธขเธฃเธฑเธเธเธญเธเธเธฑเธ</span> เนเธฅเนเธงเธกเธญเธเนเธเธ—เธตเนเธเธฅเนเธญเธเน€เธกเธเธนเธ—เธฒเธเธ”เนเธฒเธเธเธงเธฒเธกเธทเธญเธเธญเธเธซเธเนเธฒเธเธญ เธ—เธตเนเน€เธเธตเธขเธเธงเนเธฒ "เธฃเธฒเธขเธเธฒเธเธเธฒเธฃเน€เธเธดเธ" เนเธซเนเธเธฅเธดเธเธ—เธตเนเธฅเธดเธเธเน <span class="hl">เธ”เธนเน€เธเธดเนเธกเน€เธ•เธดเธก ></span>', en: 'Go to the <span class="hl">My Income</span> page. Look at the right-side panel labeled "Financial Reports" and click the <span class="hl">View More ></span> link' },
+  'sp3-s2':        { th: 'เนเธเธซเธเนเธฒเธ•เนเธฒเธเธฃเธฒเธขเธเธฒเธเธเธฒเธฃเน€เธเธดเธ เนเธซเนเธเธฅเธดเธเน€เธกเธเธนเนเธเธเน€เธฅเธทเนเธญเธเธฅเธ (Dropdown) เน€เธเธทเนเธญเน€เธฅเธทเธญเธ <span class="hl">เน€เธ”เธทเธญเธเนเธฅเธฐเธเธต</span> เธ—เธตเนเธ•เนเธญเธเธเธฒเธฃ', en: 'In the Financial Reports page, use the dropdown to select the desired <span class="hl">month and year</span>' },
+  'sp3-s3':        { th: 'เธเธฅเธดเธเนเธญเธเธญเธเธ”เธฒเธงเธเนเนเธซเธฅเธ” (เธฃเธนเธเธฅเธนเธเธจเธฃเธเธตเนเธฅเธ) เธ”เนเธฒเธเธซเธฅเธฑเธเน€เธ”เธทเธญเธเธเธฑเนเธ เธซเธฃเธทเธญเธเธฅเธดเธเธเธธเนเธก <span class="hl">เธ”เธฒเธงเธเนเนเธซเธฅเธ”เธ—เธฑเนเธเธซเธกเธ”</span>', en: 'Click the download icon (down arrow) next to the month, or click <span class="hl">Download All</span>' },
 
-  'sp4-title':     { th: 'ดาวน์โหลดข้อมูลค่าใช้จ่ายแพลตฟอร์ม (ใบกำกับภาษี)', en: 'Download Platform Expenses (Tax Invoices)' },
-  'sp4-s1':        { th: 'ที่แถบเมนูด้านซ้าย ในหมวด "การเงิน" คลิกเมนู <span class="hl">รายรับของฉัน</span>', en: 'In the left sidebar, under "Finance" click <span class="hl">My Income</span>' },
-  'sp4-s2':        { th: 'มองไปที่กล่องเมนูทางด้านขวามือของหน้าจอ ที่เขียนว่า "รายงานการเงิน" ให้สังเกตด้านล่างสุดของกล่องนั้น จะมีลิงก์คำว่า <span class="hl">My Tax Invoices ></span> ให้คลิกเข้าไป', en: 'On the right-side panel labeled "Financial Reports", find the link <span class="hl">My Tax Invoices ></span> at the bottom and click it' },
-  'sp4-s3':        { th: 'ระบบจะเปิดหน้าต่างใหม่พาไปที่หน้า <span class="hl">ระบบออกใบกำกับภาษี</span> (e-Tax Web Portal)', en: 'A new window will open to the <span class="hl">e-Tax Invoice System</span> (e-Tax Web Portal)' },
-  'sp4-s4':        { th: 'ตรงกลางหน้าจอหัวข้อ "ดาวน์โหลดใบเสร็จรับเงิน..." จะมีช่องปฏิทิน 2 ช่อง ให้คลิกเลือก <span class="hl">วันที่เริ่มต้น</span> ในช่องซ้าย และ <span class="hl">วันที่สิ้นสุด</span> ในช่องขวา', en: 'In the center, under "Download receipts...", use the two calendar fields to set the <span class="hl">Start Date</span> (left) and <span class="hl">End Date</span> (right)' },
-  'sp4-s5':        { th: 'กดปุ่ม <span class="hl">เลือก</span> สีส้ม', en: 'Click the orange <span class="hl">Select</span> button' },
-  'sp4-s6':        { th: 'รายการค่าใช้จ่ายจะแสดงขึ้นมาในตารางด้านล่าง ให้มองไปที่มุมขวาของหัวตารางในคอลัมน์ "ใบกำกับภาษีแบบเต็มรูป" แล้วคลิกปุ่มสีฟ้าที่เขียนว่า <span class="hl">ดาวน์โหลดทั้งหมด</span>', en: 'Expenses will appear in the table below. In the "Full Tax Invoice" column header, click the blue <span class="hl">Download All</span> button' },
+  'sp4-title':     { th: 'เธ”เธฒเธงเธเนเนเธซเธฅเธ”เธเนเธญเธกเธนเธฅเธเนเธฒเนเธเนเธเนเธฒเธขเนเธเธฅเธ•เธเธญเธฃเนเธก (เนเธเธเธณเธเธฑเธเธ เธฒเธฉเธต)', en: 'Download Platform Expenses (Tax Invoices)' },
+  'sp4-s1':        { th: 'เธ—เธตเนเนเธ–เธเน€เธกเธเธนเธ”เนเธฒเธเธเนเธฒเธข เนเธเธซเธกเธงเธ” "เธเธฒเธฃเน€เธเธดเธ" เธเธฅเธดเธเน€เธกเธเธน <span class="hl">เธฃเธฒเธขเธฃเธฑเธเธเธญเธเธเธฑเธ</span>', en: 'In the left sidebar, under "Finance" click <span class="hl">My Income</span>' },
+  'sp4-s2':        { th: 'เธกเธญเธเนเธเธ—เธตเนเธเธฅเนเธญเธเน€เธกเธเธนเธ—เธฒเธเธ”เนเธฒเธเธเธงเธฒเธกเธทเธญเธเธญเธเธซเธเนเธฒเธเธญ เธ—เธตเนเน€เธเธตเธขเธเธงเนเธฒ "เธฃเธฒเธขเธเธฒเธเธเธฒเธฃเน€เธเธดเธ" เนเธซเนเธชเธฑเธเน€เธเธ•เธ”เนเธฒเธเธฅเนเธฒเธเธชเธธเธ”เธเธญเธเธเธฅเนเธญเธเธเธฑเนเธ เธเธฐเธกเธตเธฅเธดเธเธเนเธเธณเธงเนเธฒ <span class="hl">My Tax Invoices ></span> เนเธซเนเธเธฅเธดเธเน€เธเนเธฒเนเธ', en: 'On the right-side panel labeled "Financial Reports", find the link <span class="hl">My Tax Invoices ></span> at the bottom and click it' },
+  'sp4-s3':        { th: 'เธฃเธฐเธเธเธเธฐเน€เธเธดเธ”เธซเธเนเธฒเธ•เนเธฒเธเนเธซเธกเนเธเธฒเนเธเธ—เธตเนเธซเธเนเธฒ <span class="hl">เธฃเธฐเธเธเธญเธญเธเนเธเธเธณเธเธฑเธเธ เธฒเธฉเธต</span> (e-Tax Web Portal)', en: 'A new window will open to the <span class="hl">e-Tax Invoice System</span> (e-Tax Web Portal)' },
+  'sp4-s4':        { th: 'เธ•เธฃเธเธเธฅเธฒเธเธซเธเนเธฒเธเธญเธซเธฑเธงเธเนเธญ "เธ”เธฒเธงเธเนเนเธซเธฅเธ”เนเธเน€เธชเธฃเนเธเธฃเธฑเธเน€เธเธดเธ..." เธเธฐเธกเธตเธเนเธญเธเธเธเธดเธ—เธดเธ 2 เธเนเธญเธ เนเธซเนเธเธฅเธดเธเน€เธฅเธทเธญเธ <span class="hl">เธงเธฑเธเธ—เธตเนเน€เธฃเธดเนเธกเธ•เนเธ</span> เนเธเธเนเธญเธเธเนเธฒเธข เนเธฅเธฐ <span class="hl">เธงเธฑเธเธ—เธตเนเธชเธดเนเธเธชเธธเธ”</span> เนเธเธเนเธญเธเธเธงเธฒ', en: 'In the center, under "Download receipts...", use the two calendar fields to set the <span class="hl">Start Date</span> (left) and <span class="hl">End Date</span> (right)' },
+  'sp4-s5':        { th: 'เธเธ”เธเธธเนเธก <span class="hl">เน€เธฅเธทเธญเธ</span> เธชเธตเธชเนเธก', en: 'Click the orange <span class="hl">Select</span> button' },
+  'sp4-s6':        { th: 'เธฃเธฒเธขเธเธฒเธฃเธเนเธฒเนเธเนเธเนเธฒเธขเธเธฐเนเธชเธ”เธเธเธถเนเธเธกเธฒเนเธเธ•เธฒเธฃเธฒเธเธ”เนเธฒเธเธฅเนเธฒเธ เนเธซเนเธกเธญเธเนเธเธ—เธตเนเธกเธธเธกเธเธงเธฒเธเธญเธเธซเธฑเธงเธ•เธฒเธฃเธฒเธเนเธเธเธญเธฅเธฑเธกเธเน "เนเธเธเธณเธเธฑเธเธ เธฒเธฉเธตเนเธเธเน€เธ•เนเธกเธฃเธนเธ" เนเธฅเนเธงเธเธฅเธดเธเธเธธเนเธกเธชเธตเธเนเธฒเธ—เธตเนเน€เธเธตเธขเธเธงเนเธฒ <span class="hl">เธ”เธฒเธงเธเนเนเธซเธฅเธ”เธ—เธฑเนเธเธซเธกเธ”</span>', en: 'Expenses will appear in the table below. In the "Full Tax Invoice" column header, click the blue <span class="hl">Download All</span> button' },
 
-  'sp5-title':     { th: 'ดาวน์โหลดข้อมูลการคืนสินค้าและการคืนเงิน', en: 'Download Returns & Refunds Data' },
-  'sp5-s1':        { th: 'ที่แถบเมนูด้านซ้าย ในหมวด "คำสั่งซื้อ" ให้คลิกเมนู <span class="hl">การคืนเงิน/คืนสินค้า</span>', en: 'In the left sidebar, under "Orders" click <span class="hl">Return/Refund</span>' },
-  'sp5-s2':        { th: 'มองไปที่มุมขวาบน จะเห็นปุ่มสำหรับ <span class="hl">ส่งออก</span>', en: 'At the top-right, find the <span class="hl">Export</span> button' },
-  'sp5-s3':        { th: 'คลิกที่ช่องปฏิทินเพื่อระบุ <span class="hl">วันที่เริ่มต้น</span> และ <span class="hl">วันที่สิ้นสุด</span> ที่ต้องการ', en: 'Use the calendar fields to set the <span class="hl">Start Date</span> and <span class="hl">End Date</span>' },
-  'sp5-s4':        { th: 'กดปุ่มเพื่อส่งออกเป็นไฟล์ <span class="hl">Excel</span> แล้วไปกดรับไฟล์ที่ช่อง <span class="hl">ประวัติการส่งออก</span> (ทำขั้นตอนคล้ายกับการดาวน์โหลดคำสั่งซื้อ)', en: 'Click to export as <span class="hl">Excel</span>, then download the file from <span class="hl">Export History</span> (same steps as downloading orders)' },
+  'sp5-title':     { th: 'เธ”เธฒเธงเธเนเนเธซเธฅเธ”เธเนเธญเธกเธนเธฅเธเธฒเธฃเธเธทเธเธชเธดเธเธเนเธฒเนเธฅเธฐเธเธฒเธฃเธเธทเธเน€เธเธดเธ', en: 'Download Returns & Refunds Data' },
+  'sp5-s1':        { th: 'เธ—เธตเนเนเธ–เธเน€เธกเธเธนเธ”เนเธฒเธเธเนเธฒเธข เนเธเธซเธกเธงเธ” "เธเธณเธชเธฑเนเธเธเธทเนเธญ" เนเธซเนเธเธฅเธดเธเน€เธกเธเธน <span class="hl">เธเธฒเธฃเธเธทเธเน€เธเธดเธ/เธเธทเธเธชเธดเธเธเนเธฒ</span>', en: 'In the left sidebar, under "Orders" click <span class="hl">Return/Refund</span>' },
+  'sp5-s2':        { th: 'เธกเธญเธเนเธเธ—เธตเนเธกเธธเธกเธเธงเธฒเธเธ เธเธฐเน€เธซเนเธเธเธธเนเธกเธชเธณเธซเธฃเธฑเธ <span class="hl">เธชเนเธเธญเธญเธ</span>', en: 'At the top-right, find the <span class="hl">Export</span> button' },
+  'sp5-s3':        { th: 'เธเธฅเธดเธเธ—เธตเนเธเนเธญเธเธเธเธดเธ—เธดเธเน€เธเธทเนเธญเธฃเธฐเธเธธ <span class="hl">เธงเธฑเธเธ—เธตเนเน€เธฃเธดเนเธกเธ•เนเธ</span> เนเธฅเธฐ <span class="hl">เธงเธฑเธเธ—เธตเนเธชเธดเนเธเธชเธธเธ”</span> เธ—เธตเนเธ•เนเธญเธเธเธฒเธฃ', en: 'Use the calendar fields to set the <span class="hl">Start Date</span> and <span class="hl">End Date</span>' },
+  'sp5-s4':        { th: 'เธเธ”เธเธธเนเธกเน€เธเธทเนเธญเธชเนเธเธญเธญเธเน€เธเนเธเนเธเธฅเน <span class="hl">Excel</span> เนเธฅเนเธงเนเธเธเธ”เธฃเธฑเธเนเธเธฅเนเธ—เธตเนเธเนเธญเธ <span class="hl">เธเธฃเธฐเธงเธฑเธ•เธดเธเธฒเธฃเธชเนเธเธญเธญเธ</span> (เธ—เธณเธเธฑเนเธเธ•เธญเธเธเธฅเนเธฒเธขเธเธฑเธเธเธฒเธฃเธ”เธฒเธงเธเนเนเธซเธฅเธ”เธเธณเธชเธฑเนเธเธเธทเนเธญ)', en: 'Click to export as <span class="hl">Excel</span>, then download the file from <span class="hl">Export History</span> (same steps as downloading orders)' },
 
   // Program Guide section
-  'pg-title':      { th: 'วิธีใช้โปรแกรม', en: 'Program Guide' },
-  'pg-desc':       { th: 'การนำเข้าข้อมูลเข้าสู่ระบบ — 4 ประเภท', en: 'Importing data into the system — 4 types' },
+  'pg-title':      { th: 'เธงเธดเธเธตเนเธเนเนเธเธฃเนเธเธฃเธก', en: 'Program Guide' },
+  'pg-desc':       { th: 'เธเธฒเธฃเธเธณเน€เธเนเธฒเธเนเธญเธกเธนเธฅเน€เธเนเธฒเธชเธนเนเธฃเธฐเธเธ โ€” 4 เธเธฃเธฐเน€เธ เธ—', en: 'Importing data into the system โ€” 4 types' },
 
-  'pg1-title':     { th: 'นำเข้าข้อมูลคำสั่งซื้อ', en: 'Import Order Data' },
-  'pg1-intro':     { th: 'ที่แถบเมนูด้านซ้าย ในหมวด E-Commerce คลิกเมนู <span class="hl">คำสั่งซื้อ</span> แล้วคลิกปุ่ม <span class="hl">นำเข้าคำสั่งซื้อ</span> สีเขียว ที่มุมขวาบน', en: 'In the left sidebar under E-Commerce, click <span class="hl">Orders</span>, then click the green <span class="hl">Import Orders</span> button at the top-right' },
-  'pg1-s1':        { th: 'คลิกปุ่ม <span class="hl">นำเข้าคำสั่งซื้อ</span> สีเขียว ที่มุมขวาบน', en: 'Click the green <span class="hl">Import Orders</span> button at the top-right' },
-  'pg1-s2':        { th: 'หน้าต่าง <span class="hl">อัปโหลดข้อมูลคำสั่งซื้อ</span> จะเด้งขึ้นมา', en: 'The <span class="hl">Upload Order Data</span> dialog will appear' },
-  'pg1-s3':        { th: 'เลือกวิธีนำเข้าไฟล์ (เลือก<strong>วิธีใดวิธีหนึ่ง</strong>):', en: 'Choose an import method (pick <strong>one</strong>):' },
-  'pg1-s3a':       { th: 'แท็บ <span class="hl">ไฟล์</span> — ลากไฟล์ Excel มาวางในกรอบเส้นประ หรือคลิกเลือกจากเครื่อง (.xls .xlsx .csv) <span class="sub-rec">★ แนะนำ</span>', en: '<span class="hl">File</span> tab — Drag and drop Excel files into the dashed box, or click to browse (.xls .xlsx .csv) <span class="sub-rec">★ Recommended</span>' },
-  'pg1-s3b':       { th: 'แท็บ <span class="hl">โฟลเดอร์ Drive</span> — วาง Drive Folder URL ในช่อง → เลือกเดือน/ปี → กดปุ่ม <span class="hl">ค้นหาไฟล์</span>', en: '<span class="hl">Drive Folder</span> tab — Paste the Drive Folder URL → select month/year → click <span class="hl">Find Files</span>' },
-  'pg1-s3c':       { th: 'แท็บ <span class="hl">Excel URL</span> — วาง URL ไฟล์ Google Sheets ลงในช่อง', en: '<span class="hl">Excel URL</span> tab — Paste the Google Sheets file URL' },
-  'pg1-s4':        { th: 'เลือกไฟล์ที่ต้องการนำเข้า (ถ้าใช้แท็บ "ไฟล์" ให้คลิก Dropdown เลือก Platform: <span class="hl">TikTok</span> / <span class="hl">Shopee</span> / <span class="hl">Lazada</span>)', en: 'Select the files to import (if using the "File" tab, use the dropdown to select Platform: <span class="hl">TikTok</span> / <span class="hl">Shopee</span> / <span class="hl">Lazada</span>)' },
-  'pg1-s5':        { th: 'กดปุ่ม <span class="hl">อัปโหลด X ไฟล์</span> สีเขียว', en: 'Click the green <span class="hl">Upload X Files</span> button' },
-  'pg1-s6':        { th: 'รอระบบประมวลผล — จะมีแถบ progress bar แสดงความคืบหน้า', en: 'Wait for processing — a progress bar will show the status' },
-  'pg1-s7':        { th: 'เมื่อเสร็จจะแสดง <span class="hl">อัปโหลดสำเร็จ ✅</span> พร้อมสรุปผล → กดปุ่ม <span class="hl">เสร็จสิ้น</span>', en: 'When done, <span class="hl">Upload Successful ✅</span> will appear with a summary → click <span class="hl">Done</span>' },
+  'pg1-title':     { th: 'เธเธณเน€เธเนเธฒเธเนเธญเธกเธนเธฅเธเธณเธชเธฑเนเธเธเธทเนเธญ', en: 'Import Order Data' },
+  'pg1-intro':     { th: 'เธ—เธตเนเนเธ–เธเน€เธกเธเธนเธ”เนเธฒเธเธเนเธฒเธข เนเธเธซเธกเธงเธ” E-Commerce เธเธฅเธดเธเน€เธกเธเธน <span class="hl">เธเธณเธชเธฑเนเธเธเธทเนเธญ</span> เนเธฅเนเธงเธเธฅเธดเธเธเธธเนเธก <span class="hl">เธเธณเน€เธเนเธฒเธเธณเธชเธฑเนเธเธเธทเนเธญ</span> เธชเธตเน€เธเธตเธขเธง เธ—เธตเนเธกเธธเธกเธเธงเธฒเธเธ', en: 'In the left sidebar under E-Commerce, click <span class="hl">Orders</span>, then click the green <span class="hl">Import Orders</span> button at the top-right' },
+  'pg1-s1':        { th: 'เธเธฅเธดเธเธเธธเนเธก <span class="hl">เธเธณเน€เธเนเธฒเธเธณเธชเธฑเนเธเธเธทเนเธญ</span> เธชเธตเน€เธเธตเธขเธง เธ—เธตเนเธกเธธเธกเธเธงเธฒเธเธ', en: 'Click the green <span class="hl">Import Orders</span> button at the top-right' },
+  'pg1-s2':        { th: 'เธซเธเนเธฒเธ•เนเธฒเธ <span class="hl">เธญเธฑเธเนเธซเธฅเธ”เธเนเธญเธกเธนเธฅเธเธณเธชเธฑเนเธเธเธทเนเธญ</span> เธเธฐเน€เธ”เนเธเธเธถเนเธเธกเธฒ', en: 'The <span class="hl">Upload Order Data</span> dialog will appear' },
+  'pg1-s3':        { th: 'เน€เธฅเธทเธญเธเธงเธดเธเธตเธเธณเน€เธเนเธฒเนเธเธฅเน (เน€เธฅเธทเธญเธ<strong>เธงเธดเธเธตเนเธ”เธงเธดเธเธตเธซเธเธถเนเธ</strong>):', en: 'Choose an import method (pick <strong>one</strong>):' },
+  'pg1-s3a':       { th: 'เนเธ—เนเธ <span class="hl">เนเธเธฅเน</span> โ€” เธฅเธฒเธเนเธเธฅเน Excel เธกเธฒเธงเธฒเธเนเธเธเธฃเธญเธเน€เธชเนเธเธเธฃเธฐ เธซเธฃเธทเธญเธเธฅเธดเธเน€เธฅเธทเธญเธเธเธฒเธเน€เธเธฃเธทเนเธญเธ (.xls .xlsx .csv) <span class="sub-rec">โ… เนเธเธฐเธเธณ</span>', en: '<span class="hl">File</span> tab โ€” Drag and drop Excel files into the dashed box, or click to browse (.xls .xlsx .csv) <span class="sub-rec">โ… Recommended</span>' },
+  'pg1-s3b':       { th: 'เนเธ—เนเธ <span class="hl">เนเธเธฅเน€เธ”เธญเธฃเน Drive</span> โ€” เธงเธฒเธ Drive Folder URL เนเธเธเนเธญเธ โ’ เน€เธฅเธทเธญเธเน€เธ”เธทเธญเธ/เธเธต โ’ เธเธ”เธเธธเนเธก <span class="hl">เธเนเธเธซเธฒเนเธเธฅเน</span>', en: '<span class="hl">Drive Folder</span> tab โ€” Paste the Drive Folder URL โ’ select month/year โ’ click <span class="hl">Find Files</span>' },
+  'pg1-s3c':       { th: 'เนเธ—เนเธ <span class="hl">Excel URL</span> โ€” เธงเธฒเธ URL เนเธเธฅเน Google Sheets เธฅเธเนเธเธเนเธญเธ', en: '<span class="hl">Excel URL</span> tab โ€” Paste the Google Sheets file URL' },
+  'pg1-s4':        { th: 'เน€เธฅเธทเธญเธเนเธเธฅเนเธ—เธตเนเธ•เนเธญเธเธเธฒเธฃเธเธณเน€เธเนเธฒ (เธ–เนเธฒเนเธเนเนเธ—เนเธ "เนเธเธฅเน" เนเธซเนเธเธฅเธดเธ Dropdown เน€เธฅเธทเธญเธ Platform: <span class="hl">TikTok</span> / <span class="hl">Shopee</span> / <span class="hl">Lazada</span>)', en: 'Select the files to import (if using the "File" tab, use the dropdown to select Platform: <span class="hl">TikTok</span> / <span class="hl">Shopee</span> / <span class="hl">Lazada</span>)' },
+  'pg1-s5':        { th: 'เธเธ”เธเธธเนเธก <span class="hl">เธญเธฑเธเนเธซเธฅเธ” X เนเธเธฅเน</span> เธชเธตเน€เธเธตเธขเธง', en: 'Click the green <span class="hl">Upload X Files</span> button' },
+  'pg1-s6':        { th: 'เธฃเธญเธฃเธฐเธเธเธเธฃเธฐเธกเธงเธฅเธเธฅ โ€” เธเธฐเธกเธตเนเธ–เธ progress bar เนเธชเธ”เธเธเธงเธฒเธกเธเธทเธเธซเธเนเธฒ', en: 'Wait for processing โ€” a progress bar will show the status' },
+  'pg1-s7':        { th: 'เน€เธกเธทเนเธญเน€เธชเธฃเนเธเธเธฐเนเธชเธ”เธ <span class="hl">เธญเธฑเธเนเธซเธฅเธ”เธชเธณเน€เธฃเนเธ โ…</span> เธเธฃเนเธญเธกเธชเธฃเธธเธเธเธฅ โ’ เธเธ”เธเธธเนเธก <span class="hl">เน€เธชเธฃเนเธเธชเธดเนเธ</span>', en: 'When done, <span class="hl">Upload Successful โ…</span> will appear with a summary โ’ click <span class="hl">Done</span>' },
 
-  'pg2-title':     { th: 'นำเข้าข้อมูลรายรับของฉัน', en: 'Import My Income Data' },
-  'pg2-intro':     { th: 'ที่แถบเมนูด้านซ้าย ในหมวด E-Commerce คลิกเมนู <span class="hl">รายรับของฉัน</span> แล้วคลิกปุ่ม <span class="hl">นำเข้า</span> ที่มุมขวาบน', en: 'In the left sidebar under E-Commerce, click <span class="hl">My Income</span>, then click the <span class="hl">Import</span> button at the top-right' },
-  'pg2-s1':        { th: 'คลิกปุ่ม <span class="hl">นำเข้า</span> ที่มุมขวาบน', en: 'Click the <span class="hl">Import</span> button at the top-right' },
-  'pg2-s2':        { th: 'หน้าต่าง <span class="hl">อัปโหลดข้อมูล</span> จะเด้งขึ้นมา', en: 'The <span class="hl">Upload Data</span> dialog will appear' },
-  'pg2-s3':        { th: 'เลือกวิธีนำเข้าไฟล์ (เลือก<strong>วิธีใดวิธีหนึ่ง</strong>):', en: 'Choose an import method (pick <strong>one</strong>):' },
-  'pg2-s3a':       { th: 'แท็บ <span class="hl">ไฟล์</span> — ลากไฟล์ Excel มาวาง หรือคลิกเลือกจากเครื่อง <span class="sub-rec">★ แนะนำ</span>', en: '<span class="hl">File</span> tab — Drag and drop Excel files or click to browse <span class="sub-rec">★ Recommended</span>' },
-  'pg2-s3b':       { th: 'แท็บ <span class="hl">โฟลเดอร์ Drive</span> — วาง Drive Folder URL → เลือกเดือน/ปี → กดปุ่ม <span class="hl">ค้นหาไฟล์</span>', en: '<span class="hl">Drive Folder</span> tab — Paste the Drive Folder URL → select month/year → click <span class="hl">Find Files</span>' },
-  'pg2-s3c':       { th: 'แท็บ <span class="hl">Excel URL</span> — วาง URL ไฟล์ Google Sheets ลงในช่อง', en: '<span class="hl">Excel URL</span> tab — Paste the Google Sheets file URL' },
-  'pg2-s4':        { th: 'เลือกไฟล์ที่ต้องการนำเข้า แล้วกดปุ่ม <span class="hl">อัปโหลด X ไฟล์</span> สีเขียว', en: 'Select the files to import, then click the green <span class="hl">Upload X Files</span> button' },
-  'pg2-s5':        { th: 'รอระบบประมวลผล — จะมีแถบ progress bar แสดงความคืบหน้า', en: 'Wait for processing — a progress bar will show the status' },
-  'pg2-s6':        { th: 'เมื่อเสร็จจะแสดง <span class="hl">อัปโหลดสำเร็จ ✅</span> พร้อมสรุปผล → กดปุ่ม <span class="hl">เสร็จสิ้น</span>', en: 'When done, <span class="hl">Upload Successful ✅</span> will appear with a summary → click <span class="hl">Done</span>' },
+  'pg2-title':     { th: 'เธเธณเน€เธเนเธฒเธเนเธญเธกเธนเธฅเธฃเธฒเธขเธฃเธฑเธเธเธญเธเธเธฑเธ', en: 'Import My Income Data' },
+  'pg2-intro':     { th: 'เธ—เธตเนเนเธ–เธเน€เธกเธเธนเธ”เนเธฒเธเธเนเธฒเธข เนเธเธซเธกเธงเธ” E-Commerce เธเธฅเธดเธเน€เธกเธเธน <span class="hl">เธฃเธฒเธขเธฃเธฑเธเธเธญเธเธเธฑเธ</span> เนเธฅเนเธงเธเธฅเธดเธเธเธธเนเธก <span class="hl">เธเธณเน€เธเนเธฒ</span> เธ—เธตเนเธกเธธเธกเธเธงเธฒเธเธ', en: 'In the left sidebar under E-Commerce, click <span class="hl">My Income</span>, then click the <span class="hl">Import</span> button at the top-right' },
+  'pg2-s1':        { th: 'เธเธฅเธดเธเธเธธเนเธก <span class="hl">เธเธณเน€เธเนเธฒ</span> เธ—เธตเนเธกเธธเธกเธเธงเธฒเธเธ', en: 'Click the <span class="hl">Import</span> button at the top-right' },
+  'pg2-s2':        { th: 'เธซเธเนเธฒเธ•เนเธฒเธ <span class="hl">เธญเธฑเธเนเธซเธฅเธ”เธเนเธญเธกเธนเธฅ</span> เธเธฐเน€เธ”เนเธเธเธถเนเธเธกเธฒ', en: 'The <span class="hl">Upload Data</span> dialog will appear' },
+  'pg2-s3':        { th: 'เน€เธฅเธทเธญเธเธงเธดเธเธตเธเธณเน€เธเนเธฒเนเธเธฅเน (เน€เธฅเธทเธญเธ<strong>เธงเธดเธเธตเนเธ”เธงเธดเธเธตเธซเธเธถเนเธ</strong>):', en: 'Choose an import method (pick <strong>one</strong>):' },
+  'pg2-s3a':       { th: 'เนเธ—เนเธ <span class="hl">เนเธเธฅเน</span> โ€” เธฅเธฒเธเนเธเธฅเน Excel เธกเธฒเธงเธฒเธ เธซเธฃเธทเธญเธเธฅเธดเธเน€เธฅเธทเธญเธเธเธฒเธเน€เธเธฃเธทเนเธญเธ <span class="sub-rec">โ… เนเธเธฐเธเธณ</span>', en: '<span class="hl">File</span> tab โ€” Drag and drop Excel files or click to browse <span class="sub-rec">โ… Recommended</span>' },
+  'pg2-s3b':       { th: 'เนเธ—เนเธ <span class="hl">เนเธเธฅเน€เธ”เธญเธฃเน Drive</span> โ€” เธงเธฒเธ Drive Folder URL โ’ เน€เธฅเธทเธญเธเน€เธ”เธทเธญเธ/เธเธต โ’ เธเธ”เธเธธเนเธก <span class="hl">เธเนเธเธซเธฒเนเธเธฅเน</span>', en: '<span class="hl">Drive Folder</span> tab โ€” Paste the Drive Folder URL โ’ select month/year โ’ click <span class="hl">Find Files</span>' },
+  'pg2-s3c':       { th: 'เนเธ—เนเธ <span class="hl">Excel URL</span> โ€” เธงเธฒเธ URL เนเธเธฅเน Google Sheets เธฅเธเนเธเธเนเธญเธ', en: '<span class="hl">Excel URL</span> tab โ€” Paste the Google Sheets file URL' },
+  'pg2-s4':        { th: 'เน€เธฅเธทเธญเธเนเธเธฅเนเธ—เธตเนเธ•เนเธญเธเธเธฒเธฃเธเธณเน€เธเนเธฒ เนเธฅเนเธงเธเธ”เธเธธเนเธก <span class="hl">เธญเธฑเธเนเธซเธฅเธ” X เนเธเธฅเน</span> เธชเธตเน€เธเธตเธขเธง', en: 'Select the files to import, then click the green <span class="hl">Upload X Files</span> button' },
+  'pg2-s5':        { th: 'เธฃเธญเธฃเธฐเธเธเธเธฃเธฐเธกเธงเธฅเธเธฅ โ€” เธเธฐเธกเธตเนเธ–เธ progress bar เนเธชเธ”เธเธเธงเธฒเธกเธเธทเธเธซเธเนเธฒ', en: 'Wait for processing โ€” a progress bar will show the status' },
+  'pg2-s6':        { th: 'เน€เธกเธทเนเธญเน€เธชเธฃเนเธเธเธฐเนเธชเธ”เธ <span class="hl">เธญเธฑเธเนเธซเธฅเธ”เธชเธณเน€เธฃเนเธ โ…</span> เธเธฃเนเธญเธกเธชเธฃเธธเธเธเธฅ โ’ เธเธ”เธเธธเนเธก <span class="hl">เน€เธชเธฃเนเธเธชเธดเนเธ</span>', en: 'When done, <span class="hl">Upload Successful โ…</span> will appear with a summary โ’ click <span class="hl">Done</span>' },
 
-  'pg3-title':     { th: 'นำเข้าข้อมูลเงินเข้าธนาคาร', en: 'Import Bank Deposit Data' },
-  'pg3-intro':     { th: 'ที่แถบเมนูด้านซ้าย ในเมนู E-Commerce คลิกเมนู <span class="hl">รับเงินเข้าธนาคาร</span> แล้วกดปุ่ม <span class="hl">รับเงินเข้าธนาคารทั้งหมด</span> สีเขียว แล้วเลือก <span class="hl">นำเข้ารับเงินจากไฟล์</span>', en: 'In the left sidebar under E-Commerce, click <span class="hl">Bank Deposits</span>, then click the green <span class="hl">All Bank Deposits</span> button and select <span class="hl">Import from File</span>' },
-  'pg3-s1':        { th: 'ที่แถบเมนูด้านซ้าย ในเมนู E-Commerce คลิกเมนู <span class="hl">รับเงินเข้าธนาคาร</span>', en: 'In the left sidebar under E-Commerce, click <span class="hl">Bank Deposits</span>' },
-  'pg3-s2':        { th: 'กดปุ่ม <span class="hl">รับเงินเข้าธนาคารทั้งหมด</span> (สีเขียว) แล้วเลือก <span class="hl">นำเข้ารับเงินจากไฟล์</span>', en: 'Click the green <span class="hl">All Bank Deposits</span> button, then select <span class="hl">Import from File</span>' },
-  'pg3-s3':        { th: 'หน้าต่าง <span class="hl">นำเข้ารายการถอนเงิน</span> จะเด้งขึ้นมา เลือก Platform: <span class="hl">TikTok</span> หรือ <span class="hl">Shopee</span>', en: 'The <span class="hl">Import Withdrawal Records</span> dialog will appear. Select Platform: <span class="hl">TikTok</span> or <span class="hl">Shopee</span>' },
-  'pg3-s3a':       { th: 'เลือก <span class="hl">ไฟล์ Excel / PDF</span> — ลากไฟล์มาวาง หรือคลิกเลือกไฟล์ <span class="sub-rec">★ แนะนำ</span>', en: 'Select <span class="hl">Excel / PDF File</span> — Drag and drop or click to browse <span class="sub-rec">★ Recommended</span>' },
-  'pg3-s3b':       { th: 'เลือก <span class="hl">Google Drive</span> — วาง URL ของ Google Drive Folder', en: 'Select <span class="hl">Google Drive</span> — Paste the Google Drive Folder URL' },
-  'pg3-s4':        { th: 'กดปุ่ม <span class="hl">นำเข้าข้อมูล</span>', en: 'Click the <span class="hl">Import Data</span> button' },
-  'pg3-s5':        { th: 'ตรวจสอบข้อมูล → กด <span class="hl">บันทึก</span>', en: 'Review the data → click <span class="hl">Save</span>' },
-  'pg3-s6':        { th: 'เมื่อเสร็จจะแสดง <span class="hl">เสร็จสิ้น ✅</span>', en: 'When done, <span class="hl">Complete ✅</span> will be displayed' },
+  'pg3-title':     { th: 'เธเธณเน€เธเนเธฒเธเนเธญเธกเธนเธฅเน€เธเธดเธเน€เธเนเธฒเธเธเธฒเธเธฒเธฃ', en: 'Import Bank Deposit Data' },
+  'pg3-intro':     { th: 'เธ—เธตเนเนเธ–เธเน€เธกเธเธนเธ”เนเธฒเธเธเนเธฒเธข เนเธเน€เธกเธเธน E-Commerce เธเธฅเธดเธเน€เธกเธเธน <span class="hl">เธฃเธฑเธเน€เธเธดเธเน€เธเนเธฒเธเธเธฒเธเธฒเธฃ</span> เนเธฅเนเธงเธเธ”เธเธธเนเธก <span class="hl">เธฃเธฑเธเน€เธเธดเธเน€เธเนเธฒเธเธเธฒเธเธฒเธฃเธ—เธฑเนเธเธซเธกเธ”</span> เธชเธตเน€เธเธตเธขเธง เนเธฅเนเธงเน€เธฅเธทเธญเธ <span class="hl">เธเธณเน€เธเนเธฒเธฃเธฑเธเน€เธเธดเธเธเธฒเธเนเธเธฅเน</span>', en: 'In the left sidebar under E-Commerce, click <span class="hl">Bank Deposits</span>, then click the green <span class="hl">All Bank Deposits</span> button and select <span class="hl">Import from File</span>' },
+  'pg3-s1':        { th: 'เธ—เธตเนเนเธ–เธเน€เธกเธเธนเธ”เนเธฒเธเธเนเธฒเธข เนเธเน€เธกเธเธน E-Commerce เธเธฅเธดเธเน€เธกเธเธน <span class="hl">เธฃเธฑเธเน€เธเธดเธเน€เธเนเธฒเธเธเธฒเธเธฒเธฃ</span>', en: 'In the left sidebar under E-Commerce, click <span class="hl">Bank Deposits</span>' },
+  'pg3-s2':        { th: 'เธเธ”เธเธธเนเธก <span class="hl">เธฃเธฑเธเน€เธเธดเธเน€เธเนเธฒเธเธเธฒเธเธฒเธฃเธ—เธฑเนเธเธซเธกเธ”</span> (เธชเธตเน€เธเธตเธขเธง) เนเธฅเนเธงเน€เธฅเธทเธญเธ <span class="hl">เธเธณเน€เธเนเธฒเธฃเธฑเธเน€เธเธดเธเธเธฒเธเนเธเธฅเน</span>', en: 'Click the green <span class="hl">All Bank Deposits</span> button, then select <span class="hl">Import from File</span>' },
+  'pg3-s3':        { th: 'เธซเธเนเธฒเธ•เนเธฒเธ <span class="hl">เธเธณเน€เธเนเธฒเธฃเธฒเธขเธเธฒเธฃเธ–เธญเธเน€เธเธดเธ</span> เธเธฐเน€เธ”เนเธเธเธถเนเธเธกเธฒ เน€เธฅเธทเธญเธ Platform: <span class="hl">TikTok</span> เธซเธฃเธทเธญ <span class="hl">Shopee</span>', en: 'The <span class="hl">Import Withdrawal Records</span> dialog will appear. Select Platform: <span class="hl">TikTok</span> or <span class="hl">Shopee</span>' },
+  'pg3-s3a':       { th: 'เน€เธฅเธทเธญเธ <span class="hl">เนเธเธฅเน Excel / PDF</span> โ€” เธฅเธฒเธเนเธเธฅเนเธกเธฒเธงเธฒเธ เธซเธฃเธทเธญเธเธฅเธดเธเน€เธฅเธทเธญเธเนเธเธฅเน <span class="sub-rec">โ… เนเธเธฐเธเธณ</span>', en: 'Select <span class="hl">Excel / PDF File</span> โ€” Drag and drop or click to browse <span class="sub-rec">โ… Recommended</span>' },
+  'pg3-s3b':       { th: 'เน€เธฅเธทเธญเธ <span class="hl">Google Drive</span> โ€” เธงเธฒเธ URL เธเธญเธ Google Drive Folder', en: 'Select <span class="hl">Google Drive</span> โ€” Paste the Google Drive Folder URL' },
+  'pg3-s4':        { th: 'เธเธ”เธเธธเนเธก <span class="hl">เธเธณเน€เธเนเธฒเธเนเธญเธกเธนเธฅ</span>', en: 'Click the <span class="hl">Import Data</span> button' },
+  'pg3-s5':        { th: 'เธ•เธฃเธงเธเธชเธญเธเธเนเธญเธกเธนเธฅ โ’ เธเธ” <span class="hl">เธเธฑเธเธ—เธถเธ</span>', en: 'Review the data โ’ click <span class="hl">Save</span>' },
+  'pg3-s6':        { th: 'เน€เธกเธทเนเธญเน€เธชเธฃเนเธเธเธฐเนเธชเธ”เธ <span class="hl">เน€เธชเธฃเนเธเธชเธดเนเธ โ…</span>', en: 'When done, <span class="hl">Complete โ…</span> will be displayed' },
 
-  'pg4-title':     { th: 'นำเข้าบิลค่าใช้จ่ายแพลตฟอร์ม', en: 'Import Platform Expense Bills' },
-  'pg4-intro':     { th: 'ที่แถบเมนูด้านซ้าย ในเมนู E-Commerce คลิกเมนู <span class="hl">ค่าใช้จ่ายแพลตฟอร์ม</span> แล้วกดปุ่ม <span class="hl">นำเข้าบิลค่าใช้จ่าย</span> สีเขียว', en: 'In the left sidebar under E-Commerce, click <span class="hl">Platform Expenses</span>, then click the green <span class="hl">Import Expense Bills</span> button' },
-  'pg4-s1':        { th: 'ที่แถบเมนูด้านซ้าย ในเมนู E-Commerce คลิกเมนู <span class="hl">ค่าใช้จ่ายแพลตฟอร์ม</span>', en: 'In the left sidebar under E-Commerce, click <span class="hl">Platform Expenses</span>' },
-  'pg4-s2':        { th: 'กดปุ่ม <span class="hl">นำเข้าบิลค่าใช้จ่าย</span> (สีเขียว)', en: 'Click the green <span class="hl">Import Expense Bills</span> button' },
-  'pg4-s3':        { th: 'หน้าต่าง <span class="hl">AI Scan บิล</span> จะเด้งขึ้นมา เลือกวิธีนำเข้า (เลือก<strong>วิธีใดวิธีหนึ่ง</strong>):', en: 'The <span class="hl">AI Bill Scan</span> dialog will appear. Choose an import method (pick <strong>one</strong>):' },
-  'pg4-s3a':       { th: 'แท็บ <span class="hl">โฟลเดอร์ Drive</span> — วาง URL โฟลเดอร์ที่มีไฟล์ PDF → เลือกแพลตฟอร์ม → กดปุ่ม <span class="hl">สแกน + แม็ปบัญชีอัตโนมัติ</span> <span class="sub-rec">★ แนะนำ</span>', en: '<span class="hl">Drive Folder</span> tab — Paste the folder URL with PDF files → select platform → click <span class="hl">Scan + Auto Map Accounts</span> <span class="sub-rec">★ Recommended</span>' },
-  'pg4-s3b':       { th: 'แท็บ <span class="hl">ไฟล์เดี่ยว</span> — ลาก PDF / รูปมาวาง แล้วกด <span class="hl">สแกน</span> หรือ <span class="hl">รับข้อมูลบัญชี</span>', en: '<span class="hl">Single File</span> tab — Drag and drop PDF / image, then click <span class="hl">Scan</span> or <span class="hl">Get Account Data</span>' },
-  'pg4-s4':        { th: 'รอระบบ AI ประมวลผล', en: 'Wait for AI processing' },
-  'pg4-s5':        { th: 'เมื่อเสร็จจะแสดง <span class="hl">เสร็จสิ้น ✅</span>', en: 'When done, <span class="hl">Complete ✅</span> will be displayed' },
+  'pg4-title':     { th: 'เธเธณเน€เธเนเธฒเธเธดเธฅเธเนเธฒเนเธเนเธเนเธฒเธขเนเธเธฅเธ•เธเธญเธฃเนเธก', en: 'Import Platform Expense Bills' },
+  'pg4-intro':     { th: 'เธ—เธตเนเนเธ–เธเน€เธกเธเธนเธ”เนเธฒเธเธเนเธฒเธข เนเธเน€เธกเธเธน E-Commerce เธเธฅเธดเธเน€เธกเธเธน <span class="hl">เธเนเธฒเนเธเนเธเนเธฒเธขเนเธเธฅเธ•เธเธญเธฃเนเธก</span> เนเธฅเนเธงเธเธ”เธเธธเนเธก <span class="hl">เธเธณเน€เธเนเธฒเธเธดเธฅเธเนเธฒเนเธเนเธเนเธฒเธข</span> เธชเธตเน€เธเธตเธขเธง', en: 'In the left sidebar under E-Commerce, click <span class="hl">Platform Expenses</span>, then click the green <span class="hl">Import Expense Bills</span> button' },
+  'pg4-s1':        { th: 'เธ—เธตเนเนเธ–เธเน€เธกเธเธนเธ”เนเธฒเธเธเนเธฒเธข เนเธเน€เธกเธเธน E-Commerce เธเธฅเธดเธเน€เธกเธเธน <span class="hl">เธเนเธฒเนเธเนเธเนเธฒเธขเนเธเธฅเธ•เธเธญเธฃเนเธก</span>', en: 'In the left sidebar under E-Commerce, click <span class="hl">Platform Expenses</span>' },
+  'pg4-s2':        { th: 'เธเธ”เธเธธเนเธก <span class="hl">เธเธณเน€เธเนเธฒเธเธดเธฅเธเนเธฒเนเธเนเธเนเธฒเธข</span> (เธชเธตเน€เธเธตเธขเธง)', en: 'Click the green <span class="hl">Import Expense Bills</span> button' },
+  'pg4-s3':        { th: 'เธซเธเนเธฒเธ•เนเธฒเธ <span class="hl">AI Scan เธเธดเธฅ</span> เธเธฐเน€เธ”เนเธเธเธถเนเธเธกเธฒ เน€เธฅเธทเธญเธเธงเธดเธเธตเธเธณเน€เธเนเธฒ (เน€เธฅเธทเธญเธ<strong>เธงเธดเธเธตเนเธ”เธงเธดเธเธตเธซเธเธถเนเธ</strong>):', en: 'The <span class="hl">AI Bill Scan</span> dialog will appear. Choose an import method (pick <strong>one</strong>):' },
+  'pg4-s3a':       { th: 'เนเธ—เนเธ <span class="hl">เนเธเธฅเน€เธ”เธญเธฃเน Drive</span> โ€” เธงเธฒเธ URL เนเธเธฅเน€เธ”เธญเธฃเนเธ—เธตเนเธกเธตเนเธเธฅเน PDF โ’ เน€เธฅเธทเธญเธเนเธเธฅเธ•เธเธญเธฃเนเธก โ’ เธเธ”เธเธธเนเธก <span class="hl">เธชเนเธเธ + เนเธกเนเธเธเธฑเธเธเธตเธญเธฑเธ•เนเธเธกเธฑเธ•เธด</span> <span class="sub-rec">โ… เนเธเธฐเธเธณ</span>', en: '<span class="hl">Drive Folder</span> tab โ€” Paste the folder URL with PDF files โ’ select platform โ’ click <span class="hl">Scan + Auto Map Accounts</span> <span class="sub-rec">โ… Recommended</span>' },
+  'pg4-s3b':       { th: 'เนเธ—เนเธ <span class="hl">เนเธเธฅเนเน€เธ”เธตเนเธขเธง</span> โ€” เธฅเธฒเธ PDF / เธฃเธนเธเธกเธฒเธงเธฒเธ เนเธฅเนเธงเธเธ” <span class="hl">เธชเนเธเธ</span> เธซเธฃเธทเธญ <span class="hl">เธฃเธฑเธเธเนเธญเธกเธนเธฅเธเธฑเธเธเธต</span>', en: '<span class="hl">Single File</span> tab โ€” Drag and drop PDF / image, then click <span class="hl">Scan</span> or <span class="hl">Get Account Data</span>' },
+  'pg4-s4':        { th: 'เธฃเธญเธฃเธฐเธเธ AI เธเธฃเธฐเธกเธงเธฅเธเธฅ', en: 'Wait for AI processing' },
+  'pg4-s5':        { th: 'เน€เธกเธทเนเธญเน€เธชเธฃเนเธเธเธฐเนเธชเธ”เธ <span class="hl">เน€เธชเธฃเนเธเธชเธดเนเธ โ…</span>', en: 'When done, <span class="hl">Complete โ…</span> will be displayed' },
 };
 
 function switchLang(lang) {
@@ -1231,9 +1230,9 @@ function toggleDark(){
     document.body.classList.toggle('dark');
     const isDark=document.body.classList.contains('dark');
     localStorage.setItem('theme',isDark?'dark':'light');
-    document.getElementById('themeToggle').textContent=isDark?'☀️':'🌙';
+    document.getElementById('themeToggle').textContent=isDark?'โ€๏ธ':'๐';
 }
-if(localStorage.getItem('theme')==='dark'){document.body.classList.add('dark');document.getElementById('themeToggle').textContent='☀️';}
+if(localStorage.getItem('theme')==='dark'){document.body.classList.add('dark');document.getElementById('themeToggle').textContent='โ€๏ธ';}
 
 // Keyboard navigation
 function getVisibleCards(){return[...document.querySelectorAll('.gc[id]:not(.fout)')];}
