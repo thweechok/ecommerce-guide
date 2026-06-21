@@ -434,7 +434,7 @@
         /* ━━━━━━━━━━ Sidebar Overlay ━━━━━━━━━━ */
         .sb-overlay {
             display:none; position:fixed; top:0; left:0; right:0; bottom:0;
-            background:rgba(0,0,0,.5); z-index:998;
+            background:rgba(0,0,0,.35); z-index:998;
             opacity:0; transition:opacity .3s;
         }
         .sb-overlay.active { display:block; opacity:1; }
@@ -1176,6 +1176,7 @@ function sbTog(el,e){
     if(sub&&sub.classList.contains('sb-sub'))sub.classList.toggle('open');
     const href=el.getAttribute('href').slice(1);
     showSection(href);
+    closeMobileSidebar();
 }
 
 const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){const d=(x.target.getAttribute('data-i')||0)*80;setTimeout(()=>x.target.classList.add('vis'),d);obs.unobserve(x.target)}})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
