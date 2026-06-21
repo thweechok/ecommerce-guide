@@ -130,7 +130,6 @@
         .main { min-width:0; display:flex; flex-direction:column; gap:0; }
         .pg-sec { order:-1; }
         .main > .sec-div:last-of-type { order:-2; }
-        section.fout, .sec-div.fout { display:none !important; }
 
         /* ━━━━━━━━━━ Sidebar ━━━━━━━━━━ */
         .sidebar {
@@ -180,9 +179,7 @@
         .sb-indicator.vis { opacity:1; }
 
         /* Filter out */
-        .fout { opacity:0; max-height:0; overflow:hidden; margin:0; padding:0; border:none;
-            transition:opacity .3s ease, max-height .3s ease, margin .3s ease; pointer-events:none; }
-        .gc:not(.fout) { transition:opacity .35s ease .05s, max-height .5s ease, margin .3s ease, box-shadow .3s, border-color .3s, transform .3s; }
+        .fout { display:none !important; }
 
         /* Card Glow */
         .tk-sec .gc:hover { box-shadow:0 4px 20px rgba(254,44,85,.12), 0 0 0 1px rgba(254,44,85,.08); }
