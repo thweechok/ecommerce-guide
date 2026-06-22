@@ -251,7 +251,14 @@
         .dark .lang-btn.active { background:rgba(99,102,241,.2); color:#818cf8; }
 
         /* ━━━━━━━━━━ Section ━━━━━━━━━━ */
-        .sec-head { text-align:center; margin-bottom:1.5rem; padding-top:1rem; }
+        .sec-head {
+            text-align:center; padding:1.5rem 1rem 1rem;
+            margin-bottom:0;
+            background:#fff; border:1px solid #e5e8ed; border-bottom:none;
+            border-radius:12px 12px 0 0;
+            box-shadow:0 1px 4px rgba(0,0,0,.04);
+        }
+        .sec-head + .gc { border-radius:0 0 12px 12px; }
         .sec-head .sec-logo { animation:iconFloat 3s ease-in-out infinite; display:inline-block; margin-bottom:.5rem; }
         .sec-head .sec-logo svg { width:44px; height:44px; }
         .sec-head h2 { font-size:1.6rem; font-weight:800; color:#1a2744; margin-bottom:.3rem; }
