@@ -432,11 +432,13 @@
 
         /* ━━━━━━━━━━ Sidebar Overlay ━━━━━━━━━━ */
         .sb-overlay {
-            display:none; position:fixed; top:0; left:0; right:0; bottom:0;
+            position:fixed; top:0; left:0; right:0; bottom:0;
             background:rgba(0,0,0,.35); z-index:998;
-            opacity:0; transition:opacity .3s;
+            opacity:0; visibility:hidden;
+            transition:opacity .3s, visibility .3s;
+            -webkit-tap-highlight-color:transparent;
         }
-        .sb-overlay.active { display:block; opacity:1; }
+        .sb-overlay.active { opacity:1; visibility:visible; }
         .dark .sb-overlay { background:rgba(0,0,0,.7); }
 
         .ss-cap {
@@ -528,7 +530,7 @@
         <button class="lang-btn" id="btnEN" onclick="switchLang('en')">EN</button>
     </div>
 </nav>
-<div class="sb-overlay" id="sbOverlay" onclick="toggleMobileSidebar()"></div>
+<div class="sb-overlay" id="sbOverlay" onclick="closeMobileSidebar()"></div>
 
 <!-- ── Hero ── -->
 <section class="hero">
@@ -1177,9 +1179,13 @@ function sbTog(el,e){
     el.classList.toggle('open');
     const sub=el.nextElementSibling;
     if(sub&&sub.classList.contains('sb-sub'))sub.classList.toggle('open');
-    const href=el.getAttribute('href').slice(1);
-    showSection(href);
-    closeMobileSidebar();
+    // On mobile: only toggle sub-menu, don't close sidebar (let user pick sub-item)
+    // On desktop: show section normally
+    const isMobile=window.innerWidth<=768;
+    if(!isMobile){
+        const href=el.getAttribute('href').slice(1);
+        showSection(href);
+    }
 }
 
 const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){const d=(x.target.getAttribute('data-i')||0)*80;setTimeout(()=>x.target.classList.add('vis'),d);obs.unobserve(x.target)}})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
