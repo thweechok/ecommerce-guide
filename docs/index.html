@@ -580,6 +580,7 @@
         <a href="#lz-1" class="sb-sub-link">วิธีดาวน์โหลดคำสั่งซื้อ</a>
         <a href="#lz-2" class="sb-sub-link">วิธีดาวน์โหลดรายรับของฉัน</a>
         <a href="#lz-3" class="sb-sub-link">วิธีดาวน์โหลดเงินเข้าธนาคาร</a>
+        <a href="#lz-4" class="sb-sub-link">วิธีดาวน์โหลดค่าใช้จ่ายแพลตฟอร์ม</a>
     </div>
 </aside>
 
@@ -774,7 +775,7 @@
         <div class="sec-head anim">
             <div class="sec-logo" style="font-size:2.5rem;">🛒</div>
             <h2>Lazada Seller Center</h2>
-            <p>การดึงข้อมูลจาก Lazada — 3 ประเภทรายงาน</p>
+            <p>การดึงข้อมูลจาก Lazada — 4 ประเภทรายงาน</p>
             <span class="uline"></span>
         </div>
 
@@ -826,6 +827,23 @@
             <div class="fi">
                 <div class="fi-r"><span class="fi-l">📄 ชื่อไฟล์</span><span class="fi-v">XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.xls (ชื่อเป็น hash code)</span></div>
                 <div class="fi-r"><span class="fi-l">📑 ชื่อแท็บ</span><span class="fi-v fi-t">Balance Transactions</span></div>
+            </div></div>
+        </div>
+
+        <!-- LZ 4 -->
+        <div class="gc anim" data-i="4" id="lz-4">
+            <div class="gc-h" onclick="tog(this)"><div class="gc-n">4</div><h3>วิธีดาวน์โหลดค่าใช้จ่ายแพลตฟอร์ม</h3><span class="gc-t">▼</span></div>
+            <div class="gc-b"><ol class="steps">
+                <li class="step">ที่แถบเมนูด้านซ้าย ในหมวด "การเงิน" คลิกเมนู <span class="hl">รายรับของฉัน</span></li>
+                <li class="step">คลิกแท็บ <span class="hl">ใบแจ้งหนี้และใบลดหนี้</span> (แท็บที่ 4 ด้านบน)</li>
+                <li class="step">ที่ช่อง "ประเภทใบแจ้งหนี้" เลือก <span class="hl">ผู้ให้บริการใบแจ้งหนี้</span> → ตั้ง <span class="hl">วันที่เริ่มต้น</span> และ <span class="hl">วันที่สิ้นสุด</span> → กด <span class="hl">ค้นหา</span></li>
+                <li class="step">กด <span class="hl">☑ เลือกทั้งหมด</span> (checkbox มุมซ้ายบนของตาราง) เพื่อเลือกทุกรายการ</li>
+                <li class="step">กดปุ่ม <span class="hl">Batch Download</span> สีน้ำเงิน ที่โผล่ขึ้นมาหลังเลือก — ระบบจะดาวน์โหลดไฟล์ PDF ใบแจ้งหนี้ทั้งหมดรวมเป็น ZIP</li>
+            </ol>
+            <div class="fi">
+                <div class="fi-r"><span class="fi-l">📄 ชื่อไฟล์</span><span class="fi-v">invoice_batch_download.zip (รวม PDF หลายไฟล์)</span></div>
+                <div class="fi-r"><span class="fi-l">📑 ประเภท</span><span class="fi-v fi-t">ใบแจ้งหนี้/ใบลดหนี้ (PDF)</span></div>
+                <div class="fi-r"><span class="fi-l">📝 หมายเหตุ</span><span class="fi-v">แต่ละรอบบิลจะมีทั้ง LAZADA และ LEL (Lazada E-Logistics) — ดาวน์โหลดทั้งหมดได้ในครั้งเดียว</span></div>
             </div></div>
         </div>
     </section>
@@ -1246,7 +1264,7 @@ const indicator=document.createElement('div');indicator.className='sb-indicator'
 function moveIndicator(el){if(!el)return;const sb=document.querySelector('.sidebar');const rect=el.getBoundingClientRect();const sbRect=sb.getBoundingClientRect();indicator.style.top=(rect.top-sbRect.top+sb.scrollTop+4)+'px';indicator.classList.add('vis');}
 
 // Sidebar active sub-link on scroll
-const allIds=['tk-1','tk-2','tk-3','tk-4','sp-1','sp-2','sp-3','sp-4','sp-5','lz-1','lz-2','lz-3','pg-orders','pg-income','pg-bank','pg-expense'];
+const allIds=['tk-1','tk-2','tk-3','tk-4','sp-1','sp-2','sp-3','sp-4','sp-5','lz-1','lz-2','lz-3','lz-4','pg-orders','pg-income','pg-bank','pg-expense'];
 const sbObs2=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){document.querySelectorAll('.sb-sub-link,.sb-link').forEach(l=>l.classList.remove('active'));const id=e.target.id;const a=document.querySelector('.sb-sub-link[href="#'+id+'"]')||document.querySelector('.sb-link[href="#'+id+'"]');if(a){a.classList.add('active');moveIndicator(a);}}});},{threshold:0.15,rootMargin:'-80px 0px -50% 0px'});
 allIds.forEach(id=>{const el=document.getElementById(id);if(el)sbObs2.observe(el);});
 
