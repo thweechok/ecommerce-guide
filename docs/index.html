@@ -169,7 +169,6 @@
         .sb-sub-link.active { color:#1a2744; font-weight:600; background:#f0f4ff; border-left-color:#1a2744; }
 
         /* Sidebar sliding indicator */
-        .sidebar { position:sticky; top:72px; align-self:start; }
         .sb-indicator {
             position:absolute; left:0; width:3px; height:24px;
             background:#1a2744; border-radius:0 3px 3px 0;
@@ -218,6 +217,7 @@
         .dark .sub-rec { background:rgba(34,197,94,.15); color:#4ade80; }
         .dark .sec-head h2 { color:#e2e8f0; }
         .dark .sec-head p { color:#64748b; }
+        .dark .sec-head { background:#1e293b; border-color:#334155; }
         .dark .sec-div { background:linear-gradient(90deg,transparent,#334155,transparent); }
         .dark .footer { background:#0f172a; color:#475569; border-color:#1e293b; }
         .dark .btt { background:#334155; color:#e2e8f0; }
@@ -477,7 +477,7 @@
             }
 
             /* Hero */
-            .hero { padding:4.5rem 1.2rem 2.5rem; clip-path:polygon(0 0,100% 0,100% calc(100% - 20px),0 100%); }
+            .hero { padding:1rem 1.2rem 1.2rem; clip-path:polygon(0 0,100% 0,100% calc(100% - 20px),0 100%); }
             .hero h1 { font-size:1.4rem; }
             .hero p { font-size:.85rem; }
             .hero-badge { font-size:.72rem; padding:.3rem .9rem; }
@@ -490,6 +490,8 @@
 
             /* Cards */
             .gc { border-radius:10px; }
+            .sec-head { border-radius:10px 10px 0 0; }
+            .sec-head + .gc { border-radius:0 0 10px 10px; }
             .gc-h { padding:.7rem .8rem; gap:.5rem; }
             .gc-h h3 { font-size:.82rem; }
             .gc-n { width:26px; height:26px; font-size:.7rem; }
@@ -1125,32 +1127,7 @@ function switchLang(lang) {
   if (saved && saved !== 'th') switchLang(saved);
 })();
 
-// Section data for hero title
-const secData={
-    'program':{icon:'💻',title:'วิธีใช้โปรแกรม',desc:'การนำเข้าข้อมูลเข้าสู่ระบบ — 4 ประเภท',titleKey:'pg-title',descKey:'pg-desc'},
-    'tiktok':{icon:'<svg viewBox="0 0 48 48" fill="none" style="width:32px;height:32px;vertical-align:middle"><path d="M33.3 8.2A8.1 8.1 0 0 1 28.1 3h-5.7l-.01 27.7a5.4 5.4 0 1 1-3.7-5.1V19.7a11.2 11.2 0 1 0 9.5 11.1V17.5A14 14 0 0 0 36.3 20v-5.8a8.1 8.1 0 0 1-3-6z" fill="#fff"/></svg>',title:'TikTok Seller Center',desc:'การดึงข้อมูลจาก TikTok Shop — 4 ประเภทรายงาน',titleKey:'tk-title',descKey:'tk-desc'},
-    'shopee':{icon:'🛒',title:'Shopee Seller Centre',desc:'การดึงข้อมูลจาก Shopee — 5 ประเภทรายงาน',titleKey:'sp-title',descKey:'sp-desc'},
-    'lazada':{icon:'🔵',title:'Lazada Seller Center',desc:'การดึงข้อมูลจาก Lazada — 4 ประเภทรายงาน',titleKey:'lz-title',descKey:'lz-desc'}
-};
-function updateHeroTitle(sectionId){
-    // Map card IDs to section IDs
-    let secId=sectionId;
-    if(sectionId.startsWith('pg-'))secId='program';
-    if(sectionId.startsWith('tk-'))secId='tiktok';
-    if(sectionId.startsWith('sp-'))secId='shopee';
-    if(sectionId.startsWith('lz-'))secId='lazada';
-    const d=secData[secId];
-    if(!d)return;
-    document.getElementById('heroSecIcon').innerHTML=d.icon;
-    const nameEl=document.getElementById('heroSecName');
-    const descEl=document.getElementById('heroSecDesc');
-    nameEl.textContent=d.title;
-    nameEl.setAttribute('data-i18n',d.titleKey||'');
-    descEl.textContent=d.desc;
-    descEl.setAttribute('data-i18n',d.descKey||'');
-    // Re-apply language if EN
-    if(localStorage.getItem('lang')==='en')switchLang('en');
-}
+
 
 function tog(h){h.parentElement.classList.toggle('open')}
 
@@ -1178,12 +1155,17 @@ function filterView(targetId){
     const target=document.getElementById(targetId);
     if(!target)return;
     const parentSec=target.closest('section');
+    // Hide other sections + dividers
     document.querySelectorAll('#tiktok,#shopee,#lazada,.pg-sec').forEach(s=>s.classList.toggle('fout',s!==parentSec));
     document.querySelectorAll('.sec-div').forEach(d=>d.classList.add('fout'));
+    // Hide all sec-heads, then show only parent's
+    document.querySelectorAll('.sec-head').forEach(h=>h.classList.add('fout'));
+    const head=parentSec.querySelector('.sec-head');
+    if(head){head.classList.remove('fout');head.classList.add('vis');}
+    // Hide other cards in parent
     parentSec.querySelectorAll('.gc[id]').forEach(c=>c.classList.toggle('fout',c.id!==targetId));
     target.classList.add('open','vis');
     parentSec.classList.add('vis');
-    updateHeroTitle(targetId);
     setTimeout(()=>target.scrollIntoView({behavior:'smooth',block:'start'}),100);
 }
 
@@ -1193,9 +1175,12 @@ function showSection(sectionId){
     if(!sec)return;
     document.querySelectorAll('#tiktok,#shopee,#lazada,.pg-sec').forEach(s=>s.classList.toggle('fout',s!==sec));
     document.querySelectorAll('.sec-div').forEach(d=>d.classList.add('fout'));
+    // Show sec-head for this section only
+    document.querySelectorAll('.sec-head').forEach(h=>h.classList.add('fout'));
+    const head=sec.querySelector('.sec-head');
+    if(head){head.classList.remove('fout');head.classList.add('vis');}
     sec.querySelectorAll('.gc[id]').forEach(c=>{c.classList.remove('fout');c.classList.add('vis');});
     sec.classList.add('vis');
-    updateHeroTitle(sectionId);
     sec.scrollIntoView({behavior:'smooth'});
 }
 
@@ -1219,7 +1204,11 @@ document.querySelectorAll('.anim').forEach(e=>obs.observe(e));
 const b=document.getElementById('btt');
 const nav=document.querySelector('.navbar');
 window.addEventListener('scroll',()=>{b.classList.toggle('show',scrollY>350);nav.classList.toggle('scrolled',scrollY>20);});
-b.addEventListener('click',()=>{document.querySelectorAll('.fout').forEach(el=>el.classList.remove('fout'));window.scrollTo({top:0,behavior:'smooth'});});
+b.addEventListener('click',()=>{
+    document.querySelectorAll('.fout').forEach(el=>el.classList.remove('fout'));
+    document.querySelectorAll('.sb-sub-link,.sb-link').forEach(l=>l.classList.remove('active'));
+    window.scrollTo({top:0,behavior:'smooth'});
+});
 
 // Click handlers for sidebar links
 document.querySelectorAll('.sb-sub-link').forEach(a=>{
@@ -1291,6 +1280,7 @@ document.addEventListener('keydown',e=>{
     }else if(e.key==='Escape'){
         e.preventDefault();
         document.querySelectorAll('.fout').forEach(el=>el.classList.remove('fout'));
+        document.querySelectorAll('.sb-sub-link,.sb-link').forEach(l=>l.classList.remove('active'));
         focusedIdx=-1;
     }
 });
