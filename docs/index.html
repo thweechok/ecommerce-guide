@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="th">
 <head>
     <meta charset="UTF-8">
@@ -56,11 +56,11 @@
             display:flex; align-items:center; gap:.5rem;
         }
         .navbar-brand .nb-icon {
-            background: linear-gradient(135deg, #d4a843, #f0c040);
-            color: #1a2744; width:28px; height:28px; border-radius:6px;
+            width:32px; height:32px; border-radius:6px; overflow:hidden;
             display:flex; align-items:center; justify-content:center;
-            font-size:.85rem; font-weight:800;
+            flex-shrink:0;
         }
+        .navbar-brand .nb-icon img { width:100%; height:100%; object-fit:contain; }
         .navbar-links { display:flex; gap:.3rem; list-style:none; height:100%; }
         .navbar-links li { display:flex; }
         .navbar-links a {
@@ -534,7 +534,7 @@
         <span></span><span></span><span></span>
     </button>
     <a href="#" class="navbar-brand">
-        <div class="nb-icon">BK</div>
+        <div class="nb-icon"><img src="images/bkk-logo.svg" alt="BKKHolding"></div>
         <span data-i18n="nav-brand">คู่มือ BKKHolding</span>
     </a>
     <div class="lang-toggle">
@@ -559,7 +559,7 @@
     <div class="sb-cat" data-i18n="sb-cat-program">💻 วิธีใช้โปรแกรม</div>
     <a href="#pg-orders" class="sb-link"><span class="sb-dot" style="background:#1a2744;"></span><span data-i18n="sb-pg1">คำสั่งซื้อ</span></a>
     <a href="#pg-income" class="sb-link"><span class="sb-dot" style="background:#1a2744;"></span><span data-i18n="sb-pg2">รายรับของฉัน</span></a>
-    <a href="#pg-bank" class="sb-link"><span class="sb-dot" style="background:#1a2744;"></span><span data-i18n="sb-pg3">เงินเข้าธนาคาร</span></a>
+    <a href="#pg-bank" class="sb-link"><span class="sb-dot" style="background:#1a2744;"></span><span data-i18n="sb-pg3">รายการถอน</span></a>
     <a href="#pg-expense" class="sb-link"><span class="sb-dot" style="background:#1a2744;"></span><span data-i18n="sb-pg4">ค่าใช้จ่ายแพลตฟอร์ม</span></a>
     <div class="sb-divider"></div>
     <div class="sb-cat" data-i18n="sb-cat-extract">📥 วิธีดึงข้อมูล</div>
@@ -950,15 +950,15 @@
             </div>
         </div>
 
-        <!-- PG 3: เงินเข้าธนาคาร -->
+        <!-- PG 3: รายการถอน -->
         <div class="gc anim" data-i="3" id="pg-bank">
-            <div class="gc-h" onclick="tog(this)"><div class="gc-n">3</div><h3 data-i18n="pg3-title">นำเข้าข้อมูลเงินเข้าธนาคาร</h3><span class="gc-t">▼</span></div>
+            <div class="gc-h" onclick="tog(this)"><div class="gc-n">3</div><h3 data-i18n="pg3-title">นำเข้ารายการถอน</h3><span class="gc-t">▼</span></div>
             <div class="gc-b">
-                <p style="font-size:.85rem;color:#7a8a9e;margin-bottom:.8rem;" data-i18n="pg3-intro">ที่แถบเมนูด้านซ้าย ในเมนู E-Commerce คลิกเมนู <span class="hl">รับเงินเข้าธนาคาร</span> แล้วกดปุ่ม <span class="hl">รับเงินเข้าธนาคารทั้งหมด</span> สีเขียว แล้วเลือก <span class="hl">นำเข้ารับเงินจากไฟล์</span></p>
+                <p style="font-size:.85rem;color:#7a8a9e;margin-bottom:.8rem;" data-i18n="pg3-intro">ที่แถบเมนูด้านซ้าย ในเมนู E-Commerce คลิกเมนู <span class="hl">รายการถอนเงิน</span> แล้วกดปุ่ม <span class="hl">+ รับเงินแพลตฟอร์ม</span> สีเขียว แล้วเลือก <span class="hl">นำเข้ารับเงินจากไฟล์</span></p>
 
                 <ol class="steps">
-                <li class="step" data-i18n="pg3-s1">ที่แถบเมนูด้านซ้าย ในเมนู E-Commerce คลิกเมนู <span class="hl">รับเงินเข้าธนาคาร</span></li>
-                <li class="step" data-i18n="pg3-s2">กดปุ่ม <span class="hl">รับเงินเข้าธนาคารทั้งหมด</span> (สีเขียว) แล้วเลือก <span class="hl">นำเข้ารับเงินจากไฟล์</span></li>
+                <li class="step" data-i18n="pg3-s1">ที่แถบเมนูด้านซ้าย ในเมนู E-Commerce คลิกเมนู <span class="hl">รายการถอนเงิน</span></li>
+                <li class="step" data-i18n="pg3-s2">กดปุ่ม <span class="hl">+ รับเงินแพลตฟอร์ม</span> (สีเขียว) แล้วเลือก <span class="hl">นำเข้ารับเงินจากไฟล์</span></li>
                 <li class="step" data-i18n="pg3-s3">หน้าต่าง <span class="hl">นำเข้ารายการถอนเงิน</span> จะเด้งขึ้นมา เลือก Platform: <span class="hl">TikTok</span> หรือ <span class="hl">Shopee</span>
                     <ul class="sub-steps">
                         <li class="sub-step" data-n="3.1" data-i18n="pg3-s3a">เลือก <span class="hl">ไฟล์ Excel / PDF</span> — ลากไฟล์มาวาง หรือคลิกเลือกไฟล์ <span class="sub-rec">★ แนะนำ</span></li>
@@ -969,6 +969,62 @@
                 <li class="step" data-i18n="pg3-s5">ตรวจสอบข้อมูล → กด <span class="hl">บันทึก</span></li>
                 <li class="step" data-i18n="pg3-s6">เมื่อเสร็จจะแสดง <span class="hl">เสร็จสิ้น ✅</span></li>
             </ol>
+
+            <!-- ยอดยกมา Guide -->
+            <div style="margin-top:1.5rem; padding:1.2rem; background:linear-gradient(135deg,#fffbeb,#fef3c7); border:1px solid #f59e0b; border-radius:12px;">
+                <h4 style="color:#92400e; margin-bottom:.8rem; font-size:1rem;">💰 วิธีหายอดยกมา (Carry-Forward Balance)</h4>
+                <p style="font-size:.85rem; color:#78350f; margin-bottom:.8rem; line-height:1.7;">
+                    <strong>ยอดยกมา</strong> คือยอด Earnings ของเดือนก่อน ที่ค้างอยู่ในรอบ Withdrawal แรกของเดือนที่ดึงข้อมูล — ต้องใส่เพื่อให้ยอดเงินคงเหลือในกระเป๋าแพลตฟอร์มตรงกับยอดจริง
+                </p>
+
+                <div style="background:#fff; border-radius:8px; padding:1rem; margin-bottom:.8rem; border:1px solid #fde68a;">
+                    <p style="font-size:.82rem; color:#92400e; font-weight:600; margin-bottom:.5rem;">📋 การตัดรอบ Settlement</p>
+                    <p style="font-size:.82rem; color:#78350f; line-height:1.7; margin-bottom:.5rem;">
+                        ข้อมูล Settlement มี 2 ประเภท:<br>
+                        • <strong>Earnings</strong> (+) = ยอดขายสะสมแต่ละวัน<br>
+                        • <strong>Withdrawal</strong> (−) = แพลตฟอร์มโอนเงินเข้าธนาคาร
+                    </p>
+                    <p style="font-size:.82rem; color:#78350f; line-height:1.7;">
+                        Earnings สะสมหลายวัน → ครบรอบ → ถอนเงิน (Withdrawal) เข้าธนาคาร<br>
+                        <strong>Earnings รวม = Withdrawal ของรอบนั้นเสมอ → หักกัน = 0</strong>
+                    </p>
+                </div>
+
+                <div style="background:#fff; border-radius:8px; padding:1rem; margin-bottom:.8rem; border:1px solid #fde68a;">
+                    <p style="font-size:.82rem; color:#92400e; font-weight:600; margin-bottom:.5rem;">📊 ตัวอย่าง 1 รอบ Settlement</p>
+                    <table style="width:100%; font-size:.8rem; border-collapse:collapse; color:#78350f;">
+                        <tr style="background:#fef3c7;"><th style="padding:.4rem .5rem; text-align:left; border-bottom:1px solid #fde68a;">วันที่</th><th style="padding:.4rem .5rem; text-align:left; border-bottom:1px solid #fde68a;">ประเภท</th><th style="padding:.4rem .5rem; text-align:right; border-bottom:1px solid #fde68a;">จำนวนเงิน</th></tr>
+                        <tr><td style="padding:.3rem .5rem;">12 ม.ค.</td><td style="padding:.3rem .5rem;">Withdrawal</td><td style="padding:.3rem .5rem; text-align:right; color:#dc2626; font-weight:600;">−81,376.32</td></tr>
+                        <tr><td style="padding:.3rem .5rem;">12 ม.ค.</td><td style="padding:.3rem .5rem;">Earnings</td><td style="padding:.3rem .5rem; text-align:right; color:#16a34a;">+41,806.40</td></tr>
+                        <tr><td style="padding:.3rem .5rem;">11 ม.ค.</td><td style="padding:.3rem .5rem;">Earnings</td><td style="padding:.3rem .5rem; text-align:right; color:#16a34a;">+20,936.93</td></tr>
+                        <tr><td style="padding:.3rem .5rem;">10 ม.ค.</td><td style="padding:.3rem .5rem;">Earnings</td><td style="padding:.3rem .5rem; text-align:right; color:#16a34a;">+17,306.17</td></tr>
+                        <tr><td style="padding:.3rem .5rem;">9 ม.ค.</td><td style="padding:.3rem .5rem;">Earnings</td><td style="padding:.3rem .5rem; text-align:right; color:#16a34a;">+1,226.82</td></tr>
+                        <tr style="background:#fef3c7; font-weight:700;"><td style="padding:.4rem .5rem;" colspan="2">รวมทั้งรอบ</td><td style="padding:.4rem .5rem; text-align:right; color:#16a34a;">= 0 ✅</td></tr>
+                    </table>
+                </div>
+
+                <div style="background:#fff; border-radius:8px; padding:1rem; border:1px solid #fde68a;">
+                    <p style="font-size:.82rem; color:#92400e; font-weight:600; margin-bottom:.5rem;">🧮 วิธีคำนวณ</p>
+                    <ol style="font-size:.82rem; color:#78350f; line-height:1.8; padding-left:1.2rem;">
+                        <li>เปิดไฟล์ Settlement (แท็บ "บันทึกการถอน")</li>
+                        <li>ดึงข้อมูลตั้งแต่ <strong>ต้นเดือน</strong> (วันที่ 1)</li>
+                        <li>หา <strong>รอบ Withdrawal แรก</strong> ของเดือน</li>
+                        <li>ใช้สูตร <code style="background:#fde68a; padding:0 .3rem; border-radius:3px;">=SUM()</code> รวม Earnings + Withdrawal ของรอบแรก</li>
+                        <li>ผลลัพธ์จะเป็น <strong>ค่าลบ</strong> → เอา <strong>ค่าบวก</strong> ไปใส่ในโปรแกรม</li>
+                    </ol>
+                    <div style="margin-top:.8rem; padding:.6rem; background:#fef3c7; border-radius:6px; font-size:.8rem; color:#92400e; font-family:monospace; line-height:1.6;">
+                        <strong>ตัวอย่าง:</strong><br>
+                        =SUM(รอบแรก) = −6,955.62<br>
+                        <strong>ยอดยกมา = 6,955.62</strong> ← ใส่ค่านี้ในโปรแกรม<br><br>
+                        ✅ ยอดยกมา (+6,955.62) + ข้อมูลเก่า (−6,955.62) = <strong>0</strong>
+                    </div>
+                    <p style="font-size:.78rem; color:#92400e; margin-top:.6rem; line-height:1.6;">
+                        💡 <strong>ทำไมต้องใส่?</strong> เพราะ Withdrawal รอบแรกรวม Earnings จากเดือนก่อน (เช่น ธ.ค.) ที่ไม่มีในไฟล์ ยอดยกมาจะหักล้างส่วนนี้ให้ → ยอดในโปรแกรมจึงตรงกับยอดจริง
+                    </p>
+                    <p style="font-size:.78rem; color:#78350f; margin-top:.4rem;">⚠️ ตั้งค่า <strong>ครั้งแรกเท่านั้น</strong> · ตั้ง <strong>แยกแต่ละแพลตฟอร์ม</strong> · กด "แก้ไข" เพื่อแก้ภายหลังได้</p>
+                </div>
+            </div>
+
             </div>
         </div>
 
@@ -1018,13 +1074,13 @@ const i18n = {
   'sb-tk4':        { th: 'ค่าใช้จ่ายแพลตฟอร์ม', en: 'Platform Expenses' },
   'sb-sp1':        { th: 'คำสั่งซื้อสินค้า', en: 'Product Orders' },
   'sb-sp2':        { th: 'รายรับ', en: 'Income' },
-  'sb-sp3':        { th: 'เงินเข้าธนาคาร', en: 'Bank Deposits' },
+  'sb-sp3':        { th: 'เงินเข้าธนาคาร', en: 'Bank Deposits' },  // Shopee section - keep original name
   'sb-sp4':        { th: 'ค่าใช้จ่ายแพลตฟอร์ม', en: 'Platform Expenses' },
   'sb-sp5':        { th: 'คืนสินค้า/คืนเงิน', en: 'Returns / Refunds' },
   'sb-cat-program':{ th: '💻 วิธีใช้โปรแกรม', en: '💻 Program Guide' },
   'sb-pg1':        { th: 'คำสั่งซื้อ', en: 'Orders' },
   'sb-pg2':        { th: 'รายรับของฉัน', en: 'My Income' },
-  'sb-pg3':        { th: 'เงินเข้าธนาคาร', en: 'Bank Deposits' },
+  'sb-pg3':        { th: 'รายการถอน', en: 'Withdrawals' },
   'sb-pg4':        { th: 'ค่าใช้จ่ายแพลตฟอร์ม', en: 'Platform Expenses' },
 
   // File info labels (shared)
@@ -1134,10 +1190,10 @@ const i18n = {
   'pg2-s5':        { th: 'รอระบบประมวลผล — จะมีแถบ progress bar แสดงความคืบหน้า', en: 'Wait for processing — a progress bar will show the status' },
   'pg2-s6':        { th: 'เมื่อเสร็จจะแสดง <span class="hl">อัปโหลดสำเร็จ ✅</span> พร้อมสรุปผล → กดปุ่ม <span class="hl">เสร็จสิ้น</span>', en: 'When done, <span class="hl">Upload Successful ✅</span> will appear with a summary → click <span class="hl">Done</span>' },
 
-  'pg3-title':     { th: 'นำเข้าข้อมูลเงินเข้าธนาคาร', en: 'Import Bank Deposit Data' },
-  'pg3-intro':     { th: 'ที่แถบเมนูด้านซ้าย ในเมนู E-Commerce คลิกเมนู <span class="hl">รับเงินเข้าธนาคาร</span> แล้วกดปุ่ม <span class="hl">รับเงินเข้าธนาคารทั้งหมด</span> สีเขียว แล้วเลือก <span class="hl">นำเข้ารับเงินจากไฟล์</span>', en: 'In the left sidebar under E-Commerce, click <span class="hl">Bank Deposits</span>, then click the green <span class="hl">All Bank Deposits</span> button and select <span class="hl">Import from File</span>' },
-  'pg3-s1':        { th: 'ที่แถบเมนูด้านซ้าย ในเมนู E-Commerce คลิกเมนู <span class="hl">รับเงินเข้าธนาคาร</span>', en: 'In the left sidebar under E-Commerce, click <span class="hl">Bank Deposits</span>' },
-  'pg3-s2':        { th: 'กดปุ่ม <span class="hl">รับเงินเข้าธนาคารทั้งหมด</span> (สีเขียว) แล้วเลือก <span class="hl">นำเข้ารับเงินจากไฟล์</span>', en: 'Click the green <span class="hl">All Bank Deposits</span> button, then select <span class="hl">Import from File</span>' },
+  'pg3-title':     { th: 'นำเข้ารายการถอน', en: 'Import Withdrawals' },
+  'pg3-intro':     { th: 'ที่แถบเมนูด้านซ้าย ในเมนู E-Commerce คลิกเมนู <span class="hl">รายการถอนเงิน</span> แล้วกดปุ่ม <span class="hl">+ รับเงินแพลตฟอร์ม</span> สีเขียว แล้วเลือก <span class="hl">นำเข้ารับเงินจากไฟล์</span>', en: 'In the left sidebar under E-Commerce, click <span class="hl">Withdrawals</span>, then click the green <span class="hl">+ Platform Payment</span> button and select <span class="hl">Import from File</span>' },
+  'pg3-s1':        { th: 'ที่แถบเมนูด้านซ้าย ในเมนู E-Commerce คลิกเมนู <span class="hl">รายการถอนเงิน</span>', en: 'In the left sidebar under E-Commerce, click <span class="hl">Withdrawals</span>' },
+  'pg3-s2':        { th: 'กดปุ่ม <span class="hl">+ รับเงินแพลตฟอร์ม</span> (สีเขียว) แล้วเลือก <span class="hl">นำเข้ารับเงินจากไฟล์</span>', en: 'Click the green <span class="hl">+ Platform Payment</span> button, then select <span class="hl">Import from File</span>' },
   'pg3-s3':        { th: 'หน้าต่าง <span class="hl">นำเข้ารายการถอนเงิน</span> จะเด้งขึ้นมา เลือก Platform: <span class="hl">TikTok</span> หรือ <span class="hl">Shopee</span>', en: 'The <span class="hl">Import Withdrawal Records</span> dialog will appear. Select Platform: <span class="hl">TikTok</span> or <span class="hl">Shopee</span>' },
   'pg3-s3a':       { th: 'เลือก <span class="hl">ไฟล์ Excel / PDF</span> — ลากไฟล์มาวาง หรือคลิกเลือกไฟล์ <span class="sub-rec">★ แนะนำ</span>', en: 'Select <span class="hl">Excel / PDF File</span> — Drag and drop or click to browse <span class="sub-rec">★ Recommended</span>' },
   'pg3-s3b':       { th: 'เลือก <span class="hl">Google Drive</span> — วาง URL ของ Google Drive Folder', en: 'Select <span class="hl">Google Drive</span> — Paste the Google Drive Folder URL' },
