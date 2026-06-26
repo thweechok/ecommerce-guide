@@ -1032,19 +1032,21 @@
         <div class="gc anim" data-i="4" id="pg-expense">
             <div class="gc-h" onclick="tog(this)"><div class="gc-n">4</div><h3 data-i18n="pg4-title">นำเข้าบิลค่าใช้จ่ายแพลตฟอร์ม</h3><span class="gc-t">▼</span></div>
             <div class="gc-b">
-                <p style="font-size:.85rem;color:#7a8a9e;margin-bottom:.8rem;" data-i18n="pg4-intro">ที่แถบเมนูด้านซ้าย ในเมนู E-Commerce คลิกเมนู <span class="hl">ค่าใช้จ่ายแพลตฟอร์ม</span> แล้วกดปุ่ม <span class="hl">นำเข้าบิลค่าใช้จ่าย</span> สีเขียว</p>
+                <p style="font-size:.85rem;color:#7a8a9e;margin-bottom:.8rem;" data-i18n="pg4-intro">ที่แถบเมนูด้านซ้าย ในเมนู E-Commerce คลิกเมนู <span class="hl">ค่าใช้จ่ายแพลตฟอร์ม</span> แล้วกดปุ่ม <span class="hl">นำเข้าบิลค่าใช้จ่าย</span> สีม่วง</p>
 
                 <ol class="steps">
                 <li class="step" data-i18n="pg4-s1">ที่แถบเมนูด้านซ้าย ในเมนู E-Commerce คลิกเมนู <span class="hl">ค่าใช้จ่ายแพลตฟอร์ม</span></li>
-                <li class="step" data-i18n="pg4-s2">กดปุ่ม <span class="hl">นำเข้าบิลค่าใช้จ่าย</span> (สีเขียว)</li>
+                <li class="step" data-i18n="pg4-s2">กดปุ่ม <span class="hl">นำเข้าบิลค่าใช้จ่าย</span> (สีม่วง) ที่มุมขวาบน</li>
                 <li class="step" data-i18n="pg4-s3">หน้าต่าง <span class="hl">AI Scan บิล</span> จะเด้งขึ้นมา เลือกวิธีนำเข้า (เลือก<strong>วิธีใดวิธีหนึ่ง</strong>):
                     <ul class="sub-steps">
                         <li class="sub-step" data-n="3.1" data-i18n="pg4-s3a">แท็บ <span class="hl">โฟลเดอร์ Drive</span> — วาง URL โฟลเดอร์ที่มีไฟล์ PDF → เลือกแพลตฟอร์ม → กดปุ่ม <span class="hl">สแกน + แม็ปบัญชีอัตโนมัติ</span> <span class="sub-rec">★ แนะนำ</span></li>
-                        <li class="sub-step" data-n="3.2" data-i18n="pg4-s3b">แท็บ <span class="hl">ไฟล์เดี่ยว</span> — ลาก PDF / รูปมาวาง แล้วกด <span class="hl">สแกน</span> หรือ <span class="hl">รับข้อมูลบัญชี</span></li>
+                        <li class="sub-step" data-n="3.2" data-i18n="pg4-s3b">แท็บ <span class="hl">ไฟล์เดี่ยว</span> — ลาก PDF / รูปมาวาง (มีกี่บิลก็ลากมาได้เลย ไม่จำกัดจำนวน)</li>
                     </ul>
                 </li>
-                <li class="step" data-i18n="pg4-s4">รอระบบ AI ประมวลผล</li>
-                <li class="step" data-i18n="pg4-s5">เมื่อเสร็จจะแสดง <span class="hl">เสร็จสิ้น ✅</span></li>
+                <li class="step" data-i18n="pg4-s4">กดปุ่ม <span class="hl">สแกน</span> (สีม่วง) → รอระบบ AI ประมวลผล</li>
+                <li class="step" data-i18n="pg4-s5">เมื่อสแกนเสร็จ ตรวจสอบข้อมูลที่ AI ดึงมา: <span class="hl">เลขที่</span> / <span class="hl">ยอดรวม</span> / <span class="hl">VAT</span> / <span class="hl">WHT</span> — แต่ละไฟล์จะแสดง <span class="hl">เสร็จ ✅</span></li>
+                <li class="step" data-i18n="pg4-s6">กดปุ่ม <span class="hl">ยืนยันลงบัญชี</span> (สีเหลือง)</li>
+                <li class="step" data-i18n="pg4-s7">ระบบแจ้ง <span class="hl">"บันทึก X บิล"</span> → กด <span class="hl">ตกลง</span> ✅</li>
             </ol>
             </div>
         </div>
@@ -1202,14 +1204,16 @@ const i18n = {
   'pg3-s6':        { th: 'เมื่อเสร็จจะแสดง <span class="hl">เสร็จสิ้น ✅</span>', en: 'When done, <span class="hl">Complete ✅</span> will be displayed' },
 
   'pg4-title':     { th: 'นำเข้าบิลค่าใช้จ่ายแพลตฟอร์ม', en: 'Import Platform Expense Bills' },
-  'pg4-intro':     { th: 'ที่แถบเมนูด้านซ้าย ในเมนู E-Commerce คลิกเมนู <span class="hl">ค่าใช้จ่ายแพลตฟอร์ม</span> แล้วกดปุ่ม <span class="hl">นำเข้าบิลค่าใช้จ่าย</span> สีเขียว', en: 'In the left sidebar under E-Commerce, click <span class="hl">Platform Expenses</span>, then click the green <span class="hl">Import Expense Bills</span> button' },
+  'pg4-intro':     { th: 'ที่แถบเมนูด้านซ้าย ในเมนู E-Commerce คลิกเมนู <span class="hl">ค่าใช้จ่ายแพลตฟอร์ม</span> แล้วกดปุ่ม <span class="hl">นำเข้าบิลค่าใช้จ่าย</span> สีม่วง', en: 'In the left sidebar under E-Commerce, click <span class="hl">Platform Expenses</span>, then click the purple <span class="hl">Import Expense Bills</span> button' },
   'pg4-s1':        { th: 'ที่แถบเมนูด้านซ้าย ในเมนู E-Commerce คลิกเมนู <span class="hl">ค่าใช้จ่ายแพลตฟอร์ม</span>', en: 'In the left sidebar under E-Commerce, click <span class="hl">Platform Expenses</span>' },
-  'pg4-s2':        { th: 'กดปุ่ม <span class="hl">นำเข้าบิลค่าใช้จ่าย</span> (สีเขียว)', en: 'Click the green <span class="hl">Import Expense Bills</span> button' },
+  'pg4-s2':        { th: 'กดปุ่ม <span class="hl">นำเข้าบิลค่าใช้จ่าย</span> (สีม่วง) ที่มุมขวาบน', en: 'Click the purple <span class="hl">Import Expense Bills</span> button at the top right' },
   'pg4-s3':        { th: 'หน้าต่าง <span class="hl">AI Scan บิล</span> จะเด้งขึ้นมา เลือกวิธีนำเข้า (เลือก<strong>วิธีใดวิธีหนึ่ง</strong>):', en: 'The <span class="hl">AI Bill Scan</span> dialog will appear. Choose an import method (pick <strong>one</strong>):' },
   'pg4-s3a':       { th: 'แท็บ <span class="hl">โฟลเดอร์ Drive</span> — วาง URL โฟลเดอร์ที่มีไฟล์ PDF → เลือกแพลตฟอร์ม → กดปุ่ม <span class="hl">สแกน + แม็ปบัญชีอัตโนมัติ</span> <span class="sub-rec">★ แนะนำ</span>', en: '<span class="hl">Drive Folder</span> tab — Paste the folder URL with PDF files → select platform → click <span class="hl">Scan + Auto Map Accounts</span> <span class="sub-rec">★ Recommended</span>' },
-  'pg4-s3b':       { th: 'แท็บ <span class="hl">ไฟล์เดี่ยว</span> — ลาก PDF / รูปมาวาง แล้วกด <span class="hl">สแกน</span> หรือ <span class="hl">รับข้อมูลบัญชี</span>', en: '<span class="hl">Single File</span> tab — Drag and drop PDF / image, then click <span class="hl">Scan</span> or <span class="hl">Get Account Data</span>' },
-  'pg4-s4':        { th: 'รอระบบ AI ประมวลผล', en: 'Wait for AI processing' },
-  'pg4-s5':        { th: 'เมื่อเสร็จจะแสดง <span class="hl">เสร็จสิ้น ✅</span>', en: 'When done, <span class="hl">Complete ✅</span> will be displayed' },
+  'pg4-s3b':       { th: 'แท็บ <span class="hl">ไฟล์เดี่ยว</span> — ลาก PDF / รูปมาวาง (มีกี่บิลก็ลากมาได้เลย ไม่จำกัดจำนวน)', en: '<span class="hl">Single File</span> tab — Drag and drop PDF / images (upload as many bills as needed, no limit)' },
+  'pg4-s4':        { th: 'กดปุ่ม <span class="hl">สแกน</span> (สีม่วง) → รอระบบ AI ประมวลผล', en: 'Click the purple <span class="hl">Scan</span> button → wait for AI processing' },
+  'pg4-s5':        { th: 'เมื่อสแกนเสร็จ ตรวจสอบข้อมูลที่ AI ดึงมา: <span class="hl">เลขที่</span> / <span class="hl">ยอดรวม</span> / <span class="hl">VAT</span> / <span class="hl">WHT</span> — แต่ละไฟล์จะแสดง <span class="hl">เสร็จ ✅</span>', en: 'When scan completes, review extracted data: <span class="hl">Receipt No.</span> / <span class="hl">Total</span> / <span class="hl">VAT</span> / <span class="hl">WHT</span> — each file will show <span class="hl">Done ✅</span>' },
+  'pg4-s6':        { th: 'กดปุ่ม <span class="hl">ยืนยันลงบัญชี</span> (สีเหลือง)', en: 'Click the yellow <span class="hl">Confirm & Record</span> button' },
+  'pg4-s7':        { th: 'ระบบแจ้ง <span class="hl">"บันทึก X บิล"</span> → กด <span class="hl">ตกลง</span> ✅', en: 'System confirms <span class="hl">"Recorded X bills"</span> → click <span class="hl">OK</span> ✅' },
 };
 
 function switchLang(lang) {
