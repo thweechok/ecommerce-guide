@@ -1,10 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
-  <rect width="100" height="100" rx="12" fill="#1a2744"/>
-  <!-- B -->
-  <path d="M15 20h18c8 0 14 3 14 10 0 5-3 8-7 9v.5c5 1 9 5 9 11 0 8-7 12-16 12H15V20zm10 16h7c4 0 6-2 6-5s-2-5-6-5h-7v10zm0 18h8c5 0 7-2 7-6s-3-6-7-6h-8v12z" fill="#fff"/>
-  <!-- K with arrow -->
-  <path d="M55 20h10v18l16-18h13L78 38l18 24H83L70 43v19h-10V20z" fill="#fff"/>
-  <!-- Gold arrow/roof -->
-  <path d="M62 75l12-15 12 15" stroke="#d4a843" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M68 75v12h12v-12" stroke="#d4a843" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a2744"/>
+      <stop offset="100%" stop-color="#2d4a7a"/>
+    </linearGradient>
+  </defs>
+  <rect width="120" height="120" rx="16" fill="url(#g)"/>
+  <text x="36" y="78" font-family="Arial,Helvetica,sans-serif" font-weight="900" font-size="62" fill="#ffffff" letter-spacing="-3">BK</text>
+  <path d="M72 88 L84 74 L96 88" stroke="#d4a843" stroke-width="5.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
