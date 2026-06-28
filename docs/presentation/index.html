@@ -3,240 +3,718 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BKKHolding - Pitch Deck</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <title>BKKHolding — โปรแกรมบัญชี E-Commerce อัจฉริยะ</title>
+    <meta name="description" content="BKKHolding โปรแกรมบัญชีสำหรับร้านค้าออนไลน์ นำเข้าออเดอร์ กระทบยอด ปิดงบ ครบจบในโปรแกรมเดียว">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         :root {
             --navy: #1B365D;
+            --navy-dark: #0f2240;
+            --navy-light: #264a7a;
             --gold: #D4A843;
-            --bg-color: #f8fafc;
-            --text-dark: #1e293b;
+            --gold-light: #f0d48a;
+            --bg: #f8fafc;
+            --text: #1e293b;
+            --text-light: #64748b;
+            --white: #ffffff;
+            --success: #22c55e;
+            --danger: #ef4444;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Prompt', sans-serif; }
-        
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-dark);
-            overflow-x: hidden;
-            scroll-behavior: smooth;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Prompt', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
+
+        /* ══════════ NAVBAR ══════════ */
+        .navbar {
+            position: fixed; top: 0; width: 100%; z-index: 1000;
+            background: rgba(255,255,255,0.95); backdrop-filter: blur(20px);
+            padding: 0 60px; height: 70px;
+            display: flex; align-items: center; justify-content: space-between;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            transition: all 0.3s;
+        }
+        .navbar.scrolled { box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+        .nav-brand { font-size: 1.6rem; font-weight: 800; color: var(--navy); text-decoration: none; }
+        .nav-brand span { color: var(--gold); }
+        .nav-links { display: flex; gap: 8px; align-items: center; }
+        .nav-links a {
+            color: var(--text-light); text-decoration: none; font-size: 0.88rem; font-weight: 500;
+            padding: 8px 16px; border-radius: 8px; transition: all 0.2s;
+        }
+        .nav-links a:hover { color: var(--navy); background: #f1f5f9; }
+        .nav-cta {
+            background: var(--gold) !important; color: white !important;
+            font-weight: 600 !important; border-radius: 50px !important;
+            padding: 10px 24px !important;
+            box-shadow: 0 4px 12px rgba(212,168,67,0.3);
+        }
+        .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(212,168,67,0.4); }
+
+        /* ══════════ HERO ══════════ */
+        .hero {
+            min-height: 100vh; display: flex; align-items: center;
+            background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 40%, var(--navy-light) 100%);
+            padding: 120px 60px 80px; position: relative; overflow: hidden;
+        }
+        .hero::before {
+            content: ''; position: absolute; top: -50%; right: -20%; width: 800px; height: 800px;
+            background: radial-gradient(circle, rgba(212,168,67,0.15) 0%, transparent 70%);
+            border-radius: 50%; animation: pulse 8s ease-in-out infinite;
+        }
+        .hero::after {
+            content: ''; position: absolute; bottom: -30%; left: -10%; width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(59,130,246,0.1) 0%, transparent 70%);
+            border-radius: 50%; animation: pulse 10s ease-in-out infinite reverse;
+        }
+        @keyframes pulse { 0%,100% { transform: scale(1); opacity: 0.5; } 50% { transform: scale(1.1); opacity: 1; } }
+
+        .hero-inner { max-width: 1300px; margin: 0 auto; display: flex; align-items: center; gap: 80px; position: relative; z-index: 1; width: 100%; }
+        .hero-text { flex: 1.2; }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(212,168,67,0.15); border: 1px solid rgba(212,168,67,0.3);
+            padding: 6px 18px; border-radius: 50px; font-size: 0.82rem; font-weight: 600;
+            color: var(--gold-light); margin-bottom: 24px;
+        }
+        .hero-badge .dot { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; animation: blink 2s infinite; }
+        @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+        .hero-text h1 { font-size: 3.2rem; font-weight: 800; color: white; line-height: 1.3; margin-bottom: 20px; }
+        .hero-text h1 .gold { color: var(--gold-light); }
+        .hero-text p { font-size: 1.15rem; color: rgba(255,255,255,0.7); line-height: 1.8; margin-bottom: 32px; max-width: 560px; }
+
+        .hero-stats { display: flex; gap: 40px; margin-bottom: 36px; }
+        .hero-stat { text-align: center; }
+        .hero-stat .num { font-size: 2.4rem; font-weight: 800; color: var(--gold-light); }
+        .hero-stat .label { font-size: 0.8rem; color: rgba(255,255,255,0.5); margin-top: 4px; }
+
+        .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+        .btn-primary {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: var(--gold); color: white; padding: 14px 32px;
+            border-radius: 50px; font-size: 1rem; font-weight: 600; text-decoration: none;
+            box-shadow: 0 8px 24px rgba(212,168,67,0.3); transition: all 0.3s;
+        }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(212,168,67,0.4); }
+        .btn-outline {
+            display: inline-flex; align-items: center; gap: 8px;
+            border: 2px solid rgba(255,255,255,0.3); color: white; padding: 12px 32px;
+            border-radius: 50px; font-size: 1rem; font-weight: 500; text-decoration: none; transition: all 0.3s;
+        }
+        .btn-outline:hover { border-color: white; background: rgba(255,255,255,0.1); }
+
+        .hero-visual { flex: 1; display: flex; justify-content: center; }
+        .hero-visual img { max-height: 520px; object-fit: contain; filter: drop-shadow(0 20px 40px rgba(0,0,0,0.3)); }
+
+        .hero-platforms {
+            display: flex; gap: 16px; margin-top: 24px;
+        }
+        .platform-chip {
+            display: flex; align-items: center; gap: 6px;
+            background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15);
+            padding: 8px 16px; border-radius: 50px; font-size: 0.82rem; color: white; font-weight: 500;
         }
 
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0; width: 100%;
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            padding: 20px 50px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        /* ══════════ SECTIONS ══════════ */
+        section { padding: 100px 60px; }
+        .section-inner { max-width: 1200px; margin: 0 auto; }
+        .section-label {
+            display: inline-flex; align-items: center; gap: 8px;
+            font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px;
+            color: var(--gold); margin-bottom: 12px;
         }
-        nav h2 { color: var(--navy); font-weight: 800; font-size: 1.8rem; }
-        nav h2 span { color: var(--gold); }
+        .section-title { font-size: 2.6rem; font-weight: 800; color: var(--navy); line-height: 1.3; margin-bottom: 16px; }
+        .section-title .gold { color: var(--gold); }
+        .section-desc { font-size: 1.1rem; color: var(--text-light); line-height: 1.8; max-width: 700px; margin-bottom: 48px; }
 
-        /* Sections */
-        section {
-            min-height: 100vh;
-            padding: 100px 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
+        .bg-navy { background: linear-gradient(135deg, var(--navy-dark), var(--navy)); }
+        .bg-navy .section-title { color: white; }
+        .bg-navy .section-desc { color: rgba(255,255,255,0.6); }
+        .bg-navy .section-label { color: var(--gold-light); }
+        .bg-light { background: #f1f5f9; }
+
+        /* ══════════ PAIN POINTS ══════════ */
+        .pain-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .pain-card {
+            background: white; border: 1px solid #e2e8f0; border-radius: 16px;
+            padding: 32px; transition: all 0.3s; position: relative; overflow: hidden;
+        }
+        .pain-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); border-color: var(--danger); }
+        .pain-card .icon {
+            width: 52px; height: 52px; border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.4rem; margin-bottom: 20px;
+            background: #fef2f2; color: var(--danger);
+        }
+        .pain-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; color: var(--navy); }
+        .pain-card p { font-size: 0.9rem; color: var(--text-light); line-height: 1.7; }
+
+        /* ══════════ FEATURE ROWS ══════════ */
+        .feature-row {
+            display: flex; align-items: center; gap: 80px;
+            padding: 60px 0;
+        }
+        .feature-row.reverse { flex-direction: row-reverse; }
+        .feature-text { flex: 1; }
+        .feature-visual { flex: 1; }
+        .feature-visual img {
+            width: 100%; border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+            transition: transform 0.3s;
+        }
+        .feature-visual img:hover { transform: scale(1.02); }
+
+        .feature-tag {
+            display: inline-block; font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 1px; padding: 4px 12px; border-radius: 50px; margin-bottom: 16px;
+        }
+        .tag-tiktok { background: #fff0f3; color: #FE2C55; }
+        .tag-shopee { background: #fff3ee; color: #EE4D2D; }
+        .tag-lazada { background: #eef0ff; color: #0F146D; }
+        .tag-ai { background: #f0fdf4; color: #16a34a; }
+        .tag-auto { background: #fefce8; color: #ca8a04; }
+
+        .feature-text h2 { font-size: 2rem; font-weight: 800; color: var(--navy); line-height: 1.3; margin-bottom: 16px; }
+        .feature-text h2 .gold { color: var(--gold); }
+        .bg-navy .feature-text h2 { color: white; }
+        .feature-text > p { font-size: 1rem; color: var(--text-light); line-height: 1.8; margin-bottom: 24px; }
+        .bg-navy .feature-text > p { color: rgba(255,255,255,0.6); }
+
+        .feature-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+        .feature-list li {
+            display: flex; align-items: flex-start; gap: 12px;
+            font-size: 0.92rem; color: var(--text); line-height: 1.6;
+        }
+        .bg-navy .feature-list li { color: rgba(255,255,255,0.8); }
+        .feature-list li .check {
+            width: 22px; height: 22px; min-width: 22px; border-radius: 50%;
+            background: linear-gradient(135deg, var(--gold), #e8b84a);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.65rem; color: white; margin-top: 2px;
         }
 
-        .container {
-            max-width: 1200px;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            gap: 50px;
+        /* ══════════ PROCESS / WORKFLOW ══════════ */
+        .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 48px; }
+        .process-card {
+            background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 16px; padding: 32px 24px; text-align: center;
+            transition: all 0.3s; position: relative;
+        }
+        .process-card:hover { background: rgba(255,255,255,0.12); transform: translateY(-4px); }
+        .process-card .step-num {
+            width: 40px; height: 40px; border-radius: 50%;
+            background: var(--gold); color: white; font-weight: 800; font-size: 1rem;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 16px;
+        }
+        .process-card .step-icon { font-size: 2rem; margin-bottom: 12px; }
+        .process-card h3 { font-size: 1rem; font-weight: 700; color: white; margin-bottom: 8px; }
+        .process-card p { font-size: 0.82rem; color: rgba(255,255,255,0.55); line-height: 1.6; }
+        .process-arrow {
+            position: absolute; right: -20px; top: 50%; transform: translateY(-50%);
+            color: var(--gold); font-size: 1.2rem; z-index: 2;
         }
 
-        /* Text Content */
-        .content { flex: 1; }
-        .content h1 {
-            font-size: 3.5rem;
-            color: var(--navy);
-            line-height: 1.2;
-            margin-bottom: 20px;
+        /* ══════════ COMPARISON TABLE ══════════ */
+        .compare-table {
+            width: 100%; border-collapse: separate; border-spacing: 0;
+            background: white; border-radius: 16px; overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.06);
         }
-        .content h1 span { color: var(--gold); }
-        .content p {
-            font-size: 1.2rem;
-            color: #475569;
-            line-height: 1.8;
-            margin-bottom: 30px;
+        .compare-table th {
+            background: var(--navy); color: white; padding: 18px 24px;
+            font-size: 0.9rem; font-weight: 600; text-align: left;
+        }
+        .compare-table th:first-child { border-radius: 16px 0 0 0; }
+        .compare-table th:last-child { border-radius: 0 16px 0 0; background: var(--gold); }
+        .compare-table td {
+            padding: 16px 24px; border-bottom: 1px solid #f1f5f9;
+            font-size: 0.88rem; color: var(--text);
+        }
+        .compare-table tr:last-child td { border-bottom: none; }
+        .compare-table td:last-child { background: #fffbeb; font-weight: 600; color: var(--navy); }
+        .compare-table .yes { color: var(--success); font-weight: 700; }
+        .compare-table .no { color: var(--danger); }
+
+        /* ══════════ STATS ROW ══════════ */
+        .stats-row { display: flex; justify-content: center; gap: 60px; padding: 60px 0; flex-wrap: wrap; }
+        .stat-item { text-align: center; }
+        .stat-item .stat-num {
+            font-size: 3rem; font-weight: 900; color: var(--gold);
+            background: linear-gradient(135deg, var(--gold), #e8b84a);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .stat-item .stat-label { font-size: 0.9rem; color: var(--text-light); margin-top: 4px; }
+
+        /* ══════════ CTA ══════════ */
+        .cta-section {
+            background: linear-gradient(135deg, var(--navy-dark), var(--navy));
+            text-align: center; padding: 100px 60px;
+        }
+        .cta-section h2 { font-size: 2.8rem; font-weight: 800; color: white; margin-bottom: 16px; }
+        .cta-section h2 .gold { color: var(--gold-light); }
+        .cta-section p { font-size: 1.1rem; color: rgba(255,255,255,0.6); margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+        /* ══════════ FOOTER ══════════ */
+        .footer {
+            background: var(--navy-dark); padding: 40px 60px; text-align: center;
+            color: rgba(255,255,255,0.4); font-size: 0.82rem;
+            border-top: 1px solid rgba(255,255,255,0.08);
         }
 
-        /* Image Content */
-        .visual {
-            flex: 1;
-            position: relative;
-            display: flex;
-            justify-content: center;
-        }
-        .visual img {
-            max-width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            transition: transform 0.3s ease;
-        }
-        .visual img:hover {
-            transform: translateY(-10px);
-        }
-
-        /* Alternating Layout */
-        .reverse { flex-direction: row-reverse; }
-        .bg-navy { background-color: var(--navy); color: white; }
-        .bg-navy .content h1 { color: white; }
-        .bg-navy .content p { color: #cbd5e0; }
-
-        /* Feature List */
-        .feature-box {
-            background: white;
-            padding: 30px;
-            border-radius: 16px;
-            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
-            border-left: 5px solid var(--gold);
-        }
-        .bg-navy .feature-box { background: rgba(255,255,255,0.1); color: white; border-color: var(--gold); box-shadow: none;}
-        .feature-box h3 { font-size: 1.4rem; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
-        .feature-box h3 i { color: var(--gold); }
-
-        /* Animations */
-        .fade-up { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        /* ══════════ ANIMATIONS ══════════ */
+        .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
         .fade-up.visible { opacity: 1; transform: translateY(0); }
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+        .delay-4 { transition-delay: 0.4s; }
 
-        /* CTA */
-        .btn {
-            display: inline-block;
-            padding: 15px 40px;
-            background: var(--gold);
-            color: white;
-            text-decoration: none;
-            font-size: 1.2rem;
-            font-weight: 600;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 20px rgba(212, 168, 67, 0.3);
+        /* ══════════ DIVIDER ══════════ */
+        .section-divider { height: 1px; background: linear-gradient(90deg, transparent, #e2e8f0, transparent); margin: 0; }
+
+        /* ══════════ RESPONSIVE ══════════ */
+        @media (max-width: 900px) {
+            .navbar { padding: 0 20px; }
+            .nav-links { display: none; }
+            section { padding: 60px 20px; }
+            .hero { padding: 100px 20px 60px; }
+            .hero-inner { flex-direction: column; gap: 40px; text-align: center; }
+            .hero-text h1 { font-size: 2rem; }
+            .hero-text p { max-width: 100%; }
+            .hero-stats { justify-content: center; }
+            .hero-btns { justify-content: center; }
+            .hero-platforms { justify-content: center; flex-wrap: wrap; }
+            .hero-visual img { max-height: 300px; }
+            .pain-grid { grid-template-columns: 1fr; }
+            .feature-row, .feature-row.reverse { flex-direction: column; gap: 32px; }
+            .process-grid { grid-template-columns: repeat(2, 1fr); }
+            .process-arrow { display: none; }
+            .section-title { font-size: 1.8rem; }
+            .compare-table { font-size: 0.78rem; }
+            .compare-table th, .compare-table td { padding: 10px 12px; }
+            .stats-row { gap: 30px; }
+            .stat-item .stat-num { font-size: 2.2rem; }
+            .cta-section h2 { font-size: 2rem; }
         }
-        .btn:hover { transform: translateY(-3px); box-shadow: 0 15px 25px rgba(212, 168, 67, 0.4); }
-
     </style>
 </head>
 <body>
 
-    <nav>
-        <h2>BKK<span>Holding</span></h2>
-        <a href="#demo" class="btn" style="padding: 10px 25px; font-size: 1rem;">ทดลองใช้ฟรี</a>
-    </nav>
+<!-- ══════════ NAVBAR ══════════ -->
+<nav class="navbar" id="navbar">
+    <a href="#" class="nav-brand">BKK<span>Holding</span></a>
+    <div class="nav-links">
+        <a href="#pain">ปัญหา</a>
+        <a href="#platform">แพลตฟอร์ม</a>
+        <a href="#workflow">วิธีทำงาน</a>
+        <a href="#features">ฟีเจอร์</a>
+        <a href="#compare">เปรียบเทียบ</a>
+        <a href="#contact" class="nav-cta">ทดลองใช้ฟรี</a>
+    </div>
+</nav>
 
-    <!-- Slide 1: Hero -->
-    <section id="hero">
-        <div class="container">
-            <div class="content fade-up">
-                <h1>จัดการบัญชีร้านออนไลน์<br>ให้เป็นเรื่อง <span>ง่ายสุดๆ</span></h1>
-                <p>บอกลาการคีย์ข้อมูลด้วยมือและการกระทบยอดที่ไม่ตรงกัน BKKHolding เชื่อมต่อ TikTok Shop, Shopee และ Lazada พร้อม AI สแกนบิล ช่วยคุณปิดงบได้ง่ายกว่าที่เคย</p>
-                <div class="feature-box">
-                    <h3><i class="fa-solid fa-bolt"></i> ประหยัดเวลา 80%</h3>
-                    <p style="margin-bottom:0; font-size:1rem;">ระบบดึงข้อมูลและจัดการสมุดรายวันอัตโนมัติ</p>
+<!-- ══════════ HERO ══════════ -->
+<section class="hero" id="hero">
+    <div class="hero-inner">
+        <div class="hero-text fade-up">
+            <div class="hero-badge"><div class="dot"></div> Fintech Accounting Software</div>
+            <h1>จัดการบัญชี<br><span class="gold">ร้านค้าออนไลน์</span><br>ให้เป็นเรื่องง่าย</h1>
+            <p>โปรแกรมบัญชีที่ออกแบบมาเพื่อธุรกิจ E-Commerce โดยเฉพาะ นำเข้าคำสั่งซื้อจาก TikTok Shop, Shopee และ Lazada ได้ในคลิกเดียว พร้อมกระทบยอด Settlement อัตโนมัติ และ AI สแกนบิลค่าใช้จ่าย ช่วยให้คุณปิดงบได้เร็วขึ้น 80%</p>
+
+            <div class="hero-stats">
+                <div class="hero-stat fade-up delay-1">
+                    <div class="num">80%</div>
+                    <div class="label">ลดเวลาทำงาน</div>
+                </div>
+                <div class="hero-stat fade-up delay-2">
+                    <div class="num">3</div>
+                    <div class="label">แพลตฟอร์มรองรับ</div>
+                </div>
+                <div class="hero-stat fade-up delay-3">
+                    <div class="num">0</div>
+                    <div class="label">ข้อผิดพลาด</div>
                 </div>
             </div>
-            <div class="visual fade-up" style="transition-delay: 0.2s;">
-                <img src="./assets/mascot.png" alt="Mascot" style="max-height: 600px; object-fit: contain; box-shadow: none;">
+
+            <div class="hero-btns fade-up delay-2">
+                <a href="#contact" class="btn-primary"><i class="fa-solid fa-rocket"></i> เริ่มใช้งานฟรี</a>
+                <a href="#workflow" class="btn-outline"><i class="fa-solid fa-play"></i> ดูวิธีทำงาน</a>
+            </div>
+
+            <div class="hero-platforms fade-up delay-3">
+                <div class="platform-chip"><i class="fa-brands fa-tiktok"></i> TikTok Shop</div>
+                <div class="platform-chip"><i class="fa-solid fa-store"></i> Shopee</div>
+                <div class="platform-chip"><i class="fa-solid fa-bag-shopping"></i> Lazada</div>
             </div>
         </div>
-    </section>
+        <div class="hero-visual fade-up delay-2">
+            <img src="./assets/mascot.png" alt="BKKHolding Mascot">
+        </div>
+    </div>
+</section>
 
-    <!-- Slide 2: Platform Integration -->
-    <section class="bg-navy">
-        <div class="container reverse">
-            <div class="content fade-up">
-                <h1>ดึงข้อมูลจากแพลตฟอร์ม<br><span>แบบอัตโนมัติ</span></h1>
-                <p>เราเตรียมระบบคู่มือและการตั้งค่าที่เชื่อมต่อกับแพลตฟอร์มหลัก เพื่อดึงข้อมูลคำสั่งซื้อและรายรับเข้ามาในระบบแบบไม่ตกหล่น</p>
-                
-                <div class="feature-box">
-                    <h3><i class="fa-brands fa-tiktok"></i> นำเข้าคำสั่งซื้อ TikTok Shop</h3>
-                    <p style="margin-bottom:0; font-size:1rem; color: #fff;">ระบบดึงข้อมูล Order นับพันรายการมาจัดเรียงในพริบตา พร้อมออกใบแจ้งหนี้ให้อัตโนมัติ</p>
-                </div>
+<!-- ══════════ STATS BAR ══════════ -->
+<div class="bg-light">
+    <div class="stats-row">
+        <div class="stat-item fade-up">
+            <div class="stat-num">10,000+</div>
+            <div class="stat-label">ออเดอร์นำเข้าต่อวัน</div>
+        </div>
+        <div class="stat-item fade-up delay-1">
+            <div class="stat-num">99.9%</div>
+            <div class="stat-label">ความแม่นยำในการกระทบยอด</div>
+        </div>
+        <div class="stat-item fade-up delay-2">
+            <div class="stat-num">5 นาที</div>
+            <div class="stat-label">เวลาเฉลี่ยปิดงบรายเดือน</div>
+        </div>
+        <div class="stat-item fade-up delay-3">
+            <div class="stat-num">24/7</div>
+            <div class="stat-label">ทีมซัพพอร์ตพร้อมช่วยเหลือ</div>
+        </div>
+    </div>
+</div>
+
+<!-- ══════════ PAIN POINTS ══════════ -->
+<section id="pain">
+    <div class="section-inner">
+        <div class="section-label fade-up"><i class="fa-solid fa-triangle-exclamation"></i> ปัญหาที่พบบ่อย</div>
+        <h2 class="section-title fade-up">ร้านค้าออนไลน์ส่วนใหญ่<br><span class="gold">กำลังเจอปัญหาเหล่านี้</span></h2>
+        <p class="section-desc fade-up">ยิ่งยอดขายโต ภาระงานบัญชีก็ยิ่งเพิ่มทวีคูณ หลายร้านค้าเสียเวลาหลายชั่วโมงต่อวันกับงานที่ระบบทำแทนได้</p>
+
+        <div class="pain-grid">
+            <div class="pain-card fade-up">
+                <div class="icon"><i class="fa-solid fa-keyboard"></i></div>
+                <h3>คีย์ข้อมูลด้วยมือทีละรายการ</h3>
+                <p>มีออเดอร์วันละหลายร้อยรายการจากหลายแพลตฟอร์ม ต้องเปิดแต่ละเว็บมาคัดลอกข้อมูลทีละรายการเข้า Excel หรือโปรแกรมบัญชี เสียเวลามหาศาลและมีโอกาสผิดพลาดสูง</p>
             </div>
-            <div class="visual fade-up" style="transition-delay: 0.2s;">
-                <img src="./assets/tiktok_guide.png" alt="TikTok Guide">
+            <div class="pain-card fade-up delay-1">
+                <div class="icon"><i class="fa-solid fa-money-bill-transfer"></i></div>
+                <h3>กระทบยอดเงินไม่ตรง</h3>
+                <p>ยอดขายหน้าแพลตฟอร์มกับเงินที่โอนเข้าธนาคารไม่ตรงกัน เพราะถูกหักค่าธรรมเนียม ค่าโปรโมชั่น ค่าส่ง และค่า GP ต่างๆ ทำให้ตรวจสอบยากว่าเงินหายไปไหน</p>
+            </div>
+            <div class="pain-card fade-up delay-2">
+                <div class="icon"><i class="fa-solid fa-receipt"></i></div>
+                <h3>ค่าธรรมเนียมซ่อนอยู่ — ไม่ได้หักภาษี</h3>
+                <p>ค่าคอมมิชชั่น ค่าโฆษณา ค่า Affiliate ค่าบรรจุภัณฑ์ ฯลฯ กระจายอยู่ในรายงานหลายแท็บ ทำให้พลาดไม่ได้นำมาตั้งเป็นค่าใช้จ่ายเพื่อลดหย่อนภาษี เท่ากับเสียเงินฟรี</p>
+            </div>
+            <div class="pain-card fade-up">
+                <div class="icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
+                <h3>ปิดงบช้า — ข้อมูลไม่ทันเวลา</h3>
+                <p>เนื่องจากต้องรอรวบรวมข้อมูลจากหลายแหล่ง การปิดงบแต่ละเดือนกินเวลาหลายวัน ทำให้เจ้าของกิจการไม่เห็นตัวเลขกำไร-ขาดทุนจริงของแต่ละเดือนจนกว่าจะสายเกินแก้ไข</p>
+            </div>
+            <div class="pain-card fade-up delay-1">
+                <div class="icon"><i class="fa-solid fa-people-arrows"></i></div>
+                <h3>ต้องจ้างพนักงานบัญชีหลายคน</h3>
+                <p>ร้านค้าที่มีหลายแพลตฟอร์มต้องจ้างพนักงานบัญชีเพิ่มเพื่อรับมือกับปริมาณข้อมูล ต้นทุนเงินเดือนสูงขึ้นแต่ประสิทธิภาพไม่ได้ดีขึ้น เพราะยังใช้วิธีทำงานแบบเดิม</p>
+            </div>
+            <div class="pain-card fade-up delay-2">
+                <div class="icon"><i class="fa-solid fa-undo"></i></div>
+                <h3>การคืนสินค้า/คืนเงินยุ่งเหยิง</h3>
+                <p>ออเดอร์ที่ถูกยกเลิกหรือคืนสินค้า ต้องกลับไปแก้ไขรายการบัญชีด้วยมือ ถ้าตกหล่นจะทำให้ยอดขายและภาษีขายไม่ถูกต้อง ส่งผลกระทบต่อการยื่นภาษีทั้งระบบ</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Slide 3: Revenue -->
-    <section>
-        <div class="container">
-            <div class="content fade-up">
-                <h1>กระทบยอด <span>Settlement</span><br>หมดปัญหาเงินหาย</h1>
-                <p>ไม่ต้องปวดหัวกับการเช็คยอดเงินที่โอนเข้าธนาคารว่าตรงกับยอดขายหรือไม่ ระบบของเรามีฟีเจอร์ Auto Reconciliation ช่วยจับคู่ให้ทันที</p>
-                
-                <div class="feature-box">
-                    <h3><i class="fa-solid fa-wallet"></i> ตรวจสอบรายรับจาก Lazada & Shopee</h3>
-                    <p style="margin-bottom:0; font-size:1rem;">เราดึงข้อมูล Settlement มาตั้งรอไว้ เมื่อเงินเข้าธนาคาร ระบบจะตัดยอดให้ตรงกันร้อยเปอร์เซ็นต์</p>
-                </div>
+<div class="section-divider"></div>
+
+<!-- ══════════ WORKFLOW ══════════ -->
+<section class="bg-navy" id="workflow">
+    <div class="section-inner" style="text-align: center;">
+        <div class="section-label fade-up"><i class="fa-solid fa-gears"></i> วิธีทำงาน</div>
+        <h2 class="section-title fade-up">จากออเดอร์สู่งบการเงิน<br><span class="gold">เพียง 4 ขั้นตอน</span></h2>
+        <p class="section-desc fade-up" style="margin-left: auto; margin-right: auto;">BKKHolding จะทำงานแทนคุณตั้งแต่ขั้นตอนแรกจนถึงขั้นตอนสุดท้าย ลดการทำงานซ้ำซ้อน และป้องกันข้อผิดพลาดจากการคีย์ข้อมูลด้วยมือ</p>
+
+        <div class="process-grid">
+            <div class="process-card fade-up" style="position: relative;">
+                <div class="step-num">1</div>
+                <div class="step-icon">📥</div>
+                <h3>ดาวน์โหลดไฟล์</h3>
+                <p>ดาวน์โหลดไฟล์คำสั่งซื้อ รายรับ และค่าธรรมเนียมจาก TikTok Shop, Shopee, Lazada ตามคู่มือที่เราเตรียมไว้ให้</p>
+                <div class="process-arrow"><i class="fa-solid fa-chevron-right"></i></div>
             </div>
-            <div class="visual fade-up" style="transition-delay: 0.2s;">
-                <img src="./assets/lazada_guide.png" alt="Lazada Guide">
+            <div class="process-card fade-up delay-1" style="position: relative;">
+                <div class="step-num">2</div>
+                <div class="step-icon">⚡</div>
+                <h3>นำเข้าข้อมูลอัตโนมัติ</h3>
+                <p>อัปโหลดไฟล์เข้า BKKHolding ระบบจะอ่านข้อมูล แยกประเภท จัดเรียง และสร้างรายการบัญชีให้อัตโนมัติ ไม่ต้องคีย์เอง</p>
+                <div class="process-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+            </div>
+            <div class="process-card fade-up delay-2" style="position: relative;">
+                <div class="step-num">3</div>
+                <div class="step-icon">🔍</div>
+                <h3>กระทบยอด Settlement</h3>
+                <p>ระบบจับคู่ยอดขายกับเงินที่โอนเข้าธนาคารอัตโนมัติ ตรวจสอบค่าธรรมเนียมที่ถูกหัก แจ้งเตือนถ้าตัวเลขไม่ตรง</p>
+                <div class="process-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+            </div>
+            <div class="process-card fade-up delay-3">
+                <div class="step-num">4</div>
+                <div class="step-icon">📊</div>
+                <h3>ออกรายงาน & ปิดงบ</h3>
+                <p>ระบบสร้างสมุดรายวัน รายงานภาษีซื้อ-ขาย งบกำไรขาดทุน และงบดุลให้อัตโนมัติ พร้อมส่งออกไฟล์ให้สรรพากรได้ทันที</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Slide 4: AI & Platform Fee -->
-    <section class="bg-navy">
-        <div class="container reverse">
-            <div class="content fade-up">
-                <h1>ดึง <span>ค่าธรรมเนียมแพลตฟอร์ม</span><br>มาหักภาษีได้ครบ</h1>
-                <p>ค่าใช้จ่ายแอบแฝงบนแพลตฟอร์ม หรือบิลค่าใช้จ่ายทั่วไป จัดการได้ง่ายๆ ด้วยเทคโนโลยีอัจฉริยะ</p>
-                
-                <div class="feature-box">
-                    <h3><i class="fa-solid fa-robot"></i> AI OCR Scan</h3>
-                    <p style="margin-bottom:0; font-size:1rem; color:#fff;">แค่อัปโหลดไฟล์บิล PDF ระบบ AI จะสแกนข้อมูลและตั้งหนี้ให้อัตโนมัติ</p>
-                </div>
-                <div class="feature-box">
-                    <h3><i class="fa-solid fa-chart-pie"></i> ไม่พลาดทุกค่าธรรมเนียม</h3>
-                    <p style="margin-bottom:0; font-size:1rem; color:#fff;">ดึงค่าธรรมเนียมแพลตฟอร์มมาตั้งเป็นค่าใช้จ่ายอัตโนมัติ ช่วยลดหย่อนภาษีได้เต็มเม็ดเต็มหน่วย</p>
-                </div>
+<!-- ══════════ FEATURE 1: IMPORT ══════════ -->
+<section id="platform">
+    <div class="section-inner">
+        <div class="feature-row">
+            <div class="feature-text fade-up">
+                <div class="feature-tag tag-tiktok">TikTok Shop</div>
+                <h2>นำเข้าคำสั่งซื้อจาก<br><span class="gold">TikTok Shop</span></h2>
+                <p>ดึงข้อมูลคำสั่งซื้อจาก TikTok Seller Center มาเข้าระบบได้ในคลิกเดียว ไม่ว่าจะมีกี่พันออเดอร์ ระบบจะจัดเรียงและสร้างรายการบัญชีให้อัตโนมัติ</p>
+                <ul class="feature-list">
+                    <li><span class="check"><i class="fa-solid fa-check"></i></span> นำเข้าคำสั่งซื้อเป็นกลุ่ม รองรับหลักพันรายการต่อครั้ง</li>
+                    <li><span class="check"><i class="fa-solid fa-check"></i></span> แยกประเภทรายการอัตโนมัติ — ยอดขาย, ค่าส่ง, ส่วนลด, Voucher</li>
+                    <li><span class="check"><i class="fa-solid fa-check"></i></span> ออกใบแจ้งหนี้ / ใบกำกับภาษี ให้อัตโนมัติ ถูกต้องตามกฎหมาย</li>
+                    <li><span class="check"><i class="fa-solid fa-check"></i></span> รองรับทั้งภาษาไทยและอังกฤษ สร้างรายงานได้ทั้ง 2 ภาษา</li>
+                    <li><span class="check"><i class="fa-solid fa-check"></i></span> จัดการออเดอร์ที่ถูกยกเลิก/คืนสินค้า พร้อมปรับรายการบัญชีอัตโนมัติ</li>
+                </ul>
             </div>
-            <div class="visual fade-up" style="transition-delay: 0.2s;">
-                <img src="./assets/shopee_guide.png" alt="Shopee Guide">
+            <div class="feature-visual fade-up delay-2">
+                <img src="./assets/tiktok_guide.png" alt="วิธีดาวน์โหลดข้อมูลคำสั่งซื้อ TikTok">
             </div>
         </div>
-    </section>
 
-    <!-- Slide 5: CTA -->
-    <section id="demo" style="text-align: center; display: block; padding-top: 150px;">
-        <div class="fade-up">
-            <h1 style="font-size: 3rem; color: var(--navy); margin-bottom: 20px;">เปลี่ยนเรื่องบัญชีให้เป็น<span style="color: var(--gold);">เรื่องง่าย</span></h1>
-            <p style="font-size: 1.2rem; color: #475569; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;">จบปัญหางานบัญชีกองโต ให้ BKKHolding จัดการงานเอกสารแทนคุณ เพื่อให้คุณมีเวลาโฟกัสกับการเพิ่มยอดขายได้เต็มที่</p>
-            <a href="https://bkkholding.com" class="btn">ทดลองใช้งานฟรีวันนี้</a>
+        <div class="section-divider"></div>
+
+        <!-- FEATURE 2: SETTLEMENT -->
+        <div class="feature-row reverse">
+            <div class="feature-text fade-up">
+                <div class="feature-tag tag-lazada">Settlement & Reconciliation</div>
+                <h2>กระทบยอด <span class="gold">Settlement</span><br>หมดปัญหาเงินหาย</h2>
+                <p>ระบบ Auto Reconciliation ช่วยจับคู่ยอดขายกับเงินที่โอนเข้าบัญชีธนาคาร ตรวจสอบค่าธรรมเนียมที่ถูกหัก อธิบายได้ว่าเงินหายไปไหนทุกบาททุกสตางค์</p>
+                <ul class="feature-list">
+                    <li><span class="check"><i class="fa-solid fa-check"></i></span> ดึงข้อมูลรายรับ (Income Statement) จากทุกแพลตฟอร์ม</li>
+                    <li><span class="check"><i class="fa-solid fa-check"></i></span> จับคู่กับ Bank Statement — แสดงผลว่ายอดใดตรง ยอดใดยังค้าง</li>
+                    <li><span class="check"><i class="fa-solid fa-check"></i></span> แยกรายละเอียดค่าธรรมเนียม — ค่า GP, ค่าโปรฯ, ค่าส่ง, VAT แต่ละรายการ</li>
+                    <li><span class="check"><i class="fa-solid fa-check"></i></span> แจ้งเตือนอัตโนมัติเมื่อพบยอดที่ไม่ตรงกัน ป้องกันเงินรั่วไหล</li>
+                    <li><span class="check"><i class="fa-solid fa-check"></i></span> สร้างรายงาน Reconciliation สรุปรายเดือนพร้อมส่งออก PDF/Excel</li>
+                </ul>
+            </div>
+            <div class="feature-visual fade-up delay-2">
+                <img src="./assets/lazada_guide.png" alt="วิธีดาวน์โหลดข้อมูลรายรับ Lazada">
+            </div>
         </div>
-    </section>
 
-    <script>
-        // Intersection Observer for scroll animations
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
+        <div class="section-divider"></div>
 
-        document.querySelectorAll('.fade-up').forEach((el) => {
-            observer.observe(el);
+        <!-- FEATURE 3: PLATFORM FEE -->
+        <div class="feature-row">
+            <div class="feature-text fade-up">
+                <div class="feature-tag tag-shopee">ค่าธรรมเนียมแพลตฟอร์ม</div>
+                <h2>ดึง<span class="gold">ค่าธรรมเนียม</span>มาหักภาษี<br>ได้ครบทุกรายการ</h2>
+                <p>ค่าใช้จ่ายที่ซ่อนอยู่ในแพลตฟอร์มมีหลายสิบรายการ ถ้าไม่ดึงมาตั้งเป็นค่าใช้จ่าย เท่ากับคุณเสียสิทธิ์ลดหย่อนภาษีไปฟรีๆ BKKHolding ดึงข้อมูลเหล่านี้มาให้อัตโนมัติ</p>
+                <ul class="feature-list">
+                    <li><span class="check"><i class="fa-solid fa-check"></i></span> <strong>ค่าคอมมิชชั่น (Commission Fee)</strong> — ค่า GP ที่แพลตฟอร์มหักจากยอดขาย</li>
+                    <li><span class="check"><i class="fa-solid fa-check"></i></span> <strong>ค่าธรรมเนียมการชำระเงิน (Transaction Fee)</strong> — ค่าบริการรับชำระผ่านบัตร/e-wallet</li>
+                    <li><span class="check"><i class="fa-solid fa-check"></i></span> <strong>ค่าโปรโมชั่น & Voucher</strong> — ส่วนลดที่แพลตฟอร์มเรียกเก็บย้อนหลัง</li>
+                    <li><span class="check"><i class="fa-solid fa-check"></i></span> <strong>ค่าโฆษณา & Affiliate</strong> — ค่า Ads, ค่านายหน้า Affiliate ที่ถูกหักอัตโนมัติ</li>
+                    <li><span class="check"><i class="fa-solid fa-check"></i></span> <strong>ค่าขนส่ง & บรรจุภัณฑ์</strong> — ค่าส่งที่ร้านค้าต้องรับภาระ</li>
+                    <li><span class="check"><i class="fa-solid fa-check"></i></span> ทุกรายการถูกตั้งเป็นค่าใช้จ่ายและบันทึกลงสมุดรายวันอัตโนมัติ พร้อมหักภาษีได้ทันที</li>
+                </ul>
+            </div>
+            <div class="feature-visual fade-up delay-2">
+                <img src="./assets/shopee_guide.png" alt="วิธีดาวน์โหลดค่าใช้จ่ายแพลตฟอร์ม Shopee">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════ AI FEATURES ══════════ -->
+<section class="bg-navy" id="features">
+    <div class="section-inner">
+        <div class="section-label fade-up"><i class="fa-solid fa-wand-magic-sparkles"></i> เทคโนโลยี AI</div>
+        <h2 class="section-title fade-up">ฟีเจอร์อัจฉริยะ<br><span class="gold">ที่คู่แข่งไม่มี</span></h2>
+        <p class="section-desc fade-up">BKKHolding ใช้เทคโนโลยี AI และ OCR ขั้นสูงเพื่อลดงานซ้ำซ้อนและเพิ่มความแม่นยำในการทำบัญชี</p>
+
+        <div class="feature-row" style="padding-top: 0;">
+            <div class="feature-text fade-up">
+                <div class="feature-tag tag-ai">AI-Powered</div>
+                <h2 style="color: white;">AI OCR <span class="gold">สแกนบิล</span><br>อ่านข้อมูลอัตโนมัติ</h2>
+                <p>แค่อัปโหลดไฟล์ PDF หรือถ่ายรูปใบเสร็จ ระบบ AI จะอ่านข้อมูลทั้งหมดบนบิล แล้วสร้างรายการบัญชีให้อัตโนมัติ ไม่ต้องคีย์ข้อมูลเองแม้แต่ตัวเลขเดียว</p>
+                <ul class="feature-list">
+                    <li><span class="check"><i class="fa-solid fa-check"></i></span> อ่านข้อมูลจากใบกำกับภาษี ใบแจ้งหนี้ ใบเสร็จรับเงิน ได้ทุกรูปแบบ</li>
+                    <li><span class="check"><i class="fa-solid fa-check"></i></span> ดึงข้อมูลสำคัญอัตโนมัติ — ชื่อบริษัท, เลขประจำตัวผู้เสียภาษี, วันที่, ยอดเงิน, VAT</li>
+                    <li><span class="check"><i class="fa-solid fa-check"></i></span> สร้างรายการตั้งหนี้ (AP) และบันทึกลงสมุดรายวันซื้อให้อัตโนมัติ</li>
+                    <li><span class="check"><i class="fa-solid fa-check"></i></span> รองรับทั้งบิลภาษาไทยและภาษาอังกฤษ ความแม่นยำ 95%+</li>
+                    <li><span class="check"><i class="fa-solid fa-check"></i></span> ตรวจจับข้อมูลซ้ำอัตโนมัติ ป้องกันการบันทึกบิลซ้ำ</li>
+                </ul>
+            </div>
+            <div class="feature-visual fade-up delay-2">
+                <img src="./assets/mascot.png" alt="AI OCR" style="max-height: 400px; object-fit: contain; box-shadow: none; border-radius: 0;">
+            </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px;">
+            <div class="process-card fade-up">
+                <div class="step-icon">📋</div>
+                <h3>สมุดรายวันอัตโนมัติ</h3>
+                <p>ทุกรายการที่นำเข้าจะถูกลงบันทึกในสมุดรายวันซื้อ-ขายให้อัตโนมัติ ตาม Chart of Account ที่คุณตั้งค่าไว้ ไม่ต้องเปิด Excel พิมพ์เองอีกต่อไป</p>
+            </div>
+            <div class="process-card fade-up delay-1">
+                <div class="step-icon">🧾</div>
+                <h3>รายงานภาษี VAT</h3>
+                <p>ระบบสร้างรายงานภาษีซื้อ-ภาษีขายให้อัตโนมัติ พร้อมส่งออกเป็นไฟล์ที่ยื่นสรรพากรได้ทันที ลดขั้นตอนการเตรียมเอกสารภาษีจากหลายวันเหลือไม่กี่นาที</p>
+            </div>
+            <div class="process-card fade-up delay-2">
+                <div class="step-icon">📈</div>
+                <h3>แดชบอร์ดกำไร-ขาดทุน</h3>
+                <p>เห็นภาพรวมธุรกิจแบบเรียลไทม์ รายได้ ค่าใช้จ่าย กำไรสุทธิ แยกตามแพลตฟอร์ม แยกตามเดือน ช่วยให้ตัดสินใจทางธุรกิจได้อย่างรวดเร็ว</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════ COMPARISON ══════════ -->
+<section id="compare">
+    <div class="section-inner">
+        <div class="section-label fade-up"><i class="fa-solid fa-scale-balanced"></i> เปรียบเทียบ</div>
+        <h2 class="section-title fade-up">ทำไมต้อง <span class="gold">BKKHolding</span></h2>
+        <p class="section-desc fade-up">เปรียบเทียบวิธีทำงานแบบเดิมกับ BKKHolding เพื่อให้เห็นภาพชัดเจนว่าประหยัดเวลาและลดข้อผิดพลาดได้มากแค่ไหน</p>
+
+        <table class="compare-table fade-up">
+            <thead>
+                <tr>
+                    <th style="width: 35%;">หัวข้อเปรียบเทียบ</th>
+                    <th style="width: 30%;">❌ ทำเอง (Excel / มือ)</th>
+                    <th style="width: 35%;">✅ BKKHolding</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>นำเข้าคำสั่งซื้อ</strong></td>
+                    <td class="no">คีย์มือทีละรายการ ใช้เวลา 2-3 ชม./วัน</td>
+                    <td class="yes">อัปโหลดไฟล์ 1 คลิก เสร็จใน 30 วินาที</td>
+                </tr>
+                <tr>
+                    <td><strong>กระทบยอด Settlement</strong></td>
+                    <td class="no">เปิด Excel เทียบมือทีละแถว เสี่ยงพลาด</td>
+                    <td class="yes">ระบบจับคู่อัตโนมัติ แม่นยำ 99.9%</td>
+                </tr>
+                <tr>
+                    <td><strong>ค่าธรรมเนียมแพลตฟอร์ม</strong></td>
+                    <td class="no">มักตกหล่น ไม่ได้หักภาษีครบ</td>
+                    <td class="yes">ดึงมาครบทุกรายการ ตั้งค่าใช้จ่ายอัตโนมัติ</td>
+                </tr>
+                <tr>
+                    <td><strong>บันทึกบัญชี (สมุดรายวัน)</strong></td>
+                    <td class="no">จ้างพนักงานบัญชีลงรายการ 1-2 คน</td>
+                    <td class="yes">ระบบลงให้อัตโนมัติ ถูกต้องตาม TFRS</td>
+                </tr>
+                <tr>
+                    <td><strong>สแกนบิลค่าใช้จ่าย</strong></td>
+                    <td class="no">อ่านบิลด้วยตา พิมพ์ข้อมูลเอง</td>
+                    <td class="yes">AI OCR อ่านให้อัตโนมัติ แม่นยำ 95%+</td>
+                </tr>
+                <tr>
+                    <td><strong>รายงานภาษี</strong></td>
+                    <td class="no">ทำเองใน Excel ใช้เวลา 1-2 วัน</td>
+                    <td class="yes">กดปุ่มเดียว ได้ไฟล์พร้อมยื่นสรรพากร</td>
+                </tr>
+                <tr>
+                    <td><strong>ปิดงบรายเดือน</strong></td>
+                    <td class="no">ใช้เวลา 3-5 วันทำการ</td>
+                    <td class="yes">เสร็จภายใน 5 นาที</td>
+                </tr>
+                <tr>
+                    <td><strong>ต้นทุนรายเดือน</strong></td>
+                    <td class="no">เงินเดือนพนักงานบัญชี 15,000-25,000 ฿/คน</td>
+                    <td class="yes">เริ่มต้นเพียงเศษเสี้ยวของเงินเดือนพนักงาน</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- ══════════ SUPPORTED PLATFORMS DETAIL ══════════ -->
+<section class="bg-light">
+    <div class="section-inner" style="text-align: center;">
+        <div class="section-label fade-up"><i class="fa-solid fa-plug"></i> แพลตฟอร์มที่รองรับ</div>
+        <h2 class="section-title fade-up">รองรับข้อมูลจาก <span class="gold">3 แพลตฟอร์มหลัก</span></h2>
+        <p class="section-desc fade-up" style="margin-left: auto; margin-right: auto;">ครอบคลุมทุกแพลตฟอร์ม E-Commerce ยอดนิยมในประเทศไทย พร้อมคู่มือภาษาไทยละเอียดทุกขั้นตอน</p>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 40px;">
+            <div style="background: white; border-radius: 16px; padding: 36px 28px; box-shadow: 0 4px 16px rgba(0,0,0,0.04); border: 1px solid #e2e8f0; transition: all 0.3s;" class="fade-up" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 32px rgba(254,44,85,0.1)'" onmouseout="this.style.transform='';this.style.boxShadow='0 4px 16px rgba(0,0,0,0.04)'">
+                <i class="fa-brands fa-tiktok" style="font-size: 2.5rem; color: #000; margin-bottom: 16px;"></i>
+                <h3 style="font-size: 1.2rem; font-weight: 700; color: var(--navy); margin-bottom: 12px;">TikTok Shop</h3>
+                <ul style="list-style: none; text-align: left; font-size: 0.85rem; color: var(--text-light); line-height: 2;">
+                    <li>✅ คำสั่งซื้อสินค้า</li>
+                    <li>✅ รายรับของฉัน (Income)</li>
+                    <li>✅ ค่าใช้จ่ายแพลตฟอร์ม</li>
+                    <li>✅ การคืนสินค้า / คืนเงิน</li>
+                </ul>
+            </div>
+            <div style="background: white; border-radius: 16px; padding: 36px 28px; box-shadow: 0 4px 16px rgba(0,0,0,0.04); border: 1px solid #e2e8f0; transition: all 0.3s;" class="fade-up delay-1" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 32px rgba(238,77,45,0.1)'" onmouseout="this.style.transform='';this.style.boxShadow='0 4px 16px rgba(0,0,0,0.04)'">
+                <i class="fa-solid fa-store" style="font-size: 2.5rem; color: #EE4D2D; margin-bottom: 16px;"></i>
+                <h3 style="font-size: 1.2rem; font-weight: 700; color: var(--navy); margin-bottom: 12px;">Shopee</h3>
+                <ul style="list-style: none; text-align: left; font-size: 0.85rem; color: var(--text-light); line-height: 2;">
+                    <li>✅ คำสั่งซื้อสินค้า</li>
+                    <li>✅ รายรับ (Revenue)</li>
+                    <li>✅ เงินเข้าธนาคาร (Settlement)</li>
+                    <li>✅ ค่าใช้จ่ายแพลตฟอร์ม</li>
+                    <li>✅ การคืนสินค้า / คืนเงิน</li>
+                </ul>
+            </div>
+            <div style="background: white; border-radius: 16px; padding: 36px 28px; box-shadow: 0 4px 16px rgba(0,0,0,0.04); border: 1px solid #e2e8f0; transition: all 0.3s;" class="fade-up delay-2" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 32px rgba(15,20,109,0.1)'" onmouseout="this.style.transform='';this.style.boxShadow='0 4px 16px rgba(0,0,0,0.04)'">
+                <i class="fa-solid fa-bag-shopping" style="font-size: 2.5rem; color: #0F146D; margin-bottom: 16px;"></i>
+                <h3 style="font-size: 1.2rem; font-weight: 700; color: var(--navy); margin-bottom: 12px;">Lazada</h3>
+                <ul style="list-style: none; text-align: left; font-size: 0.85rem; color: var(--text-light); line-height: 2;">
+                    <li>✅ คำสั่งซื้อ</li>
+                    <li>✅ ภาพรวมธุรกรรม</li>
+                    <li>✅ รายงานการเงิน</li>
+                    <li>✅ เงินเข้าธนาคาร</li>
+                    <li>✅ ค่าใช้จ่ายแพลตฟอร์ม</li>
+                    <li>✅ การคืนสินค้า</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════ CTA ══════════ -->
+<section class="cta-section" id="contact">
+    <div class="fade-up">
+        <h2>พร้อมเปลี่ยนเรื่องบัญชี<br>ให้เป็น<span class="gold">เรื่องง่าย</span>แล้วหรือยัง?</h2>
+        <p>เริ่มต้นทดลองใช้ BKKHolding ฟรีวันนี้ ไม่ต้องผูกบัตรเครดิต ไม่มีค่าใช้จ่ายซ่อนเร้น ทีมงานพร้อมช่วยเซ็ตอัประบบให้คุณตั้งแต่วันแรก</p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+            <a href="https://bkkholding.com" class="btn-primary" style="font-size: 1.15rem; padding: 16px 40px;">
+                <i class="fa-solid fa-rocket"></i> ทดลองใช้งานฟรี
+            </a>
+            <a href="#" class="btn-outline" style="font-size: 1.15rem; padding: 14px 40px;">
+                <i class="fa-solid fa-phone"></i> ติดต่อทีมขาย
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer class="footer">
+    <p>&copy; 2024 BKKHolding — Fintech Accounting. All rights reserved.</p>
+</footer>
+
+<script>
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+        document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Intersection Observer for fade-up animations
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
         });
-    </script>
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
