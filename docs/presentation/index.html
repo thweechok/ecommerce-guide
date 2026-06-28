@@ -20,6 +20,7 @@
             --white: #ffffff;
             --success: #22c55e;
             --danger: #ef4444;
+        --info: #3b82f6;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -166,6 +167,65 @@
         }
         .feature-visual img:hover { transform: scale(1.02); }
 
+        /* ══════════ EXPANDABLE DETAIL ══════════ */
+        .detail-toggle {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: linear-gradient(135deg, var(--navy), var(--navy-light));
+            color: white; padding: 10px 22px; border-radius: 50px;
+            font-size: 0.85rem; font-weight: 600; cursor: pointer; border: none;
+            box-shadow: 0 4px 12px rgba(27,54,93,0.25); transition: all 0.3s;
+            margin-top: 20px; font-family: 'Prompt', sans-serif;
+        }
+        .detail-toggle:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(27,54,93,0.35); }
+        .detail-toggle i { transition: transform 0.3s; }
+        .detail-toggle.open i { transform: rotate(180deg); }
+        .bg-navy .detail-toggle { background: linear-gradient(135deg, var(--gold), #e8b84a); color: var(--navy-dark); }
+
+        .detail-content {
+            max-height: 0; overflow: hidden; opacity: 0;
+            transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease, margin 0.4s ease;
+            margin-top: 0;
+        }
+        .detail-content.open { max-height: 2000px; opacity: 1; margin-top: 20px; }
+        .detail-box {
+            background: #f0f4ff; border: 1px solid #dbeafe; border-radius: 14px;
+            padding: 24px 28px;
+        }
+        .bg-navy .detail-box { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.12); }
+        .detail-box h4 { font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+        .bg-navy .detail-box h4 { color: var(--gold-light); }
+        .detail-box p, .detail-box li { font-size: 0.85rem; color: var(--text-light); line-height: 1.8; }
+        .bg-navy .detail-box p, .bg-navy .detail-box li { color: rgba(255,255,255,0.6); }
+        .detail-box ul { list-style: none; padding: 0; }
+        .detail-box ul li { padding: 4px 0; padding-left: 20px; position: relative; }
+        .detail-box ul li::before { content: '▸'; position: absolute; left: 0; color: var(--gold); font-weight: 700; }
+
+        /* ══════════ DASHBOARD SHOWCASE ══════════ */
+        .dashboard-showcase {
+            background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
+            padding: 100px 60px; text-align: center;
+        }
+        .dashboard-frame {
+            max-width: 1100px; margin: 0 auto;
+            background: white; border-radius: 16px;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.12); overflow: hidden;
+            border: 1px solid #e2e8f0;
+        }
+        .dashboard-topbar {
+            background: var(--navy); padding: 12px 20px;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .dashboard-dot { width: 10px; height: 10px; border-radius: 50%; }
+        .dashboard-dot.red { background: #ef4444; }
+        .dashboard-dot.yellow { background: #eab308; }
+        .dashboard-dot.green { background: #22c55e; }
+        .dashboard-url {
+            flex: 1; background: rgba(255,255,255,0.12); border-radius: 6px;
+            padding: 4px 14px; font-size: 0.75rem; color: rgba(255,255,255,0.6);
+            margin-left: 8px; font-family: monospace;
+        }
+        .dashboard-frame img { width: 100%; display: block; }
+
         .feature-tag {
             display: inline-block; font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
             letter-spacing: 1px; padding: 4px 12px; border-radius: 50px; margin-bottom: 16px;
@@ -276,7 +336,25 @@
         .section-divider { height: 1px; background: linear-gradient(90deg, transparent, #e2e8f0, transparent); margin: 0; }
 
         /* ══════════ RESPONSIVE ══════════ */
+        /* ══════════ HIGHLIGHT BOX ══════════ */
+        .highlight-row {
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 16px;
+        }
+        .highlight-item {
+            background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 16px;
+            text-align: center; transition: all 0.3s;
+        }
+        .highlight-item:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+        .highlight-item .hi-icon { font-size: 1.5rem; margin-bottom: 8px; }
+        .highlight-item .hi-title { font-size: 0.82rem; font-weight: 700; color: var(--navy); }
+        .highlight-item .hi-desc { font-size: 0.75rem; color: var(--text-light); margin-top: 4px; }
+        .bg-navy .highlight-item { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.1); }
+        .bg-navy .highlight-item .hi-title { color: white; }
+        .bg-navy .highlight-item .hi-desc { color: rgba(255,255,255,0.5); }
+
         @media (max-width: 900px) {
+            .highlight-row { grid-template-columns: 1fr; }
+            .dashboard-showcase { padding: 60px 20px; }
             .navbar { padding: 0 20px; }
             .nav-links { display: none; }
             section { padding: 60px 20px; }
@@ -476,6 +554,23 @@
                     <li><span class="check"><i class="fa-solid fa-check"></i></span> รองรับทั้งภาษาไทยและอังกฤษ สร้างรายงานได้ทั้ง 2 ภาษา</li>
                     <li><span class="check"><i class="fa-solid fa-check"></i></span> จัดการออเดอร์ที่ถูกยกเลิก/คืนสินค้า พร้อมปรับรายการบัญชีอัตโนมัติ</li>
                 </ul>
+                <button class="detail-toggle" onclick="toggleDetail(this)"><i class="fa-solid fa-chevron-down"></i> ดูรายละเอียดเพิ่มเติม</button>
+                <div class="detail-content">
+                    <div class="detail-box">
+                        <h4><i class="fa-solid fa-list-check"></i> ข้อมูลที่ระบบดึงจากไฟล์คำสั่งซื้อ TikTok</h4>
+                        <ul>
+                            <li><strong>Order ID</strong> — รหัสคำสั่งซื้อสำหรับอ้างอิง</li>
+                            <li><strong>ชื่อสินค้า / SKU</strong> — รายละเอียดสินค้าทุกรายการในออเดอร์</li>
+                            <li><strong>จำนวน</strong> — จำนวนชิ้นที่สั่ง</li>
+                            <li><strong>ราคาขาย</strong> — ราคาจริง หักส่วนลดแล้ว</li>
+                            <li><strong>ค่าจัดส่ง</strong> — ที่เรียกเก็บจากลูกค้า</li>
+                            <li><strong>Voucher / ส่วนลด</strong> — ที่แพลตฟอร์มออกให้</li>
+                            <li><strong>สถานะ</strong> — สำเร็จ / ยกเลิก / คืนสินค้า</li>
+                            <li><strong>วันที่สร้าง / วันที่จัดส่ง</strong> — สำหรับบันทึกตามรอบบัญชี</li>
+                        </ul>
+                        <p style="margin-top: 12px;">📁 <strong>ชื่อไฟล์:</strong> ทั้งหมด คำสั่งซื้อ-XXXX-XX-XX.xlsx &nbsp;|&nbsp; 📑 <strong>แท็บ:</strong> OrderSKUList</p>
+                    </div>
+                </div>
             </div>
             <div class="feature-visual fade-up delay-2">
                 <img src="./assets/tiktok_guide.png" alt="วิธีดาวน์โหลดข้อมูลคำสั่งซื้อ TikTok">
@@ -497,6 +592,20 @@
                     <li><span class="check"><i class="fa-solid fa-check"></i></span> แจ้งเตือนอัตโนมัติเมื่อพบยอดที่ไม่ตรงกัน ป้องกันเงินรั่วไหล</li>
                     <li><span class="check"><i class="fa-solid fa-check"></i></span> สร้างรายงาน Reconciliation สรุปรายเดือนพร้อมส่งออก PDF/Excel</li>
                 </ul>
+                <button class="detail-toggle" onclick="toggleDetail(this)"><i class="fa-solid fa-chevron-down"></i> ดูรายละเอียดเพิ่มเติม</button>
+                <div class="detail-content">
+                    <div class="detail-box">
+                        <h4><i class="fa-solid fa-magnifying-glass-chart"></i> ระบบ Reconciliation ทำงานอย่างไร?</h4>
+                        <ul>
+                            <li><strong>ขั้นตอน 1:</strong> ระบบรวบรวมยอดขายจากทุกแพลตฟอร์ม (TikTok, Shopee, Lazada)</li>
+                            <li><strong>ขั้นตอน 2:</strong> หักค่าธรรมเนียมทุกรายการ — ค่า GP, ค่าโปรฯ, ค่าส่ง, ค่า Affiliate</li>
+                            <li><strong>ขั้นตอน 3:</strong> คำนวณยอดเงินที่ควรเข้าบัญชีธนาคาร</li>
+                            <li><strong>ขั้นตอน 4:</strong> จับคู่กับ Statement ธนาคารจริง — ตรวจสอบว่าตรงกัน</li>
+                            <li><strong>ขั้นตอน 5:</strong> แจ้งเตือนถ้ามียอดไม่ตรง พร้อมระบุสาเหตุ</li>
+                        </ul>
+                        <p style="margin-top: 12px;">💡 ระบบช่วยอธิบายได้ว่า <strong>เงินหายไปไหนทุกบาท</strong> — ตัวอย่างเช่น ยอดขาย 100,000 ถูกหักค่า GP 5%, ค่าโปรฯ 3%, ค่า Affiliate 1.5% ดังนั้นเงินที่ควรเข้าบัญชี = 90,500 บาท</p>
+                    </div>
+                </div>
             </div>
             <div class="feature-visual fade-up delay-2">
                 <img src="./assets/lazada_guide.png" alt="วิธีดาวน์โหลดข้อมูลรายรับ Lazada">
@@ -519,6 +628,35 @@
                     <li><span class="check"><i class="fa-solid fa-check"></i></span> <strong>ค่าขนส่ง & บรรจุภัณฑ์</strong> — ค่าส่งที่ร้านค้าต้องรับภาระ</li>
                     <li><span class="check"><i class="fa-solid fa-check"></i></span> ทุกรายการถูกตั้งเป็นค่าใช้จ่ายและบันทึกลงสมุดรายวันอัตโนมัติ พร้อมหักภาษีได้ทันที</li>
                 </ul>
+                <button class="detail-toggle" onclick="toggleDetail(this)"><i class="fa-solid fa-chevron-down"></i> ดูรายละเอียดเพิ่มเติม</button>
+                <div class="detail-content">
+                    <div class="detail-box">
+                        <h4><i class="fa-solid fa-calculator"></i> ตัวอย่างค่าธรรมเนียมที่มักถูกมองข้าม</h4>
+                        <div class="highlight-row">
+                            <div class="highlight-item">
+                                <div class="hi-icon">💰</div>
+                                <div class="hi-title">Commission Fee</div>
+                                <div class="hi-desc">3-5% ของยอดขาย</div>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="hi-icon">💳</div>
+                                <div class="hi-title">Transaction Fee</div>
+                                <div class="hi-desc">1-2% ค่ารับชำระ</div>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="hi-icon">📢</div>
+                                <div class="hi-title">Ads & Affiliate</div>
+                                <div class="hi-desc">ค่าโฆษณา + ค่านายหน้า</div>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="hi-icon">🎁</div>
+                                <div class="hi-title">Voucher & Promo</div>
+                                <div class="hi-desc">ส่วนลดที่แพลตฟอร์มเรียกเก็บ</div>
+                            </div>
+                        </div>
+                        <p style="margin-top: 16px;">⚠️ <strong>ตัวอย่าง:</strong> ร้านค้ายอดขาย 1 ล้าน/เดือน ถ้าไม่ดึงค่าธรรมเนียมมาตั้งค่าใช้จ่าย จะเสียภาษีเพิ่ม <strong>~30,000-50,000 บาท/เดือน</strong> โดยไม่จำเป็น</p>
+                    </div>
+                </div>
             </div>
             <div class="feature-visual fade-up delay-2">
                 <img src="./assets/shopee_guide.png" alt="วิธีดาวน์โหลดค่าใช้จ่ายแพลตฟอร์ม Shopee">
@@ -546,6 +684,21 @@
                     <li><span class="check"><i class="fa-solid fa-check"></i></span> รองรับทั้งบิลภาษาไทยและภาษาอังกฤษ ความแม่นยำ 95%+</li>
                     <li><span class="check"><i class="fa-solid fa-check"></i></span> ตรวจจับข้อมูลซ้ำอัตโนมัติ ป้องกันการบันทึกบิลซ้ำ</li>
                 </ul>
+                <button class="detail-toggle" onclick="toggleDetail(this)"><i class="fa-solid fa-chevron-down"></i> ดูรายละเอียดเพิ่มเติม</button>
+                <div class="detail-content">
+                    <div class="detail-box">
+                        <h4><i class="fa-solid fa-robot"></i> AI OCR ทำงานอย่างไร?</h4>
+                        <ul>
+                            <li><strong>อัปโหลดไฟล์</strong> — ลากไฟล์ PDF/รูปภาพบิลวางลงในระบบ</li>
+                            <li><strong>AI อ่านข้อมูล</strong> — ระบบใช้ OCR สแกนข้อความทุกตัวบนบิล</li>
+                            <li><strong>ดึงข้อมูลสำคัญ</strong> — ชื่อบริษัท, เลขผู้เสียภาษี, วันที่, รายการสินค้า, ยอดเงิน, VAT</li>
+                            <li><strong>จับคู่ผู้ขาย</strong> — ระบบตรวจสอบว่าเป็นผู้ขายรายเดิมหรือรายใหม่</li>
+                            <li><strong>สร้างรายการอัตโนมัติ</strong> — ตั้งหนี้ (AP) และบันทึกลงสมุดรายวันซื้อ</li>
+                            <li><strong>ตรวจซ้ำ</strong> — ถ้าเลขที่บิลเคยบันทึกแล้ว ระบบจะแจ้งเตือนทันที</li>
+                        </ul>
+                        <p style="margin-top: 12px;">🎯 <strong>ความแม่นยำ 95%+</strong> — รองรับทั้งใบกำกับภาษีเต็มรูป, ใบกำกับภาษีอย่างย่อ, ใบเสร็จรับเงิน และ e-Tax Invoice</p>
+                    </div>
+                </div>
             </div>
             <div class="feature-visual fade-up delay-2">
                 <img src="./assets/mascot.png" alt="AI OCR" style="max-height: 400px; object-fit: contain; box-shadow: none; border-radius: 0;">
@@ -567,6 +720,48 @@
                 <div class="step-icon">📈</div>
                 <h3>แดชบอร์ดกำไร-ขาดทุน</h3>
                 <p>เห็นภาพรวมธุรกิจแบบเรียลไทม์ รายได้ ค่าใช้จ่าย กำไรสุทธิ แยกตามแพลตฟอร์ม แยกตามเดือน ช่วยให้ตัดสินใจทางธุรกิจได้อย่างรวดเร็ว</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════ DASHBOARD SHOWCASE ══════════ -->
+<section class="dashboard-showcase">
+    <div class="section-inner" style="text-align: center;">
+        <div class="section-label fade-up"><i class="fa-solid fa-desktop"></i> หน้าจอโปรแกรมจริง</div>
+        <h2 class="section-title fade-up">นี่คือหน้าจอจริงของ <span class="gold">BKKHolding</span></h2>
+        <p class="section-desc fade-up" style="margin-left: auto; margin-right: auto;">ไม่ใช่แค่ภาพ Mock-up — นี่คือหน้า Dashboard จริงที่ผู้ใช้งานเห็นทุกวัน แสดงภาพรวมรายได้ ค่าใช้จ่าย ยอดออเดอร์ และภาษีมูลค่าเพิ่ม ทุกตัวเลขอัปเดตแบบเรียลไทม์</p>
+
+        <div class="dashboard-frame fade-up">
+            <div class="dashboard-topbar">
+                <span class="dashboard-dot red"></span>
+                <span class="dashboard-dot yellow"></span>
+                <span class="dashboard-dot green"></span>
+                <span class="dashboard-url">bkkholding.com/dashboard</span>
+            </div>
+            <img src="./assets/dashboard.png" alt="BKKHolding Dashboard — หน้าจอโปรแกรมจริง" loading="lazy">
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 40px; max-width: 1100px; margin-left: auto; margin-right: auto;">
+            <div class="highlight-item fade-up">
+                <div class="hi-icon">💰</div>
+                <div class="hi-title">รายได้รวม</div>
+                <div class="hi-desc">ดูยอดรายได้รวมทุกแพลตฟอร์ม แยกตามเดือน</div>
+            </div>
+            <div class="highlight-item fade-up delay-1">
+                <div class="hi-icon">📊</div>
+                <div class="hi-title">กราฟยอดขายรายวัน</div>
+                <div class="hi-desc">เปรียบเทียบยอดขาย TikTok vs Shopee ในกราฟเดียว</div>
+            </div>
+            <div class="highlight-item fade-up delay-2">
+                <div class="hi-icon">🏪</div>
+                <div class="hi-title">แยกตามแพลตฟอร์ม</div>
+                <div class="hi-desc">ดูยอดขายแยกตามแพลตฟอร์ม เห็นภาพรวมชัดเจน</div>
+            </div>
+            <div class="highlight-item fade-up delay-3">
+                <div class="hi-icon">🧾</div>
+                <div class="hi-title">ใบกำกับภาษีล่าสุด</div>
+                <div class="hi-desc">ดูรายการใบกำกับภาษีที่สร้างล่าสุดได้ทันที</div>
             </div>
         </div>
     </div>
@@ -704,6 +899,16 @@
     window.addEventListener('scroll', () => {
         document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
     });
+
+    // Toggle detail sections
+    function toggleDetail(btn) {
+        const content = btn.nextElementSibling;
+        btn.classList.toggle('open');
+        content.classList.toggle('open');
+        btn.innerHTML = btn.classList.contains('open')
+            ? '<i class="fa-solid fa-chevron-up"></i> ซ่อนรายละเอียด'
+            : '<i class="fa-solid fa-chevron-down"></i> ดูรายละเอียดเพิ่มเติม';
+    }
 
     // Intersection Observer for fade-up animations
     const observer = new IntersectionObserver((entries) => {
